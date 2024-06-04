@@ -1,6 +1,16 @@
+/* Header container styles */
+.header-container{
+    background-color: #002A9E;
+    padding : 1em 0;
+    font-size: 0.7vw;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 12.5vw;  
+}
 /* Home page SearchBar */
 .search-container{
-    width: 250px;
+    margin-left: 2em;
+    width: 12.5vw;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -9,47 +19,89 @@
 }
 .search-input{
     border-radius: 20px;
-    padding : 5px;
-    padding-left: 10px;
+    padding : 0.4em;
+    padding-left: 1em;
     width : 95%;
     border: none;
     outline: none;
-    background-color: #ffffff4D
+    background-color: #ffffff4D;
+    font-size: 1.1em;
 }
 .search-input::placeholder{
     color : rgba(255,255,255,0.5)
 }
+
 .search-icon-container{
     display:flex;
     border-radius: 50%;
     background-color: #00C2FF;
     position: absolute;
     right : 0px;
-    width : 24px;
-    height: 24px;
+    width : 2.2em;
+    height: 2.2em;
     justify-content: center;
     align-items: center;
 }
 /* ListItem */
 
 .contact-list-container{
-    
+  display: flex;
+  margin-left : 2em;
 }
 .contact-list{
     list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding : 0;
+    display: flex;
+    align-items: center;
 }
 
 .list-item{
     display: inline;
     border-right: 1px solid #FFFFFFCC;
+    align-items: center;
 }
-.list-item img{
-    padding-left : 5px;
-    padding-right: 5px;
+.list-item:last-child{
+    border: none;
 }
+
 .list-item p{
     display: inline;
     color: rgba(255,255,255,0.8);
-    font-size: 15px;
-    padding-right : 10px;
+    padding : 0 1em;
+}
+.list-item a{
+    text-decoration: none;
+}
+.list-item img{
+    margin-left : 1em;
+}
+.icon-container{
+    display:flex;
+    width : 1.5em;
+    height: 1.5em;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    width: 1.2em;
+    height : 1.2em;
+}
+.chosen-language{
+    color : #00C2FF;
+    padding : 0 ;
+}
+.unchosen-language{
+    padding : 0
+}
+.unchosen-language:hover{
+    cursor: pointer;
+}
+
+.menu-section-container{
+
+}
+.horizontal-list-container{
+    
 }
