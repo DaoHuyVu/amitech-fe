@@ -1,0 +1,55 @@
+/* Home page SearchBar */
+.search-container{
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.3);
+}
+.search-input{
+    border-radius: 20px;
+    padding : 5px;
+    padding-left: 10px;
+    width : 95%;
+    border: none;
+    outline: none;
+    background-color: #ffffff4D
+}
+.search-input::placeholder{
+    color : rgba(255,255,255,0.5)
+}
+.search-icon-container{
+    display:flex;
+    border-radius: 50%;
+    background-color: #00C2FF;
+    position: absolute;
+    right : 0px;
+    width : 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+}
+/* ListItem */
+
+.contact-list-container{
+    
+}
+.contact-list{
+    list-style-type: none;
+}
+
+.list-item{
+    display: inline;
+    border-right: 1px solid #FFFFFFCC;
+}
+.list-item img{
+    padding-left : 5px;
+    padding-right: 5px;
+}
+.list-item p{
+    display: inline;
+    color: rgba(255,255,255,0.8);
+    font-size: 15px;
+    padding-right : 10px;
+}
