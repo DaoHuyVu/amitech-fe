@@ -1,8 +1,8 @@
-import Header from "./components/header/Header";
+import Home from "./pages/Home/Home.js";
 function App() {
   return (
     <div >
-      <Header />
+      {/* <Home /> */}
     </div>
   );
 }

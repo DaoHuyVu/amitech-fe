@@ -1,5 +1,4 @@
 import searchIcon from '../../../assets/images/search-icon.png'
-import '../../../assets/styles/header/style.css'
 import {useState} from 'react'
 export default function SearchBar(){
     const [searchQuery,setQuery] = useState('');
@@ -16,7 +15,7 @@ export default function SearchBar(){
                 onChange={handleQueryChange}        
             />
             <div className="search-icon-container">
-                <img src={searchIcon} alt={searchIcon} className='icon'/>
+                <img src={searchIcon} alt="SearchIcon" className='icon'/>
             </div>
         </span>
     )

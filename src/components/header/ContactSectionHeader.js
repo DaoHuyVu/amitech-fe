@@ -1,54 +1,44 @@
-import HorizontalBorderedList from "./HorizontalBorderedList";
+import HorizontalNavBar from "./common/HorizontalNavBar";
 import SearchBar from "./common/SearchBar";
-import '../../assets/styles/header/style.css'
 import phone from "../../assets/images/phone.png"
 import mail from "../../assets/images/mail.png"
 import LanguageChooser from "./LanguageChooser";
+import NavBarMenuItem from "./NavBarMenuItem";
 export default function HomeHeader(){
+    const itemStyle = {
+        color : '#FFFFFFCC'
+    }
+    
     const contactList = <>
-        <li className="list-item">
-                <img className="icon" src={phone} alt={phone} />            
-                <a href="tel:0979 796 584">
-                    <p>0979 796 584</p>
-                </a>
-        </li>
-        <li className="list-item">
-            <span><img className="icon" src={phone} alt={phone} /></span>
-            <a href="tel:(024) 22 33 55 66">
-                <p>(024) 22 33 55 66</p>
-            </a>
-        </li>
-        <li className="list-item">
-            <img src={mail} alt={mail} className="icon"/>
-            <a href="mailto:contact@amitech.com">
-                <p>contact@amitech.com</p>
-            </a>
-        </li>
+        <span className="flex-dir-row">
+            <span className="flex-item-center"><img className="icon" src={phone} alt="Phone" /></span>
+            <NavBarMenuItem name="0979 796 584" link="tel:0979796584" style={itemStyle}/>
+        </span>
+        
+        <span className="flex-dir-row">
+            <span className="flex-item-center"><img className="icon" src={phone} alt="Phone" /></span>
+            <NavBarMenuItem name="(024) 22 33 55 66" link="tel:(024) 22 33 55 66" style={itemStyle}/>
+        </span>
+        
+        <span className="flex-dir-row">
+            <span className="flex-item-center"><img className="icon" src={mail} alt="Mail" /></span>
+            <NavBarMenuItem name="contact@amitech.com" link="mailto:contact@amitech.com" style={itemStyle}/>
+        </span>
     </>
     const miscList = <>
-        <li className="list-item">
-            <LanguageChooser />
-        </li>
-        <li className="list-item">
-            <a href="/LienHe">
-                <p>Liên hệ</p>
-            </a>
-        </li>
-        <li className="list-item">
-            <a href="/tuyenDung">
-                <p>Tuyển dụng</p>
-            </a>
-        </li>
+        <LanguageChooser />
+        <NavBarMenuItem name="Liên hệ" link="/lien-he" style={itemStyle}/>
+        <NavBarMenuItem name="Tuyển dụng" link="tuyen-dung" style={itemStyle}/>
     </>
     return(
         <div className="header-container">
-            <HorizontalBorderedList>
+           <HorizontalNavBar>
                 {miscList}
-            </HorizontalBorderedList>
+            </HorizontalNavBar>
             <SearchBar />
-            <HorizontalBorderedList>
+            <HorizontalNavBar>
                 {contactList}
-            </HorizontalBorderedList>
+            </HorizontalNavBar>
         </div>
     )
 }

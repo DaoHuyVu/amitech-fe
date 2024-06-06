@@ -2,15 +2,15 @@
 .header-container{
     background-color: #002A9E;
     padding : 1em 0;
-    font-size: 0.7vw;
+    font-size: 0.6rem;
     display: flex;
     flex-direction: row-reverse;
-    padding-right: 12.5vw;  
+    padding-right: 10%;  
 }
 /* Home page SearchBar */
 .search-container{
     margin-left: 2em;
-    width: 12.5vw;
+    width: 15%;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -42,41 +42,7 @@
     justify-content: center;
     align-items: center;
 }
-/* ListItem */
 
-.contact-list-container{
-  display: flex;
-  margin-left : 2em;
-}
-.contact-list{
-    list-style-type: none;
-    display: inline;
-    margin: 0;
-    padding : 0;
-    display: flex;
-    align-items: center;
-}
-
-.list-item{
-    display: inline;
-    border-right: 1px solid #FFFFFFCC;
-    align-items: center;
-}
-.list-item:last-child{
-    border: none;
-}
-
-.list-item p{
-    display: inline;
-    color: rgba(255,255,255,0.8);
-    padding : 0 1em;
-}
-.list-item a{
-    text-decoration: none;
-}
-.list-item img{
-    margin-left : 1em;
-}
 .icon-container{
     display:flex;
     width : 1.5em;
@@ -88,20 +54,44 @@
     width: 1.2em;
     height : 1.2em;
 }
-.chosen-language{
-    color : #00C2FF;
-    padding : 0 ;
-}
-.unchosen-language{
-    padding : 0
-}
-.unchosen-language:hover{
-    cursor: pointer;
-}
 
+.language-chooser{
+    display: flex;
+    font-size: 0.7rem;
+    align-items: center;
+    /* padding : 0 0 0 0.5rem; */
+    padding : 0 0.5rem;
+}
+.language-chooser__language-item{
+    margin : 0;
+}
+.language-item__link{
+    text-decoration: none;
+}
 .menu-section-container{
-
+    display: flex;
+    padding : 1em 10%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
-.horizontal-list-container{
+.nav-bar{
+    display: flex;
+    padding : 0;
+    margin : 0;
+}
+.nav-bar__nav-item{
+    display: flex;
+    font-size: 0.7rem;
+    align-items: center;
+    /* padding : 0 0 0 0.5rem; */
+    padding : 0 0.5rem;
+}
+.nav-item__link{
+    text-decoration: none;
+}
+.nav-item__link:visited{
+    color : inherit;
+}
+.nav-bar__nav-item-dropdown{
     
 }

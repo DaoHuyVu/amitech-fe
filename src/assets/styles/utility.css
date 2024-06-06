@@ -1,0 +1,27 @@
+.flex-item-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-dir-row{
+    display: flex;
+    flex-direction: row;
+}
+.width-auto{
+    width : auto
+}
+.bg-linear-blue{
+   background: linear-gradient(270deg, #006CE7 42.29%, #0031B8 100%);
+}
+.pd-vertical-1em{
+    padding: 1em;
+}
+.pd-right-10per{
+    padding-right: 10%;
+}
+.flex{
+    display: flex;
+}
+.align-item-center{
+    align-items: center;
+}

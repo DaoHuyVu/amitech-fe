@@ -6,5 +6,5 @@ body{
 }
 @font-face {
     font-family: 'BeVietNam';
-    src: url('./assets/fonts/BeVietnamPro-Regular.ttf') format('trueType');
+    src: url('./assets/fonts/BeVietnamPro-Bold.ttf') format('trueType');
 }
