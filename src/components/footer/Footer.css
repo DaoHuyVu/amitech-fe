@@ -1,3 +1,4 @@
+
 .component {
   background-color: #001a6c;
   height: 401px;
@@ -30,7 +31,7 @@
   top: calc(120 / 401 * 100%); /* khoảng cách từ lề trên */
   color: #ffffff;
   text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -53,7 +54,7 @@
   top: calc(150 / 401 * 100%); /* khoảng cách từ lề trên */
   color: #ffffff;
   text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -76,7 +77,7 @@
 
 .component .p {
   color: #ffffff;
-  font-family: "Roboto-Regular", Helvetica;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   font-weight: 400;
   left: calc(140 / 1920 * 100%);
@@ -85,7 +86,7 @@
   letter-spacing: 0;
   line-height: 24px;
   position: absolute;
-  width: calc(100% - 1380px); /* Dat gia tri width phu hop */
+  width: calc(100% - 1080px); /* Dat gia tri width phu hop */
   height: 100px;
   white-space: normal;
   overflow: hidden;
@@ -105,7 +106,7 @@
 
 .gi-i-thi-u-gi-i-ph-p {
   color: #ffffff;
-  font-family: "Roboto-Regular", Helvetica;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   position: absolute;
   right: calc(815 / 1920 * 100%); /* Adjust this value to move the section to the right */
@@ -128,12 +129,14 @@
   top: calc(70 / 401 * 100%); /* khoảng cách từ lề trên */
   left: calc(1458 / 1920 * 100%); /* khoảng cách từ lề trái */
   text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   line-height: 42px;
 }
 
 .icon {
   margin-left: 10px;
+  width: 10px;
+  height: 10px;
 }
 
 .component .contact-info .phone-text {
@@ -143,7 +146,7 @@
   left: calc(767 / 1920 * 100%); /* khoảng cách từ lề trái */
   color: #ffffff;
   text-align: left;
-  font-family: "RobotoCondensed-Bold", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
@@ -169,7 +172,7 @@
   left: calc(767 / 1920 * 100%); /* khoảng cách từ lề trái */
   color: #ffffff;
   text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   line-height: 41px;
   font-weight: 400;
@@ -186,7 +189,7 @@
   right: calc(1106 / 1920 * 100%); /* khoảng cách từ lề phải */
   color: #ffffff;
   text-align: left;
-  font-family: "RobotoCondensed-Bold", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
@@ -206,7 +209,7 @@
   left: calc(767 / 1920 * 100%); /* khoảng cách từ lề trái */
   color: #ffffff;
   text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   line-height: 41px;
   font-weight: 400;
@@ -222,7 +225,7 @@
   right: calc(1117 / 1920 * 100%); /* khoảng cách từ lề phải */
   color: #ffffff;
   text-align: left;
-  font-family: "RobotoCondensed-Bold", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
@@ -246,7 +249,7 @@
   left: calc(767 / 1920 * 100%); /* khoảng cách từ lề trái */
   color: #ffffff;
   text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   font-size: 16px;
   line-height: 41px;
   font-weight: 400;

@@ -53,7 +53,7 @@
   position: relative;
   color: rgba(255, 255, 255, 0.5);
   text-align: left;
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: "VNFont Regular", sans-serif;
   font-weight: 400;
   margin-right: 0px;
   width: 280px;
@@ -93,19 +93,19 @@
 
 .country-name {
   font-size: 14px;
-  font-family: Roboto, sans-serif;
+  font-family: "VNFont Regular", sans-serif;
 }
 
 .dropdown-icon {
   font-size: 12px;
   font-weight: 900;
-  font-family: "Font Awesome 6 Free";
 }
 
 .secondary-nav {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: "VNFont Regular", sans-serif;
 
 }
 
@@ -143,7 +143,7 @@
 }
 
 .main-nav-link {
-  font-family: Roboto, sans-serif;
+  font-family: "VNFont ExtraBold", sans-serif;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -161,16 +161,28 @@
   background-color: #002a9e;
   min-width: 80px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 0px 16px;
   z-index: 1;
   top: 100%;
   left: 0;
   display: flex;
   text-transform: uppercase;
   text-decoration: none;
+  font-family: "VNFont", sans-serif;
 }
 
 .dropdown-content a {
   color: inherit; /* Kế thừa màu sắc từ phần tử cha */
   text-decoration: none; /* Loại bỏ gạch chân mặc định */
+}
+.hero-title {
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: "VNFont", sans-serif;
+}
+.hero-subtitle{
+  margin-top: 16px;
+  font-size: 20px;
+  line-height: 1.2;
+  font-family: "VNFont Regular", sans-serif;
 }

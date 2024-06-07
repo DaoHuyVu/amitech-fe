@@ -1,10 +1,21 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 body{
     margin : 0;
-    font-family: 'BeVietNam' ;
+    font-family: 'VNFont' ;
     box-sizing: border-box;
     padding: 0;
 }
 @font-face {
-    font-family: 'BeVietNam';
-    src: url('./assets/fonts/BeVietnamPro-Bold.ttf') format('trueType');
+    font-family: 'VNFont';
+    src:
+        url("./assets/fonts/BeVietnamPro-ExtraBold.ttf") format('trueType'),
+        url('./assets/fonts/BeVietnamPro-Black.ttf') format('trueType'),
+    url("./assets/fonts/BeVietnamPro-Bold.ttf") format('trueType'),
+    url("./assets/fonts/BeVietnamPro-Medium.ttf") format('trueType');
+
+    font-weight: normal;
+    font-style: normal;
 }
