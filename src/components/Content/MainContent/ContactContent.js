@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
 import "./ContactContent.css"
 
 function ContactDetails({title, details, imgSrc}) {
@@ -14,6 +14,24 @@ function ContactDetails({title, details, imgSrc}) {
 }
 
 function Content() {
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const topBarHeight = document.querySelector('.top-bar').offsetHeight;
+      if (window.scrollY > topBarHeight) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   const contactInfo = [
     {
       title: "Trụ sở chính",
