@@ -1,70 +1,70 @@
-import React, {useState, useEffect} from 'react';
-import "./ContactContent.css"
+import * as React from "react";
+import "./QuoteContent.css";
 
-function ContactDetails({title, details, imgSrc}) {
-  return (
-      <div className={`flex items-center space-x-2`}>
-        <img src={imgSrc} alt={title}/>
-        <div>
-          <div className="contact-title">{title}</div>
-          <div className="contact-info">{details}</div>
-        </div>
-      </div>
-  );
-}
-
-function Content() {
+function QuoteRequestForm() {
   return (
       <>
-        <div className="container max-w-full p-0">
-          <section className="hero">
-            <img loading="lazy" src="maskgroup.png"
-                 className="hero-image w-screen"
-                 alt=""/>
-            <div className="hero-content">
-              <h1 className="hero-title">BÁO GIÁ</h1>
-              <p className="hero-subtitle">Lựa chọn giải pháp phù hợp với nhu cầu của bạn và nhận báo giá miễn phí</p>
+        <section className="quote-section">
+          <div className="quote-background">
+            <div className="quote-overlay">
+              <img loading="lazy" src="maskgroup.png" alt="Background for Quote Section" className="quote-img" />
+              <div className="quote-container">
+                <h1 className="quote-title">Báo giá</h1>
+                <p className="quote-description">
+                  Lựa chọn giải pháp phù hợp với nhu cầu của bạn và nhận báo giá miễn phí
+                </p>
+              </div>
             </div>
-          </section>
-
-          <section className="contact-form-section">
-            <form className="contact-form">
-              <label htmlFor="nameInput" className="visually-hidden"></label>
-              <input className="input-field" type="text" id="nameInput"
-                     placeholder="Họ tên *" aria-label="Họ tên" required/>
-
-              <label htmlFor="phoneInput" className="visually-hidden"></label>
-              <input className="input-field" type="tel" id="phoneInput"
-                     placeholder="Số điện thoại *" aria-label="Số điện thoại"
-                     required/>
-
-              <label htmlFor="emailInput"
-                     className="visually-hidden"></label>
-              <input className="input-field" type="email" id="emailInput"
-                     placeholder="Email *" aria-label="Email" required/>
-
-              <label htmlFor="companyInput" className="visually-hidden"></label>
-              <input className="input-field" type="text" id="companyInput"
-                     placeholder="Tên công ty" aria-label="Tên công ty"/>
-
-              <label htmlFor="QtInput" className="visually-hidden"></label>
-              <input className="input-field" type="text" id="QtInput"
-                     placeholder="Lĩnh vực quan tâm *" aria-label="Lĩnh vực quan tâm"
-                     required/>
-
-              <label htmlFor="NDInput" className="visually-hidden"></label>
-              <textarea className="input-field" id="NDInput"
-                        placeholder="Nội dung *" aria-label="Nội dung"
-                        required/>
-
-              <button className="submit-button" type="submit">Gửi yêu cầu
-              </button>
-            </form>
-          </section>
-        </div>
-
+          </div>
+          <div className="form-background">
+            <img loading="lazy" src="background.png" alt="Background for Form Section" className="form-bg-img" />
+            <div className="form-container">
+              <div className="form-image-column">
+                <img loading="lazy" src="gircontactl3.png" alt="Form Related Image" className="form-image" />
+              </div>
+              <div className="form-fields-column">
+                <form className="quote-form">
+                  <div className="form-inputs-container">
+                    <div className="form-group">
+                      <input type="text" id="name" name="name"
+                             className="form-input" placeholder="Họ tên *"
+                             required/>
+                    </div>
+                    <div className="form-group">
+                      <input type="tel" id="phone" name="name"
+                             className="form-input"
+                             placeholder="Số điện thoại *"
+                             required/>
+                    </div>
+                    <div className="form-group">
+                      <input type="email" id="email" name="name"
+                             className="form-input" placeholder="Email *"
+                             required/>
+                    </div>
+                    <div className="form-group">
+                      <input type="text" id="company" className="form-input"
+                             name="name" placeholder="Công ty"/>
+                    </div>
+                    <div className="form-group">
+                      <input type="text" id="interest" className="form-input"
+                             required name="name"
+                             placeholder="Lĩnh vực quan tâm *"/>
+                    </div>
+                    <div className="form-group">
+                      <textarea id="message" className="form-input" rows="4"
+                                name="name" placeholder="Nội dung *"></textarea>
+                    </div>
+                    <button type="submit" className="form-submit">
+                      Gửi yêu cầu
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       </>
   );
 }
 
-export default Content;
+export default QuoteRequestForm;

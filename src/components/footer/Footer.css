@@ -8,7 +8,6 @@
   flex-direction: column;
   align-items: center; /* Change from flex-start to center */
   justify-content: space-between; /* Thêm dòng này */
-  margin-top: 140px;
   padding: 20px;
 }
 
