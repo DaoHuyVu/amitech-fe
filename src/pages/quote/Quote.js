@@ -4,7 +4,7 @@ import {Footer} from '../../components/footer/Footer';
 import QuoteContent from "../../components/Content/QuoteContent/QuoteContent";
 import Header from "../../components/header2/Header";
 
-function Contact() {
+function Quote() {
   return (
       <div>
         <Header/>
@@ -14,4 +14,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Quote;

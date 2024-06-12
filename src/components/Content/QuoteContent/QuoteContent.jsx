@@ -7,20 +7,24 @@ function QuoteRequestForm() {
         <section className="quote-section">
           <div className="quote-background">
             <div className="quote-overlay">
-              <img loading="lazy" src="maskgroup.png" alt="Background for Quote Section" className="quote-img" />
+              <img loading="lazy" src="maskgroup.png"
+                   alt="Background for Quote Section" className="quote-img"/>
               <div className="quote-container">
                 <h1 className="quote-title">Báo giá</h1>
                 <p className="quote-description">
-                  Lựa chọn giải pháp phù hợp với nhu cầu của bạn và nhận báo giá miễn phí
+                  Lựa chọn giải pháp phù hợp với nhu cầu của bạn và nhận báo giá
+                  miễn phí
                 </p>
               </div>
             </div>
           </div>
           <div className="form-background">
-            <img loading="lazy" src="background.png" alt="Background for Form Section" className="form-bg-img" />
+            <img loading="lazy" src="background.png"
+                 alt="Background for Form Section" className="form-bg-img"/>
             <div className="form-container">
               <div className="form-image-column">
-                <img loading="lazy" src="gircontactl3.png" alt="Form Related Image" className="form-image" />
+                <img loading="lazy" src="gircontactl3.png"
+                     alt="Form Related Image" className="form-image"/>
               </div>
               <div className="form-fields-column">
                 <form className="quote-form">
