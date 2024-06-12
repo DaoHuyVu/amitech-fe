@@ -1,11 +1,10 @@
-import NavBarMenuItem from "./NavBarMenuItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 export default function NavBarItemDropDown(props){
     return(
-        <span className="nav-dropdown-item">
-            <NavBarMenuItem name={props.name} link={props.link} style={props.style}/>
-            <FontAwesomeIcon icon={faCaretDown} style={props.style}/>
-        </span>
+            <a href={props.link} style = {props.style} className="nav-dropdown-item">
+                <p>{props.name}</p>
+                <FontAwesomeIcon icon={faCaretDown}/>
+            </a>
     )
 }

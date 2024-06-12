@@ -1,8 +1,8 @@
 
-export default function NavBarMenuItem(props){
+export default function NavBarMenuItem({link,children,style}){
     return (
-        <li className="nav-bar__nav-item" style={props.style}>
-            <a href={props.link} className="nav-item__link">{props.name} </a>
-        </li>
+        <a href={link} className="nav-bar__nav-item" style={style}>
+            {children}
+        </a>
     )
 }

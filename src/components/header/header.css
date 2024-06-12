@@ -1,0 +1,19 @@
+/* Header container styles */
+#header-home-top{
+    font-size: 0.7rem;
+    background-color: #002A9E;
+}
+#header-home-main{
+    font-size : 0.8rem;
+    font-weight: 500;
+}
+.language-chooser{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.language-item__link{
+    text-decoration: none;
+}
+

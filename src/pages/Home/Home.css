@@ -1,0 +1,175 @@
+.App{
+    zoom: 0.8;
+    text-align: center;
+}
+.component {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    background-color: #00248b;
+    margin-top: 0px;
+}
+
+.component .logo-ami {
+    position: absolute;
+    width: 190px;
+    height: 43px;
+    top: 16px;
+    left: 232px;
+    object-fit: cover;
+}
+
+.component .group {
+    width: 100%; /* Adjust as needed */
+    top: 21px;
+    left: 1127px;
+    position: absolute;
+    height: 32px;
+}
+
+.component .text-wrapper {
+    position: absolute;
+    top: 8px;
+    left: 481px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.component .div {
+    position: absolute;
+    top: 8px;
+    left: 373px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.component .ellipse {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 7px;
+    left: 347px;
+    object-fit: cover;
+}
+
+.component .line {
+    position: absolute;
+    width: 1px;
+    height: 18px;
+    top: 7px;
+    left: 469px;
+    object-fit: cover;
+}
+
+.component .overlap-group-wrapper {
+    width: 323px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.component .overlap-group {
+    position: relative;
+    width: 323px;
+    border-radius: 5px;
+    height: 32px;
+    border: 0.5px solid;
+    border-color: #ffffff;
+}
+
+.component .overlap {
+    position: absolute;
+    width: 32px;
+    top: 0;
+    left: 291px;
+    background-color: #00c1ff;
+    border-radius: 0px 5px 5px 0px;
+    height: 32px;
+    border: 0.5px solid;
+    border-color: #ffffff;
+}
+
+.component .text-wrapper-2 {
+    top: 8px;
+    left: 8px;
+    font-size: 14px;
+    position: absolute;
+    font-family: "Font Awesome 6 Free-Solid", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.component .p {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff80;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.component .text-wrapper-3 {
+    top: 9px;
+    left: 437px;
+    font-size: 12px;
+    position: absolute;
+    font-family: "Font Awesome 6 Free-Solid", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+/* Nhap noi dung tim kiem */
+.overlap-group-wrapper-2 {
+    color: rgba(255, 255, 255, 0.50);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /* ở trong overlap-group-wrapper-2 */
+    top: 21px;
+}
+/* css nhap noi dung tim kiem */
+.overlap-group-wrapper-2 .overlap-group-1 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Font Awesome 6 Free";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+}
+/* text-wrapper-3 */
+.overlap-group-wrapper-2 .overlap-group-1 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Font Awesome 6 Free";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+}

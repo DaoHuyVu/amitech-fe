@@ -1,7 +1,8 @@
-export default function HorizontalNavBar({children}){
+import './nav-bar.css'
+export default function HorizontalNavBar({children,style}){
     return(
-        <ul className="nav-bar" >
+        <div className="nav-bar" style={style}>
             {children}
-        </ul>
+        </div>
     )
 }

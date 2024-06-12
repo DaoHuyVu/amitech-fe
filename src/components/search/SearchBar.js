@@ -1,12 +1,13 @@
-import searchIcon from '../assets/images/search-icon.png'
+import searchIcon from '../../assets/images/search-icon.png'
 import {useState} from 'react'
+import './search-bar.css'
 export default function SearchBar(){
     const [searchQuery,setQuery] = useState('');
     function handleQueryChange(e){
         setQuery(e.target.value)
     }
     return (
-        <span className="search-container">
+        <span className="search-container" >
             <input 
                 className = "search-input"
                 placeholder="Nhập nội dung tìm kiếm..."
@@ -15,7 +16,7 @@ export default function SearchBar(){
                 onChange={handleQueryChange}        
             />
             <div className="search-icon-background">
-                <img src={searchIcon} alt="SearchIcon" className='icon'/>
+                <img src={searchIcon} alt="SearchIcon" className='search-bar-icon'/>
             </div>
         </span>
     )

@@ -1,10 +1,10 @@
-import Main from "../../components/body/Main";
-import Header from "../../components/header/Header";
+import HomeContent from "../../components/Content/Home/HomeContent";
+import Header from "../../components/header/HomeHeader";
 export default function Home(){
     return(
         <>
             <Header />
-            <Main />
+            <HomeContent />
         </>
     )
 }

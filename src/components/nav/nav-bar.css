@@ -1,0 +1,31 @@
+.nav-bar{
+    display: flex;
+    column-gap: 5px;
+}
+.nav-bar__nav-item{
+    display: flex;
+    align-items: center;    
+    column-gap : 5px;
+}
+
+.nav-bar__nav-item:hover{
+    cursor: pointer;
+}
+.nav-item__link{
+    color : inherit;
+}
+.nav-item__link:visited{
+    color : inherit;
+}
+.nav-dropdown-item{
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+}
+.nav-dropdown-item:hover{
+    cursor: pointer;
+}
+.nav-bar-icon{
+    width: 1em;
+    height: 1em;
+}

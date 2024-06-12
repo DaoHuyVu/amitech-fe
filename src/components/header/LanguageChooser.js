@@ -1,21 +1,18 @@
 import { useState } from "react"
-
-export default function LanguageChooser(){
+export default function LanguageChooser({style}){
     const activeLanguageStyle = {
         color : '#00C2FF'
     }
-    const inactiveLanguageStyle = {
-        color : '#FFFFFFCC'
-    }
     return (
-       <span className="language-chooser">
+       <span className="language-chooser" style={style}>
             <a href="/VN" style={activeLanguageStyle} className="language-item__link">
                 <p>VN</p>
             </a>
             <p>-</p>
-            <a href="EN" style={inactiveLanguageStyle} className="language-item__link">
+            <a href="/EN" style={style} className="language-item__link">
                 <p>EN</p>
             </a>
+            <p>|</p>
        </span>
     )
 }
