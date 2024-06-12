@@ -1,51 +1,21 @@
-@font-face {
-    font-family: 'BeVietNam';
-    src: url('./assets/fonts/BeVietnamPro-Regular.ttf') format('trueType');
-}
-@font-face {
-    font-family: 'BeVietNam';
-    src: url('./assets/fonts/BeVietnamPro-Medium.ttf') format('trueType');
-    font-weight: 500;
-}
-@font-face {
-    font-family: 'BeVietNam';
-    src: url('./assets/fonts/BeVietnamPro-Bold.ttf') format('trueType');
-    font-weight: 600;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body{
     margin : 0;
-    font-family: 'BeVietNam' ;
+    font-family: "VNFont", sans-serif;
     box-sizing: border-box;
     padding: 0;
 }
-:root{
-    --primary : #002A9E;
-    --primary-dark : #00258B;
+@font-face {
+    font-family: 'VNFont';
+    src:
+        url("./assets/fonts/BeVietnamPro-ExtraBold.ttf") format('trueType'),
+        url('./assets/fonts/BeVietnamPro-Black.ttf') format('trueType'),
+    url("./assets/fonts/BeVietnamPro-Bold.ttf") format('trueType'),
+    url("./assets/fonts/BeVietnamPro-Medium.ttf") format('trueType');
 
-    --bg-primary : #002A9E;
-    --bg-primary-dark : #00258B;
-    --bg-linear-blue : linear-gradient(270deg, #006CE7 42.29%, #0031B8 100%);
-
-    --text-primary : #4D4D4D;
-    --text-secondary : #152D5280;
-
-    --color-white-o-50 : #FFFFFF80;
-    --color-white-o-30 : #FFFFFF4D;
+    font-weight: normal;
+    font-style: normal;
 }
-p {
-    margin : 0;
-    padding : 0;
-}
-a,a:hover,a:active,a:visited{
-    text-decoration: none;
-}
-ul{
-  list-style-type: none;
-  margin : 0;
-  padding: 0;  
-}
-
-*:focus{
-    outline: 0;
-}
-/* Override bootstrap*/

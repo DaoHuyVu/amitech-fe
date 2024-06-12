@@ -1,0 +1,166 @@
+.quote-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-background,
+.form-background {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+  align-items: center;
+}
+
+.form-inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1122px;
+  padding: 44px 60px 0;
+  margin-bottom: 50px;
+}
+
+.quote-overlay {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 230px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  height: 200px;
+  padding: 0 60px;
+}
+
+.quote-img  {
+  filter: brightness(0.5);
+}
+
+.quote-img,
+.form-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quote-container {
+  position: relative;
+}
+
+.quote-title {
+  font: 700 32px/141% Roboto, sans-serif;
+  text-transform: uppercase;
+}
+
+.quote-description {
+  margin-top: 22px;
+  font: 400 20px/120% Roboto, sans-serif;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  max-width: 1122px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 44px 60px 0;
+}
+
+.form-image-column,
+.form-fields-column {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.form-image-column {
+  width: 50%;
+  left: 30%;
+  flex-direction: column-reverse;
+}
+
+.form-fields-column {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.form-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 0.81;
+}
+
+.quote-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  /* hien thi ben trai */
+  justify-content: flex-start;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left:20%;
+}
+
+.form-label {
+  font-family: Roboto Condensed, sans-serif;
+  color: #f00;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.form-input {
+  margin-top: 4px;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #fff;
+  font-family: Roboto Condensed, sans-serif;
+  color: #303030;
+}
+
+.form-submit {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 5px;
+  background-color: #006ce7;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  margin-left: 100px;
+}
+
+@media (max-width: 991px) {
+  .quote-overlay {
+    padding: 0 20px;
+  }
+
+  .form-container {
+    padding: 0 20px;
+  }
+
+  .form-image {
+    margin-top: 40px;
+  }
+
+  .form-fields-column {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .form-group {
+    margin-top: 40px;
+  }
+}

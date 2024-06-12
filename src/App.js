@@ -1,9 +1,14 @@
-import Home from "./pages/Home/Home.js";
+import './App.css';
+import React from "react";
+
+import News from "./pages/news/News";
+
+
 function App() {
   return (
-    <div >
-      <Home/>
-    </div>
+      <div className="App">
+        <News/>
+      </div>
   );
 }
 

@@ -1,17 +1,17 @@
 // src/pages/Contact.js
 import React from 'react';
 import {Footer} from '../../components/footer/Footer';
-import ContactContent from "../../components/Content/ContactContent/ContactContent";
+import QuoteContent from "../../components/Content/QuoteContent/QuoteContent";
 import Header from "../../components/header2/Header";
 
-function Contact() {
+function Quote() {
   return (
       <div>
         <Header/>
-        <ContactContent/>
+        <QuoteContent/>
         <Footer/>
       </div>
   );
 }
 
-export default Contact;
+export default Quote;

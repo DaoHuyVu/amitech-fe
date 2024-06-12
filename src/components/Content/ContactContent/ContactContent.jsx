@@ -1,11 +1,14 @@
-import * as React from "react";
+import React from 'react';
 import "./ContactContent.css"
 
-function ContactDetails({title, details, icon}) {
+function ContactDetails({title, details, imgSrc}) {
   return (
-      <div className={`contact-details ${icon}`}>
-        <div className="contact-title">{title}</div>
-        <div className="contact-info">{details}</div>
+      <div className={`flex items-center space-x-2`}>
+        <img src={imgSrc} alt={title}/>
+        <div>
+          <div className="contact-title">{title}</div>
+          <div className="contact-info">{details}</div>
+        </div>
       </div>
   );
 }
@@ -15,20 +18,32 @@ function Content() {
     {
       title: "Trụ sở chính",
       details: "Tầng 4, Tòa nhà Sông Đà 9, Số 2 Nguyễn Hoàng, Mỹ Đình, Nam Từ Liêm, Hà Nội",
-      icon: "../../assets/icons/location.png" // thêm đường dẫn tới icon tương ứng
+      imgSrc: "location.png",
     },
-    {title: "Điện thoại", details: "024 22 33 55 66", icon: "dienthoai.png"},
-    {title: "Hotline", details: "0986 893 233", icon: "hotline.png"},
-    {title: "Email", details: "contact@amitech.vn", icon: "email.png"},
+    {
+      title: "Điện thoại",
+      details: "024 22 33 55 66",
+      imgSrc: "hotline.png",
+    },
+    {
+      title: "Hotline",
+      details: "0986 893 233",
+      imgSrc: "hotline.png",
+    },
+    {
+      title: "Email",
+      details: "contact@amitech.vn",
+      imgSrc: "email.png",
+    },
   ];
 
   return (
       <>
-        <div className="container">
+        <div className="container max-w-full p-0">
           <section className="hero">
-            <img loading="lazy"
-                 src="maskgroup.png"
-                 className="hero-image" alt=""/>
+            <img loading="lazy" src="maskgroup.png"
+                 className="hero-image w-screen"
+                 alt=""/>
             <div className="hero-content">
               <h1 className="hero-title">Liên Hệ</h1>
               <p className="hero-subtitle">Hãy để đội ngũ tư vấn của AMITECH hỗ
@@ -42,14 +57,20 @@ function Content() {
                 Ami Việt Nam</h2>
               {contactInfo.map((info, index) => (
                   <ContactDetails key={index} title={info.title}
-                                  details={info.details}/>
+                                  details={info.details}
+                                  imgSrc={info.imgSrc}/>
               ))}
             </article>
-            <aside className="contact-image">
-              <img loading="lazy"
-                   src="image46.png"
-                   className="contact-img" alt="Ami Vietnam Office"/>
-            </aside>
+            <div className="contact-image">
+              <iframe
+                  className="contact-img"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1862.0436873520816!2d105.7766756415367!3d21.029189646173116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454afa4c1ae5b%3A0x581fa138c631ac30!2zU8O0bmcgxJDDoCBKU0MgOQ!5e0!3m2!1svi!2s!4v1717752484932!5m2!1svi!2s"
+                  width="600"
+                  height="450"
+                  allowFullScreen=""
+                  loading="lazy"
+              ></iframe>
+            </div>
           </section>
 
           <section className="contact-form-section">
