@@ -1,10 +1,10 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body{
     margin : 0;
-    font-family: 'VNFont' ;
+    font-family: "VNFont", sans-serif;
     box-sizing: border-box;
     padding: 0;
 }
