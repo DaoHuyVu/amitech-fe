@@ -14,6 +14,8 @@ function ContactDetails({title, details, imgSrc}) {
 }
 
 function Content() {
+
+  // Khởi tạo mảng contactInfo chứa các thông tin liên hệ
   const contactInfo = [
     {
       title: "Trụ sở chính",

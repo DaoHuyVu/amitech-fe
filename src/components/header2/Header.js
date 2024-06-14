@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './Header.css';
+import { Link } from "react-router-dom";
 
 function MyComponent() {
   const navItems = [
@@ -12,7 +13,6 @@ function MyComponent() {
     {name: 'Báo giá'},
     {name: 'Liên hệ'},
   ];
-
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
