@@ -1,17 +1,18 @@
 // src/pages/Contact.js
 import React from 'react';
 import {Footer} from '../../components/footer/Footer';
-import ContactContent from "../../components/Content/ContactContent/ContactContent";
 import Header from "../../components/header2/Header";
+import NewsContent from "../../components/Content/NewsContent/NewsContent";
+import ProductsContent from "../../components/Content/ProductsContent/ProductsContent";
 
-function Contact() {
+function Products() {
   return (
       <div>
         <Header/>
-        <ContactContent/>
+        <ProductsContent/>
         <Footer/>
       </div>
   );
 }
 
-export default Contact;
+export default Products;

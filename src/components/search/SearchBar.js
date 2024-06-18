@@ -1,6 +1,7 @@
 import searchIcon from '../../assets/images/search-icon.png'
 import {useState} from 'react'
 import './search-bar.css'
+
 export default function SearchBar(){
     const [searchQuery,setQuery] = useState('');
     function handleQueryChange(e){
