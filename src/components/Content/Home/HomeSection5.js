@@ -38,7 +38,7 @@ export default function HomeSection5(){
     )
     const columns = data.map((e,index) => {
         return (
-            <div className="col-6 col-lg-3" key={index}>
+            <div className="col-12 col-md-6 col-xl-3" key={index}>
                 <DetailCard src={e.src} title = {e.title} >
                     <ul>
                         <li>
@@ -59,7 +59,7 @@ export default function HomeSection5(){
         <section id="section5">
             <div className="container d-flex flex-column align-items-center">
                 <div className="text-center pb-4">
-                    <h5 >DỰ ÁN TIÊU BIỂU</h5>
+                    <h5 style={{fontWeight : '700'}}>DỰ ÁN TIÊU BIỂU</h5>
                 </div>
                 <div className="row d-flex g-3 pb-4">
                     {columns}

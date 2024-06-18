@@ -18,6 +18,14 @@
     background-color: #001A6C;
     padding : 4rem 0;
 }
+#section6{
+    padding : 4rem 0;
+}
+#section7{
+    padding : 4rem 0;
+    background-color: #E5ECF6;
+    ;
+}
 @media only screen and (max-width : 768px) {
     .text-center-not-md {
         text-align: center;
@@ -33,4 +41,25 @@
     .w-xl-75 {
         width : 75%;
     }
+}
+.custom-slider .slick-list{
+    height : 100% 
+}
+.custom-slider .slick-slide{
+  height: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F1F7FF;
+}
+.custom-slider .slick-track{
+    height : 100%;
+}
+@media screen and (max-width : 1200) {
+    .custom-slider{
+        height : 400px;
+    }
+}
+.custom-slider .slick-slide > div{
+    height : 100%
 }

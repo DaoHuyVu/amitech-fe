@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './hero-image.css'
-import LeftScrollContainer from '../scroller/LeftScrollContainer'
 export default function HoverableHeroImage({src,style,title,children,className=''}){
     const [isVisible,setVisible] = useState(false)
     const handleMouseEnter = () => setVisible(true)

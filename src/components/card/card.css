@@ -4,7 +4,8 @@
     flex-direction: column;
 }
 .card__image{
-    height : 250px;
+    height : 300px;
+    width: 100%;
 }
 .bg-img-card__text--sm{
     font-size: 0.7rem;

@@ -20,7 +20,7 @@ export default function HomeSection2(){
                 </div>
                 <div className="row ">
                     <div className="col-12 col-md-6 text-center mb-4">
-                        <img src={Background1} height='250px' alt="IntroductionImage"/>
+                        <img src={Background1} height='300px' alt="IntroductionImage"/>
                     </div>
                     <div className="col-12 col-md-6">
                         <LeftScrollContainer>
