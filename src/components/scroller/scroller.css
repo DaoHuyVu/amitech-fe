@@ -1,0 +1,20 @@
+.overflow-scroll-container{
+    overflow-y:auto;
+    height : 200px;
+    direction: rtl;
+    margin-bottom: 2rem;
+}
+.overflow-scroll-container__content{
+    direction: ltr;
+    margin-left: 0.5rem;
+}
+.overflow-scroll-container::-webkit-scrollbar{
+    width : 3px;
+}
+.overflow-scroll-container::-webkit-scrollbar-thumb{
+    background-color : #002A9E
+}
+.overflow-scroll-container::-webkit-scrollbar-track{
+    background-color : #002A9E66;
+}
+

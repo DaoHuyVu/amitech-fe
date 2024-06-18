@@ -1,4 +1,36 @@
 #section1{
     background-image: linear-gradient(270deg, #006CE7 42.29%, #0031B8 100%);
-    padding : 2em 0;
+    padding : 2rem 0;
+}
+#section2{
+    background-image : url('../../../assets/images/image3.png');
+    padding : 4rem 0;
+    font-size: 0.8rem;
+}
+#section3{
+    padding : 4rem 0;
+}
+#section4{
+    background-image : url('../../../assets/images/image\ 202.png');
+    padding : 4rem 0;
+}
+#section5{
+    background-color: #001A6C;
+    padding : 4rem 0;
+}
+@media only screen and (max-width : 768px) {
+    .text-center-not-md {
+        text-align: center;
+    }
+}
+@media only screen and (min-width : 768px){
+    .mw-md-75{
+        max-width: 75%;
+    }
+}
+
+@media only screen and (min-width : 1200px){
+    .w-xl-75 {
+        width : 75%;
+    }
 }

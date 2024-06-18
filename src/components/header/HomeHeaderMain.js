@@ -32,7 +32,7 @@ export default function HomeHeaderMain(){
     </>
     return(
         <div id="header-home-main">
-            <div className="container my-3">
+            <div className="container-fluid container-md my-3">
                 <div className="d-flex justify-content-between">
                     <Logo img={logo}/>
                     <HorizontalNavBar style={navStyle}>

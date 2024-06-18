@@ -12,10 +12,16 @@
     src: url('./assets/fonts/BeVietnamPro-Bold.ttf') format('trueType');
     font-weight: 600;
 }
+@font-face {
+    font-family: 'BeVietNam';
+    src: url('./assets/fonts/BeVietnamPro-ExtraBold.ttf') format('trueType');
+    font-weight: 700;
+}
 body{
     margin : 0;
     font-family: 'BeVietNam' ;
     box-sizing: border-box;
+    color : white;
     padding: 0;
 }
 :root{
@@ -39,13 +45,16 @@ p {
 a,a:hover,a:active,a:visited{
     text-decoration: none;
 }
-ul{
-  list-style-type: none;
-  margin : 0;
-  padding: 0;  
-}
-
 *:focus{
     outline: 0;
 }
-/* Override bootstrap*/
+
+.text__weight--md{
+    font-weight: 500;
+}
+.text__weight--lg{
+    font-weight: 600;
+}
+.text__weight--xl{
+    font-weight: 700;
+}

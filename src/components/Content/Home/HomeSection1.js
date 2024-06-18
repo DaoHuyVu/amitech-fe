@@ -2,10 +2,10 @@ import Background1 from '../../../assets/images/img1.png'
 export default function HomeSection1(){
     return(
         <section id='section1' >
-            <div className='container text-center '>
+            <div className='container text-center-not-md'>
                 <div className='row'>
-                    <div className='col-12 col-md-6 py-4 py-md-0 d-md-flex align-items-center'>
-                        <span className=''>
+                    <div className='col-12 col-md-6 py-4 py-md-0 d-md-flex align-items-center '>
+                        <span className='w-xl-75'>
                             <h1 style={{color : '#ffffff'}}>
                                 Chuyển đổi số
                             </h1>
@@ -16,7 +16,7 @@ export default function HomeSection1(){
                             </p>
                         </span>
                     </div>
-                    <div className='col-12 col-md-6 '>
+                    <div className='col-12 col-md-6 text-center'>
                         <img 
                             src={Background1}
                             height='300px'
