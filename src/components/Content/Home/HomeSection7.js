@@ -4,30 +4,47 @@ import bg3 from '../../../assets/images/image 194.png'
 import bg4 from '../../../assets/images/image 195.png'
 import bg5 from '../../../assets/images/image 196.png'
 import bg6 from '../../../assets/images/image 197.png'
+import bg7 from '../../../assets/images/gircontactl3.png'
+import Input from '../../input/Input'
+import Button from '../../button/Button'
 export default function HomeSection7(){
     const customerData = [
         bg1,bg2,bg3,bg4,bg5,bg6
     ]
     return (
         <section id="section7">
-            <div className="container d-flex flex-column">
-                <div className="text-center pb-4">
+            <div className="container ">
+                <div className="text-center pb-4 ">
                     <h5 style={{fontWeight : '700',color : '#4D4D4D'}}>ĐỐI TÁC VÀ KHÁCH HÀNG</h5>
                 </div>
-                <div className="row pb-4 g-3 d-flex">
+                <div className="row pb-5 g-3">
                     {customerData.map((e,index)=>{
                         return (
                             <div 
                             key={index} 
                             style={{backgroundColor : 'white'}} 
-                            className='col-6 col-md-4 col-xxl-2 py-3 d-flex justify-content-center align-items-center'>
+                            className='col-6 col-md-4 col-xxl-2 p-2 d-flex justify-content-center align-items-center' >
                                 <img src={e} alt='customerLogo' />
                             </div>
                         )
                     })}
                 </div>
-                <div className="row">
-
+                <div className="row" style={{background :'linear-gradient(360deg, #006CE7 0%, #0E349C 100%)'}}>
+                    <div className='col-12 col-lg-6 text-center order-2'>
+                        <img src={bg7} alt ='PriceImg' /> 
+                    </div>
+                    <div className='col-12 col-lg-6 d-flex flex-column py-4 justify-content-center
+                     align-items-center align-items-lg-start order-1 order-lg-2 row-gap-4'>
+                        <h4>ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ</h4>
+                        <Input  placeholder='Họ tên *' className='w-75'/>
+                        <Input  placeholder='Số điện thoại *' className='w-75'/>
+                        <Input  placeholder='Email *' className='w-75'/>
+                        <Input  placeholder='Công ty *' className='w-75'/>
+                        <Button
+                            style={{backgroundColor : '#00C2FF'}}>
+                                Nhận tư vấn miễn phí
+                        </Button>
+                    </div>
                 </div>
             </div>
         </section>

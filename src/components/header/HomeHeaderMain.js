@@ -11,7 +11,7 @@ export default function HomeHeaderMain(){
         color : '#152D5280'
     }
     const navStyle = {
-        columnGap : '1em'
+        columnGap : '2em'
     }
     const navBarItems = <>
         <NavBarMenuItem link="/trang-chu" style = {activeItemStyle}>
@@ -22,7 +22,7 @@ export default function HomeHeaderMain(){
             <p>Dự án tiêu biểu</p>
         </NavBarMenuItem>
         <NavBarItemDropDown name = 'Giải pháp chuyển đổi số' link = "/giai-phap-chuyen-doi-so"  style={itemStyle}/>
-        <NavBarItemDropDown name = 'Thiết bị & sản phẩn công nghiệp' link = "/thiet-bi-&-spcn"  style={itemStyle}/>
+        <NavBarItemDropDown name = 'Thiết bị & sản phẩn công nghiệp' link = "/thiet-bi-va-san-pham-cong-nghiep"  style={itemStyle}/>
         <NavBarMenuItem link = "/tin-tuc" style={itemStyle}>
             <p>Tin tức và sự kiện</p>
         </NavBarMenuItem>

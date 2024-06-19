@@ -1,12 +1,12 @@
 /* Home page SearchBar */
-.search-container{
+.home-search-container{
     width: 20%;
     display: flex;
     position: relative;
     border-radius: 20px;
     background-color: rgba(255,255,255,0);
 }
-.search-input{
+.home-search-input{
     border-radius: 20px;
     padding: 0.3em 0 0.3em 1em;
     width : 100%;
@@ -15,11 +15,11 @@
     font-size: 1.1em;
     color : #ffffffcc;
 }
-.search-input::placeholder{
+.home-search-input::placeholder{
     color : rgba(255,255,255,0.3)
 }
 
-.search-icon-background{
+.home-search-icon-background{
     display:flex;
     border-radius: 50%;
     background-color: #00C2FF;
@@ -31,7 +31,7 @@
     align-items: center;
     cursor: pointer;
 }
-.search-bar-icon{
+.home-search-bar-icon{
     width: 1.2em;
     height: 1.2em;
 }

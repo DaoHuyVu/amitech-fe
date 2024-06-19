@@ -95,7 +95,7 @@ export default function HomeSection6(){
                 </div>
                 <div className="row g-3 w-100 h-100 pb-4 d-flex flex-row">
                     <div className="col-12 col-xl-6" style={{minHeight : '600px'}}>
-                        <Slider {...carouselSettings} className='custom-slider h-100'>
+                        <Slider {...carouselSettings} className='custom-slider h-100 '>
                             {carouselItems}
                         </Slider>
                     </div>

@@ -61,7 +61,7 @@ export default function HomeSection5(){
                 <div className="text-center pb-4">
                     <h5 style={{fontWeight : '700'}}>DỰ ÁN TIÊU BIỂU</h5>
                 </div>
-                <div className="row d-flex g-3 pb-4">
+                <div className="row g-3 pb-4">
                     {columns}
                 </div>
                 <Button

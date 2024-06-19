@@ -8,16 +8,16 @@ export default function SearchBar(){
         setQuery(e.target.value)
     }
     return (
-        <span className="search-container" >
+        <span className="home-search-container" >
             <input 
-                className = "search-input"
+                className = "home-search-input"
                 placeholder="Nhập nội dung tìm kiếm..."
                 type="text"
                 value={searchQuery}
                 onChange={handleQueryChange}        
             />
-            <div className="search-icon-background">
-                <img src={searchIcon} alt="SearchIcon" className='search-bar-icon'/>
+            <div className="home-search-icon-background">
+                <img src={searchIcon} alt="SearchIcon" className='home-search-bar-icon'/>
             </div>
         </span>
     )

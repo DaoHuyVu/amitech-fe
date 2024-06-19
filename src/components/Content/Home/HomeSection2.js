@@ -19,10 +19,10 @@ export default function HomeSection2(){
                     </p>
                 </div>
                 <div className="row ">
-                    <div className="col-12 col-md-6 text-center mb-4">
+                    <div className="col-12 col-lg-6 text-center mb-4">
                         <img src={Background1} height='300px' alt="IntroductionImage"/>
                     </div>
-                    <div className="col-12 col-md-6">
+                    <div className="col-12 col-lg-6">
                         <LeftScrollContainer>
                             <h6 style={{color : '#002A9E',fontWeight : '600'}}>Điểm ưu việt</h6>
                             <ul className='pb-3' style={{color : '#152D52'}} >
