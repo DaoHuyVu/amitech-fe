@@ -1,9 +1,24 @@
-import * as React from "react";
 import styled from "styled-components";
 import Banner from "../../common/BannerWrapper";
 import searchIcon from '../../../assets/icons/search-icon.png';
 import Pagination from "../../common/Pagination";
-import {useState} from "react";
+import axios from 'axios';
+import React, {useEffect, useState} from 'react';
+
+const fetchRecruitment = async () => {
+  const response = await axios.get(
+      'http://localhost:1337/api/recruitments?populate=*', {
+        headers: {
+          'Authorization': `Bearer ${'db039ed19eeadef24d428398246e5f10dad7be75c9235f541db26838b57abe9503a67151a00456a4080ba9a89134ee0a338395312a75e692bc76bc9f92aeb7eaf5fd257462acdf031a2156b69dda6810e9ecbcafc251cc2e500314a16e8e75bb0745cc4b5c43453de7c3ceb6ff2947919574d77a6d840243a65015757083bd33'}`
+        }
+      });
+  const data = response.data.data.map(item => ({
+    ...item.attributes,
+    imgUrl: 'http://localhost:1337' + item.attributes.img_u.data.attributes.url
+  }));
+  const pagination = response.data.meta.pagination;
+  return {data, pagination};
+};
 
 function JobCardItem({
   imgUrl, title, subtitle, quantity, salary, badge, date, badgeColor
@@ -16,15 +31,15 @@ function JobCardItem({
         <JobCardSubtitle>{subtitle}</JobCardSubtitle>
         <JobCardInfo>
           <InfoItem>
-            <Icon></Icon>
+            <Icon src="soluong.png"/>
             <InfoText>Số lượng: {quantity}</InfoText>
           </InfoItem>
           <InfoItem>
-            <Icon>$</Icon>
+            <Icon src="dola.png"/>
             <InfoText>Mức lương: {salary}</InfoText>
           </InfoItem>
           <DateContainer>
-            <Icon></Icon>
+            <Icon src="calendar.png"/>
             <InfoText>{date}</InfoText>
           </DateContainer>
         </JobCardInfo>
@@ -39,6 +54,18 @@ function JobCardItem({
 
 function MyComponent() {
 
+  const [recruitmentData, setRecruitmentData] = useState(
+      {data: [], pagination: {}});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchRecruitment();
+      setRecruitmentData(data);
+    };
+
+    fetchData();
+  }, []);
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const handlePageChange = (pageNumber) => {
@@ -46,9 +73,10 @@ function MyComponent() {
   };
 
   const jobsPerPage = 12;
-  const totalPages = Math.ceil(JobListContent.length / jobsPerPage);
+  const totalPages = Math.ceil(recruitmentData.data.length / jobsPerPage);
 
-  const currentJobs = JobListContent.slice((currentPage - 1) * jobsPerPage,
+  const currentJobs = recruitmentData.data.slice(
+      (currentPage - 1) * jobsPerPage,
       currentPage * jobsPerPage);
   return (<Container>
     <HeaderBanner>
@@ -85,17 +113,19 @@ function MyComponent() {
       </JobSearchContainer>
       <JobsSection>
         <JobList>
-          {currentJobs.map((job) => (<JobCardItem
-              key={job.id}
-              imgUrl={job.imgUrl}
-              title={job.title}
-              subtitle={job.subtitle}
-              quantity={job.quantity}
-              salary={job.salary}
-              badge={job.badge}
-              date={job.date}
-              badgeColor={job.badgeColor}
-          />))}
+          {currentJobs.map((job, index) => (
+              <JobCardItem
+                  key={index}
+                  imgUrl={job.imgUrl}
+                  title={job.career}
+                  subtitle={job.job_position}
+                  quantity={job.quantity}
+                  salary={job.salary}
+                  date={job.date}
+                  badge={job.badge}
+                  badgeColor={job.badgeColor}
+              />
+          ))}
         </JobList>
         <Pagination currentPage={currentPage} totalPages={totalPages}
                     onPageChange={handlePageChange}/>
@@ -105,134 +135,6 @@ function MyComponent() {
 }
 
 export default MyComponent;
-
-const JobListContent = [{
-  id: 1,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/2d9ace6264a0bd308379b755f464f4942c07c6b96f7bd514e417b91ca6913e70?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Công nghệ thông tin",
-  subtitle: "Vận hành hệ thống – DEVOPS (VHHT)",
-  quantity: "01",
-  salary: "Thỏa thuận",
-  badge: "New",
-  date: "30/11/2023",
-  badgeColor: "#00c2ff",
-}, {
-  id: 2,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/406b4339fa999da8dc2da0aa4e9a745d7d288af13b22738bfc88f5f082ed496e?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Thiết kế đồ họa",
-  subtitle: "Nhân viên thiết kế",
-  quantity: "01",
-  salary: "Thỏa thuận",
-  date: "30/10/2023",
-}, {
-  id: 3,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/52fee5589fce64ee103c1297d5503ceadcf8a405c40cc6a07509c4418736e486?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Công nghệ thông tin",
-  subtitle: "Senior/Leader Magento Developer",
-  quantity: "01",
-  salary: "Thỏa thuận",
-  date: "30/11/2023",
-}, {
-  id: 4,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ceb01feb6f1381e0fbc9840af0cf63e6a4985f18b78d5b932355386d0e48c0aa?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Nhân sự",
-  subtitle: "Thực tập sinh tuyển dụng",
-  quantity: "01",
-  salary: "Thỏa thuận",
-  date: "30/11/2023",
-}, {
-  id: 5,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/2fb328dc6c7aaba2e33ab40d8fe6d4948fa8cc73754845369308dff0b2ad99d6?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Bán hàng/Kinh doanh",
-  subtitle: "Nhân viên kinh doanh",
-  quantity: "01",
-  salary: "10tr - 15tr",
-  date: "30/11/2023",
-}, {
-  id: 6,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/f87a1ce187535151f1de343d69ce09367eb9de5226fd6df41f220a5a2edf3096?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Công nghệ thông tin",
-  subtitle: "Vận hành hệ thống – DEVOPS (VHHT)",
-  quantity: "01",
-  salary: "Thỏa thuận",
-  badge: "Hot",
-  date: "30/11/2023",
-  badgeColor: "#f00",
-}, {
-  id: 7,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/f87a1ce187535151f1de343d69ce09367eb9de5226fd6df41f220a5a2edf3096?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Công nghệ thông tin",
-  subtitle: "Vận hành hệ thống – DEVOPS (VHHT)",
-  quantity: "01",
-  salary: "Thỏa thuận",
-  badge: "Hot",
-  date: "30/11/2023",
-  badgeColor: "#f00",
-}, {
-  id: 8,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/f87a1ce187535151f1de343d69ce09367eb9de5226fd6df41f220a5a2edf3096?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Công nghệ thông tin",
-  subtitle: "Vận hành hệ thống – DEVOPS (VHHT)",
-  quantity: "01",
-  salary: "Thỏa thuận",
-  badge: "Hot",
-  date: "30/11/2023",
-  badgeColor: "#f00",
-}, {
-  id: 9,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/f87a1ce187535151f1de343d69ce09367eb9de5226fd6df41f220a5a2edf3096?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Công nghệ thông tin",
-  subtitle: "Vận hành hệ thống – DEVOPS (VHHT)",
-  quantity: "01",
-  salary: "Thỏa thuận",
-  badge: "Hot",
-  date: "30/11/2023",
-  badgeColor: "#f00",
-}, {
-  id: 10,
-  imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/f87a1ce187535151f1de343d69ce09367eb9de5226fd6df41f220a5a2edf3096?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-  title: "Công nghệ thông tin",
-  subtitle: "Vận hành hệ thống – DEVOPS (VHHT)",
-  quantity: "01",
-  salary: "Thỏa thuận",
-  badge: "Hot",
-  date: "30/11/2023",
-  badgeColor: "#f00",
-}
-  , {
-    id: 11,
-    imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/f87a1ce187535151f1de343d69ce09367eb9de5226fd6df41f220a5a2edf3096?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-    title: "Công nghệ thông tin",
-    subtitle: "Vận hành hệ thống – DEVOPS (VHHT)",
-    quantity: "01",
-    salary: "Thỏa thuận",
-    badge: "Hot",
-    date: "30/11/2023",
-    badgeColor: "#f00",
-  }
-  , {
-    id: 12,
-    imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/f87a1ce187535151f1de343d69ce09367eb9de5226fd6df41f220a5a2edf3096?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-    title: "Công nghệ thông tin",
-    subtitle: "Vận hành hệ thống – DEVOPS (VHHT)",
-    quantity: "01",
-    salary: "Thỏa thuận",
-    badge: "Hot",
-    date: "30/11/2023",
-    badgeColor: "#f00",
-  }
-  , {
-    id: 13,
-    imgUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/f87a1ce187535151f1de343d69ce09367eb9de5226fd6df41f220a5a2edf3096?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&",
-    title: "Công nghệ thông tin",
-    subtitle: "Vận hành hệ thống – DEVOPS (VHHT)",
-    quantity: "01",
-    salary: "Thỏa thuận",
-    badge: "Hot",
-    date: "30/11/2023",
-    badgeColor: "#f00",
-  }
-];
 
 const Container = styled.section`
   display: flex;
@@ -452,10 +354,9 @@ const InfoItem = styled.div`
   gap: 8px;
 `;
 
-const Icon = styled.span`
-  font-family: "VNFont Regular", sans-serif;
-  font-weight: 900;
-  color: rgba(77, 77, 77, 0.70);
+const Icon = styled.img`
+  width: 20px;
+  height: 20px;
 `;
 
 const InfoText = styled.span`

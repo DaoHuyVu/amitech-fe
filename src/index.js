@@ -5,10 +5,11 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Introduction from './pages/Introduction/Introduction';
+import Recruitment from "./pages/recruitment/Recruitment";
 const router = createBrowserRouter([
   {
     path : '/',
-    element : <Home />
+    element : <Recruitment />
   },
   {
     path : '/trang-chu',
