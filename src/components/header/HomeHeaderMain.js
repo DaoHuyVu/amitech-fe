@@ -14,7 +14,7 @@ export default function HomeHeaderMain(){
         columnGap : '2em'
     }
     const navBarItems = <>
-        <NavBarMenuItem link="/trang-chu" style = {activeItemStyle}>
+        <NavBarMenuItem link="/" style = {activeItemStyle}>
                 <p>Trang chủ</p>
         </NavBarMenuItem>
         <NavBarItemDropDown name = 'Giới thiệu' link = "/gioi-thieu"  style={itemStyle}/>

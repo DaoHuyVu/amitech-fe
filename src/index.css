@@ -22,6 +22,7 @@ body{
 @font-face {
     font-family: 'BeVietNam';
     src: url('./assets/fonts/BeVietnamPro-Regular.ttf') format('trueType');
+    font-weight: 400;
 }
 @font-face {
     font-family: 'BeVietNam';
@@ -37,6 +38,21 @@ body{
     font-family: 'BeVietNam';
     src: url('./assets/fonts/BeVietnamPro-ExtraBold.ttf') format('trueType');
     font-weight: 700;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto-Bold.ttf');
+    font-weight: 600;
 }
 body{
     margin : 0;
