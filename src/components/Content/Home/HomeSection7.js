@@ -13,11 +13,11 @@ export default function HomeSection7(){
     ]
     return (
         <section id="section7">
-            <div className="container ">
+            <div className="container">
                 <div className="text-center pb-4 ">
                     <h5 style={{fontWeight : '700',color : '#4D4D4D'}}>ĐỐI TÁC VÀ KHÁCH HÀNG</h5>
                 </div>
-                <div className="row pb-5 g-3">
+                <div className="row pb-5 ">
                     {customerData.map((e,index)=>{
                         return (
                             <div 
@@ -36,10 +36,10 @@ export default function HomeSection7(){
                     <div className='col-12 col-lg-6 d-flex flex-column py-4 justify-content-center
                      align-items-center align-items-lg-start order-1 order-lg-2 row-gap-4'>
                         <h4>ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ</h4>
-                        <Input  placeholder='Họ tên *' className='w-75'/>
-                        <Input  placeholder='Số điện thoại *' className='w-75'/>
-                        <Input  placeholder='Email *' className='w-75'/>
-                        <Input  placeholder='Công ty *' className='w-75'/>
+                        <Input  placeholder='Họ tên *' className='w-75' type='text' required/>
+                        <Input  placeholder='Số điện thoại *' typw='number'className='w-75' required/>
+                        <Input  placeholder='Email *' type='email' className='w-75' required/>
+                        <Input  placeholder='Công ty *' type='text' className='w-75' required/>
                         <Button
                             style={{backgroundColor : '#00C2FF'}}>
                                 Nhận tư vấn miễn phí

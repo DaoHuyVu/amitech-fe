@@ -22,7 +22,7 @@ export default function HomeSection3(){
     const heroImages = data.map( (e,index)=>{
         return (
            <div className='col-6 col-lg-3' key = {index}>
-                <HoverableHeroImage className='hero-image--bg-dim ' src={e.src} title = {e.title}>
+                <HoverableHeroImage className='hoverable-hero-image--bg-dim ' src={e.src} title = {e.title}>
                     <p>{e.content}</p>
                 </HoverableHeroImage>
            </div>

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home/Home';
-
+import Introduction from './pages/Introduction/Introduction';
 const router = createBrowserRouter([
   {
     path : '/',
@@ -14,7 +14,10 @@ const router = createBrowserRouter([
     path : '/trang-chu',
     element : <Home />
   },
-  
+  {
+    path : '/gioi-thieu',
+    element : <Introduction />
+  }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -8,8 +8,10 @@
 .hero-image{
     padding : 1rem;
     color : white;
+    position: relative;
+    z-index: 1;
 }
-.hero-image--bg-dim::before{
+.hoverable-hero-image--bg-dim::before{
     content : '';
     position: absolute;
     top : 0;
@@ -65,3 +67,4 @@
 .hoverable-hero-image:hover .hero-image-detail{
     height: 100%;    
 }
+
