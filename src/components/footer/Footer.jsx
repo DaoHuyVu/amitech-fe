@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import "./footer.css";
+import "./Footer.css";
 
 export const Footer = ({
   logoAmi = "logo-ami-2.png",
