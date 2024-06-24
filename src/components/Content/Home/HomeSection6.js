@@ -6,8 +6,7 @@ import bg5 from '../../../assets/images/image 174.png'
 import Button from '../../button/Button'
 import Slider from 'react-slick'
 import Card from '../../card/Card'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 export default function HomeSection6(){
     const carouselData = [
         {

@@ -5,6 +5,10 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Introduction from './pages/Introduction/Introduction';
+import Activities from './pages/Activity/Activities';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const router = createBrowserRouter([
   {
     path : '/',
@@ -16,7 +20,11 @@ const router = createBrowserRouter([
   },
   {
     path : '/gioi-thieu',
-    element : <Introduction />
+    element : <Introduction />,
+  },
+  {
+    path : '/hinh-anh-hoat-dong',
+    element : <Activities />
   }
 ])
 

@@ -42,24 +42,4 @@
         width : 75%;
     }
 }
-.custom-slider .slick-list{
-    height : 100% 
-}
-.custom-slider .slick-slide{
-  height: 100%; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #F1F7FF;
-}
-.custom-slider .slick-track{
-    height : 100%;
-}
-@media screen and (max-width : 1200) {
-    .custom-slider{
-        height : 400px;
-    }
-}
-.custom-slider .slick-slide > div{
-    height : 100%
-}
+

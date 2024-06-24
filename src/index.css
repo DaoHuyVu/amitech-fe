@@ -54,6 +54,7 @@ body{
     src: url('./assets/fonts/Roboto-Bold.ttf');
     font-weight: 600;
 }
+
 body{
     margin : 0;
     font-family: 'BeVietNam' ;
@@ -94,4 +95,47 @@ a,a:hover,a:active,a:visited{
 }
 .text__weight--xl{
     font-weight: 700;
+}
+.responsive-image-wrapper{
+    position: relative;
+    padding-top: 56.25%;
+}
+.responsive-image{
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : auto;
+}
+/* ================ OVERRIDE REACT SLICK =====================*/
+.custom-slider .slick-list{
+    height : 100% 
+}
+.custom-slider .slick-slide{
+  height: 100%; 
+  background: #F1F7FF;
+}
+.custom-slider .slick-track{
+    height : 100%;
+}
+
+.slick-dots li{
+    margin : 0 !important
+}
+.slick-dots li.slick-active button:before{
+    color : #006CE7 !important
+}
+.slick-current .carousel-item-infomation,
+.slick-current .counter-bottom-image__dimmed-bottom {
+    display :  block !important; 
+}
+
+.scaled-carousel .slick-slide {
+    transition: all 0.3s;
+}
+.scaled-carousel .slick-current {
+    transition: all 0.3s;
+}
+.scaled-carousel .slick-track{
+    display: flex;
 }
