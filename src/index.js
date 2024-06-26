@@ -6,10 +6,12 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Introduction from './pages/Introduction/Introduction';
 import Recruitment from "./pages/recruitment/Recruitment";
+import News from "./pages/news/News";
+import Solution from "./pages/solution/Solution";
 const router = createBrowserRouter([
   {
     path : '/',
-    element : <Recruitment />
+    element : <Solution/>
   },
   {
     path : '/trang-chu',
