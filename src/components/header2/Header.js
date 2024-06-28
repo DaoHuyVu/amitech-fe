@@ -1,7 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
 import {useLocation} from "react-router-dom";
 
 const Header = () => {
@@ -45,9 +43,9 @@ const Header = () => {
           <NavMenu>
             {navItems.map((item, index) => (
                 <NavItem key={index} isActive={location.pathname === item.link}>
-                  <StyledLink to={item.link}>
+                  <StyledAnchor href={item.link}>
                     {item.text}
-                  </StyledLink>
+                  </StyledAnchor>
                   {item.hasDropdown && (
                       <img className="dropdown-icon" src="downbox1.png"
                            style={{marginLeft: '8px'}}></img>
@@ -247,7 +245,7 @@ const NavItem = styled.li`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledAnchor = styled.a`
   color: inherit; // Kế thừa màu sắc từ NavItem
   text-decoration: none;
 `;

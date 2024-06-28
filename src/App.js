@@ -12,12 +12,6 @@ import Solution from "./pages/solution/Solution";
 import Recruitment from "./pages/recruitment/Recruitment";
 
 function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
   return (
       <div>
         <Routes>

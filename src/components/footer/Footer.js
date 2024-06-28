@@ -1,7 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import {Link} from "react-router-dom";
-import {useLocation} from "react-router-dom";
 
 const ContactInfo = ({icon, title, content}) => (
     <ContactInfoWrapper>
@@ -16,14 +14,13 @@ const ContactInfo = ({icon, title, content}) => (
 );
 
 const FooterLink = ({text, link}) => (
-    <FooterLinkItem as={Link} to={link}>
+    <FooterLinkItem href={link}>
       <img src="choose.png" alt="" style={{marginRight: '10px'}} />
       {text}
     </FooterLinkItem>
 );
 
 function Footer() {
-  const location = useLocation();
   const contactInfo = [
     {
       icon: "location.png",

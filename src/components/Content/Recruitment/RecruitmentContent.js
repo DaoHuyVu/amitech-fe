@@ -4,6 +4,7 @@ import searchIcon from '../../../assets/icons/search-icon.png';
 import Pagination from "../../common/Pagination";
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
+import imageBanner from '../../../assets/banner/tuyendung.png';
 
 const fetchRecruitment = async () => {
   const response = await axios.get(
@@ -83,7 +84,7 @@ function MyComponent() {
   return (<Container>
     <HeaderBanner>
       <Banner
-          imgSrc="maskgroup-tbspcn.png"
+          imgSrc={imageBanner}
           title="Cơ hội việc làm tại AMITECH"
           description="Trở thành một phần của AMITECH và nắm bắt cơ hội tạo dựng nghề nghiệp tương lai vững chắc"
       />
