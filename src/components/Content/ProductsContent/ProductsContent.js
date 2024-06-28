@@ -312,5 +312,5 @@ const CategoryTitle = styled.h3`
 const CategoryText = styled.p`
   color: #fff;
   margin-top: 12px;
-  font: 700 20px/30px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 550 1em/2em BeVietNam, -apple-system, Roboto, Helvetica, sans-serif;
 `;

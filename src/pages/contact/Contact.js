@@ -1,6 +1,6 @@
 // src/pages/Contact.js
 import React from 'react';
-import {Footer} from '../../components/footer/Footer';
+import Footer from '../../components/footer/Footer';
 import ContactContent from "../../components/Content/ContactContent/ContactContent";
 import Header from "../../components/header2/Header";
 

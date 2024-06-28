@@ -1,8 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 const Header = () => {
+
+  const location = useLocation();
 
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -10,7 +14,6 @@ const Header = () => {
     const checkScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", checkScroll);
     return () => {
       window.removeEventListener("scroll", checkScroll);
@@ -21,7 +24,7 @@ const Header = () => {
       <HeaderWrapper>
         <TopBar>
           <TopBarContent>
-            <Logo src="logo-ami-2.png" alt="Company Logo"/>
+            <Logo src="logo-ami-2.png" alt="Company Logo" link="/"/>
             <SearchAndNav>
               <SearchBar>
                 <SearchInput placeholder="Nhập nội dung tìm kiếm..."/>
@@ -34,15 +37,17 @@ const Header = () => {
                 <LanguageText>Việt Nam</LanguageText>
               </LanguageSelector>
               <Divider/>
-              <RecruitmentLink href="/recruitment">Tuyển dụng</RecruitmentLink>
+              <RecruitmentLink href="/tuyen-dung">Tuyển dụng</RecruitmentLink>
             </SearchAndNav>
           </TopBarContent>
         </TopBar>
         <NavBar>
           <NavMenu>
             {navItems.map((item, index) => (
-                <NavItem key={index} isActive={item.isActive}>
-                  {item.text}
+                <NavItem key={index} isActive={location.pathname === item.link}>
+                  <StyledLink to={item.link}>
+                    {item.text}
+                  </StyledLink>
                   {item.hasDropdown && (
                       <img className="dropdown-icon" src="downbox1.png"
                            style={{marginLeft: '8px'}}></img>
@@ -53,18 +58,27 @@ const Header = () => {
         </NavBar>
       </HeaderWrapper>
   );
-
 };
 
 const navItems = [
-  {text: "trang chủ", isActive: false},
-  {text: "Giới thiệu", isActive: false, hasDropdown: true},
-  {text: "Dự án tiêu biểu", isActive: false},
-  {text: "Giải pháp chuyển đổi số", isActive: false, hasDropdown: true},
-  {text: "Thiết bị & sản phẩm công nghiệp", isActive: false, hasDropdown: true},
-  {text: "tin tức và sự kiện", isActive: false},
-  {text: "báo giá", isActive: false},
-  {text: "liên hệ", isActive: false},
+  {text: "trang chủ", isActive: false, link: "/"},
+  {text: "Giới thiệu", isActive: false, hasDropdown: true, link: "/gioi-thieu"},
+  {text: "Dự án tiêu biểu", isActive: false, link: "/du-an-tieu-bieu"},
+  {
+    text: "Giải pháp chuyển đổi số",
+    isActive: false,
+    hasDropdown: true,
+    link: "/giap-phap-chuyen-doi-so"
+  },
+  {
+    text: "Thiết bị & sản phẩm công nghiệp",
+    isActive: false,
+    hasDropdown: true,
+    link: "/thiet-bi-san-pham-cong-nghiep"
+  },
+  {text: "tin tức và sự kiện", isActive: false, link: "/tin-tuc-va-su-kien"},
+  {text: "báo giá", isActive: false, link: "/bao-gia"},
+  {text: "liên hệ", isActive: false, link: "/lien-he"},
 ];
 
 const HeaderWrapper = styled.header`
@@ -124,7 +138,7 @@ const SearchInput = styled.input`
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.5);
-  font-family: Roboto, sans-serif;
+  font-family: BeVietNam, sans-serif;
   font-size: 14px;
   padding: 8px;
   flex-grow: 1;
@@ -173,7 +187,7 @@ const FlagIcon = styled.img`
 `;
 
 const LanguageText = styled.span`
-  font: 400 14px Roboto, sans-serif;
+  font: 400 14px BeVietNam, sans-serif;
 `;
 
 const Divider = styled.div`
@@ -184,7 +198,7 @@ const Divider = styled.div`
 
 const RecruitmentLink = styled.a`
   color: #fff;
-  font: 400 14px Roboto, sans-serif;
+  font: 400 14px BeVietNam, sans-serif;
   text-decoration: none;
 `;
 
@@ -208,6 +222,7 @@ const NavMenu = styled.ul`
   margin: 0;
   width: 100%;
   max-width: 1447px;
+  color: #fff;
   @media (max-width: 991px) {
     display: flex;
     gap: 10px;
@@ -217,7 +232,7 @@ const NavMenu = styled.ul`
 `;
 
 const NavItem = styled.li`
-  font-family: Roboto, sans-serif;
+  font-family: BeVietNam, sans-serif;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -230,6 +245,11 @@ const NavItem = styled.li`
   .fas {
     margin-left: 5px;
   }
+`;
+
+const StyledLink = styled(Link)`
+  color: inherit; // Kế thừa màu sắc từ NavItem
+  text-decoration: none;
 `;
 
 export default Header;

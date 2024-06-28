@@ -20,6 +20,8 @@ const fetchRecruitment = async () => {
   return {data, pagination};
 };
 
+
+
 function JobCardItem({
   imgUrl, title, subtitle, quantity, salary, badge, date, badgeColor
 }) {

@@ -1,21 +1,21 @@
 import React from 'react';
 import "./ContactContent.css"
+import BannerWrapper from "../../common/BannerWrapper";
+import styled from "styled-components";
+import imageBanner from "../../../assets/banner/lienhe.png";
 
 function ContactDetails({title, details, imgSrc}) {
   return (
       <div className={`flex items-center space-x-2`}>
-        <img src={imgSrc} alt={title}/>
-        <div>
-          <div className="contact-title">{title}</div>
-          <div className="contact-info">{details}</div>
+        <div className="flex">
+          <Title imgSrc={imgSrc}>{title}</Title>
         </div>
+        <div className="contact-info">{details}</div>
       </div>
   );
 }
 
 function Content() {
-
-  // Khởi tạo mảng contactInfo chứa các thông tin liên hệ
   const contactInfo = [
     {
       title: "Trụ sở chính",
@@ -41,18 +41,12 @@ function Content() {
 
   return (
       <>
+        <BannerWrapper
+            imgSrc={imageBanner}
+            title={"LIÊN HỆ"}
+            description={"Hãy để đội ngũ Amitech hỗ trợ bạn bất cứ đâu"}
+        />
         <div className="container max-w-full p-0">
-          <section className="hero">
-            <img loading="lazy" src="maskgroup.png"
-                 className="hero-image w-screen"
-                 alt=""/>
-            <div className="hero-content">
-              <h1 className="hero-title">Liên Hệ</h1>
-              <p className="hero-subtitle">Hãy để đội ngũ tư vấn của AMITECH hỗ
-                trợ bạn dù ở bất kỳ nơi đâu</p>
-            </div>
-          </section>
-
           <section className="contact-section">
             <article className="company-info">
               <h2 className="company-name">Công ty cổ phần Giải pháp Công nghệ
@@ -109,5 +103,16 @@ function Content() {
       </>
   );
 }
+
+const Title = styled.div`
+  font-weight: 700;
+  margin-top: 20px;
+  font-family: "VNFont", sans-serif;
+  font-size: 15px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 30px;
+  background-image: url(${props => props.imgSrc});
+`;
 
 export default Content;

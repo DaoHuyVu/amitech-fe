@@ -1,5 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 const ContactInfo = ({icon, title, content}) => (
     <ContactInfoWrapper>
@@ -13,14 +15,15 @@ const ContactInfo = ({icon, title, content}) => (
     </ContactInfoWrapper>
 );
 
-const FooterLink = ({text}) => (
-    <FooterLinkItem>
+const FooterLink = ({text, link}) => (
+    <FooterLinkItem as={Link} to={link}>
       <img src="choose.png" alt="" style={{marginRight: '10px'}} />
       {text}
     </FooterLinkItem>
 );
 
 function Footer() {
+  const location = useLocation();
   const contactInfo = [
     {
       icon: "location.png",
@@ -33,9 +36,13 @@ function Footer() {
   ];
 
   const footerLinks = [
-    "Giới thiệu", "Giải pháp chuyển đổi số", "Thiết bị và sản phẩm công nghiệp",
-    "Báo giá",
-    "Tuyển dụng", "Hình ảnh hoạt động", "Cam kết", "Chính sách bảo mật"
+    {text:"Giới thiệu", link:"/gioi-thieu"},
+    {text: "Giải pháp chuyển đổi số", link: "/giap-phap-chuyen-doi-so"},
+    {text: "Thiết bị và sản phẩm công nghiệp", link: "/thiet-bi-san-pham-cong-nghiep"},
+    {text: "Báo giá", link: "/bao-gia"},
+    {text:"Tuyển dụng", link:"/tuyen-dung"},
+    {text:"Cam kết", link: "/cam-ket"},
+    {text:"Chính sách bảo mật", link: "/chinh-sach-bao-mat"},
   ];
 
   return (
@@ -58,12 +65,12 @@ function Footer() {
             <LinksSection>
               <LinkColumn>
                 {footerLinks.slice(0, 4).map((link, index) => (
-                    <FooterLink key={index} text={link}/>
+                    <FooterLink key={index} text={link.text} link={link.link}/>
                 ))}
               </LinkColumn>
               <LinkColumn>
                 {footerLinks.slice(4).map((link, index) => (
-                    <FooterLink key={index} text={link}/>
+                    <FooterLink key={index} text={link.text} link={link.link}/>
                 ))}
               </LinkColumn>
             </LinksSection>
@@ -98,6 +105,7 @@ const FooterContent = styled.div`
 const FooterMain = styled.div`
   display: flex;
   gap: 20px;
+  margin-top: -2rem;
   @media (max-width: 991px) {
     flex-direction: column;
     align-items: stretch;
@@ -153,7 +161,7 @@ const ContactDetails = styled.div`
 `;
 
 const ContactTitle = styled.h3`
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'BeVietNam', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 150%;
@@ -162,7 +170,7 @@ const ContactTitle = styled.h3`
 `;
 
 const ContactContent = styled.p`
-  font-family: Roboto, sans-serif;
+  font-family: BeVietNam, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -189,7 +197,7 @@ const LinkColumn = styled.div`
 
 const FooterLinkItem = styled.a`
   color: #fff;
-  font: 400 16px/42px Roboto, sans-serif;
+  font: 400 16px/42px BeVietNam, sans-serif;
   text-decoration: none;
   cursor: pointer;
 
@@ -200,11 +208,11 @@ const FooterLinkItem = styled.a`
 
 const Copyright = styled.div`
   background-color: #09084d;
-  margin-top: 83px;
+  margin-top: 2rem;
   width: 100%;
   color: #fff;
   padding: 18px 60px;
-  font: 400 16px/150% Roboto, sans-serif;
+  font: 400 16px/150% BeVietNam, sans-serif;
   text-align: center;
   @media (max-width: 991px) {
     margin-top: 40px;
