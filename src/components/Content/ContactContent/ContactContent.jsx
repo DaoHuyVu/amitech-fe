@@ -71,6 +71,7 @@ function Content() {
                   height="450"
                   allowFullScreen=""
                   loading="lazy"
+                  title="Google Map"
               ></iframe>
             </div>
           </section>

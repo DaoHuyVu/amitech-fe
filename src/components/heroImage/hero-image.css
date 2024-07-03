@@ -2,8 +2,9 @@
     border-radius: 5px;
     color : white;
     padding : 1rem;
-    height : 250px;
+    height : 300px;
     position: relative; 
+    background-size: cover;
 }
 .hero-image{
     padding : 1rem;
@@ -55,7 +56,7 @@
     background-color: #002A9E;
     width: 100%;
     height: 0;
-    padding : 1.5rem;
+    padding : 1rem;
     transition: width 0.5s 0.01s,height 0.5s 0.01s;
     display: flex;
     flex-direction: column;

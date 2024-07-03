@@ -1,30 +1,24 @@
-#section1{
+#home > section{
+    padding : 4rem 10%;
+}
+#home__digital-transformation{
     background-image: linear-gradient(270deg, #006CE7 42.29%, #0031B8 100%);
-    padding : 2rem 0;
 }
-#section2{
+#home__introduction{
     background-image : url('../../../assets/images/image3.png');
-    padding : 4rem 0;
-    font-size: 0.8rem;
+    background-size: cover;
 }
-#section3{
-    padding : 4rem 0;
-}
-#section4{
+#home_products{
     background-image : url('../../../assets/images/image\ 202.png');
-    padding : 4rem 0;
 }
 #section5{
     background-color: #001A6C;
-    padding : 4rem 0;
 }
 #section6{
-    padding : 4rem 0;
 }
 #section7{
-    padding : 4rem 0;
     background-color: #E5ECF6;
-    ;
+    
 }
 @media only screen and (max-width : 768px) {
     .text-center-not-md {

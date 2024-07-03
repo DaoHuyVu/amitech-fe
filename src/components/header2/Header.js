@@ -8,7 +8,7 @@ function MyComponent() {
     {name: 'Giới thiệu', hasDropdown: true},
     {name: 'Dự án tiêu biểu'},
     {name: 'Giải pháp chuyển đổi số', hasDropdown: true},
-    {name: 'Thiết bị & sản phẩm công nghiệp', hasDropdown: true},
+    {name: 'Thiết bị & sản phẩm công nghiệp', hasDropdown: true, Link: '/products'},
     {name: 'Tin tức và sự kiện'},
     {name: 'Báo giá'},
     {name: 'Liên hệ'},

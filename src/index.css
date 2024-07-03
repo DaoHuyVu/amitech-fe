@@ -87,6 +87,8 @@ a,a:hover,a:active,a:visited{
     outline: 0;
 }
 
+
+
 .text__weight--md{
     font-weight: 500;
 }
@@ -96,27 +98,66 @@ a,a:hover,a:active,a:visited{
 .text__weight--xl{
     font-weight: 700;
 }
-.responsive-image-wrapper{
+/* ============= Aspect ratio image =============== */
+.retained-4-7-image-wrapper{
     position: relative;
-    padding-top: 56.25%;
+    padding-top: 56.21%;
+    height: 0;
 }
-.responsive-image{
+.retained-4-7-image{
     position: absolute;
     top : 0;
     left : 0;
+    width: 100%;
+    height: auto;
+}
+.aspect-2-3-image-wrapper{
+    padding-top : 67%;
+    width: 100%;
+    height : 0;
+    position: relative;
+}
+.aspect-3-5-image-wrapper{
+    padding-top : 60%;
+    width: 100%;
+    height: 0;
+    position: relative;
+}
+.aspect-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom : 0;
+    width: 100%;
+}
+
+.counter-bottom-image-wrapper{
+    position: relative;
+}
+.counter-bottom-image{
+    width: 100%;
+    z-index : -1;
+}
+.counter-bottom-image__dimmed-bottom{
+    background-color: #000000B2;
+    position: absolute;
+    bottom : 0;
     width : 100%;
-    height : auto;
+    padding : 0.5rem;
 }
 /* ================ OVERRIDE REACT SLICK =====================*/
-.custom-slider .slick-list{
+.custom-carousel .slick-list{
     height : 100% 
 }
-.custom-slider .slick-slide{
-  height: 100%; 
-  background: #F1F7FF;
+.custom-carousel .slick-slide > div{
+    height: 100%;
 }
-.custom-slider .slick-track{
+.custom-carousel .slick-track{
     height : 100%;
+}
+
+.custom-carousel__button--disabled > button{
+    display: none !important;
 }
 
 .slick-dots li{
@@ -127,15 +168,129 @@ a,a:hover,a:active,a:visited{
 }
 .slick-current .carousel-item-infomation,
 .slick-current .counter-bottom-image__dimmed-bottom {
-    display :  block !important; 
+    visibility: visible !important; 
 }
-
-.scaled-carousel .slick-slide {
+.slick-slide .carousel-item-infomation{
+    position : absolute;
+    top : calc(100% + 0.5rem);
+    width: 90%;
+}
+@media only screen and (min-width : 1200px) {
+    .scaled-carousel .slick-active{
+        transition: all 0.3s;
+        width: calc(1116px * 0.25) !important;
+    }
+}
+@media only screen and (min-width : 1400px) {
+    .scaled-carousel .slick-active{
+        transition: all 0.3s;
+        width: calc(1296px * 0.25) !important;
+    }
+}
+.scaled-carousel .slick-slide{
+    transition: all 0.3s;
+}
+.scaled-carousel .slick-active{
     transition: all 0.3s;
 }
 .scaled-carousel .slick-current {
     transition: all 0.3s;
+    flex-grow: 1;
 }
 .scaled-carousel .slick-track{
     display: flex;
+    align-items: center;
+}
+.custom-carousel .slick-next::before{
+    background-image: url('./assets/images/arrow_next.png');
+}
+.custom-carousel .slick-prev::before{
+    background-image: url('./assets/images/arrow_prev.png');
+}
+.custom-carousel .slick-prev::before,
+.custom-carousel .slick-next::before
+{
+    font-size: 32px;
+    content : "";
+    width: 8px;
+    height: 13px;
+    display: inline-block;
+    position: absolute;
+    bottom: 50%;
+    left : 50%;
+    transform: translate(-50%,50%);
+    z-index: 2;
+}
+
+.custom-carousel .slick-prev,
+.custom-carousel .slick-next{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.custom-carousel .slick-prev{
+    left : 25px;
+    z-index: 3;
+    background-color: #006ce7; 
+}
+.custom-carousel .slick-next{
+    right : 25px;
+    background-color: #006ce7;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus{
+    background: #006CE7 !important;
+}
+.slick-disabled {
+    opacity: 0.3;
+}
+.slick-disabled::before{
+    opacity: 1 !important;
+}
+.scaled-carousel .slick-track{
+    margin: 64px 0 100px 0;
+}
+
+.slick-thumb li{
+    width: 60px !important;
+    height: auto !important;
+    cursor: pointer;
+}
+.sided-carousel .sided-navigation{
+    height: 100%;
+    width: 60px;
+    left : -60px;
+    bottom : 0;
+}
+
+.sided-carousel{
+    padding-left : 60px;
+}
+.sided-carousel .sided-navigation img{
+    max-width: 100% ;
+    display: block;
+}
+.slick-thumb li.slick-active img{
+    filter: grayscale(0);
+}
+.slick-thumb li img{
+    filter: grayscale(1);
+}
+
+/* ================= Extend Bootstrap ========================*/
+.px-10{
+    padding-left : 10% !important;
+    padding-right : 10% !important
+}
+@media only screen and (min-width : 992px) {
+    .mw-lg-75{
+        max-width: 75% !important;
+    }
+}
+@media only screen and (min-width : 1200px) {
+    .mw-xl-75{
+        max-width: 75% !important;
+    }
 }

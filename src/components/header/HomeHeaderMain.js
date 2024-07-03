@@ -22,7 +22,7 @@ export default function HomeHeaderMain(){
             <p>Dự án tiêu biểu</p>
         </NavBarMenuItem>
         <NavBarItemDropDown name = 'Giải pháp chuyển đổi số' link = "/giai-phap-chuyen-doi-so"  style={itemStyle}/>
-        <NavBarItemDropDown name = 'Thiết bị & sản phẩn công nghiệp' link = "/thiet-bi-va-san-pham-cong-nghiep"  style={itemStyle}/>
+        <NavBarItemDropDown name = 'Thiết bị & sản phẩn công nghiệp' link = "/thiet-bi-va-san-pham-cong-nghiep/chi-tiet-san-pham"  style={itemStyle}/>
         <NavBarMenuItem link = "/tin-tuc" style={itemStyle}>
             <p>Tin tức và sự kiện</p>
         </NavBarMenuItem>

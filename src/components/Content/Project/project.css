@@ -1,0 +1,14 @@
+#project__section2{
+    padding : 4rem 0 0 0;
+    font-family: 'Roboto';
+}
+#project-detail__section1{
+    padding : 2rem 0;
+    border-bottom: 1px solid #d9d9d9;
+    font-family: 'Roboto';
+}
+#project-detail__section2{
+    padding : 2rem 0 4rem 0;
+    font-family: 'Roboto';
+    color : #4d4d4d
+}

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import img1 from '../../../assets/images/image 44.png'
 import { faUserGroup,faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 import Button from '../../button/Button'
-export default function IntroductionSection6(){
+export default function Recruitment(){
     const data = [
         {
             image : img1,
@@ -98,7 +98,7 @@ export default function IntroductionSection6(){
         )
     }) 
     return (
-        <section id="introduction__section6">
+        <section id="introduction__recruiment">
             <h2 className="text-center pb-4 fw-bold" style={{color : '#4d4d4d'}}>TUYỂN DỤNG</h2>
             <div className="container pb-5">
                 <div className="row row-gap-3">

@@ -30,12 +30,17 @@ export default function HomeSection6(){
     ]
     const carouselItems = carouselData.map((e,index) => {
        return (
-        <Card key={index} src = {e.src} >
-            <p className='pb-2' style = {{color : '#4D4D4DB2',fontSize : '0.8rem'}}>{e.categoryName}</p>
-            <h5 className='card__title pb-2' style={{color : '#4D4D4D'}}>{e.title}</h5>
-            <div className='card__body pb-2' style= {{color : '#4D4D4DB2'}}>{e.content}</div>
-            <span style={{color : '#00C2FF'}}>Xem chi tiết &gt;&gt;</span>
-        </Card>
+            <div key={index} className='h-100'>
+                <div className='retained-4-7-image-wrapper '>
+                    <img src={e.src} alt='Carousel Img Item' className='retained-4-7-image'/>
+                </div>
+                <div style={{backgroundColor : '#f1f7ff'}} className='p-2 h-100'>
+                    <p className='pb-2' style = {{color : '#4D4D4DB2',fontSize : '0.8rem'}}>{e.categoryName}</p>
+                    <h5 className='card__title pb-2' style={{color : '#4D4D4D'}}>{e.title}</h5>
+                    <div className='card__body pb-2' style= {{color : '#4D4D4DB2'}}>{e.content}</div>
+                    <span style={{color : '#00C2FF'}}>Xem chi tiết &gt;&gt;</span>
+                </div>
+            </div>
        )
     })
     const carouselSettings = {
@@ -96,7 +101,7 @@ export default function HomeSection6(){
                 </div>
                 <div className="row g-3 w-100 h-100 pb-4 d-flex flex-row">
                     <div className="col-12 col-xl-6" style={{minHeight : '600px'}}>
-                        <Slider {...carouselSettings} className='custom-slider h-100 '>
+                        <Slider {...carouselSettings} className='custom-carousel h-100 custom-carousel__button--disabled'>
                             {carouselItems}
                         </Slider>
                     </div>

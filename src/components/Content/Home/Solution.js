@@ -8,7 +8,7 @@ import bg7 from '../../../assets/images/image 185.png'
 import Button from '../../button/Button'
 import HoverableHeroImage from '../../heroImage/HoverableHeroImage'
 
-export default function HomeSection3(){
+export default function Solution(){
     const data = [
         {title : 'Quản lý năng lượng - iNERGY',src : bg1 , content : "Phần mềm thông minh, chuyên nghiệp, hiện đại được tư vấn thiết kế bởi các chuyên gia Quản lý Năng lượng, hỗ trợ công...chuyên gia Quản lý Năng lượng, hỗ trợ công...chuyên gia Quản lý Năng lượng, hỗ trợ công..."},
         {title : 'Giám sát sản xuất - AMWORKING',src : bg1, content : "Phần mềm thông minh, chuyên nghiệp, hiện đại được tư vấn thiết kế bởi các chuyên gia Quản lý Năng lượng, hỗ trợ công...chuyên gia Quản lý Năng lượng, hỗ trợ công...chuyên gia Quản lý Năng lượng, hỗ trợ công..."},
@@ -21,7 +21,7 @@ export default function HomeSection3(){
     ]
     const heroImages = data.map( (e,index)=>{
         return (
-           <div className='col-6 col-lg-3' key = {index}>
+           <div className='col-12 col-sm-6 col-lg-4 col-xxl-3 ' key = {index}>
                 <HoverableHeroImage className='hoverable-hero-image--bg-dim ' src={e.src} title = {e.title}>
                     <p>{e.content}</p>
                 </HoverableHeroImage>
@@ -29,7 +29,7 @@ export default function HomeSection3(){
         )
     })
     return(
-        <section id='section3'>
+        <section>
             <div className="container">
                 <div className="d-flex flex-column align-items-center ">
                     <div className='text-center'>

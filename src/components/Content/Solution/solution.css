@@ -1,0 +1,20 @@
+#solution-detail{
+    font-family: 'Roboto';
+}
+#solution-detail > section{
+    padding-left : 10%;
+    padding-right: 10%;
+}
+#solution-detail > section:nth-child(odd){
+    background-image : url('../../../assets/images/image\ 216.png');
+}
+#solution-detail__overview,
+#solution-detail__functionality,
+#solution-detail__benefit,
+#solution-detail__system-model,
+#solution-detail__customer,
+#solution-detail__other-solutions
+{
+    padding-top: 3rem;
+    padding-bottom : 3rem;
+}

@@ -17,21 +17,22 @@ export default function HomeSection7(){
                 <div className="text-center pb-4 ">
                     <h5 style={{fontWeight : '700',color : '#4D4D4D'}}>ĐỐI TÁC VÀ KHÁCH HÀNG</h5>
                 </div>
-                <div className="row pb-5 ">
+                <div className="row g-3 pb-3">
                     {customerData.map((e,index)=>{
                         return (
                             <div 
                             key={index} 
-                            style={{backgroundColor : 'white'}} 
-                            className='col-6 col-md-4 col-xxl-2 p-2 d-flex justify-content-center align-items-center' >
-                                <img src={e} alt='customerLogo' />
+                            className='col-6 col-md-4 col-xl-2 ' >
+                                <div className='d-flex justify-content-center align-items-center h-100' style={{backgroundColor : 'white'}} >
+                                    <img src={e} alt='customerLogo' className='mw-100'/>
+                                </div>
                             </div>
                         )
                     })}
                 </div>
                 <div className="row" style={{background :'linear-gradient(360deg, #006CE7 0%, #0E349C 100%)'}}>
                     <div className='col-12 col-lg-6 text-center order-2'>
-                        <img src={bg7} alt ='PriceImg' /> 
+                        <img src={bg7} alt ='PriceImg' className='mw-100'/> 
                     </div>
                     <div className='col-12 col-lg-6 d-flex flex-column py-4 justify-content-center
                      align-items-center align-items-lg-start order-1 order-lg-2 row-gap-4'>
