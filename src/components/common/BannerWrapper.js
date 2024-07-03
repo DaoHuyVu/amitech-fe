@@ -1,6 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Banner = ({imgSrc, title, description}) => {
+  return (
+      <BannerWrapper>
+        <ImageWrapper>
+          <LazyImage alt="" src={imgSrc}/>
+          <SectionContainer>
+            <SectionContent>
+              <SectionTitle>{title}</SectionTitle>
+              <SectionDescription>{description}</SectionDescription>
+            </SectionContent>
+          </SectionContainer>
+        </ImageWrapper>
+      </BannerWrapper>
+  );
+};
+
 const BannerWrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
@@ -56,8 +72,11 @@ const SectionTitle = styled.h2`
   text-transform: uppercase;
   display: flex;
   justify-content: center;
-  font-family: "VNFont", sans-serif;
-  font-size: 32px;
+  font-family: "BeVietNam", sans-serif;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 550;
+  line-height: 45px; /* 140.625% */
   @media (max-width: 991px) {
     max-width: 100%;
   }
@@ -65,26 +84,9 @@ const SectionTitle = styled.h2`
 
 const SectionDescription = styled.p`
   margin-top: 16px;
-  font: 400 20px/120% Roboto, -apple-system, Roboto, Helvetica, sans-serif;
   @media (max-width: 991px) {
     max-width: 100%;
   }
 `;
-
-const Banner = ({ imgSrc, title, description }) => {
-  return (
-      <BannerWrapper>
-        <ImageWrapper>
-          <LazyImage alt="" src={imgSrc}/>
-          <SectionContainer>
-            <SectionContent>
-              <SectionTitle>{title}</SectionTitle>
-              <SectionDescription>{description}</SectionDescription>
-            </SectionContent>
-          </SectionContainer>
-        </ImageWrapper>
-      </BannerWrapper>
-  );
-};
 
 export default Banner;

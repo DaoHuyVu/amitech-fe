@@ -1,14 +1,14 @@
 // src/pages/Contact.js
 import React from 'react';
-import {Footer} from '../../components/footer/Footer';
+import Footer from '../../components/footer/Footer';
 import Header from "../../components/header2/Header";
-import NewsContent from "../../components/Content/NewsContent/NewsContent";
+import NewsContent2 from "../../components/Content/NewsContent/NewsContent2";
 
 function News() {
   return (
       <div>
         <Header/>
-        <NewsContent/>
+        <NewsContent2/>
         <Footer/>
       </div>
   );

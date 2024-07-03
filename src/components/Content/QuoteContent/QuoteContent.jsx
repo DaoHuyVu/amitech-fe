@@ -1,23 +1,17 @@
 import * as React from "react";
 import "./QuoteContent.css";
+import BannerWrapper from "../../common/BannerWrapper";
+import imageBanner from "../../../assets/banner/lienhe.png";
 
 function QuoteRequestForm() {
   return (
       <>
+        <BannerWrapper
+            imgSrc={imageBanner}
+            title={"BÁO GIÁ"}
+            description={"Lựa chọn giải pháp phù hợp với nhu cầu của bạn và nhận báo giá miễn phí"}
+        />
         <section className="quote-section">
-          <div className="quote-background">
-            <div className="quote-overlay">
-              <img loading="lazy" src="maskgroup.png"
-                   alt="Background for Quote Section" className="quote-img"/>
-              <div className="quote-container">
-                <h1 className="quote-title">Báo giá</h1>
-                <p className="quote-description">
-                  Lựa chọn giải pháp phù hợp với nhu cầu của bạn và nhận báo giá
-                  miễn phí
-                </p>
-              </div>
-            </div>
-          </div>
           <div className="form-background">
             <img loading="lazy" src="background.png"
                  alt="Background for Form Section" className="form-bg-img"/>

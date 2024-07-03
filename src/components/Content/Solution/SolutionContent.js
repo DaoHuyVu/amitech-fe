@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled, {createGlobalStyle} from "styled-components";
 import Banner from "../../common/BannerWrapper";
 import Pagination from "../../common/Pagination";
+import imageBanner from "../../../assets/banner/giaiphap.png";
 
 const DigitalSolutionsPage = () => {
   const solutions = [
@@ -57,7 +58,7 @@ const DigitalSolutionsPage = () => {
   return (
       <main className="digital-solutions">
         <Banner
-            imgSrc="maskgroup-tbspcn.png"
+            imgSrc={imageBanner}
             title="GIẢI PHÁP CHUYỂN ĐỔI SỐ"
             description="Cung cấp các giải pháp chuyển đổi số hàng đầu"
         />
@@ -79,15 +80,19 @@ const SolutionCard = ({title, description, imageSrc, isReversed}) => (
       <div className="solution-content">
         <h2 className="solution-title">{title}</h2>
         <p className="solution-description">{description}</p>
-        <a href="#" className="solution-link">Xem chi tiết <span
-            className="icon-arrow-right" aria-hidden="true"></span></a>
+        <a href="#" className="solution-link">
+          Xem chi tiết
+          <span className="icon-arrow-right">
+            <i className="fas fa-arrow-right"/>
+          </span>
+        </a>
       </div>
     </article>
 );
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: Roboto, sans-serif;
+    font-family: BeVietNam, sans-serif;
     line-height: 1.5;
     color: #4d4d4d;
   }
@@ -126,12 +131,12 @@ const StyledDigitalSolutions = styled.div`
 
   .hero-title {
     text-transform: uppercase;
-    font: 700 32px/1.41 Roboto, sans-serif;
+    font: 550 32px/1.41 BeVietNam, sans-serif;
   }
 
   .hero-subtitle {
     margin-top: 22px;
-    font: 400 20px/1.2 Roboto, sans-serif;
+    font: 400 20px/1.2 BeVietNam, sans-serif;
   }
 
   .solutions-grid {
@@ -186,7 +191,7 @@ const StyledDigitalSolutions = styled.div`
   .solution-title {
     color: #4d4d4d;
     text-transform: uppercase;
-    font: 700 30px Roboto, sans-serif;
+    font: 550 30px BeVietNam, sans-serif;
   }
 
   .solution-description {
