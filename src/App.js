@@ -10,6 +10,9 @@ import Quote from "./pages/quote/Quote";
 import Contact from "./pages/contact/Contact";
 import Solution from "./pages/solution/Solution";
 import Recruitment from "./pages/recruitment/Recruitment";
+import Introduction from "./pages/Introduction/Introduction";
+import Project from "./pages/project/Project";
+import JobDetails from "./pages/recruitment/JobDetails";
 
 function App() {
   return (
@@ -20,8 +23,12 @@ function App() {
           <Route path="/tin-tuc-va-su-kien" element={<News/>}/>
           <Route path="/bao-gia" element={<Quote/>}/>
           <Route path="/lien-he" element={<Contact/>}/>
-          <Route path="/giap-phap-chuyen-doi-so" element={<Solution/>}/>
+          <Route path="/giai-phap-chuyen-doi-so" element={<Solution/>}/>
           <Route path="/tuyen-dung" element={<Recruitment/>}/>
+          <Route path="/tuyen-dung2" element={<JobDetails/>}/>
+          <Route path="/tuyen-dung/:id" element={<JobDetails/>}/>
+          <Route path="/gioi-thieu" element={<Introduction/>}/>
+          <Route path="/du-an-tieu-bieu" element={<Project/>}/>
         </Routes>
       </div>
   );

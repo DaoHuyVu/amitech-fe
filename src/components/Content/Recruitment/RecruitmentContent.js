@@ -5,57 +5,49 @@ import Pagination from "../../common/Pagination";
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import imageBanner from '../../../assets/banner/tuyendung.png';
-
-const fetchRecruitment = async () => {
-  const response = await axios.get(
-      'http://localhost:1337/api/recruitments?populate=*', {
-        headers: {
-          'Authorization': `Bearer ${'db039ed19eeadef24d428398246e5f10dad7be75c9235f541db26838b57abe9503a67151a00456a4080ba9a89134ee0a338395312a75e692bc76bc9f92aeb7eaf5fd257462acdf031a2156b69dda6810e9ecbcafc251cc2e500314a16e8e75bb0745cc4b5c43453de7c3ceb6ff2947919574d77a6d840243a65015757083bd33'}`
-        }
-      });
-  const data = response.data.data.map(item => ({
-    ...item.attributes,
-    imgUrl: 'http://localhost:1337' + item.attributes.img_u.data.attributes.url
-  }));
-  const pagination = response.data.meta.pagination;
-  return {data, pagination};
-};
-
+import {fetchRecruitment} from "../../../services/recruitmentService";
+import { Link } from 'react-router-dom';
 
 
 function JobCardItem({
-  imgUrl, title, subtitle, quantity, salary, badge, date, badgeColor
+  id,imgUrl, title, subtitle, quantity, salary, badge, date, badgeColor
 }) {
-  return (<JobCard>
-    <JobCardLeft>
-      <JobCardImage src={imgUrl} alt={title}/>
-      <JobCardDetails>
-        <JobCardTitle>{title}</JobCardTitle>
-        <JobCardSubtitle>{subtitle}</JobCardSubtitle>
-        <JobCardInfo>
-          <InfoItem>
-            <Icon src="soluong.png"/>
-            <InfoText>Số lượng: {quantity}</InfoText>
-          </InfoItem>
-          <InfoItem>
-            <Icon src="dola.png"/>
-            <InfoText>Mức lương: {salary}</InfoText>
-          </InfoItem>
-          <DateContainer>
-            <Icon src="calendar.png"/>
-            <InfoText>{date}</InfoText>
-          </DateContainer>
-        </JobCardInfo>
-      </JobCardDetails>
-    </JobCardLeft>
-    <NewBadgeContainer>
-      {badge && <NewBadge
-          style={{backgroundColor: badgeColor}}>{badge}</NewBadge>}
-    </NewBadgeContainer>
-  </JobCard>);
+  return (
+      <JobCard>
+        <a href={`/tuyen-dung/${id}`}
+           style={{textDecoration: 'none', color: 'inherit'}}>
+
+          <JobCardLeft>
+            <JobCardImage src={imgUrl} alt={title}/>
+            <JobCardDetails>
+              <JobCardTitle>{title}</JobCardTitle>
+              <JobCardSubtitle>{subtitle}</JobCardSubtitle>
+              <JobCardInfo>
+                <InfoItem>
+                  <Icon src="soluong.png"/>
+                  <InfoText>Số lượng: {quantity}</InfoText>
+                </InfoItem>
+                <InfoItem>
+                  <Icon src="dola.png"/>
+                  <InfoText>Mức lương: {salary}</InfoText>
+                </InfoItem>
+                <DateContainer>
+                  <Icon src="calendar.png"/>
+                  <InfoText>{date}</InfoText>
+                </DateContainer>
+              </JobCardInfo>
+            </JobCardDetails>
+          </JobCardLeft>
+          <NewBadgeContainer>
+            {badge && <NewBadge
+                style={{backgroundColor: badgeColor}}>{badge}</NewBadge>}
+          </NewBadgeContainer>
+        </a>
+      </JobCard>
+  )
 }
 
-function MyComponent() {
+function Content() {
 
   const [recruitmentData, setRecruitmentData] = useState(
       {data: [], pagination: {}});
@@ -66,7 +58,7 @@ function MyComponent() {
       setRecruitmentData(data);
     };
 
-    fetchData();
+    fetchData().then(r => console.log('Recruitment data fetched'));
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -118,6 +110,7 @@ function MyComponent() {
         <JobList>
           {currentJobs.map((job, index) => (
               <JobCardItem
+                  id={job.id}
                   key={index}
                   imgUrl={job.imgUrl}
                   title={job.career}
@@ -137,7 +130,7 @@ function MyComponent() {
   </Container>);
 }
 
-export default MyComponent;
+export default Content;
 
 const Container = styled.section`
   display: flex;

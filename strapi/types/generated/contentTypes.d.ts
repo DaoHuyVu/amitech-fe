@@ -362,85 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiRecruitmentRecruitment extends Schema.CollectionType {
-  collectionName: 'recruitments';
-  info: {
-    singularName: 'recruitment';
-    pluralName: 'recruitments';
-    displayName: 'Recruitment';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    career: Attribute.String;
-    job_position: Attribute.String;
-    quantity: Attribute.Integer;
-    salary: Attribute.String;
-    date: Attribute.Date;
-    img_u: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    recruitment_detail: Attribute.Relation<
-      'api::recruitment.recruitment',
-      'oneToOne',
-      'api::recruitment-detail.recruitment-detail'
-    >;
-    badge: Attribute.String;
-    badgeColor: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::recruitment.recruitment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::recruitment.recruitment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRecruitmentDetailRecruitmentDetail
-  extends Schema.CollectionType {
-  collectionName: 'recruitment_details';
-  info: {
-    singularName: 'recruitment-detail';
-    pluralName: 'recruitment-details';
-    displayName: 'Recruitment-detail';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Job_overview: Attribute.Text & Attribute.Required & Attribute.Unique;
-    recruitment: Attribute.Relation<
-      'api::recruitment-detail.recruitment-detail',
-      'oneToOne',
-      'api::recruitment.recruitment'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::recruitment-detail.recruitment-detail',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::recruitment-detail.recruitment-detail',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -867,6 +788,86 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiRecruitmentRecruitment extends Schema.CollectionType {
+  collectionName: 'recruitments';
+  info: {
+    singularName: 'recruitment';
+    pluralName: 'recruitments';
+    displayName: 'Recruitment';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    career: Attribute.String;
+    job_position: Attribute.String;
+    quantity: Attribute.Integer;
+    salary: Attribute.String;
+    date: Attribute.Date;
+    img_u: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    badge: Attribute.String;
+    badgeColor: Attribute.String;
+    recruitment_details: Attribute.Relation<
+      'api::recruitment.recruitment',
+      'manyToMany',
+      'api::recruitment-detail.recruitment-detail'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::recruitment.recruitment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::recruitment.recruitment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRecruitmentDetailRecruitmentDetail
+  extends Schema.CollectionType {
+  collectionName: 'recruitment_details';
+  info: {
+    singularName: 'recruitment-detail';
+    pluralName: 'recruitment-details';
+    displayName: 'Recruitment-detail';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Job_overview: Attribute.Text & Attribute.Required & Attribute.Unique;
+    recruitments: Attribute.Relation<
+      'api::recruitment-detail.recruitment-detail',
+      'manyToMany',
+      'api::recruitment.recruitment'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::recruitment-detail.recruitment-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::recruitment-detail.recruitment-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -877,8 +878,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::recruitment.recruitment': ApiRecruitmentRecruitment;
-      'api::recruitment-detail.recruitment-detail': ApiRecruitmentDetailRecruitmentDetail;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -887,6 +886,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::recruitment.recruitment': ApiRecruitmentRecruitment;
+      'api::recruitment-detail.recruitment-detail': ApiRecruitmentDetailRecruitmentDetail;
     }
   }
 }
