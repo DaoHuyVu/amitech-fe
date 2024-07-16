@@ -1,15 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const NewsGalleryItem = ({image, category, title, time}) => (
-      <NewsGalleryItemWrapper>
-        <NewsGalleryItemImage src={image} alt={title}/>
-        <NewsGalleryItemCategory>{category}</NewsGalleryItemCategory>
-        <NewsGalleryItemTitle>{title}</NewsGalleryItemTitle>
-        <NewsGalleryItemTime>{time}</NewsGalleryItemTime>
-      </NewsGalleryItemWrapper>
-
-);
+const NewsGalleryItem = ({ category, title, time, image, id }) => {
+  return (
+      <a href={`/tin-tuc-va-su-kien/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div style={{ cursor: 'pointer' }}>
+          <NewsGalleryItemWrapper>
+            <NewsGalleryItemImage src={image} alt={title}/>
+            <NewsGalleryItemCategory>{category}</NewsGalleryItemCategory>
+            <NewsGalleryItemTitle>{title}</NewsGalleryItemTitle>
+            <NewsGalleryItemTime>{time}</NewsGalleryItemTime>
+          </NewsGalleryItemWrapper>
+        </div>
+      </a>
+  );
+};
 
 const NewsGalleryItemWrapper = styled.div`
   // Style cho wrapper của NewsGalleryItem

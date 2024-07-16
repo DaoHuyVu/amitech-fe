@@ -7,7 +7,8 @@ const getToken = () => {
 };
 
 export const baseAPI = axios.create({
-  baseURL: 'http://localhost:1337/api', // Đây là baseURL, thay đổi nếu cần
+
+  baseURL: 'http://localhost:1337/api',
   headers: {
     'Authorization': `Bearer ${getToken()}`
   }

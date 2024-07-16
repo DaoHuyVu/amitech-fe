@@ -37,7 +37,7 @@ const JobDetailsContent = () => {
     return text.split('\n').map((line, index, array) => (
         <React.Fragment key={index}>
           {line}
-          {index < array.length - 1 && <br />}
+          {index < array.length - 1 && <br/>}
         </React.Fragment>
     ));
   };
@@ -45,7 +45,8 @@ const JobDetailsContent = () => {
   const findDetail = (index) => {
     // Kiểm tra xem mảng có đủ phần tử không
     if (index < jobDetails.recruitment_details.data.length) {
-      const detailText = jobDetails.recruitment_details.data[index]?.attributes.Job_overview || '';
+      const detailText = jobDetails.recruitment_details.data[index]?.attributes.Job_overview
+          || '';
       return renderTextWithLineBreaks(detailText);
     }
     return ''; // Trả về chuỗi rỗng nếu không tìm thấy
@@ -57,9 +58,10 @@ const JobDetailsContent = () => {
           <div className="breadcrumbs">
             <a href="/">Trang chủ</a> /
             <a href="/tuyen-dung">Tuyển dụng</a>/
-             { jobDetails.job_position}
+            {jobDetails.job_position}
           </div>
           <h1 className="namecv">{jobDetails.job_position}</h1>
+
           <div className="content">
             <div className="left-content">
               <section className="job-overview">
@@ -139,9 +141,12 @@ const StyledJobDetails = styled.div`
     }
   }
 
-  .left-content,
+  .left-content {
+    width: 60%;
+  }
+
   .right-content {
-    width: 48%;
+    width: 30%;
   }
 
   .section-title {
@@ -237,8 +242,8 @@ const StyledJobDetails = styled.div`
   .breadcrumbs .breadcrumb-item:hover {
     text-decoration: underline; /* Optional: underline on hover for better UX */
   }
-  
-  .namecv{
+
+  .namecv {
     color: #4D4D4D;
     font-size: 32px;
     font-style: normal;

@@ -4,45 +4,56 @@ import Banner from "../../common/BannerWrapper";
 import bannerImg from "../../../assets/banner/news.png";
 import NewsCard from "./NewsCard";
 import NewsGalleryItem from "./NewsGalleryItem";
-import Image from "./image 223.png"
+import {fetchNews} from "../../../services/newsService";
+import {useEffect, useState} from "react";
+import Pagination from "../../common/Pagination";
 
 const NewsAndEventsSection = () => {
-
-  const latestNews = [
-    "Tại sao cần xây dựng hệ thống phần mềm bảo trì, bảo dưỡng trong doanh nghiệp hiện nay?",
-    "Chuyển đổi số cho doanh nghiệp: Tất cả những điều cần biết về chuyển đổi số",
-    "Quản lý năng lượng là gì? Tìm hiểu chung về quản lý năng lượng",
-    "Chúc mừng ngày Quốc tế phụ nữ",
-    "Review về các phần mềm quản lý công việc, giao việc phổ biến",
-    "Du lịch Công ty năm 2022 tại Ninh Bình",
-  ];
+  const [newsItems, setNewsItems] = useState([]);
+  const [latestNews, setLatestNews] = useState([]);
+  const [activeCategory, setActiveCategory] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const newsPerPage = 8; // Số lượng tin tức trên mỗi trang
 
   const newsCategories = [
-    { id: 1, name: "Tất cả" },
-    { id: 2, name: "Tin hoạt động của AMITECH" },
-    { id: 3, name: "Tin tổng hợp" },
+    {id: 1, name: "Tất cả"},
+    {id: 2, name: "Tin hoạt động của AMITECH"},
+    {id: 3, name: "Tin tổng hợp"},
   ];
 
-  const newsGalleryItems = [
-    { image: Image, category: 'Tin hoạt động của AMITECH', title: 'Chúc mừng ngày Quốc tế phụ nữ', time: ' 13/09/2023 13:54' },
-    { image: Image, category: 'Tin hoạt động của AMITECH', title: 'Chúc mừng ngày Quốc tế phụ nữ', time: ' 13/09/2023 13:54' },
-    { image: Image, category: 'Tin hoạt động của AMITECH', title: 'Chúc mừng ngày Quốc tế phụ nữ', time: ' 13/09/2023 13:54' },
-    { image: Image, category: 'Tin hoạt động của AMITECH', title: 'Chúc mừng ngày Quốc tế phụ nữ', time: ' 13/09/2023 13:54' },
-  ];
+  useEffect(() => {
+    const loadNews = async () => {
+      const fetchedNews = await fetchNews();
+      setNewsItems(fetchedNews);
+      // Giả sử tin tức được tìm nạp được sắp xếp theo ngày, giảm dần
+      setLatestNews(fetchedNews.slice(0, 7)); // Điều chỉnh số lượng nếu cần
+    };
 
-  const [activeCategory, setActiveCategory] = React.useState(1);
-  const [currentPage, setCurrentPage] = React.useState(1);
+    loadNews().then(r => console.log('News data fetched'));
+  }, []);
 
-  const handleCategoryClick = (categoryId) => {
-    setActiveCategory(categoryId);
+  // Xử lý khi click vào danh mục
+  const handleCategoryClick = async (categoryId) => {
+    setActiveCategory(categoryId); // Update the active category state
+
+    // Lọc tin tức theo danh mục
+    const filteredNews = await fetchNews(categoryId === 1 ? ''
+        : newsCategories.find(category => category.id === categoryId).name);
+    setNewsItems(filteredNews); // Update the state with the fetched news items
   };
 
-  const handlePageClick = (page) => {
-    setCurrentPage(page);
-  };
+  // Tính toán tổng số trang
+  const totalPages = Math.ceil(newsItems.length / newsPerPage);
 
-  const handleReadMore = (newsId) => {
-    console.log(`Read more clicked for news ID: ${newsId}`);
+  // Lấy ra tin tức cho trang hiện tại
+  const currentNews = newsItems.slice(
+      (currentPage - 1) * newsPerPage,
+      currentPage * newsPerPage
+  );
+
+  // Xử lý khi thay đổi trang
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -70,47 +81,30 @@ const NewsAndEventsSection = () => {
               <SidebarTitle>tin mới nhất</SidebarTitle>
               {latestNews.map((news, index) => (
                   <React.Fragment key={index}>
-                    <LatestNewsItem>{news}</LatestNewsItem>
-                    <NewsCategory>Tin tổng hợp</NewsCategory>
-                    {index < latestNews.length - 1 && <Divider />}
+                    <a href={`/tin-tuc-va-su-kien/${news.id}`}>
+                      <LatestNewsItem>{news.title}</LatestNewsItem>
+                    </a>
+                    <NewsCategory>{news.category}</NewsCategory>
+                    {index < latestNews.length - 1 && <Divider/>}
                   </React.Fragment>
               ))}
             </LatestNewsSidebar>
           </NewsGrid>
         </MainContent>
         <NewsGallery>
-          {newsGalleryItems.map((item, index) => (
+          {currentNews.map((item, index) => (
               <NewsGalleryItem
                   key={index}
-                  image={item.image}
                   category={item.category}
                   title={item.title}
-                  time={item.time}
+                  time={item.createdAt}
+                  image={item.imgUrl}
+                  id={item.id}
               />
           ))}
         </NewsGallery>
-        <Pagination>
-          <PaginationButton active={currentPage === 1} onClick={() => handlePageClick(1)}>
-            1
-          </PaginationButton>
-          <PaginationButton active={currentPage === 2} onClick={() => handlePageClick(2)}>
-            2
-          </PaginationButton>
-          <PaginationButton active={currentPage === 3} onClick={() => handlePageClick(3)}>
-            3
-          </PaginationButton>
-          <PaginationButton active={currentPage === 4} onClick={() => handlePageClick(4)}>
-            4
-          </PaginationButton>
-          <PaginationButton active={currentPage === 5} onClick={() => handlePageClick(5)}>
-            5
-          </PaginationButton>
-          <PaginationEllipsis>...</PaginationEllipsis>
-          <PaginationButton active={currentPage === 10} onClick={() => handlePageClick(10)}>
-            10
-          </PaginationButton>
-          <PaginationNext onClick={() => handlePageClick(currentPage + 1)}>&gt;</PaginationNext>
-        </Pagination>
+        <Pagination currentPage={currentPage} totalPages={totalPages}
+                    onPageChange={handlePageChange}/>
       </StyledNewsAndEvents>
   );
 };
@@ -178,7 +172,6 @@ const NewsTitle = styled.h2`
   margin-top: 15px;
 `;
 
-
 const LatestNewsSidebar = styled.aside`
   padding: 0 20px;
   @media (max-width: 991px) {
@@ -228,42 +221,5 @@ const NewsGallery = styled.section`
 //     margin-top: 24px;
 //   }
 // `;
-
-const Pagination = styled.nav`
-  display: flex;
-  gap: 8px;
-  margin-top: 33px;
-  font-size: 20px;
-  color: #4d4d4d;
-  font-weight: 700;
-`;
-
-const PaginationButton = styled.button`
-  font-family: Roboto, sans-serif;
-  border-radius: 5px;
-  border: 1px solid #d9d9d9;
-  background-color: ${(props) => (props.active ? "#006ce7" : "transparent")};
-  color: ${(props) => (props.active ? "#fff" : "#4d4d4d")};
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-
-const PaginationEllipsis = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-`;
-
-const PaginationNext = styled(PaginationButton)`
-  width: auto;
-  padding: 0 15px;
-`;
-
-
 
 export default NewsAndEventsSection;

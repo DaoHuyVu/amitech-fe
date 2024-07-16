@@ -1,29 +1,33 @@
 import * as React from "react";
 import styled from "styled-components";
+import { fetchNews } from "../../../services/newsService";
+import {useEffect, useState} from "react";
 
-const NewsCard = ({category, title, description, link, image}) => (
+
+const SNewsCard = ({category, title, description, link, imgUrl, id}) => (
     <NewsCardWrapper>
-      <NewsImage src={image} alt={title} loading="lazy"/>
+      <NewsImage src={imgUrl} alt={title} loading="lazy"/>
       <NewsContent>
         <NewsCategory>{category}</NewsCategory>
         <NewsTitle>{title}</NewsTitle>
-        <ReadMoreLink href={link}>
-          Xem chi tiết
-          <span className="arrow"></span>
+        <NewsDescription>{description}</NewsDescription>
+        <ReadMoreLink href={`/tin-tuc-va-su-kien/${id}`}>
+          Xem chi tiết >>
+          {/*<span className="arrow"></span>*/}
         </ReadMoreLink>
       </NewsContent>
     </NewsCardWrapper>
 );
-const NewsMainCard = ({category, title, description, link, image}) => (
+const NewsMainCard = ({category, title, description, link, imgUrl, id}) => (
     <NewsCardWrapper>
-      <NewsImage src={image} alt={title} loading="lazy"/>
+      <NewsImage src={imgUrl} alt={title} loading="lazy"/>
       <NewsContent>
         <NewsCategory>{category}</NewsCategory>
         <NewsTitle>{title}</NewsTitle>
         {description && <NewsDescription>{description}</NewsDescription>}
-        <ReadMoreLink2 href={link}>
-          Xem chi tiết
-          <span className="arrow"></span>
+        <ReadMoreLink2 href={`/tin-tuc-va-su-kien/${id}`}>
+          Xem chi tiết >>
+          {/*<span className="arrow"></span>*/}
         </ReadMoreLink2>
         <Pagination/>
       </NewsContent>
@@ -39,28 +43,21 @@ const Pagination = () => (
 );
 
 function NewsSection() {
-  const mainNews = {
-    category: "Tin hoạt động của AMITECH",
-    title: "Ứng dụng phần mềm iNERGY AMS20 trong quản lý năng lượng",
-    description: "Trong khuôn khổ các hoạt động của triển lãm quốc tế công nghệ năng lượng - môi trường Hà Nội năm 2022, nhiều giải pháp công nghệ đã được giới thiệu đến các doanh nghiệp, trong đó có giải pháp về hệ thống phần mềm quản lý năng lượng...",
-    link: "#",
-    image: ""
-  };
+  const [newsData, setNewsData] = useState([]);
 
-  const sideNews = [
-    {
-      category: "Tin hoạt động của AMITECH",
-      title: "AMITECH trở thành đối tác chính thức của MITSUBISHI ELECTRIC VIETNAM",
-      link: "#",
-      image: ""
-    },
-    {
-      category: "Tin hoạt động của AMITECH",
-      title: "Quản lý năng lượng iNERGY",
-      link: "#",
-      image: ""
-    }
-  ];
+  useEffect(() => {
+    const loadData = async () => {
+      const data = await fetchNews();
+      setNewsData(data);
+    };
+    loadData();
+  }, []);
+
+  // Lấy phần tử đầu tiên làm mainNews
+  const mainNews = newsData[0] || {};
+
+  // Lấy hai phần tử tiếp theo làm sideNews
+  const sideNews = newsData.slice(1, 3);
 
   return (
       <NewsContainer>
@@ -69,7 +66,8 @@ function NewsSection() {
         </MainNewsColumn>
         <SideNewsColumn>
           {sideNews.map((news, index) => (
-              <NewsCard key={index} {...news} />
+              // Loại trừ phần mô tả cho các mục sideNews
+              <SNewsCard key={index} category={news.category} title={news.title} imgUrl={news.imgUrl} id={news.id}/>
           ))}
         </SideNewsColumn>
       </NewsContainer>

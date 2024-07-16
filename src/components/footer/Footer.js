@@ -34,7 +34,7 @@ function Footer() {
 
   const footerLinks = [
     {text:"Giới thiệu", link:"/gioi-thieu"},
-    {text: "Giải pháp chuyển đổi số", link: "/giap-phap-chuyen-doi-so"},
+    {text: "Giải pháp chuyển đổi số", link: "/giai-phap-chuyen-doi-so"},
     {text: "Thiết bị và sản phẩm công nghiệp", link: "/thiet-bi-san-pham-cong-nghiep"},
     {text: "Báo giá", link: "/bao-gia"},
     {text:"Tuyển dụng", link:"/tuyen-dung"},

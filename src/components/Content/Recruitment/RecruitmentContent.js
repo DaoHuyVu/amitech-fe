@@ -6,11 +6,9 @@ import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import imageBanner from '../../../assets/banner/tuyendung.png';
 import {fetchRecruitment} from "../../../services/recruitmentService";
-import { Link } from 'react-router-dom';
-
 
 function JobCardItem({
-  id,imgUrl, title, subtitle, quantity, salary, badge, date, badgeColor
+  id, imgUrl, title, subtitle, quantity, salary, badge, date, badgeColor
 }) {
   return (
       <JobCard>
@@ -73,61 +71,62 @@ function Content() {
   const currentJobs = recruitmentData.data.slice(
       (currentPage - 1) * jobsPerPage,
       currentPage * jobsPerPage);
-  return (<Container>
-    <HeaderBanner>
-      <Banner
-          imgSrc={imageBanner}
-          title="Cơ hội việc làm tại AMITECH"
-          description="Trở thành một phần của AMITECH và nắm bắt cơ hội tạo dựng nghề nghiệp tương lai vững chắc"
-      />
-    </HeaderBanner>
-    <MainContent>
-      <Filters>
-        <FilterLabel>Tìm kiếm công việc</FilterLabel>
-        <FilterLabel>Vị trí</FilterLabel>
-      </Filters>
-      <JobSearchContainer>
-        <JobSearchForm>
-          <SearchIconContainer>
-            <SearchIcon src={searchIcon} alt="Search"/>
-            <JobSearchInput type="text" id="jobSearch"
-                            placeholder="Nhập tên công việc...."
-                            aria-label="Nhập tên công việc...."/>
-          </SearchIconContainer>
-          <SearchButton>Tìm việc làm</SearchButton>
-        </JobSearchForm>
-        <FilterDropdown>
-          <DropdownSelect>
-            <option value="">Tất cả</option>
-            <option value="">Nhân viên thiết kế</option>
-            <option value="">Senior/Leader Magento Developer</option>
-            <option value="">Thực tập sinh tuyển dụng</option>
-            <option value="">Nhân viên kinh doanh</option>
-          </DropdownSelect>
-        </FilterDropdown>
-      </JobSearchContainer>
-      <JobsSection>
-        <JobList>
-          {currentJobs.map((job, index) => (
-              <JobCardItem
-                  id={job.id}
-                  key={index}
-                  imgUrl={job.imgUrl}
-                  title={job.career}
-                  subtitle={job.job_position}
-                  quantity={job.quantity}
-                  salary={job.salary}
-                  date={job.date}
-                  badge={job.badge}
-                  badgeColor={job.badgeColor}
-              />
-          ))}
-        </JobList>
-        <Pagination currentPage={currentPage} totalPages={totalPages}
-                    onPageChange={handlePageChange}/>
-      </JobsSection>
-    </MainContent>
-  </Container>);
+  return (
+      <Container>
+        <HeaderBanner>
+          <Banner
+              imgSrc={imageBanner}
+              title="Cơ hội việc làm tại AMITECH"
+              description="Trở thành một phần của AMITECH và nắm bắt cơ hội tạo dựng nghề nghiệp tương lai vững chắc"
+          />
+        </HeaderBanner>
+        <MainContent>
+          <Filters>
+            <FilterLabel>Tìm kiếm công việc</FilterLabel>
+            <FilterLabel>Vị trí</FilterLabel>
+          </Filters>
+          <JobSearchContainer>
+            <JobSearchForm>
+              <SearchIconContainer>
+                <SearchIcon src={searchIcon} alt="Search"/>
+                <JobSearchInput type="text" id="jobSearch"
+                                placeholder="Nhập tên công việc...."
+                                aria-label="Nhập tên công việc...."/>
+              </SearchIconContainer>
+              <SearchButton>Tìm việc làm</SearchButton>
+            </JobSearchForm>
+            <FilterDropdown>
+              <DropdownSelect>
+                <option value="">Tất cả</option>
+                <option value="">Nhân viên thiết kế</option>
+                <option value="">Senior/Leader Magento Developer</option>
+                <option value="">Thực tập sinh tuyển dụng</option>
+                <option value="">Nhân viên kinh doanh</option>
+              </DropdownSelect>
+            </FilterDropdown>
+          </JobSearchContainer>
+          <JobsSection>
+            <JobList>
+              {currentJobs.map((job, index) => (
+                  <JobCardItem
+                      id={job.id}
+                      key={index}
+                      imgUrl={job.imgUrl}
+                      title={job.career}
+                      subtitle={job.job_position}
+                      quantity={job.quantity}
+                      salary={job.salary}
+                      date={job.date}
+                      badge={job.badge}
+                      badgeColor={job.badgeColor}
+                  />
+              ))}
+            </JobList>
+            <Pagination currentPage={currentPage} totalPages={totalPages}
+                        onPageChange={handlePageChange}/>
+          </JobsSection>
+        </MainContent>
+      </Container>);
 }
 
 export default Content;
