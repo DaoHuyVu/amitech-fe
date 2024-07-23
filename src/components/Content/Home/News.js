@@ -5,7 +5,6 @@ import bg4 from '../../../assets/images/image 206.png'
 import bg5 from '../../../assets/images/image 174.png'
 import Button from '../../button/Button'
 import Slider from 'react-slick'
-import Card from '../../card/Card'
 
 export default function HomeSection6(){
     const carouselData = [
@@ -30,15 +29,17 @@ export default function HomeSection6(){
     ]
     const carouselItems = carouselData.map((e,index) => {
        return (
-            <div key={index} className='h-100'>
+            <div key={index} className='h-100 d-flex flex-column'>
                 <div className='retained-4-7-image-wrapper '>
                     <img src={e.src} alt='Carousel Img Item' className='retained-4-7-image'/>
                 </div>
-                <div style={{backgroundColor : '#f1f7ff'}} className='p-2 h-100'>
+                <div style={{backgroundColor : '#f1f7ff'}} className='p-3 flex-grow-1'>
                     <p className='pb-2' style = {{color : '#4D4D4DB2',fontSize : '0.8rem'}}>{e.categoryName}</p>
-                    <h5 className='card__title pb-2' style={{color : '#4D4D4D'}}>{e.title}</h5>
-                    <div className='card__body pb-2' style= {{color : '#4D4D4DB2'}}>{e.content}</div>
+                    <h5 className='pb-2' style={{color : '#4D4D4D'}}>{e.title}</h5>
+                    <div className='pb-2' style= {{color : '#4D4D4DB2'}}>{e.content}</div>
                     <span style={{color : '#00C2FF'}}>Xem chi tiết &gt;&gt;</span>
+                    <div style={{height : '24px'}}>
+                    </div>
                 </div>
             </div>
        )
@@ -53,7 +54,7 @@ export default function HomeSection6(){
         autoplaySpeed : 5000,
         appendDots : dots => (
             <div style={{textAlign : 'start',bottom : '0px'}}>
-              <ul style={{paddingLeft : 'calc(1rem - 2*5px)'}}> {dots} </ul>
+              <ul className='ps-3'> {dots} </ul>
             </div>
         )
     }
@@ -82,30 +83,32 @@ export default function HomeSection6(){
     const newsColumns = newsData.map((e,index) => {
         return (
             <div className='col-12 col-md-6' key={index}>
-                <Card  src = {e.src} style = {{backgroundColor : '#F1F7FF'}}
-                 imgStyle = {{height : '150px'}}>
-                   <div className='d-flex flex-column h-100' >
-                    <p className='pb-2' style = {{color : '#4D4D4DB2',fontSize : '0.8rem'}}>{e.categoryName}</p>
-                    <h5 className='card__title pb-2 flex-grow-1' style={{color : '#4D4D4D'}}>{e.title}</h5>
-                    <span style={{color : '#00C2FF'}}>Xem chi tiết &gt;&gt;</span>
-                   </div>
-                </Card>
+                <div className='d-flex flex-column h-100' style={{backgroundColor : '#f1f7ff'}}>
+                    <div className='retained-4-7-image-wrapper'>
+                        <img src={e.src} alt='News Img' className='aspect-image'/>
+                    </div>
+                    <div className='flex-grow-1 d-flex flex-column p-3'>
+                        <p className='pb-2' style = {{color : '#4D4D4DB2',fontSize : '0.8rem'}}>{e.categoryName}</p>
+                        <h5 className='pb-2 flex-grow-1' style={{color : '#4D4D4D'}}>{e.title}</h5>
+                        <span style={{color : '#00C2FF'}}>Xem chi tiết &gt;&gt;</span>
+                    </div>
+                </div>
             </div>
         )
     })
     return(
-        <section id="section6">
-            <div className="container d-flex flex-column align-items-center">
+        <section id="home_news">
+            <div className="container-fluid d-flex flex-column align-items-center">
                 <div className="text-center pb-4">
                     <h5 style={{color : '#4D4D4D',fontWeight : '700'}}>TIN TỨC VÀ SỰ KIỆN</h5>
                 </div>
                 <div className="row g-3 w-100 h-100 pb-4 d-flex flex-row">
-                    <div className="col-12 col-xl-6" style={{minHeight : '600px'}}>
+                    <div className="col-12 col-xxl-6" style={{minHeight : '600px'}}>
                         <Slider {...carouselSettings} className='custom-carousel h-100 custom-carousel__button--disabled'>
                             {carouselItems}
                         </Slider>
                     </div>
-                    <div className="col-12 col-xl-6">
+                    <div className="col-12 col-xxl-6">
                         <div className="row gy-3 ">
                             {newsColumns}
                         </div>

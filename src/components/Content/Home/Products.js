@@ -13,7 +13,7 @@ export default function Products(){
     const productCategory1 = {
         category : 'THIẾT BỊ GIÁM SÁT ĐIỆN',
         name : 'MITSUBISHI : POWER METER',
-        description : 'Các thiết bị giám sát năng lượng hỗ trợ đo lường, thu thập và phân tích mức tiêu thụ năng lượng, đạt ... Các thiết bị giám sát năng lượng hỗ trợ đo lường, thu thập và phân tích mức tiêu thụ năng lượng, đạt ... Các thiết bị giám sát năng lượng hỗ trợ đo lường, thu thập và phân tích mức tiêu thụ năng lượng, đạt ... ',
+        description : 'Các thiết bị giám sát năng lượng hỗ trợ đo lường, thu thập và phân tích mức tiêu thụ năng lượng, đạt ... ',
         products : [
             {
                 title : 'Máy chủ thu thập dữ liệu tiết kiệm Năng lượng',
@@ -78,35 +78,111 @@ export default function Products(){
                 Amitech cung cấp các giải pháp tiết kiệm Năng Lượng, giúp cho Doanh nghiệp giám sát tiêu thụ năng lượng, tiết kiệm thời gian và chi phí sử dụng, giảm phát thải, bảo vệ môi trường...
                 </p>
             </div>  
-            <div className='row g-4'>
-               <div className='col-12 col-sm-6 col-lg-4 col-xxl-3'>
-                <div className='p-3 d-flex flex-column align-items-start' style={{backgroundColor : '#001a6c',height : '350px'}}>
-                        <h3 className='text-uppercase pb-2'>{productCategory1.category}</h3>
-                        <h5 className='text-uppercase pb-2'>{productCategory1.name}</h5>
-                        <div className='flex-grow-1 w-100' style={{marginBottom : '12px'}} >
-                            <Scroller >
-                                <p>{productCategory1.description}</p>
-                            </Scroller>
-                        </div>
-                        <Button style={{backgroundColor : 'transparent'}}>
-                            Xem thêm &gt;&gt;
-                        </Button>
-                    </div>
-               </div>
-                {
-                    productCategory1.products.map((e,index) => {
-                        return(
-                            <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
-                                <div>
-                                    
+                <div className='row g-3 mb-3'>
+                    <div className='col-12 col-sm-6 col-lg-4 col-xxl-3'>
+                        <div className='p-3 d-flex flex-column align-items-start rounded' style={{backgroundColor : '#001a6c',height : '350px'}}>
+                                <h3 className='text-uppercase pb-2'>{productCategory1.category}</h3>
+                                <h5 className='text-uppercase pb-2'>{productCategory1.name}</h5>
+                                <div className='flex-grow-1 w-100' style={{marginBottom : '12px'}} >
+                                    <Scroller >
+                                        <p>{productCategory1.description}</p>
+                                    </Scroller>
                                 </div>
+                                <Button style={{backgroundColor : 'transparent'}}>
+                                    Xem thêm &gt;&gt;
+                                </Button>
                             </div>
-                        )
-                    })
-                }
-            </div>                         
+                    </div>
+                    {
+                        productCategory1.products.map((e,index) => {
+                            return(
+                                <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
+                                    <div style={{height : '350px'}} >
+                                        <div style={{height : 'calc(350px - 1rem - 48px)'}} >
+                                            <img className=' w-100 h-100' src={e.src}  alt='Product Image' />
+                                        </div>
+                                        <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#001a6c'}}>
+                                            <div className='p-2'>
+                                                {e.title}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>                         
+                
+                <div className='row g-3 mb-3'>
+                    <div className='col-12 col-sm-6 col-lg-4 col-xxl-3'>
+                        <div className='p-3 d-flex flex-column align-items-start rounded' style={{backgroundColor : '#001a6c',height : '350px'}}>
+                                <h3 className='text-uppercase pb-2'>{productCategory2.category}</h3>
+                                <h5 className='text-uppercase pb-2'>{productCategory2.name}</h5>
+                                <div className='flex-grow-1 w-100' style={{marginBottom : '12px'}} >
+                                    <Scroller >
+                                        <p>{productCategory2.description}</p>
+                                    </Scroller>
+                                </div>
+                                <Button style={{backgroundColor : 'transparent'}}>
+                                    Xem thêm &gt;&gt;
+                                </Button>
+                            </div>
+                    </div>
+                    {
+                        productCategory2.products.map((e,index) => {
+                            return(
+                                <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
+                                    <div style={{height : '350px'}} >
+                                        <div style={{height : 'calc(350px - 1rem - 48px)'}} >
+                                            <img className=' w-100 h-100' src={e.src}  alt='Product Image' />
+                                        </div>
+                                        <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#001a6c'}}>
+                                            <div className='p-2'>
+                                                {e.title}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
 
-        </div>
+                <div className='row g-3'>
+                    <div className='col-12 col-sm-6 col-lg-4 col-xxl-3'>
+                        <div className='p-3 d-flex flex-column align-items-start rounded' style={{backgroundColor : '#001a6c',height : '350px'}}>
+                                <h3 className='text-uppercase pb-2'>{productCategory3.category}</h3>
+                                <h5 className='text-uppercase pb-2'>{productCategory3.name}</h5>
+                                <div className='flex-grow-1 w-100' style={{marginBottom : '12px'}} >
+                                    <Scroller >
+                                        <p>{productCategory3.description}</p>
+                                    </Scroller>
+                                </div>
+                                <Button style={{backgroundColor : 'transparent'}}>
+                                    Xem thêm &gt;&gt;
+                                </Button>
+                            </div>
+                    </div>
+                    {
+                        productCategory3.products.map((e,index) => {
+                            return(
+                                <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
+                                    <div style={{height : '350px'}} >
+                                        <div style={{height : 'calc(350px - 1rem - 48px)'}} >
+                                            <img className=' w-100 h-100' src={e.src}  alt='Product Image' />
+                                        </div>
+                                        <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#001a6c'}}>
+                                            <div className='p-2'>
+                                                {e.title}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            </div>
     </section> 
     )
 }

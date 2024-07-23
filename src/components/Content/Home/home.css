@@ -1,5 +1,6 @@
 #home > section{
     padding : 4rem 10%;
+    font-family: 'Roboto';
 }
 #home__digital-transformation{
     background-image: linear-gradient(270deg, #006CE7 42.29%, #0031B8 100%);
@@ -8,15 +9,18 @@
     background-image : url('../../../assets/images/image3.png');
     background-size: cover;
 }
-#home_products{
+#home__products{
     background-image : url('../../../assets/images/image\ 202.png');
+    background-repeat:  no-repeat;
+    background-size: cover;
 }
-#section5{
+#home_project{
     background-color: #001A6C;
 }
-#section6{
+#home_news{
+    
 }
-#section7{
+#home_customer{
     background-color: #E5ECF6;
     
 }

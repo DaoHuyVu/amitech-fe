@@ -37,7 +37,7 @@ const miscList = <>
 </>
     return(
             <div id="header-home-top">
-                <div className="container-xl py-2">
+                <div className="container-fluid py-2">
                     <div className='d-flex flex-row-reverse column-gap-3'>
                             <HorizontalNavBar>
                                 {miscList}

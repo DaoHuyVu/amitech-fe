@@ -100,7 +100,7 @@ export default function ProjectSection2(){
                 <div className='retained-4-7-image-wrapper'>
                     <img src={e.image} alt='Project Img' className='retained-4-7-image'/>
                 </div>
-                <div className='p-3 d-flex flex-column row-gap-2 flex-grow-1' style={{backgroundColor : '#f1f7ff'}}>
+                <div className='p-3 d-flex flex-column row-gap-2 flex-grow-1 align-items-start' style={{backgroundColor : '#f1f7ff'}}>
                     <h4 style={{color : '#4d4d4d'}} className='text__weight--lg'>{e.title}</h4>
                     <div className='flex-grow-1'>
                         <ul style={{color : '#4d4d4db2'}}>
@@ -116,9 +116,7 @@ export default function ProjectSection2(){
                         </ul>
                     </div>
                     <Button style={{backgroundColor : 'transparent',color : '#00c2ff',border : 'none'}}>
-                        <Link  to='/du-an-tieu-bieu/chi-tiet' >
-                            Xem chi tiết &gt;&gt;
-                        </Link>
+                        Xem chi tiết &gt;&gt;
                     </Button>
                 </div>
             </div>

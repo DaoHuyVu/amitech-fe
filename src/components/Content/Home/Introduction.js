@@ -48,7 +48,7 @@ export default function Introduction(){
                             </h5>
                         </LeftScrollContainer>  
                         <div className='pb-5'></div>               
-                        <div class='row g-4'>
+                        <div className='row g-4'>
                             <div className='col-12 col-sm-auto'>
                                 <Button>
                                         Tìm hiểu thêm

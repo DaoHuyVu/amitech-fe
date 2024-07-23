@@ -2,9 +2,8 @@ import bg1 from '../../../assets/images/image 257.png'
 import bg2 from '../../../assets/images/image 255.png'
 import bg3 from '../../../assets/images/image 256.png'
 import bg4 from '../../../assets/images/image 254.png'
-import DetailCard from "../../card/DetailCard"
 import Button from '../../button/Button'
-export default function HomeSection5(){
+export default function Project(){
     const data = []
     data.push(
         {
@@ -38,37 +37,48 @@ export default function HomeSection5(){
     )
     const columns = data.map((e,index) => {
         return (
-            <div className="col-12 col-md-6 col-xl-3" key={index}>
-                <DetailCard src={e.src} title = {e.title} >
-                    <ul>
-                        <li>
-                            <p>{e.customerName}</p>
-                        </li>
-                        <li>
-                            <p>{e.place}</p>
-                        </li>
-                        <li>
-                            <p>{e.time}</p>
-                        </li>
-                    </ul>
-                </DetailCard>
+            <div className="col-12 col-md-6 col-xl-4 col-xxl-3" key={index}>
+               <div className='d-flex flex-column h-100'>
+                    <div className='aspect-2-3-image-wrapper'>
+                        <img src={e.src} alt='Project Img' className='aspect-image'/>
+                    </div>
+                    <div className='p-3 d-flex flex-column flex-grow-1 align-items-start' style={{backgroundColor:'#f4f9ff1a'}}>
+                        <h5 className='lh-base'>{e.title}</h5>
+                        <ul style={{color : '#FFFFFFB2'}} className='flex-grow-1'>
+                            <li className='pb-3'>
+                                <p>{e.customerName}</p>
+                            </li>
+                            <li className='pb-3'>
+                                <p>{e.place}</p>
+                            </li>
+                            <li>
+                                <p>{e.time}</p>
+                            </li>
+                        </ul>
+                        <Button style={{border : 'none',backgroundColor : 'transparent',color : '#00c2ff'}}>
+                            Xem thêm &gt;&gt;
+                        </Button>
+                    </div>
+               </div>
             </div>
         )
     }) 
     return(
-        <section id="section5">
-            <div className="container d-flex flex-column align-items-center">
+        <section id="home_project">
+            <div className="container-fluid ">
                 <div className="text-center pb-4">
-                    <h5 style={{fontWeight : '700'}}>DỰ ÁN TIÊU BIỂU</h5>
+                    <h3 style={{fontWeight : '700'}}>DỰ ÁN TIÊU BIỂU</h3>
                 </div>
                 <div className="row g-3 pb-4">
                     {columns}
                 </div>
-                <Button
-                    style={{backgroundColor : '#006CE7'}}>
-                        Xem thêm &gt;&gt;
-                </Button>
-            </div>
+                <div className='text-center'>
+                    <Button
+                        style={{backgroundColor : '#00c2ff',border : 'none'}}>
+                            Xem thêm &gt;&gt;
+                    </Button>
+                </div>
+            </div>  
         </section>
     )
 }

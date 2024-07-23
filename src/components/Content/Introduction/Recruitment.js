@@ -78,7 +78,7 @@ export default function Recruitment(){
                         <img src={e.image} alt='img'/>
                     </div>
                     <div className='d-flex flex-column flex-grow-1'>
-                        <p className='pb-3'>{e.category}</p>
+                        <p className='pb-2'>{e.category}</p>
                         <h5>{e.name}</h5>
                         <div className='row row-gap-2'>
                             <div className='col-12 col-md-4 col-xl-5'>

@@ -3,7 +3,7 @@ import HomeHeaderMain from './HomeHeaderMain'
 import './header.css'
 export default function HomeHeader(){
     return(
-        <div id="header" className="w-100">
+        <div id="header" >
             <HomeHeaderTop />
             <HomeHeaderMain />
         </div>

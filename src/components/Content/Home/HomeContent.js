@@ -2,9 +2,9 @@ import DigitalTransformation from "./DigitalTransformation";
 import Introduction from './Introduction'
 import Solution from "./Solution";
 import Product from "./Products";
-import HomeSection5 from "./HomeSection5";
-import HomeSection6 from "./HomeSection6";
-import HomeSection7 from "./HomeSection7";
+import Project from "./Project";
+import News from "./News";
+import Customer from "./Customer";
 import './home.css'
 export default function HomeContent(){
     return(
@@ -13,9 +13,9 @@ export default function HomeContent(){
             <Introduction />
             <Solution />
             <Product />
-            <HomeSection5 />
-            <HomeSection6 />
-            <HomeSection7 />
+            <Project />
+            <News />
+            <Customer />
         </div>
     )
 }

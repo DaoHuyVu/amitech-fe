@@ -2,7 +2,7 @@ import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, {useEffect} from "react";
-import Home from './pages/Home/Home'
+import Home from './pages/home/Home'
 import {Routes, Route, useLocation} from 'react-router-dom';
 import Products from "./pages/product/Products";
 import News from "./pages/news/News";
