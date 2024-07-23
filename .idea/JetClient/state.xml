@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JetClientState">
+    <option name="draftsState">
+      <draftsState>
+        <option name="requests">
+          <list>
+            <requestState>
+              <option name="auth">
+                <authState>
+                  <option name="bearer">
+                    <lc>
+                      <option name="token" value="db039ed19eeadef24d428398246e5f10dad7be75c9235f541db26838b57abe9503a67151a00456a4080ba9a89134ee0a338395312a75e692bc76bc9f92aeb7eaf5fd257462acdf031a2156b69dda6810e9ecbcafc251cc2e500314a16e8e75bb0745cc4b5c43453de7c3ceb6ff2947919574d77a6d840243a65015757083bd33" />
+                    </lc>
+                  </option>
+                  <option name="type" value="BEARER" />
+                </authState>
+              </option>
+              <option name="id" value="8b4911ea-2299-44f6-8632-86337b4a2c16" />
+              <option name="method" value="GET" />
+              <option name="name" value="Recruitments" />
+              <option name="queryParams">
+                <list>
+                  <queryParamState>
+                    <option name="key" value="populate" />
+                    <option name="value" value="*" />
+                  </queryParamState>
+                </list>
+              </option>
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://localhost:1337/api/recruitments?populate=*" />
+            </requestState>
+            <requestState>
+              <option name="id" value="38a527dc-5d0a-4a4f-bc50-78a2ae65eebb" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="queryParams">
+                <list>
+                  <queryParamState>
+                    <option name="key" value="populate" />
+                    <option name="value" value="*" />
+                  </queryParamState>
+                </list>
+              </option>
+              <option name="sortWeight" value="2000000" />
+              <option name="url" value="http://localhost:1337/api/news?populate=*" />
+            </requestState>
+          </list>
+        </option>
+      </draftsState>
+    </option>
+    <option name="id" value="90951734-8073-476a-b292-6f23732ddca9" />
+    <option name="version" value="3" />
+  </component>
+</project>

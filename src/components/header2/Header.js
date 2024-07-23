@@ -22,7 +22,7 @@ const Header = () => {
       <HeaderWrapper>
         <TopBar>
           <TopBarContent>
-            <Logo src="logo-ami-2.png" alt="Company Logo" link="/"/>
+            <Logo src="/logo-ami-2.png" alt="Company Logo" link="/"/>
             <SearchAndNav>
               <SearchBar>
                 <SearchInput placeholder="Nhập nội dung tìm kiếm..."/>
@@ -31,7 +31,7 @@ const Header = () => {
                 </SearchButton>
               </SearchBar>
               <LanguageSelector>
-                <FlagIcon src="ellipse41.png" alt="Vietnam Flag"/>
+                <FlagIcon src="/ellipse41.png" alt="Vietnam Flag"/>
                 <LanguageText>Việt Nam</LanguageText>
               </LanguageSelector>
               <Divider/>
@@ -47,7 +47,7 @@ const Header = () => {
                     {item.text}
                   </StyledAnchor>
                   {item.hasDropdown && (
-                      <img className="dropdown-icon" src="downbox1.png"
+                      <img className="dropdown-icon" src="/downbox1.png"
                            style={{marginLeft: '8px'}}></img>
                   )}
                 </NavItem>
@@ -66,7 +66,7 @@ const navItems = [
     text: "Giải pháp chuyển đổi số",
     isActive: false,
     hasDropdown: true,
-    link: "/giap-phap-chuyen-doi-so"
+    link: "/giai-phap-chuyen-doi-so"
   },
   {
     text: "Thiết bị & sản phẩm công nghiệp",

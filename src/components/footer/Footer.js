@@ -15,7 +15,7 @@ const ContactInfo = ({icon, title, content}) => (
 
 const FooterLink = ({text, link}) => (
     <FooterLinkItem href={link}>
-      <img src="choose.png" alt="" style={{marginRight: '10px'}} />
+      <img src="/choose.png" alt="" style={{marginRight: '10px'}} />
       {text}
     </FooterLinkItem>
 );
@@ -23,18 +23,18 @@ const FooterLink = ({text, link}) => (
 function Footer() {
   const contactInfo = [
     {
-      icon: "location.png",
+      icon: "/location.png",
       title: "Trụ sở chính",
       content: "Tầng 4, Tòa nhà Sông Đà 9, Số 2 Nguyễn Hoàng, Mỹ Đình, Nam Từ Liêm, Hà Nội"
     },
-    {icon: "dienthoai.png", title: "Điện thoại", content: "024 22 33 55 66"},
-    {icon: "hotline.png", title: "Hotline", content: "0 986 893 233"},
-    {icon: "email.png", title: "Email", content: "contact@amitech.vn"}
+    {icon: "/dienthoai.png", title: "Điện thoại", content: "024 22 33 55 66"},
+    {icon: "/hotline.png", title: "Hotline", content: "0 986 893 233"},
+    {icon: "/email.png", title: "Email", content: "contact@amitech.vn"}
   ];
 
   const footerLinks = [
     {text:"Giới thiệu", link:"/gioi-thieu"},
-    {text: "Giải pháp chuyển đổi số", link: "/giap-phap-chuyen-doi-so"},
+    {text: "Giải pháp chuyển đổi số", link: "/giai-phap-chuyen-doi-so"},
     {text: "Thiết bị và sản phẩm công nghiệp", link: "/thiet-bi-san-pham-cong-nghiep"},
     {text: "Báo giá", link: "/bao-gia"},
     {text:"Tuyển dụng", link:"/tuyen-dung"},
@@ -49,7 +49,7 @@ function Footer() {
             <CompanyInfoSection>
               <LogoWrapper>
                 <Logo
-                    src="logo-ami-2.png"
+                    src="/logo-ami-2.png"
                     alt="Company Logo"/>
                 <ContactInfo key={0} {...contactInfo[0]} />
               </LogoWrapper>
