@@ -5,6 +5,7 @@ import bg4 from '../../../assets/images/image 206.png'
 import bg5 from '../../../assets/images/image 174.png'
 import Button from '../../button/Button'
 import Slider from 'react-slick'
+import { Link } from 'react-router-dom'
 
 export default function HomeSection6(){
     const carouselData = [
@@ -116,7 +117,9 @@ export default function HomeSection6(){
                 </div>
                 <Button
                     style={{backgroundColor : '#006CE7'}}>
-                        Xem thêm &gt;&gt;
+                    <Link to='/tin-tuc'>
+                        <p style={{color : 'white'}}>Xem thêm &gt;&gt;</p>
+                    </Link>
                 </Button>
             </div>
         </section>

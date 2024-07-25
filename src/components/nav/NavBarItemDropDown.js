@@ -1,11 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-export default function NavBarItemDropDown(props){
+import { NavLink } from "react-router-dom";
+export default function NavBarItemDropDown({className='',link,style,name}){
+    const cl = `nav-dropdown-item ${className}`
     return(
-            <Link to={props.link} style = {props.style} className="nav-dropdown-item">
-                <p>{props.name}</p>
+            <NavLink to={link} style = {style}
+             className={({isActive}) =>  
+                isActive ? `${cl} nav-item--active` : `${cl} nav-item--pending`
+             }>
+                <p>{name}</p>
                 <FontAwesomeIcon icon={faCaretDown}/>
-            </Link>
+            </NavLink>
     )
 }

@@ -6,10 +6,10 @@ export default function DigitalTransformation(){
                 <div className='row'>
                     <div className='col-12 col-xl-5 d-flex align-items-center text-center text-xl-start pb-3'>
                         <span>
-                            <h1 style={{fontSize : '45px'}} className='fw-bolder pb-3'>
+                            <h1 className='fw-bolder pb-3 title-fs-md title-fs-sm'>
                                 CHUYỂN ĐỔI SỐ
                             </h1>
-                            <h4 style={{color : '#ffffff99',lineHeight : '40px'}}>
+                            <h4 style={{color : '#ffffff99'}} className='lh-base'>
                                 Amitech cung cấp các giải pháp hàng đầu 
                                 giúp doanh nghiệp chuyển đổi số toàn diện,
                                 nhanh chóng, tiết kiệm, hiệu quả

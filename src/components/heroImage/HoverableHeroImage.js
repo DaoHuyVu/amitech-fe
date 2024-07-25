@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './hero-image.css'
+import Button from '../button/Button'
 export default function HoverableHeroImage({src,style,title,children,className=''}){
     const [isVisible,setVisible] = useState(false)
     const handleMouseEnter = () => setVisible(true)
@@ -22,7 +23,10 @@ export default function HoverableHeroImage({src,style,title,children,className='
                         <div className='hero-image__text--sm mb-3 hero-image-detail__content'>
                             {children}
                         </div>
-                        <p className='hero-image__text--sm' style={{color : '#00C2FF'}}>Xem thêm &gt;&gt; </p>
+                        <Button 
+                            className='hero-image__text--sm' style={{color : '#00C2FF'}}>
+                                Xem thêm &gt;&gt; 
+                        </Button>
                     </div>
                 }
 

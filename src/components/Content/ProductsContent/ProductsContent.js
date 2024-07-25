@@ -1,10 +1,11 @@
 import * as React from "react";
 import styled from 'styled-components';
 import Pagination from "../../common/Pagination";
+import { useLocation } from "react-router-dom";
 
 function ProductComponent() {
-
-  const [selectedButton, setSelectedButton] = React.useState("Tất cả");
+  const {state} = useLocation()
+  const [selectedButton, setSelectedButton] = React.useState(state !== null ? state.category : "Tất cả");
   const handleButtonClick = (buttonName) => {
     setSelectedButton(buttonName);
   };

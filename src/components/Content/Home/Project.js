@@ -3,6 +3,7 @@ import bg2 from '../../../assets/images/image 255.png'
 import bg3 from '../../../assets/images/image 256.png'
 import bg4 from '../../../assets/images/image 254.png'
 import Button from '../../button/Button'
+import { Link } from 'react-router-dom'
 export default function Project(){
     const data = []
     data.push(
@@ -75,7 +76,9 @@ export default function Project(){
                 <div className='text-center'>
                     <Button
                         style={{backgroundColor : '#00c2ff',border : 'none'}}>
-                            Xem thêm &gt;&gt;
+                            <Link to='/du-an-tieu-bieu'>
+                                <p style={{color : 'white'}}>Xem thêm &gt;&gt;</p>
+                            </Link>
                     </Button>
                 </div>
             </div>  

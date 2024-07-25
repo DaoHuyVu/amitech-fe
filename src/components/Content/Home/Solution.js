@@ -7,7 +7,7 @@ import bg6 from '../../../assets/images/image 184.png'
 import bg7 from '../../../assets/images/image 185.png'
 import Button from '../../button/Button'
 import HoverableHeroImage from '../../heroImage/HoverableHeroImage'
-
+import { Link } from 'react-router-dom'
 export default function Solution(){
     const data = [
         {title : 'Quản lý năng lượng - iNERGY',src : bg1 , content : "Phần mềm thông minh, chuyên nghiệp, hiện đại được tư vấn thiết kế bởi các chuyên gia Quản lý Năng lượng, hỗ trợ công...chuyên gia Quản lý Năng lượng, hỗ trợ công...chuyên gia Quản lý Năng lượng, hỗ trợ công..."},
@@ -43,9 +43,12 @@ export default function Solution(){
                     <div className="row g-3 my-4">
                         {heroImages}
                     </div>
-                    <Button
-                        style={{backgroundColor : '#006CE7'}}>
-                            Xem thêm &gt;&gt;
+                    <Button>
+                           <Link to='/giai-phap-chuyen-doi-so' >
+                                <p style={{color : 'white'}}>
+                                    Xem thêm &gt;&gt;
+                                </p>
+                           </Link>
                     </Button>
                 </div>
             </div>

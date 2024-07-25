@@ -9,6 +9,7 @@ import bg8 from '../../../assets/images/image 189.png'
 import bg9 from '../../../assets/images/image 232.png'
 import Button from '../../button/Button'
 import Scroller from '../../scroller/Scroller'
+import { Link } from 'react-router-dom'
 export default function Products(){
     const productCategory1 = {
         category : 'THIẾT BỊ GIÁM SÁT ĐIỆN',
@@ -89,7 +90,9 @@ export default function Products(){
                                     </Scroller>
                                 </div>
                                 <Button style={{backgroundColor : 'transparent'}}>
-                                    Xem thêm &gt;&gt;
+                                    <Link to='/thiet-bi-va-san-pham-cong-nghiep' state={{category : "Thiết bị giám sát điện"}} >
+                                        <p style={{color : 'white'}}>Xem thêm &gt;&gt;</p>
+                                    </Link>
                                 </Button>
                             </div>
                     </div>
@@ -99,7 +102,7 @@ export default function Products(){
                                 <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
                                     <div style={{height : '350px'}} >
                                         <div style={{height : 'calc(350px - 1rem - 48px)'}} >
-                                            <img className=' w-100 h-100' src={e.src}  alt='Product Image' />
+                                            <img className=' w-100 h-100' src={e.src}  alt='Product ' />
                                         </div>
                                         <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#001a6c'}}>
                                             <div className='p-2'>
@@ -115,7 +118,7 @@ export default function Products(){
                 
                 <div className='row g-3 mb-3'>
                     <div className='col-12 col-sm-6 col-lg-4 col-xxl-3'>
-                        <div className='p-3 d-flex flex-column align-items-start rounded' style={{backgroundColor : '#001a6c',height : '350px'}}>
+                        <div className='p-3 d-flex flex-column align-items-start rounded' style={{backgroundColor : '#002a9e',height : '350px'}}>
                                 <h3 className='text-uppercase pb-2'>{productCategory2.category}</h3>
                                 <h5 className='text-uppercase pb-2'>{productCategory2.name}</h5>
                                 <div className='flex-grow-1 w-100' style={{marginBottom : '12px'}} >
@@ -124,7 +127,9 @@ export default function Products(){
                                     </Scroller>
                                 </div>
                                 <Button style={{backgroundColor : 'transparent'}}>
-                                    Xem thêm &gt;&gt;
+                                    <Link to='/thiet-bi-va-san-pham-cong-nghiep' state={{category : "Thiết bị giám sát khí nén"}} >
+                                        <p style={{color : 'white'}}>Xem thêm &gt;&gt;</p>
+                                    </Link>
                                 </Button>
                             </div>
                     </div>
@@ -134,9 +139,9 @@ export default function Products(){
                                 <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
                                     <div style={{height : '350px'}} >
                                         <div style={{height : 'calc(350px - 1rem - 48px)'}} >
-                                            <img className=' w-100 h-100' src={e.src}  alt='Product Image' />
+                                            <img className=' w-100 h-100' src={e.src}  alt='Product ' />
                                         </div>
-                                        <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#001a6c'}}>
+                                        <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#002a9e'}}>
                                             <div className='p-2'>
                                                 {e.title}
                                             </div>
@@ -150,7 +155,7 @@ export default function Products(){
 
                 <div className='row g-3'>
                     <div className='col-12 col-sm-6 col-lg-4 col-xxl-3'>
-                        <div className='p-3 d-flex flex-column align-items-start rounded' style={{backgroundColor : '#001a6c',height : '350px'}}>
+                        <div className='p-3 d-flex flex-column align-items-start rounded' style={{backgroundColor : '#2253b8',height : '350px'}}>
                                 <h3 className='text-uppercase pb-2'>{productCategory3.category}</h3>
                                 <h5 className='text-uppercase pb-2'>{productCategory3.name}</h5>
                                 <div className='flex-grow-1 w-100' style={{marginBottom : '12px'}} >
@@ -159,7 +164,9 @@ export default function Products(){
                                     </Scroller>
                                 </div>
                                 <Button style={{backgroundColor : 'transparent'}}>
-                                    Xem thêm &gt;&gt;
+                                    <Link to='/thiet-bi-va-san-pham-cong-nghiep' state={{category : "Thiết bị giám sát tiêu thụ nước"}} >
+                                        <p style={{color : 'white'}}>Xem thêm &gt;&gt;</p>
+                                    </Link>
                                 </Button>
                             </div>
                     </div>
@@ -169,9 +176,9 @@ export default function Products(){
                                 <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
                                     <div style={{height : '350px'}} >
                                         <div style={{height : 'calc(350px - 1rem - 48px)'}} >
-                                            <img className=' w-100 h-100' src={e.src}  alt='Product Image' />
+                                            <img className=' w-100 h-100' src={e.src}  alt='Product ' />
                                         </div>
-                                        <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#001a6c'}}>
+                                        <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#2253b8'}}>
                                             <div className='p-2'>
                                                 {e.title}
                                             </div>

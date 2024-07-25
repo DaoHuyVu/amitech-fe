@@ -193,12 +193,7 @@ a,a:hover,a:active,a:visited{
         width: calc(1296px * 0.25) !important;
     }
 }
-.scaled-carousel .slick-slide{
-    transition: all 0.3s;
-}
-.scaled-carousel .slick-active{
-    transition: all 0.3s;
-}
+
 .scaled-carousel .slick-current {
     transition: all 0.3s;
     flex-grow: 1;
@@ -298,5 +293,29 @@ a,a:hover,a:active,a:visited{
 @media only screen and (min-width : 1200px) {
     .mw-xl-75{
         max-width: 75% !important;
+    }
+}
+@media only screen and (min-width : 1600px) {
+    .d-xxxl-flex{
+        display: flex !important;
+    }
+    .d-xxxl-none{
+        display: none !important;
+    }
+}
+@media only screen and (min-width : 576px) {
+    .px-sm-10{
+        padding : 0 10% !important;
+    }
+    .title-fs-md{
+        font-size: 3rem !important;
+    }
+}
+@media only screen and (min-width : 576px) and (max-width : 768px){
+    
+}
+@media only screen and (max-width : 576px) {
+    .title-fs-sm{
+        font-size: 2rem !important;
     }
 }

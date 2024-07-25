@@ -1,5 +1,6 @@
 import bg1 from '../../../assets/images/IMG_8682 1.png'
 import Button from '../../button/Button'
+import OptionButton from '../../button/OptionButton'
 export default function IntroductionSection2(){
     const navigations = [
         'Giới thiệu','Sứ mệnh - Tầm nhìn - Giá trị cốt lõi','Hình ảnh hoạt động',
@@ -7,11 +8,9 @@ export default function IntroductionSection2(){
     ]
     const columns = navigations.map((e,index) => {
         return(
-            <div key={index}>
-                <span className="p-2 text-center" style={{border : '1px solid #006CE7',borderRadius : '5px',color : '#006CE7'}} >
-                    {e}
-                </span>
-            </div>
+            <OptionButton link={`#introduction__section${index+2}`} key={index}>
+                {e}
+            </OptionButton>
         )
     })
     return(

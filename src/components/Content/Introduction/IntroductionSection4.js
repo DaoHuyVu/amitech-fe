@@ -30,7 +30,7 @@ export default function IntroductionSection4(){
         className : 'center',
         centerMode : true,
         centerPadding : '0px',
-        infinite : false,
+        infinite : true,
         slidesToShow: 3,
         slidesToScroll : 1,
         speed: 500,
