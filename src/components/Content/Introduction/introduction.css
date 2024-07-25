@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 3rem 0;
+    padding: 3rem 10%;
     position: relative;
     font-family: 'Roboto';
 }
@@ -34,7 +34,7 @@
 }
 #introduction__section2{
     background-image: url('../../../assets/images/img\ 77.png');
-    padding: 3rem 0;
+    padding: 3rem 10%;
     background-size: cover;
 }
 @media only screen and (min-width : 1200px) {
@@ -44,23 +44,23 @@
     }
 }
 #introduction__section3{
-    padding : 4rem 0;
+    padding : 4rem 10%;
 }
 
 .container__item--zigzag > div:nth-child(even){
     flex-direction: row-reverse;
 }
 #introduction__section4{
-    padding : 4rem 0;
+    padding : 4rem 10%;
     background-color: #001A6C;
 }
 
 #introduction__section5{
-    padding : 4rem 0;
+    padding : 4rem 10%;
     font-family: 'Roboto';
 }
 #introduction__section6{
     background-image: url('../../../assets//images/image\ 216.png');
     font-family: 'Roboto';
-    padding : 4rem 0;
+    padding : 4rem 10%;
 }

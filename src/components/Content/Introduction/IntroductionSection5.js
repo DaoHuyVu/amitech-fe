@@ -25,22 +25,25 @@ export default function IntroductionSetion5(){
     ]
     const settings = {
         dots: true,
-        speed: 1000,
+        speed: 2000,
+        infinite : true,
+        autoPlay : true,
+        autoPlaySpeed : 2000,
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         responsive : [
             {
-                breakpoint : 1200,
+                breakpoint : 1400,
                 settings : {
                     slidesToShow: 3,
-                    slidesToScroll: 3
+                    slidesToScroll: 1
                 }
             },
             {
-                breakpoint : 968,
+                breakpoint : 992,
                 settings : {
                     slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToScroll: 1
                 }
             },
             {
@@ -65,8 +68,8 @@ export default function IntroductionSetion5(){
     return(
         <section id='introduction__section5'>
             <h2 className="text-center fw-bold pb-4" style={{color : '#4d4d4d'}}>CHỨNG NHẬN / CHỨNG CHỈ</h2>
-                <div className='container '>
-                   <div className='custom-slider'>
+                <div className='container-fluid'>
+                   <div className='custom-slider '>
                     <Slider {...settings}>
                         {slides}
                     </Slider>

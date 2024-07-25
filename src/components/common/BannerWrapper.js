@@ -5,7 +5,7 @@ const Banner = ({imgSrc, title, description}) => {
   return (
       <BannerWrapper>
         <ImageWrapper>
-          <LazyImage alt="" src={imgSrc}/>
+          <LazyImage alt="Banner" src={imgSrc}/>
           <SectionContainer>
             <SectionContent>
               <SectionTitle>{title}</SectionTitle>

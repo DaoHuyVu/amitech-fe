@@ -8,15 +8,15 @@ export default function IntroductionSection2(){
     ]
     const columns = navigations.map((e,index) => {
         return(
-            <OptionButton link={`#introduction__section${index+2}`} key={index}>
+            <OptionButton link={`#introduction__section${index+2}`} key={index} className='col-auto'>
                 {e}
             </OptionButton>
         )
     })
     return(
         <section id="introduction__section2">
-            <div className="container d-flex flex-column align-items-center">
-                <div className="d-flex justify-content-center gap-3 pb-5">
+            <div className="container-fluid d-flex flex-column align-items-center">
+                <div className="row d-flex justify-content-center gap-3 pb-5">
                     {columns}
                 </div>
                 <div className="text-center">
