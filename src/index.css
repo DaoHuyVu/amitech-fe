@@ -303,6 +303,7 @@ a,a:hover,a:active,a:visited{
         display: none !important;
     }
 }
+
 @media only screen and (min-width : 576px) {
     .px-sm-10{
         padding : 0 10% !important;

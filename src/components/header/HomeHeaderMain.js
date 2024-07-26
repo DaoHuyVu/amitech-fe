@@ -6,7 +6,10 @@ import NavBarItemDropDown from "../nav/NavBarItemDropDown.js";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ImageButton from "../button/ImageButton.js";
+import { useContext} from "react";
+import { sidebarContext } from "../../pages/home/Home.js";
 export default function HomeHeaderMain(){
+    const {isShowSideBar,setIsShowSideBar} = useContext(sidebarContext)
     const navBarItems = <>
         <NavBarMenuItem link="/" >
                 <p>Trang chủ</p>
@@ -24,6 +27,9 @@ export default function HomeHeaderMain(){
             <p>Báo giá</p>
         </NavBarMenuItem>
     </>
+    const handleOpen = () => {
+        setIsShowSideBar(true)
+    }
     return(
         <div id="header-home-main" className="px-sm-10">
             <div className="container-fluid my-3">
@@ -32,8 +38,11 @@ export default function HomeHeaderMain(){
                     <HorizontalNavBar className="d-xxxl-flex d-none">
                         {navBarItems}
                     </HorizontalNavBar>
-                    <ImageButton style={{background : 'transparent',color : '#002a9e'}} className='d-inline-block d-xxxl-none h-100'>
-                        <FontAwesomeIcon icon={faBars} className="h-100"/>
+                    <ImageButton 
+                        className='d-xxxl-none'
+                        onClick={handleOpen}
+                    >
+                        <FontAwesomeIcon icon={faBars}/>
                     </ImageButton>
                 </div>
             </div>

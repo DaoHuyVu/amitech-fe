@@ -1,0 +1,10 @@
+/* Prevent the page to be scrolled when the menu sidebar is displayed */
+@media only screen and (max-width : 1600px) {
+    #app.show-menu-sidebar{
+        overflow : hidden !important;
+    }
+}
+#app{
+    width: 100vw;
+    height: 100vh;
+}

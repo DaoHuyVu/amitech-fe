@@ -22,6 +22,7 @@ export default function DigitalTransformation(){
                             src={Background1}
                             alt='CDS'
                             className='mw-100'
+                            loading='lazy'
                         />
                     </div>
                 </div>

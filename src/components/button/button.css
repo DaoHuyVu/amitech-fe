@@ -3,14 +3,27 @@
     border-radius: 5px;
     background-color: #006CE7;
     color : white;
-    padding : 0
 }
 .button__body{
     padding : 0.5rem;
 }
-.button__image{
+.image-button{
     height : 2rem;
-    width: 2rem;
+    width : 2rem;
+    color : #002a9e;
+    background-color: transparent;
+    padding: 0;
+    border : 0
+}
+
+.image-button .button__body{
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.button__body > *{
+    height: 100%;
+    width: 100%;
 }
 .button-option{
     background-color: transparent;

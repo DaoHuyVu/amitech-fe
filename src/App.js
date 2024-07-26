@@ -1,12 +1,13 @@
 // import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, {lazy,Suspense, useEffect}from "react";
-import { createBrowserRouter, RouterProvider, ScrollRestoration, useLocation } from 'react-router-dom';
+import React, {lazy,Suspense}from "react";
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ErrorPage } from "./components/error/ErrorPage";
 // import Home from './pages/home/Home'
 // import Products from "./pages/product/Products";
 // import News from "./pages/news/News";
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
   {
     path : '/',
     element : <DefaultLayout />,
+    errorElement : <ErrorPage />,
     children : [
       {
         index : true,

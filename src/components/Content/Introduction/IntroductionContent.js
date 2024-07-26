@@ -7,13 +7,13 @@ import Recruitment from "./Recruitment"
 import './introduction.css'
 export default function IntroductionContent(){
     return(
-        <>
+        <main >
             <IntroductionSection1 />
             <IntroductionSection2 />
             <IntroductionSection3 />
             <IntroductionSection4 />
             <IntroductionSection5 />
             <Recruitment />
-        </>
+        </main>
     )
 }

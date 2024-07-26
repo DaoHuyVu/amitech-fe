@@ -102,7 +102,7 @@ export default function Products(){
                                 <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
                                     <div style={{height : '350px'}} >
                                         <div style={{height : 'calc(350px - 1rem - 48px)'}} >
-                                            <img className=' w-100 h-100' src={e.src}  alt='Product ' />
+                                            <img loading="lazy"  className=' w-100 h-100' src={e.src}  alt='Product ' />
                                         </div>
                                         <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#001a6c'}}>
                                             <div className='p-2'>
@@ -139,7 +139,7 @@ export default function Products(){
                                 <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
                                     <div style={{height : '350px'}} >
                                         <div style={{height : 'calc(350px - 1rem - 48px)'}} >
-                                            <img className=' w-100 h-100' src={e.src}  alt='Product ' />
+                                            <img loading="lazy"  className=' w-100 h-100' src={e.src}  alt='Product ' />
                                         </div>
                                         <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#002a9e'}}>
                                             <div className='p-2'>
@@ -176,7 +176,7 @@ export default function Products(){
                                 <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={index}>
                                     <div style={{height : '350px'}} >
                                         <div style={{height : 'calc(350px - 1rem - 48px)'}} >
-                                            <img className=' w-100 h-100' src={e.src}  alt='Product ' />
+                                            <img loading="lazy"  className=' w-100 h-100' src={e.src}  alt='Product ' />
                                         </div>
                                         <div style={{height : 'calc(1rem + 48px)',backgroundColor : '#2253b8'}}>
                                             <div className='p-2'>

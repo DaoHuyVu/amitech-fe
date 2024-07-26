@@ -8,7 +8,7 @@ import Customer from "./Customer";
 import './home.css'
 export default function HomeContent(){
     return(
-        <div id="home">
+        <main id="home">
             <DigitalTransformation />
             <Introduction />
             <Solution />
@@ -16,6 +16,6 @@ export default function HomeContent(){
             <Project />
             <News />
             <Customer />
-        </div>
+        </main>
     )
 }
