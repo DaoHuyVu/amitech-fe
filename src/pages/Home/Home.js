@@ -25,10 +25,26 @@ export default function Home() {
     {
       name : 'Giải pháp chuyển đổi số',
       link : '/giai-phap-chuyen-doi-so',
+      children : [
+        {
+          name : 'Quản lý năng lượng INERGY',
+          link : '/quan-ly-nang-luong-inergy'
+        },
+        {
+          name : 'Quản lý kho',
+          link : '/quan-ly-kho'
+        }
+      ]
     },
     {
       name : 'Thiết bị & sản phẩm công nghiệp',
       link : '/thiet-bi-va-san-pham-cong-nghiep',
+      children : [
+        {
+          name : 'Thiết bị giám sát điện',
+          param : 'Thiết bị giám sát điện'
+        }
+      ]
     },
     {
       name : 'Tin tức và sự kiện',

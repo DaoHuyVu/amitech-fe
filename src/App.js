@@ -32,10 +32,6 @@ const Quote  = lazy(() => import("./components/Content/QuoteContent/QuoteContent
 const Contact = lazy(() => import("./components/Content/ContactContent/ContactContent"))
 const Activities = lazy(() => import("./components/Content/Activities/ActivitiesContent"))
 const router = createBrowserRouter([
-  // {
-  //   path : '/trang-chu',
-  //   element : <Home />,
-  // },
   {
     path : '/',
     element : <DefaultLayout />,

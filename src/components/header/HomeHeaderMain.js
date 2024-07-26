@@ -9,7 +9,7 @@ import ImageButton from "../button/ImageButton.js";
 import { useContext} from "react";
 import { sidebarContext } from "../../pages/home/Home.js";
 export default function HomeHeaderMain(){
-    const {isShowSideBar,setIsShowSideBar} = useContext(sidebarContext)
+    const {setIsShowSideBar} = useContext(sidebarContext)
     const navBarItems = <>
         <NavBarMenuItem link="/" >
                 <p>Trang chủ</p>

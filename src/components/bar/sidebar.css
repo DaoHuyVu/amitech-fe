@@ -53,13 +53,24 @@
 }
 #menu-content{
     width: 100%;
+
+}
+.menu-item-container{
+    display: flex;
+    border-bottom: 1px solid rgb(211, 194, 194);
+    align-items: center;
 }
 .menu-item{
     padding : 10px;
     display: block;
-    border-bottom: 1px solid rgb(211, 194, 194);
-    color : black
+    color : black;
+    flex-grow: 1;
 }
 .menu-item:active{
     color : #002a9e
+}
+.accordion-icon{
+    color : gray;
+    padding : 0 10px;
+    cursor: pointer;
 }

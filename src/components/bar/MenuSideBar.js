@@ -3,6 +3,8 @@ import './sidebar.css'
 import ImageButton from '../button/ImageButton'
 import { Link} from 'react-router-dom'
 import { sidebarContext } from '../../pages/home/Home'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
     const {setIsShowSideBar} = useContext(sidebarContext) 
 
@@ -11,9 +13,13 @@ const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
     }
     const menuItems = items.map((item,index) => {
         return(
-            <Link to={item.link} className='menu-item' key={index} onClick={handleClose} >
+            <div key={index} className='menu-item-container'>
+                <Link to={item.link} className='menu-item'  onClick={handleClose} >
                     {item.name}
-            </Link>
+                </Link>
+                {item.children && <FontAwesomeIcon className='accordion-icon' icon={faCaretDown}/>}
+                
+            </div>
         )
     })
     return(
