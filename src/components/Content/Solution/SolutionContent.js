@@ -3,7 +3,7 @@ import styled, {createGlobalStyle} from "styled-components";
 import Banner from "../../common/BannerWrapper";
 import Pagination from "../../common/Pagination";
 import imageBanner from "../../../assets/banner/giaiphap.png";
-
+import { Link } from "react-router-dom";
 const DigitalSolutionsPage = () => {
   const solutions = [
     {
@@ -80,12 +80,12 @@ const SolutionCard = ({title, description, imageSrc, isReversed}) => (
       <div className="solution-content">
         <h2 className="solution-title">{title}</h2>
         <p className="solution-description">{description}</p>
-        <a href="#" className="solution-link">
+        <Link to='/giai-phap-chuyen-doi-so/quan-ly-nang-luong' className="solution-link">
           Xem chi tiết
           <span className="icon-arrow-right">
             <i className="fas fa-arrow-right"/>
           </span>
-        </a>
+        </Link>
       </div>
     </article>
 );

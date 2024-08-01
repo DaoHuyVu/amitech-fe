@@ -1,4 +1,4 @@
-import img from '../../../assets/images/cau-hinh-he-thong 1.png'
+import img from '../../../../assets/images/cau-hinh-he-thong 1.png'
 export default function SystemModel(){
     return(
         <section id="solution-detail__system-model">

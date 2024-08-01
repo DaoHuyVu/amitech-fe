@@ -1,24 +1,25 @@
 import { forwardRef, useContext,} from 'react'
 import './sidebar.css'
 import ImageButton from '../button/ImageButton'
-import { Link} from 'react-router-dom'
-import { sidebarContext } from '../../pages/home/Home'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { NavLink} from 'react-router-dom'
+import { sidebarContext } from '../../layout/DefaultLayout'
 const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
     const {setIsShowSideBar} = useContext(sidebarContext) 
 
     const handleClose = () => {
         setIsShowSideBar(false)
     }
-    const menuItems = items.map((item,index) => {
+    const menuItems = items.map((item) => {
         return(
-            <div key={index} className='menu-item-container'>
-                <Link to={item.link} className='menu-item'  onClick={handleClose} >
+            <div key={item.id} className='menu-item-container'>
+                <NavLink to={item.slug}  onClick={handleClose}
+                className={({isActive}) => isActive ? 'menu-item-active menu-item' : 'menu-item'}>
                     {item.name}
-                </Link>
-                {item.children && <FontAwesomeIcon className='accordion-icon' icon={faCaretDown}/>}
-                
+                </NavLink>
+                {item.hasChildren && <FontAwesomeIcon className='accordion-icon' icon={faCaretDown}/>}
+
             </div>
         )
     })

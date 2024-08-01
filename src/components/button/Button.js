@@ -1,7 +1,7 @@
 import './button.css'
-export default function Button({type='button',style,children,onClick,className=''}){
+export default function Button({type='button',style,children,className=''}){
     return(
-       <button type={type} className={`${className} button`} style={style} onClick={onClick}>
+       <button type={type} className={`${className} button`} style={style} >
            <div className='button__body'>
                 {children}
            </div>

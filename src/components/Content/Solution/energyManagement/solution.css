@@ -6,7 +6,7 @@
     padding-right: 10%;
 }
 #solution-detail > section:nth-child(odd){
-    background-image : url('../../../assets/images/image\ 216.png');
+    background-image : url('../../../../assets/images/image\ 216.png');
 }
 #solution-detail__overview,
 #solution-detail__functionality,

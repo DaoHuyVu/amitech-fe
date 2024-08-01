@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import img from '../../../assets/images/image 257.png'
 import Button from '../../button/Button'
 import Pagination from '../../common/Pagination'
-export default function ProjectSection2(){
+export default function ProjectSection2({navigation}){
     const data = {
         current : 1,
         totalPages : 2,

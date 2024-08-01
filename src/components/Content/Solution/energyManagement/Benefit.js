@@ -1,4 +1,4 @@
-import img from '../../../assets/images/quan-ly-nang-luong 1.png'
+import img from '../../../../assets/images/quan-ly-nang-luong 1.png'
 export default function Benefit(){
     const data = [
         'Tính toán tiềm năng tiết kiệm Năng lượng',

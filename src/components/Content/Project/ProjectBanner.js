@@ -1,6 +1,6 @@
-import Banner from "../../common/BannerWrapper";
-import { getImageCover } from "../../../services/util";
-export default function SolutionBanner({navigation}){
+import Banner from "../../common/BannerWrapper"
+import { getImageCover } from "../../../services/util"
+export default function ProjectBanner({navigation}){
     return(
         <Banner 
             imgSrc={getImageCover(navigation)}

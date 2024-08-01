@@ -1,5 +1,5 @@
-import maytinh from '../../../assets/images/may tinh 1.png'
-import carouselImg from '../../../assets/images/Loại năng lượng sử dụng 1.png'
+import maytinh from '../../../../assets/images/may tinh 1.png'
+import carouselImg from '../../../../assets/images/Loại năng lượng sử dụng 1.png'
 import Slider from 'react-slick'
 export default function Functionality(){
     const settings = {

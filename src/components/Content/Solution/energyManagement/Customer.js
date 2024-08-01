@@ -1,4 +1,4 @@
-import img from '../../../assets/images/image 194.png'
+import img from '../../../../assets/images/image 194.png'
 export default function Customer(){
     const data = [img,img,img,img]
     return(
@@ -9,9 +9,9 @@ export default function Customer(){
                         {
                             data.map((e,index) => {
                                 return(
-                                    <div key={index} className='col-6 col-lg-3 col-xl-auto '>
+                                    <div key={index} className='col-12 col-sm-6 col-lg-3 col-xl-auto '>
                                         <div className='p-3 border border-2 text-center'>
-                                            <img src={e} alt='Customer' className='mw-100'/>
+                                            <img src={e} alt='Customer' className='mw-100' height='50px'/>
                                         </div>
                                     </div>
                                 )

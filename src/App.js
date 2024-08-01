@@ -1,13 +1,4 @@
 // import './App.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import React, {lazy,Suspense}from "react";
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css'
-import './index.css'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { ErrorPage } from "./components/error/ErrorPage";
 // import Home from './pages/home/Home'
 // import Products from "./pages/product/Products";
 // import News from "./pages/news/News";
@@ -19,10 +10,21 @@ import { ErrorPage } from "./components/error/ErrorPage";
 // import Project from "./pages/project/Project";
 // import JobDetails from "./pages/recruitment/JobDetails";
 // import NewsDetail from "./pages/news/NewsDetail";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import React, {lazy,Suspense}from "react";
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { ErrorPage } from "./components/error/ErrorPage";
+const EnergyManagement = lazy(() => import("./components/Content/Solution/energyManagement/EnergyManagement"))
+const BaseSolution = lazy(() => import("./components/Content/Solution/BaseSolution"));
+const BaseProject = lazy(() => import("./components/Content/Project/BaseProject"));
 const HomeContent =  lazy(() => import("./components/Content/Home/HomeContent"));
 const Recruitment = lazy(() =>import("./components/Content/Recruitment/RecruitmentContent"));
-const DefaultLayout  = lazy(() => import("./pages/home/Home"))
-const Home2 = lazy(() => import("./pages/home/Home2"))
+const DefaultLayout  = lazy(() => import("./layout/DefaultLayout"))
 const Introduction  = lazy(() => import("./components/Content/Introduction/IntroductionContent"))
 const Project  = lazy(() => import("./components/Content/Project/ProjectContent"))
 const Solution  = lazy(() => import("./components/Content/Solution/SolutionContent"))
@@ -43,15 +45,31 @@ const router = createBrowserRouter([
       },
       {
         path : 'gioi-thieu',
-        element : <Introduction />
+        element : <Introduction />,
       },
       {
         path : 'du-an-tieu-bieu',
-        element : <Project />
+        element : <BaseProject/>,
+        children : [
+          {
+            index : true,
+            element : <Project />
+          }
+        ]
       },
       {
         path : 'giai-phap-chuyen-doi-so',
-        element : <Solution />
+        element : <BaseSolution />,
+        children : [
+          {
+            index : true,
+            element : <Solution />
+          },
+          {
+            path : 'quan-ly-nang-luong',
+            element : <EnergyManagement />
+          }
+        ]
       },
       {
         path : 'thiet-bi-va-san-pham-cong-nghiep',
@@ -73,10 +91,7 @@ const router = createBrowserRouter([
         path : 'tuyen-dung',
         element : <Recruitment />
       },
-      {
-        path : 'hinh-anh-hoat-dong',
-        element : <Activities />
-      }
+      
     ]
   }, 
 ])

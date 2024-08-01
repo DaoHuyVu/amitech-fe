@@ -1,5 +1,5 @@
-import img1 from '../../../assets/images/image 265.png'
-import Button from '../../button/Button'
+import img1 from '../../../../assets/images/image 265.png'
+import Button from '../../../button/Button'
 export default function Overview(){
     
     return (

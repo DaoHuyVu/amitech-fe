@@ -6,27 +6,31 @@ import NavBarItemDropDown from "../nav/NavBarItemDropDown.js";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ImageButton from "../button/ImageButton.js";
-import { useContext} from "react";
-import { sidebarContext } from "../../pages/home/Home.js";
+import { useContext, useEffect, useState} from "react";
+import { sidebarContext } from "../../layout/DefaultLayout.js";
+import { getPrimaryNavigation } from "../../services/header.js";
 export default function HomeHeaderMain(){
     const {setIsShowSideBar} = useContext(sidebarContext)
-    const navBarItems = <>
-        <NavBarMenuItem link="/" >
-                <p>Trang chủ</p>
+    const [navigations,setNavigations] = useState([])
+    useEffect(() => {
+        const fetchNavs = async () => {
+            try{
+                const res = await getPrimaryNavigation()
+                setNavigations(res.data.data)
+            }catch(err){
+                console.log(err)
+            }
+        }
+        fetchNavs()
+    },[])
+    const navBarItems = navigations.map((navigation) => {
+        return navigation.hasChildren ? 
+        <NavBarItemDropDown key={navigation.id} name={navigation.name} link = {navigation.slug}/>
+        :
+        <NavBarMenuItem link = {navigation.slug} key={navigation.id}>
+            <p>{navigation.name}</p>
         </NavBarMenuItem>
-        <NavBarItemDropDown name = 'Giới thiệu' link = "/gioi-thieu"  />
-        <NavBarMenuItem link = "/du-an-tieu-bieu" >
-            <p>Dự án tiêu biểu</p>
-        </NavBarMenuItem>
-        <NavBarItemDropDown name = 'Giải pháp chuyển đổi số' link = "/giai-phap-chuyen-doi-so"  />
-        <NavBarItemDropDown name = 'Thiết bị & sản phẩn công nghiệp' link = "/thiet-bi-va-san-pham-cong-nghiep"  />
-        <NavBarMenuItem link = "/tin-tuc" >
-            <p>Tin tức và sự kiện</p>
-        </NavBarMenuItem>
-        <NavBarMenuItem link = "/bao-gia" >
-            <p>Báo giá</p>
-        </NavBarMenuItem>
-    </>
+    })
     const handleOpen = () => {
         setIsShowSideBar(true)
     }
