@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation} from 'react-router-dom'
 import { getOtherSolutions } from '../../../../services/solution'
-import { getImageCover } from '../../../../services/util'
+import { getNavigationImageCover } from '../../../../services/util'
 import { concatePath } from '../../../../utils/parseUrl'
 export default function OtherSolutions({navigation}){
     const location = useLocation()
@@ -25,7 +25,7 @@ export default function OtherSolutions({navigation}){
                                 <div key={index} className='col-12 col-md-6 col-xl-4 col-xxl-3 '>
                                     <div className='h-100 d-flex flex-column'>
                                         <div>
-                                            <img src={getImageCover(e)} alt='Solution' className='mw-100 w-100'/>
+                                            <img src={getNavigationImageCover(e)} alt='Solution' className='mw-100 w-100'/>
                                         </div>
                                         <div className='p-3 flex-fill d-flex flex-column' style={{backgroundColor : 'white'}}>
                                             <h5 style={{color : '#4d4d4d'}}>{e.name}</h5>

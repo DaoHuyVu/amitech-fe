@@ -1,4 +1,3 @@
-import { height } from '@fortawesome/free-regular-svg-icons/faAddressBook'
 import Background1 from '../../../assets/images/img4.png'
 import Button from '../../button/Button'
 import LeftScrollContainer from '../../scroller/LeftScroll'

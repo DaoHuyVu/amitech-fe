@@ -19,6 +19,7 @@ import './index.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ErrorPage } from "./components/error/ErrorPage";
+import { projectLoader } from "./components/Content/Project/ProjectDetailContent";
 const EnergyManagement = lazy(() => import("./components/Content/Solution/energyManagement/EnergyManagement"))
 const BaseSolution = lazy(() => import("./components/Content/Solution/BaseSolution"));
 const BaseProject = lazy(() => import("./components/Content/Project/BaseProject"));
@@ -33,6 +34,7 @@ const News  = lazy(() => import("./components/Content/NewsContent/NewsContent2")
 const Quote  = lazy(() => import("./components/Content/QuoteContent/QuoteContent"))
 const Contact = lazy(() => import("./components/Content/ContactContent/ContactContent"))
 const Activities = lazy(() => import("./components/Content/Activities/ActivitiesContent"))
+const ProjectDetailContent = lazy(() => import("./components/Content/Project/ProjectDetailContent"))
 const router = createBrowserRouter([
   {
     path : '/',
@@ -54,6 +56,11 @@ const router = createBrowserRouter([
           {
             index : true,
             element : <Project />
+          },
+          {
+            path : ':id',
+            element : <ProjectDetailContent />,
+            loader : projectLoader
           }
         ]
       },

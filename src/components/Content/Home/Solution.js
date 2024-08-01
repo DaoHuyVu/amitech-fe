@@ -3,7 +3,7 @@ import Button from '../../button/Button'
 import HoverableHeroImage from '../../heroImage/HoverableHeroImage'
 import { Link } from 'react-router-dom'
 import { getSubNavigations } from '../../../services/navigation'
-import { getImageCover } from '../../../services/util'
+import { getNavigationImageCover } from '../../../services/util'
 export default function Solution(){
     const [data,setData] = useState([])
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function Solution(){
         return (
            <div className='col-12 col-sm-6 col-lg-4 col-xxl-3 ' key = {e.id}>
                 <HoverableHeroImage className='hoverable-hero-image--bg-dim' 
-                src={getImageCover(e)} title = {e.name} slug={e.url}>
+                src={getNavigationImageCover(e)} title = {e.name} slug={e.url}>
                     <p>{e.description}</p>
                 </HoverableHeroImage>
            </div>

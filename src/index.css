@@ -320,3 +320,8 @@ a,a:hover,a:active,a:visited{
         font-size: 2rem !important;
     }
 }
+/* ================================ Post content css ==============================*/
+#post-content img{
+    width: 75%;
+    height: auto;
+}
