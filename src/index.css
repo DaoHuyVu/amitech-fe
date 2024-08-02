@@ -265,10 +265,10 @@ a,a:hover,a:active,a:visited{
     left : -60px;
     bottom : 0;
 }
-
 .sided-carousel{
     padding-left : 60px;
 }
+
 .sided-carousel .sided-navigation img{
     max-width: 100% ;
     display: block;

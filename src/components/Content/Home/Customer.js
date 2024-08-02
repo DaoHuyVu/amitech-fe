@@ -16,7 +16,7 @@ export default function Customer(){
         <section id="home_customer">
             <div className="container">
                 <div className="text-center pb-4 ">
-                    <h5 style={{fontWeight : '700',color : '#4D4D4D'}}>ĐỐI TÁC VÀ KHÁCH HÀNG</h5>
+                    <h4 style={{fontWeight : '700',color : '#4D4D4D'}}>ĐỐI TÁC VÀ KHÁCH HÀNG</h4>
                 </div>
                 <div className="row g-3 pb-3">
                     {customerData.map((e,index)=>{
@@ -36,7 +36,8 @@ export default function Customer(){
                         <img src={bg7} alt ='PriceImg' className='mw-100'/> 
                     </div>
                     <Form className='col-12 col-lg-6 d-flex flex-column py-4 justify-content-center
-                     align-items-center align-items-lg-start order-1 order-lg-2 row-gap-4'>
+                     align-items-center align-items-lg-start order-1 order-lg-2 row-gap-4' method='post'
+                     action='/'>
                         <h4>ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ</h4>
                         <Input  placeholder='Họ tên *' className='w-75' type='text' required/>
                         <Input  placeholder='Số điện thoại *' type='number'className='w-75' required/>
