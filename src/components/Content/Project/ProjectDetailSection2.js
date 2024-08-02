@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import parser from 'html-react-parser'
 import { getRelatedProjects } from '../../../services/project'
 import { useEffect, useState } from 'react'
-import { getPostNavigationArray, getPostProfile } from '../../../services/util'
+import { getPostNavigation, getPostProfile } from '../../../services/util'
 import { concatePath } from '../../../utils/parseUrl'
 export default function ProjectDetailSection2({project}){
     const [relatedProjects,setRelatedProjects] = useState([])
@@ -12,8 +12,8 @@ export default function ProjectDetailSection2({project}){
     useEffect(()=>{
         const fetchProjects = async () => {
             try{
-                const navigationsArr = getPostNavigationArray(project)
-                const res = await getRelatedProjects(navigationsArr[0].attributes.slug,project.id)
+                const navigation = getPostNavigation(project)
+                const res = await getRelatedProjects(navigation,project.id)
                 setRelatedProjects(res.data.data)
             }catch(err){
                 console.log(err)
@@ -33,7 +33,7 @@ export default function ProjectDetailSection2({project}){
                         </div>
                     </div>
                     <Button style={{backgroundColor : 'transparent',color : '#00c2ff',border : 'none'}}>
-                        <Link to={concatePath(urlArr,urlArr.length-1,`/${e.id}`)} >
+                        <Link to={concatePath(urlArr,urlArr.length-1,`/${e.attributes.slug}`)}>
                             Xem chi tiết &gt;&gt;
                         </Link>
                     </Button>

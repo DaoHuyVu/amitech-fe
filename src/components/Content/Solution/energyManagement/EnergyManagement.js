@@ -17,7 +17,7 @@ export default function EnergyManagement(){
         const fetchNav = async () => {
             try{
                 const res = await getNavigation(getLastPathname(location.pathname))
-                setNavigation(res.data.data[0])
+                setNavigation(res)
             }catch(err){
                 console.log(err)
             }

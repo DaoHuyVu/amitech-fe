@@ -72,8 +72,10 @@
 .menu-item:active{
     color : #002a9e
 }
+
 .accordion-icon{
     color : gray;
     padding : 0 10px;
     cursor: pointer;
 }
+

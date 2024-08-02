@@ -13,7 +13,7 @@ export default function ProjectContent(){
         const fetchNav = async () => {
            try{
             const res = await getNavigation(location.pathname)
-            setNavigation(res.data.data[0])
+            setNavigation(res)
            }catch(err){
             console.log(err)
            }         
@@ -24,7 +24,7 @@ export default function ProjectContent(){
         const fetchPosts = async () => {
             try{
                 const res = await getPosts(navigation.slug)
-                setPostInfo(res.data)
+                setPostInfo(res)
             }catch(err){
                 console.log(err)
             }

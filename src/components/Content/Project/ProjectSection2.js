@@ -1,4 +1,3 @@
-import { decode } from 'html-entities'
 import { getPostProfile } from '../../../services/util'
 import Button from '../../button/Button'
 import Pagination from '../../common/Pagination'
@@ -9,6 +8,7 @@ export default function ProjectSection2({data}){
     const location = useLocation()
     const projects = data.data
     const pagination = data.meta.pagination
+    console.log(projects)
     const cols = projects.map((e)=>{
         return(
             <div className='col-12 col-md-6 col-lg-4 col-xxl-3 d-flex flex-column' key={e.id}>
@@ -23,7 +23,7 @@ export default function ProjectSection2({data}){
                         </div>
                     </div>
                     <Button style={{backgroundColor : 'transparent',color : '#00c2ff',border : 'none'}}>
-                        <Link to={`${hostName}${location.pathname}/${e.id}`}>
+                        <Link to={`${hostName}${location.pathname}/${e.attributes.slug}`}>
                             Xem chi tiết &gt;&gt;
                         </Link>
                     </Button>

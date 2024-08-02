@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from 'styled-components';
 import Pagination from "../../common/Pagination";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function ProductComponent() {
   const {state} = useLocation()
@@ -110,7 +110,9 @@ function ProductComponent() {
                                    src={product.imageUrl}/>
                     <CategoryDescription>
                       <CategoryTitle>{product.name}</CategoryTitle>
+                      <Link to='/thiet-bi-va-san-pham-cong-nghiep/may-chu-thu-thap-du-lieu-tiet-kiem-nang-luong'>
                       <CategoryText>{product.description}</CategoryText>
+                      </Link>
                     </CategoryDescription>
                   </CategoryContainer>
                 </CategoryColumn>

@@ -20,9 +20,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ErrorPage } from "./components/error/ErrorPage";
 import { projectLoader } from "./components/Content/Project/ProjectDetailContent";
+import BaseContainer from "./components/Content/BaseContainer";
+import {loader as ProductDetailLoader } from "./components/Content/ProductsContent/ProductDetailContent"
 const EnergyManagement = lazy(() => import("./components/Content/Solution/energyManagement/EnergyManagement"))
 const BaseSolution = lazy(() => import("./components/Content/Solution/BaseSolution"));
-const BaseProject = lazy(() => import("./components/Content/Project/BaseProject"));
 const HomeContent =  lazy(() => import("./components/Content/Home/HomeContent"));
 const Recruitment = lazy(() =>import("./components/Content/Recruitment/RecruitmentContent"));
 const DefaultLayout  = lazy(() => import("./layout/DefaultLayout"))
@@ -35,6 +36,7 @@ const Quote  = lazy(() => import("./components/Content/QuoteContent/QuoteContent
 const Contact = lazy(() => import("./components/Content/ContactContent/ContactContent"))
 const Activities = lazy(() => import("./components/Content/Activities/ActivitiesContent"))
 const ProjectDetailContent = lazy(() => import("./components/Content/Project/ProjectDetailContent"))
+const ProductDetailContent =lazy(()=> import("./components/Content/ProductsContent/ProductDetailContent"))
 const router = createBrowserRouter([
   {
     path : '/',
@@ -51,14 +53,14 @@ const router = createBrowserRouter([
       },
       {
         path : 'du-an-tieu-bieu',
-        element : <BaseProject/>,
+        element : <BaseContainer/>,
         children : [
           {
             index : true,
             element : <Project />
           },
           {
-            path : ':id',
+            path : ':slug',
             element : <ProjectDetailContent />,
             loader : projectLoader
           }
@@ -80,7 +82,18 @@ const router = createBrowserRouter([
       },
       {
         path : 'thiet-bi-va-san-pham-cong-nghiep',
-        element : <Products />
+        element : <BaseContainer/>,
+        children : [
+          {
+            index : true,
+            element : <Products />
+          },
+          {
+            path : ':slug',
+            element : <ProductDetailContent />,
+            loader : ProductDetailLoader
+          }
+        ]
       },
       {
         path : 'tin-tuc',
@@ -99,7 +112,7 @@ const router = createBrowserRouter([
         element : <Recruitment />
       },
       
-    ]
+    ] 
   }, 
 ])
 function App() {

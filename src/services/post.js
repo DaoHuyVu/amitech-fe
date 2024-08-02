@@ -1,8 +1,11 @@
 import axios from './AxiosInstance'
+import { handleGetMethod } from './common'
 
-export const getPosts = (slug) => {
-    return axios.get(`/posts?filters[navigations][slug]=${slug}&fields[1]=postTitle&fields[2]=postDescription&populate[0]=profile`)
+export const getPosts = async (slug) => {
+    let response = await handleGetMethod(() => axios.get(`/posts?filters[navigations][slug]=${slug}&fields[0]=postTitle&fields[1]=postDescription&fields[2]=slug&populate[0]=profile`))
+    return response.data
 }
-export const getPostsDetail = (id) => {
-    return axios.get(`posts?filters[id]=${id}&populate[0]=images`)
+export const getPostDetail = async (slug) => {
+    let response = await handleGetMethod(() => axios.get(`/posts?filters[slug]=${slug}&populate=*`))
+    return response.data.data[0]
 }

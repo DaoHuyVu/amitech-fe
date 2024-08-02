@@ -29,7 +29,7 @@ const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
             <div id='sidebar' ref={ref}>
                 <div id='menu'>
                         <ImageButton onClick={handleClose}>
-                            <h4 className='fw-bold'>X</h4>
+                            <h5 style={{color : 'black'}}>X</h5>
                         </ImageButton>
                     <div id='menu-content'>
                         {menuItems}

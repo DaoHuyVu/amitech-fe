@@ -14,8 +14,8 @@ export function getPostProfile(response){
     return `${host}${response.attributes.profile.data.attributes.url}`
 }
 // To retrieve a single navigation slug, user must call res.attributes.slug
-export function getPostNavigationArray(response){
-    return response.attributes.navigations.data
+export function getPostNavigation(response){
+    return response.attributes.navigations.data[0].attributes.slug
 }
 
 
