@@ -86,7 +86,7 @@ export default function HomeSection6(){
             <div className='col-12 col-md-6' key={index}>
                 <div className='d-flex flex-column h-100' style={{backgroundColor : '#f1f7ff'}}>
                     <div className='retained-4-7-image-wrapper'>
-                        <img loading='lazy' src={e.src} alt='News' className='aspect-image'/>
+                        <img loading='lazy' src={e.src} alt='News' className='aspect-retained-image'/>
                     </div>
                     <div className='flex-grow-1 d-flex flex-column p-3'>
                         <p className='pb-2' style = {{color : '#4D4D4DB2',fontSize : '0.8rem'}}>{e.categoryName}</p>

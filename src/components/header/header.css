@@ -1,3 +1,9 @@
+#header{
+    position: sticky;
+    top : 0;
+    width: 100%;
+    z-index: 4
+}
 #header-home-top{
     padding : 0 10%;
     font-size: 0.7rem;
@@ -6,6 +12,9 @@
 #header-home-main{
     font-size : 0.8rem;
     font-weight: 500;
+    background-color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .language-chooser{
     display: flex;

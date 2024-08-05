@@ -13,7 +13,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, {lazy,Suspense}from "react";
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, ScrollRestoration} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
 import "slick-carousel/slick/slick.css";
@@ -46,6 +46,10 @@ const router = createBrowserRouter([
       {
         index : true,
         element : <HomeContent />
+      },
+      {
+        path : '/tim-kiem',
+        
       },
       {
         path : 'gioi-thieu',
@@ -119,6 +123,11 @@ function App() {
   return (
     <Suspense fallback={<div>...Loading</div>}>
       <RouterProvider router={router}>
+        <ScrollRestoration 
+          getKey={(location) => {
+            return location.pathname
+          }}
+        />
       </RouterProvider>
     </Suspense>
   );

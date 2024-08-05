@@ -9,9 +9,9 @@ export default function ProductDetailSection1({data}){
     const settings = {
         customPaging: function(i) {
             return (
-              <a className="retained-4-7-image-wrapper d-block" role='none'>
+              <button className="retained-4-7-image-wrapper d-block" role='none'>
                 <img src={getPostImage(carouselItems[i])} alt='Carousel Item' className="retained-4-7-image" />
-              </a>
+              </button>
             );
         },
         infinite : false,

@@ -1,6 +1,7 @@
 import searchIcon from '../../assets/images/search-icon.png'
 import {useState} from 'react'
 import './search-bar.css'
+import { Form} from 'react-router-dom';
 
 export default function SearchBar(){
     const [searchQuery,setQuery] = useState('');
@@ -8,17 +9,19 @@ export default function SearchBar(){
         setQuery(e.target.value)
     }
     return (
-        <span className="home-search-container" >
+        <Form className="home-search-container">
             <input 
+                name='s'
                 className = "home-search-input"
                 placeholder="Nhập nội dung tìm kiếm..."
-                type="text"
+                type="search"
                 value={searchQuery}
-                onChange={handleQueryChange}        
+                onChange={handleQueryChange}
             />
-            <div className="home-search-icon-background">
+            <button className="home-search-icon-background" >
                 <img src={searchIcon} alt="SearchIcon" className='home-search-bar-icon'/>
-            </div>
-        </span>
+            </button>
+           
+        </Form>
     )
 }

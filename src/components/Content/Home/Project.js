@@ -5,6 +5,11 @@ import { useEffect, useState } from 'react'
 import { getProjects } from '../../../services/project'
 import { getPostProfile } from '../../../services/util'
 import { hostName } from '../../../config/domain'
+import TCard from '../../card/TCard'
+import TCardContent from '../../card/CardContent'
+import TCardTitle from '../../card/CardTitle'
+import CardDescription from '../../card/CardDescription'
+import ImageCard from '../../card/Image34Card'
 export default function Project(){
     const [projects,setProjects] = useState([])
     useEffect(() => {
@@ -21,22 +26,22 @@ export default function Project(){
     const columns = projects.map((e) => {
         return (
             <div className="col-12 col-md-6 col-xl-4 col-xxl-3" key={e.id}>
-               <div className='d-flex flex-column h-100'>
-                    <div className='aspect-2-3-image-wrapper'>
-                        <img src={getPostProfile(e)} alt='Project Img' className='aspect-image'/>
-                    </div>
-                    <div className='p-3 d-flex flex-column flex-grow-1 align-items-start' style={{backgroundColor:'#f4f9ff1a'}}>
-                        <h5 className='lh-base'>{e.attributes.postTitle}</h5>
-                        <div style={{color : '#FFFFFFB2'}} className='flex-grow-1'>
+                <TCard>
+                    <ImageCard src={getPostProfile(e) }/>
+                    <TCardContent style={{backgroundColor : '#f4f9ff1a'}}>
+                        <TCardTitle>
+                            {e.attributes.postTitle}
+                        </TCardTitle>
+                        <CardDescription style={{color : '#ffffffb2'}}>
                             {parse(e.attributes.postDescription)}
-                        </div>
+                        </CardDescription>
                         <Button style={{border : 'none',backgroundColor : 'transparent',color : '#00c2ff'}}>
-                            <Link to={`${hostName}/du-an-tieu-bieu/${e.attributes.slug}`}>
+                            <Link to={`${hostName}/du-an-tieu-bieu/${e.attributes.slug}`}> 
                                 Xem thêm &gt;&gt;
                             </Link>
                         </Button>
-                    </div>
-               </div>
+                    </TCardContent>
+                </TCard>
             </div>
         )
     }) 

@@ -53,7 +53,7 @@ export default function Functionality(){
                                 {carouselItems.map((e,index) => {
                                     return (
                                        <div className="aspect-3-5-image-wrapper" key={index}>
-                                            <img src={e} alt='Computer' className='aspect-image h-100' />
+                                            <img src={e} alt='Computer' className='aspect-retained-image h-100' />
                                        </div>
                                     )
                                 })}

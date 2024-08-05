@@ -29,7 +29,7 @@
     height: 2.3em;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    border : none
 }
 .home-search-bar-icon{
     width: 1.2em;

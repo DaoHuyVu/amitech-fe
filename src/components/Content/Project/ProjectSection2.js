@@ -8,7 +8,6 @@ export default function ProjectSection2({data}){
     const location = useLocation()
     const projects = data.data
     const pagination = data.meta.pagination
-    console.log(projects)
     const cols = projects.map((e)=>{
         return(
             <div className='col-12 col-md-6 col-lg-4 col-xxl-3 d-flex flex-column' key={e.id}>

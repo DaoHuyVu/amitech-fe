@@ -1,9 +1,13 @@
 import Button from '../../button/Button'
-import Scroller from '../../scroller/Scroller'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getProducts } from '../../../services/product'
 import { getPostProfile } from '../../../services/util'
+import TCard from '../../card/TCard'
+import ImageCard from '../../card/Image34Card'
+import CardContent from '../../card/CardContent'
+import CardTitle from '../../card/CardTitle'
+import CardDescription from '../../card/CardDescription'
 export default function Products(){
     const [products,setProducts] = useState([])
     const bgColor = ['#001a6c','#002a9e','#2253b8']
@@ -34,34 +38,32 @@ export default function Products(){
                     return (
                         <div className='row g-3 pb-3' key={product.id}>
                             <div className='col-12 col-sm-6 col-lg-4 col-xxl-3'>
-                                <div className='p-3 d-flex flex-column align-items-start rounded' style={{backgroundColor : `${bgColor[index]}`,height : '350px'}}>
-                                    <h3 className='text-uppercase pb-2'>{product.attributes.title}</h3>
-                                    <div className='flex-grow-1 w-100' style={{marginBottom : '12px'}} >
-                                        <Scroller >
-                                            <p>{product.attributes.description}</p>
-                                        </Scroller>
-                                </div>
-                                <Button style={{backgroundColor : 'transparent'}}>
-                                    <Link to='/thiet-bi-va-san-pham-cong-nghiep' state={{category : `${product.attributes.title}`}} >
-                                        <p style={{color : 'white'}}>Xem thêm &gt;&gt;</p>
-                                    </Link>
-                                </Button>
-                            </div>
+                                <TCard className='p-2 rounded' style={{backgroundColor:`${bgColor[index]}`,minHeight : '250px'}}>
+                                    <h3 className='px-2'>{product.attributes.title}</h3>
+                                    <CardContent>
+                                        <CardDescription>
+                                            {product.attributes.description}
+                                        </CardDescription>
+                                    <Button style={{backgroundColor : 'transparent',border : 'none'}} className='p-0'>
+                                        <Link to='/thiet-bi-va-san-pham-cong-nghiep' state={{category : `${product.attributes.title} `}} >
+                                            <p style={{color : 'white'}}>Xem thêm &gt;&gt;</p>
+                                        </Link>
+                                    </Button>
+                                    </CardContent>
+                            </TCard>
                         </div>
                     {
                         product.attributes.posts.data.map((e) => {
                             return(
                                 <div className='col-12 col-sm-6 col-lg-4 col-xxl-3' key={e.id}>
-                                    <div>
-                                        <div style={{height : 'calc(350px - 1rem - 48px)'}} >
-                                            <img loading="lazy"  className=' w-100 h-100' src={getPostProfile(e)}  alt='Product ' />
-                                        </div>
-                                        <div style={{height:'calc(1rem + 48px)',backgroundColor:`${bgColor[index]}`}}>
-                                            <div className='p-2'>
+                                    <TCard > 
+                                        <ImageCard src={getPostProfile(e)}></ImageCard>
+                                        <CardContent className='rounded-bottom'style={{backgroundColor:`${bgColor[index]}`}}>
+                                            <CardTitle maxLines={2}>
                                                 {e.attributes.postTitle}
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </CardTitle>
+                                        </CardContent>
+                                    </TCard>
                                 </div>
                             )
                         })
@@ -72,4 +74,4 @@ export default function Products(){
             </div>
     </section> 
     )
-}
+} 

@@ -36,7 +36,7 @@ export default function HomeHeaderMain(){
     }
     return(
         <div id="header-home-main" className="px-sm-10">
-            <div className="container-fluid my-3">
+            <div className="container-fluid">
                 <div className="d-flex justify-content-between">
                     <Logo img={logo} to='/'/>
                     <HorizontalNavBar className="d-xxxl-flex d-none">

@@ -20,7 +20,7 @@ export default function ProductDetailSection2({data}){
            }
         }
         fetchProducts()
-    },[])
+    },[data])
     const cols = relatedProducts.map((e) => {
         return (
             <div className='col-12 col-md-6 col-xl-12 d-flex flex-column' key={e.id}>
