@@ -22,6 +22,7 @@ import { ErrorPage } from "./components/error/ErrorPage";
 import { projectLoader } from "./components/Content/Project/ProjectDetailContent";
 import BaseContainer from "./components/Content/BaseContainer";
 import {loader as ProductDetailLoader } from "./components/Content/ProductsContent/ProductDetailContent"
+import { loader as SearchLoader} from "./components/Content/Search/SearchResults";
 const EnergyManagement = lazy(() => import("./components/Content/Solution/energyManagement/EnergyManagement"))
 const BaseSolution = lazy(() => import("./components/Content/Solution/BaseSolution"));
 const HomeContent =  lazy(() => import("./components/Content/Home/HomeContent"));
@@ -37,6 +38,7 @@ const Contact = lazy(() => import("./components/Content/ContactContent/ContactCo
 const Activities = lazy(() => import("./components/Content/Activities/ActivitiesContent"))
 const ProjectDetailContent = lazy(() => import("./components/Content/Project/ProjectDetailContent"))
 const ProductDetailContent =lazy(()=> import("./components/Content/ProductsContent/ProductDetailContent"))
+const SearchResult  = lazy(() => import('./components/Content/Search/SearchResults'))
 const router = createBrowserRouter([
   {
     path : '/',
@@ -49,7 +51,8 @@ const router = createBrowserRouter([
       },
       {
         path : '/tim-kiem',
-        
+        element : <SearchResult />,
+        loader : SearchLoader
       },
       {
         path : 'gioi-thieu',

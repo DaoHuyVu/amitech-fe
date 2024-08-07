@@ -1,19 +1,16 @@
 import Header from "../components/header/HomeHeader";
 import Footer from "../components/footer/Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { createContext, useEffect, useRef, useState } from "react";
 import MenuSideBar from "../components/bar/MenuSideBar";
 import './layout.css'
 import {getPrimaryNavigation} from '../services/header'
-
-
-
 export const sidebarContext = createContext()
 export default function Home() {
   const [isShowSideBar,setIsShowSideBar] = useState(false)
   const [navigations,setNavigations] = useState([])
   const sidebarRef = useRef(null)
-  
+  const location = useLocation()
   useEffect(() => {
     const fetchNavs = async () => {
       try{
@@ -41,8 +38,8 @@ export default function Home() {
   }
   return (
       <sidebarContext.Provider value={{isShowSideBar,setIsShowSideBar}}>
-        <div id="layout" className={isShowSideBar ? 'show-menu-sidebar' : ''}>
-          <Header />
+        <div id="layout">
+          <Header key={location}/>
           <MenuSideBar 
             ref={sidebarRef}
             handleClose={handleClose}
