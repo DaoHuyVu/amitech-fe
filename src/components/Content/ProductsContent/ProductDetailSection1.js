@@ -4,7 +4,6 @@ import Slider from "react-slick"
 import parser from 'html-react-parser'
 import { getPostImage, getPostImageArray } from "../../../services/util"
 export default function ProductDetailSection1({data}){
-    console.log(data)
     const carouselItems = getPostImageArray(data)
     const settings = {
         customPaging: function(i) {

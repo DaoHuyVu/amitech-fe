@@ -20,8 +20,13 @@
     padding: 0;
     height: 100%;
     width: 100%;
+    position: relative;
 }
-.button__body > *{
+.image-button .button__body > *{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     height: 100%;
     width: 100%;
 }
