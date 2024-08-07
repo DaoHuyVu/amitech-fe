@@ -12,14 +12,17 @@ export default function SearchResults(){
     const {results} = useLoaderData()
     return (
         <main id='search-results'>
-            <div className='container-fluid'>
-            <h2 className='pb-4 px-3' style={{color : 'black'}}>Kết quả tìm kiếm</h2>
+            <div className='container-fluid' style={{color : 'black'}}>
+            <h2 className='pb-4 px-3' >Kết quả tìm kiếm</h2>
                 {
+                    results.data.length > 0 ? 
                     results.data.map(e => {
                         return (
                             <SearchItem item={e} key={e.id} className='pb-3'/>
                         )
                     })
+                    :
+                    <h4 className='px-3'>Không tìm thấy bài viết</h4>
                 }
             </div>
         </main>

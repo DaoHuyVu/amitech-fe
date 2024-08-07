@@ -43,7 +43,7 @@ const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
                     {
                         item.childrenNavigations.map((child) => {
                             return (
-                                <NavLink to={`${item.slug}${child.slug}`}  onClick={handleClose}
+                                <NavLink to={`${item.slug}${child.slug}`}  onClick={handleClose} key={child.id}
                                 className={({isActive}) => isActive ? 'menu-item__title-active menu-item__title' : 'menu-item__title'}>
                                     {child.name}
                                 </NavLink>

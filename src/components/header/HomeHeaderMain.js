@@ -9,6 +9,7 @@ import ImageButton from "../button/ImageButton.js";
 import { useContext, useEffect, useState} from "react";
 import { sidebarContext } from "../../layout/DefaultLayout.js";
 import { getPrimaryNavigation } from "../../services/header.js";
+import SubMenuItems from "../nav/SubMenuItems.js";
 export default function HomeHeaderMain(){
     const {setIsShowSideBar} = useContext(sidebarContext)
     const [navigations,setNavigations] = useState([])
@@ -25,7 +26,9 @@ export default function HomeHeaderMain(){
     },[])
     const navBarItems = navigations.map((navigation) => {
         return navigation.hasChildren ? 
-        <NavBarItemDropDown key={navigation.id} name={navigation.name} link = {navigation.slug}/>
+        <NavBarItemDropDown key={navigation.id} name={navigation.name} link = {navigation.slug}>
+            <SubMenuItems items={navigation.childrenNavigations} parent={navigation.slug} />
+        </NavBarItemDropDown>
         :
         <NavBarMenuItem link = {navigation.slug} key={navigation.id}>
             <p>{navigation.name}</p>
@@ -44,8 +47,7 @@ export default function HomeHeaderMain(){
                     </HorizontalNavBar>
                     <ImageButton 
                         className='d-xxxl-none'
-                        onClick={handleOpen}
-                    >
+                        onClick={handleOpen}>
                         <FontAwesomeIcon icon={faBars}/>
                     </ImageButton>
                 </div>
