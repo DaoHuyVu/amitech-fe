@@ -1,4 +1,4 @@
-import {getPostNavigation, getPostProfile} from '../../services/util'
+import {getPostNavigation, getPostProfile} from '../../../services/util'
 import './search-item.css'
 import { Link } from 'react-router-dom'
 export default function SearchItem({item,className='',style}){

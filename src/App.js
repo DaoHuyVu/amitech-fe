@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         element : <HomeContent />
       },
       {
-        path : '/tim-kiem',
+        path : 'tim-kiem/page/:pageNum',
         element : <SearchResult />,
         loader : SearchLoader
       },
