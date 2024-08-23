@@ -37,8 +37,8 @@ export default function Solution(){
                     <OverlayCard style={{backgroundColor : 'rgba(0,42,158,1)'}}>
                         <h4 style={{color : '#00C2FF'}} className='p-2'>{e.name}</h4>
                         <CardDescription>{e.description}</CardDescription>
-                        <Button style={{background : 'transparent',border : 'none'}}>
-                            <Link style={{color : '#00C2FF'}} to={`${e.url}`}>
+                        <Button style={{background : 'transparent',border : 'none'}} className='p-0'>
+                            <Link style={{color : '#00C2FF'}} to={`${e.url}`} >
                                 Xem thêm &gt;&gt;
                             </Link>
                         </Button>
