@@ -11,7 +11,7 @@ export default function Benefit(){
     return(
         <section id="solution-detail__benefit">
            <h4 className='fw-bold text-center pb-3' style={{color : '#4d4d4d'}}>Lợi ích</h4>
-           <div className="container-fluid">
+           <div className="container">
                 <div className="row row-gap-3 ">
                     <div className="col-12 col-md-6 text-center text-md-end order-2 order-md-0">
                         <div >

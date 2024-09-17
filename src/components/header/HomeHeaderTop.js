@@ -4,10 +4,14 @@ import Navigatable from "../nav/Navigatable";
 import ListDelimiter from "../nav/ListDelimiter";
 import { useEffect, useState } from "react";
 import { getHeaderContacts, getSecondaryNavigation } from "../../services/header";
-import { host } from "../../services/AxiosInstance";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+const contactIcons = [faPhone,faPhone,faEnvelope]
 export default function HomeHeaderTop(){
     const [navigations,setNavigations] = useState([])
     const [contacts,setContacts] = useState([])
+
     useEffect(() => {
         const fetchNavs = async () => {
             try{
@@ -31,9 +35,9 @@ export default function HomeHeaderTop(){
     const itemStyle = {
         color : '#FFFFFFCC'
     }
-    const contactList = contacts.map((contact) => 
+    const contactList = contacts.map((contact,idx) => 
         <a href={contact.attributes.to} key={contact.attributes.id} style={itemStyle} className="d-flex align-items-center" target="_blank" rel='noreferrer'>
-            <img src={`${host}${contact.attributes.icon.data.attributes.url}`} alt='Icon' />
+            <FontAwesomeIcon icon={contactIcons[idx]}/>
             <p >{contact.attributes.info}</p>
         </a>
     )
@@ -45,9 +49,9 @@ export default function HomeHeaderTop(){
     navigationList.unshift(<LanguageChooser />)
     return(
             <div id="header-home-top">
-                <div className="container-fluid py-xl-2 d-none d-xl-block">
-                    <div className='d-flex flex-row-reverse column-gap-3 '>
-                            <ListDelimiter elements={navigationList} style={itemStyle} />
+                <div className="container py-xl-2 d-none d-xxxl-block">
+                    <div className='d-flex flex-row-reverse column-gap-4 '>
+                            <ListDelimiter elements={navigationList} style={itemStyle}/>
                             <SearchBar />
                             <ListDelimiter elements={contactList} style={itemStyle}/>
                     </div>

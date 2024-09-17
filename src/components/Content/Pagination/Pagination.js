@@ -15,7 +15,6 @@ export default function Pagination({className='',style,pageInfo}){
     let end = Math.min(page+Math.floor(totalPagesCenter/2),pageCount)
     for(let i = start; i<=end ; ++i){
         if(i >= 1 && i <= pageCount){ 
-            
             pages.push(
                 <PageItem to={`${calculateDst(i)}`} page={i} key={`${i}`} type={`${i === page ? 'selected' : 'page'}`}/>
             )        

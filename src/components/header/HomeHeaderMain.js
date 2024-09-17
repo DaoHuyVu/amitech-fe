@@ -38,8 +38,8 @@ export default function HomeHeaderMain(){
         setIsShowSideBar(true)
     }
     return(
-        <div id="header-home-main" className="px-sm-10">
-            <div className="container-fluid">
+        <div id="header-home-main">
+            <div className="container">
                 <div className="d-flex justify-content-between">
                     <Logo img={logo} to='/'/>
                     <HorizontalNavBar className="d-xxxl-flex d-none">

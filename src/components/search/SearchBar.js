@@ -8,7 +8,7 @@ export default function SearchBar(){
         setQuery(e.target.value)
     }
     return (
-        <Form className="home-search-container" action='tim-kiem/page/1/' reloadDocument>
+        <Form className="home-search-container" action='tim-kiem/page/1/' >
             <input 
                 name='s'
                 className = "home-search-input"

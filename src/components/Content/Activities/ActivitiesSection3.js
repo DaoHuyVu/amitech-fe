@@ -1,5 +1,6 @@
 import img1 from '../../../assets/images/image 223.png'
-import Pagination from '../../common/Pagination'
+import Pagination from '../Pagination/Pagination'
+
 export default function ActivitiesSection3(){
     const data = {
         current : 1,
@@ -60,7 +61,7 @@ export default function ActivitiesSection3(){
                 ],
                 quantity : 15,
                 date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
+                title : 'Tại sao cần xây dựng hệ thống phần mềm bảo trì, bảo dưỡng trong doanh nghiệp hiện nay?'
             },
             {
                 images : [
@@ -100,7 +101,7 @@ export default function ActivitiesSection3(){
                 ],
                 quantity : 15,
                 date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
+                title : 'Tại sao cần xây dựng hệ thống phần mềm bảo trì, bảo dưỡng trong doanh nghiệp hiện nay?'
             },
         ]
     }
@@ -108,7 +109,7 @@ export default function ActivitiesSection3(){
         return (
             <div className='col-12 col-sm-6 col-lg-4 col-xl-3 p-2' key={index}>
                 <div className='counter-bottom-image-wrapper mb-2'>
-                    <img src={e.images.at(0)} alt='AlbumImage' className='counter-bottom-image'/>
+                    <img src={e.images.at(0)} alt='AlbumImage' className='w-100'/>
                     <div className='counter-bottom-image__dimmed-bottom '>
                         1/{e.quantity} ảnh
                     </div>
@@ -121,13 +122,10 @@ export default function ActivitiesSection3(){
     return(
         <section id='activities__section3'>
             <div className='container'>
-                <div className='row'>
+                <div className='row mb-4'>
                     {cols}
                 </div>
-                <Pagination 
-                    currentPage={data.current}
-                    totalPages={data.total/data.perPage}
-                />
+                <Pagination pageInfo={{page : data.current,pageCount : data.total}}/>
             </div>
         </section>
     )

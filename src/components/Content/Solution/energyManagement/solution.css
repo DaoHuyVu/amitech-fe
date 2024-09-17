@@ -2,8 +2,8 @@
     font-family: 'Roboto';
 }
 #solution-detail > section{
-    padding-left : 10%;
-    padding-right: 10%;
+    padding-left : 0;
+    padding-right: 0;
 }
 #solution-detail > section:nth-child(odd){
     background-image : url('../../../../assets/images/image\ 216.png');

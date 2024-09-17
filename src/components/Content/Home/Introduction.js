@@ -4,7 +4,7 @@ import LeftScrollContainer from '../../scroller/LeftScroll'
 export default function Introduction(){
     return(
         <section id="home__introduction">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="text-center d-flex flex-column align-items-center mb-4">
                     <h4 className='text__weight--xl' style={{color : '#4D4D4D'}}>
                        GIỚI THIỆU VỀ AMITECH
@@ -42,7 +42,7 @@ export default function Introduction(){
                             <h4 className='pb-3' style={{color : '#152D5280'}}> 
                                 Tư vấn,hỗ trợ
                             </h4>
-                            <h5>
+                            <h5 style={{visibility : 'hidden'}}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </h5>
                         </LeftScrollContainer>  

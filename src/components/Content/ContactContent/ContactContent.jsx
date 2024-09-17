@@ -46,7 +46,7 @@ function Content() {
             title={"LIÊN HỆ"}
             description={"Hãy để đội ngũ Amitech hỗ trợ bạn bất cứ đâu"}
         />
-        <div className="container max-w-full p-0">
+        <div className="contact-container max-w-full p-0">
           <section className="contact-section">
             <article className="company-info">
               <h2 className="company-name">Công ty cổ phần Giải pháp Công nghệ

@@ -18,14 +18,14 @@ export default function Customer(){
                 <div className="text-center pb-4 ">
                     <h4 style={{fontWeight : '700',color : '#4D4D4D'}}>ĐỐI TÁC VÀ KHÁCH HÀNG</h4>
                 </div>
-                <div className="row g-3 pb-3">
+                <div className="row g-3 mb-5">
                     {customerData.map((e,index)=>{
                         return (
                             <div 
                             key={index} 
                             className='col-12 col-sm-6 col-lg-4 ' >
-                                <div className='d-flex justify-content-center align-items-center h-100' style={{backgroundColor : 'white'}} >
-                                    <img src={e} alt='customerLogo' style={{minHeight : '84px'}} className='mw-100'/>
+                                <div className='d-flex justify-content-center align-items-center' style={{backgroundColor : 'white',height : '100px'}} >
+                                    <img src={e} alt='customerLogo' style={{minHeight : '60px'}} className='mw-100'/>
                                 </div>
                             </div>
                         )
@@ -36,8 +36,8 @@ export default function Customer(){
                         <img src={bg7} alt ='PriceImg' className='mw-100'/> 
                     </div>
                     <Form className='col-12 col-lg-6 d-flex flex-column py-4 justify-content-center
-                     align-items-center align-items-lg-start order-1 order-lg-2 row-gap-4' method='post'
-                     action='/'>
+                     align-items-center align-items-lg-start order-1 order-lg-2 row-gap-4' 
+                        >
                         <h4>ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ</h4>
                         <Input  placeholder='Họ tên *' className='w-75' type='text' required/>
                         <Input  placeholder='Số điện thoại *' type='number'className='w-75' required/>

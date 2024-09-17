@@ -13,7 +13,7 @@ export default function ProjectDetailSection1({project}){
     const carouselItems = getPostImageArray(project)
     return(
         <section id="project-detail__section1">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row row-gap-3">
                     <div className="col-12 col-lg-6 ">
                         <div className='custom-carousel'>

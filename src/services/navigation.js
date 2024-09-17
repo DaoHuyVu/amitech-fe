@@ -13,3 +13,6 @@ export const getSubNavigationsDetail = (slug) => {
 export const getSubNavigationDetail =  (parent,slug) => {
     return  handleGetMethod(() => axios.get(`/navigations?filters[parentNavigation]=${parent}&filters[slug]=${slug}&populate=*`))
 }
+export const getNavigationById = (id) => {
+    return handleGetMethod(() => axios.get(`/navigations/${id}`))
+}

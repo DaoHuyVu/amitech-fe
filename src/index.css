@@ -136,10 +136,6 @@ a,a:hover,a:active,a:visited{
 .counter-bottom-image-wrapper{
     position: relative;
 }
-.counter-bottom-image{
-    width: 100%;
-    z-index : -1;
-}
 .counter-bottom-image__dimmed-bottom{
     background-color: #000000B2;
     position: absolute;
@@ -247,7 +243,7 @@ a,a:hover,a:active,a:visited{
     opacity: 1 !important;
 }
 .scaled-carousel .slick-track{
-    margin: 64px 0 100px 0;
+    padding : 3rem 0 100px 0;
 }
 
 .slick-thumb li{
@@ -293,12 +289,15 @@ a,a:hover,a:active,a:visited{
         max-width: 75% !important;
     }
 }
-@media only screen and (min-width : 1600px) {
+@media only screen and (min-width : 1500px) {
     .d-xxxl-flex{
         display: flex !important;
     }
     .d-xxxl-none{
         display: none !important;
+    }
+    .d-xxxl-block{
+        display: block !important;
     }
 }
 
@@ -317,6 +316,11 @@ a,a:hover,a:active,a:visited{
 @media only screen and (max-width : 576px) {
     .title-fs-sm{
         font-size: 2rem !important;
+    }
+}
+@media only screen and (min-width : 1500px){
+    .container{
+        max-width: 1440px !important;
     }
 }
 /* ================================ Post content css ==============================*/

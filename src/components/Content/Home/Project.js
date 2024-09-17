@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { getProjects } from '../../../services/project'
 import { getPostProfile } from '../../../services/util'
 import { hostName } from '../../../config/domain'
-import TCard from '../../card/TCard'
+import TCard from '../../card/Card'
 import TCardContent from '../../card/CardContent'
 import TCardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
@@ -35,11 +35,9 @@ export default function Project(){
                         <CardDescription style={{color : '#ffffffb2'}}>
                             {parse(e.attributes.postDescription)}
                         </CardDescription>
-                        <Button style={{border : 'none',backgroundColor : 'transparent',color : '#00c2ff'}}>
-                            <Link to={`${hostName}/du-an-tieu-bieu/${e.attributes.slug}`}> 
-                                Xem thêm &gt;&gt;
-                            </Link>
-                        </Button>
+                        <Link to={`${hostName}/du-an-tieu-bieu/${e.attributes.slug}`} style={{color : '#00c2ff'}}> 
+                            Xem thêm &gt;&gt;
+                        </Link>
                     </TCardContent>
                 </TCard>
             </div>
@@ -47,7 +45,7 @@ export default function Project(){
     }) 
     return(
         <section id="home_project">
-            <div className="container-fluid ">
+            <div className="container">
                 <div className="text-center pb-4">
                     <h3 style={{fontWeight : '700'}}>DỰ ÁN TIÊU BIỂU</h3>
                 </div>

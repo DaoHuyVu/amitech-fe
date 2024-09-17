@@ -83,11 +83,11 @@ function ProductComponent() {
         </HeaderSection>
         <MainContainer>
           <TabContainer>
-            <Tab active={selectedButton === "Tất cả"}
+            <Tab active={selectedButton === "Tất cả" }
                  onClick={() => handleButtonClick("Tất cả")}>
               Tất cả
             </Tab>
-            <Tab active={selectedButton === "Thiết bị giám sát điện"}
+            <Tab active={selectedButton === "Thiết bị giám sát điện" }
                  onClick={() => handleButtonClick("Thiết bị giám sát điện")}>
               Thiết bị giám sát điện
             </Tab>
@@ -232,7 +232,10 @@ const TabContainer = styled.nav`
   }
 `;
 
-const Tab = styled.div`
+const Tab = styled.div.attrs(props => ({
+  // Pass only standard HTML attributes to the DOM
+  role: 'button',
+}))`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -241,11 +244,13 @@ const Tab = styled.div`
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 30px;
-  ${(props) => props.active && `
+
+  ${props => props.active && `
     background-color: #006ce7;
     color: #fff;
   `}
-  ${(props) => !props.active && `
+
+  ${props => !props.active && `
     border: 1px solid rgba(0, 108, 231, 1);
   `}
 `;

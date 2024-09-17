@@ -11,7 +11,7 @@ export default function Functionality(){
     const carouselItems = [carouselImg,carouselImg,carouselImg]
     return(
         <section id="solution-detail__functionality">
-            <div className="container-fluid " >
+            <div className="container " >
             <h4 className='fw-bold text-center pb-3' style={{color : '#4d4d4d'}}>TÍNH NĂNG</h4>
             <div className="row row-gap-3">
                 <div className="col-12 col-lg-6 fs-5" >

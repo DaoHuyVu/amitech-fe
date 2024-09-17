@@ -43,7 +43,7 @@ export default function ProjectDetailSection2({project}){
     })
     return(
         <section id="project-detail__section2">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row gx-5">
                     <div className='col-12 col-xl-8 col-xxl-9 pb-4' id='post-content'>
                         {parser(project.attributes.postContent)}

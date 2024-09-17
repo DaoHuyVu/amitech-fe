@@ -15,7 +15,7 @@ export default function IntroductionSection2(){
     })
     return(
         <section id="introduction__section2">
-            <div className="container-fluid d-flex flex-column align-items-center">
+            <div className="container d-flex flex-column align-items-center">
                 <div className="row d-flex justify-content-center gap-3 pb-5">
                     {columns}
                 </div>

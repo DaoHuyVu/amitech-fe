@@ -4,7 +4,7 @@ export default function Customer(){
     return(
         <section id="solution-detail__customer">
             <h4 className='fw-bold text-center pb-3' style={{color : '#4d4d4d'}}>ĐỐI TÁC VÀ KHÁCH HÀNG</h4>
-            <div className='container-fluid'>
+            <div className='container'>
                 <div className='row g-3 justify-content-xl-center '>
                         {
                             data.map((e,index) => {

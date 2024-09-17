@@ -6,8 +6,13 @@ import bg5 from '../../../assets/images/image 174.png'
 import Button from '../../button/Button'
 import Slider from 'react-slick'
 import { Link } from 'react-router-dom'
-
-export default function HomeSection6(){
+import Card from '../../card/Card'
+import Image47Card from '../../card/Image47Card'
+import CardContent from '../../card/CardContent'
+import CardCategory from '../../card/CardCategory'
+import CardTitle from '../../card/CardTitle'
+import CardDescription from '../../card/CardDescription'
+export default function News(){
     const carouselData = [
         {
             categoryName : 'Tin hoạt động của Amitech',
@@ -30,19 +35,17 @@ export default function HomeSection6(){
     ]
     const carouselItems = carouselData.map((e,index) => {
        return (
-            <div key={index} className='h-100 d-flex flex-column'>
-                <div className='retained-4-7-image-wrapper '>
-                    <img src={e.src} loading='lazy' alt='Carousel Item' className='retained-4-7-image'/>
-                </div>
-                <div style={{backgroundColor : '#f1f7ff'}} className='p-3 flex-grow-1'>
-                    <p className='pb-2' style = {{color : '#4D4D4DB2',fontSize : '0.8rem'}}>{e.categoryName}</p>
-                    <h5 className='pb-2' style={{color : '#4D4D4D'}}>{e.title}</h5>
-                    <div className='pb-2' style= {{color : '#4D4D4DB2'}}>{e.content}</div>
-                    <span style={{color : '#00C2FF'}}>Xem chi tiết &gt;&gt;</span>
-                    <div style={{height : '24px'}}>
-                    </div>
-                </div>
-            </div>
+            <Card key={index} className='d-flex'>
+                <Image47Card src={e.src}/>
+                <CardContent style={{backgroundColor : '#F1F7FF',minHeight : '300px'}}>
+                    <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{e.categoryName}</CardCategory>
+                    <CardTitle maxLines='1' style={{color : '#4d4d4d'}}>{e.title}</CardTitle>
+                    <CardDescription coverRemain='false' style={{color : '#4d4d4db2'}}>{e.content}</CardDescription>
+                    <Link to='#' style={{color : '#00c2ff',fontWeight : 'bold'}}>
+                        Xem thêm &gt;&gt;
+                    </Link>
+                </CardContent>
+            </Card>
        )
     })
     const carouselSettings = {
@@ -84,27 +87,27 @@ export default function HomeSection6(){
     const newsColumns = newsData.map((e,index) => {
         return (
             <div className='col-12 col-md-6' key={index}>
-                <div className='d-flex flex-column h-100' style={{backgroundColor : '#f1f7ff'}}>
-                    <div className='retained-4-7-image-wrapper'>
-                        <img loading='lazy' src={e.src} alt='News' className='aspect-retained-image'/>
-                    </div>
-                    <div className='flex-grow-1 d-flex flex-column p-3'>
-                        <p className='pb-2' style = {{color : '#4D4D4DB2',fontSize : '0.8rem'}}>{e.categoryName}</p>
-                        <h5 className='pb-2 flex-grow-1' style={{color : '#4D4D4D'}}>{e.title}</h5>
-                        <span style={{color : '#00C2FF'}}>Xem chi tiết &gt;&gt;</span>
-                    </div>
-                </div>
+                <Card className='d-flex'>
+                <Image47Card src={e.src}/>
+                <CardContent style={{backgroundColor : '#F1F7FF'}}>
+                    <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{e.categoryName}</CardCategory>
+                    <CardTitle maxLines='3' style={{color : '#4d4d4d'}} className='fs-5'>{e.title}</CardTitle>
+                    <Link to='#' style={{color : '#00c2ff',fontWeight : 'bold'}}>
+                        Xem thêm &gt;&gt;
+                    </Link>
+                </CardContent>
+                </Card>
             </div>
         )
     })
     return(
         <section id="home_news">
-            <div className="container-fluid d-flex flex-column align-items-center">
+            <div className="container d-flex flex-column align-items-center">
                 <div className="text-center pb-4">
                     <h5 style={{color : '#4D4D4D',fontWeight : '700'}}>TIN TỨC VÀ SỰ KIỆN</h5>
                 </div>
                 <div className="row g-3 w-100 h-100 pb-4 d-flex flex-row">
-                    <div className="col-12 col-xxl-6" style={{minHeight : '600px'}}>
+                    <div className="col-12 col-xxl-6">
                         <Slider {...carouselSettings} className='custom-carousel h-100 custom-carousel__button--disabled'>
                             {carouselItems}
                         </Slider>

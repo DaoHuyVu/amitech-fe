@@ -79,7 +79,7 @@ export default function IntroductionSection4(){
         return (
             <div key={index} className='d-flex flex-column p-2 position-relative'>
                <div className="counter-bottom-image-wrapper "> 
-                    <img src={e.image} className="counter-bottom-image w-100" alt='img'/>
+                    <img src={e.image} className="w-100" alt='img'/>
                     <div className="counter-bottom-image__dimmed-bottom invisible">
                         <p>1/{data.length} ảnh</p>
                     </div>
@@ -94,7 +94,7 @@ export default function IntroductionSection4(){
     return(
         <section id="activities__section2">
             <div className="container d-flex flex-column align-items-center" >
-                    <div className='w-100 scaled-carousel '>
+                    <div className='w-100 scaled-carousel custom-carousel'>
                         <Slider {...settings}>
                             {slides}
                         </Slider>

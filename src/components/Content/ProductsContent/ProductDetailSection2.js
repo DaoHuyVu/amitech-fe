@@ -37,7 +37,7 @@ export default function ProductDetailSection2({data}){
     })
     return(
         <section id="product-detail__section2">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row gx-lg-5">
                     <div className='col-12 col-xl-9' id='post-content'>
                         {parser(data.attributes.postContent)}

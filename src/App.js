@@ -56,7 +56,17 @@ const router = createBrowserRouter([
       },
       {
         path : 'gioi-thieu',
-        element : <Introduction />,
+        element : <BaseContainer />,
+        children : [
+            {
+              index : true,
+              element : <Introduction />
+            },
+            {
+              path : 'hinh-anh-hoat-dong',
+              element : <Activities />
+            }
+        ]
       },
       {
         path : 'du-an-tieu-bieu',

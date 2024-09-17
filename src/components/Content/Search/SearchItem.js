@@ -3,7 +3,7 @@ import './search-item.css'
 import { Link } from 'react-router-dom'
 export default function SearchItem({item,className='',style}){
     return (
-        <Link className={`${className} container-fluid`} style={style} to={`${getPostNavigation(item)}/${item.attributes.slug}`}>
+        <Link className={`${className} container`} style={style} to={`${getPostNavigation(item)}/${item.attributes.slug}`}>
            <div className='row'>
                 <div className='col-12 col-sm-5 col-xxl-4'>
                     <img src={getPostProfile(item)} alt='Search Item' width='100%'/>

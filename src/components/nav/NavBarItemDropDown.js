@@ -19,7 +19,7 @@ export default function NavBarItemDropDown({className='',link,style,name,childre
                 isActive ? `${cl} nav-item--active` : `${cl}`
              }>
                 <p>{name}</p>
-                <FontAwesomeIcon icon={faCaretDown}/>
+                <FontAwesomeIcon icon={faCaretDown} className="menu-item-dropdown-icon"/>
             </NavLink>
             {children}
         </div>

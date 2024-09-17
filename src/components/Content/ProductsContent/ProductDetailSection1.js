@@ -37,7 +37,7 @@ export default function ProductDetailSection1({data}){
     </div>
     return(
         <section id="product-detail__section1">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row row-gap-3">
                     <div className="col-12 col-lg-7 ">
                         <div className='custom-carousel sided-carousel '>

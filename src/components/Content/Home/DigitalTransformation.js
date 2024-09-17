@@ -2,7 +2,7 @@ import Background1 from '../../../assets/images/img1.png'
 export default function DigitalTransformation(){
     return(
         <section id='home__digital-transformation' >
-            <div className='container-fluid'>
+            <div className='container'>
                 <div className='row'>
                     <div className='col-12 col-xl-5 d-flex align-items-center text-center text-xl-start pb-3'>
                         <span>

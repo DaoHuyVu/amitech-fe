@@ -14,7 +14,7 @@ export default function SearchResults(){
     const {results} = useLoaderData()
     return (
         <main id='search-results'>
-            <div className='container-fluid pb-4' style={{color : 'black'}}>
+            <div className='container pb-4' style={{color : 'black'}}>
             <h2 className='pb-4 px-3' >Kết quả tìm kiếm</h2>
                 {
                     results.data.length > 0 ? 

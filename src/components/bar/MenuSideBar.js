@@ -3,9 +3,9 @@ import './sidebar.css'
 import ImageButton from '../button/ImageButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { NavLink} from 'react-router-dom'
 import { sidebarContext } from '../../layout/DefaultLayout'
+import CloseButtonSVG from '../../assets/svg/multiply-svgrepo-com.svg'
 const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
     const {setIsShowSideBar} = useContext(sidebarContext) 
     // Store the menu item id to indicate whether it's showing children or not
@@ -24,32 +24,39 @@ const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
         return(
             <div key={item.id} className='menu-item-container'>
                 <div className='menu-item'>
-                    <NavLink to={item.slug} end reloadDocument
+                    <NavLink to={item.slug} end 
                     className={({isActive}) => isActive ? 'menu-item__title-active menu-item__title' : 'menu-item__title'}>
                         {item.name}
                     </NavLink>
                         {
                             item.hasChildren && 
                             (
-                                <ImageButton style={{width : '1rem',height : '1rem'}} onClick={() => handleShowChildren(item.id)}>
-                                    {isShowChildren === item.id ? 
-                                    <FontAwesomeIcon className='menu-item__accordion-icon' icon={faCaretUp}/> :
-                                    <FontAwesomeIcon className='menu-item__accordion-icon' icon={faCaretDown}/>}
+                                <ImageButton 
+                                    className={`${isShowChildren ? 'menu-item--children-show' : 'menu-item--children-collapse'}`}
+                                    style={{width : '1rem',height : '1rem'}} onClick={() => handleShowChildren(item.id)}>
+                                    <FontAwesomeIcon 
+                                        className={`menu-item__accordion-icon`}
+                                        icon={faCaretDown}
+                                    /> 
                                 </ImageButton>
                             )
                         }
                 </div>
-                <div className={`submenu-items-container ${isShowChildren === item.id ? 'submenu-items-container--show' : ''}` }>
-                    {
-                        item.childrenNavigations.map((child) => {
-                            return (
-                                <NavLink to={`${item.slug}${child.slug}`}  onClick={handleClose} key={child.id}
-                                className={({isActive}) => isActive ? 'menu-item__title-active menu-item__title' : 'menu-item__title'}>
-                                    {child.name}
-                                </NavLink>
-                            )
-                        })
-                    }
+                <div className={`submenu-items-container ${isShowChildren === item.id ? 'expand' : ''}` }>
+                    <div className='submenu-items-content'>
+                        {
+                            item.childrenNavigations.map((child) => {
+                                return (
+                                <div className='menu-item' key={child.id} >
+                                        <NavLink to={`${item.slug}${child.slug}`}  onClick={handleClose} key={child.id}
+                                        className={({isActive}) => isActive ? 'menu-item__title-active menu-item__title' : 'menu-item__title'}>
+                                            {child.name}
+                                        </NavLink>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         )
@@ -60,7 +67,7 @@ const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
             <div id='sidebar' ref={ref}>
                 <div id='menu'>
                         <ImageButton className='menu-close-btn' onClick={handleClose}>
-                            <h5>X</h5>
+                            <img src={CloseButtonSVG} alt='Close Button'/>
                         </ImageButton>
                     <div id='menu-content'>
                         {menuItems}

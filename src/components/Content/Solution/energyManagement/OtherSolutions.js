@@ -17,7 +17,7 @@ export default function OtherSolutions({navigation}){
     return(
         <section id="solution-detail__other-solutions">
             <h4 className='fw-bold text-center pb-3' style={{color : '#4d4d4d'}}>GIẢI PHÁP KHÁC</h4>
-            <div className="container-fluid">
+            <div className="container">
                 <div className='row g-4'>
                     {
                         otherSolutions.map((e,index) => {

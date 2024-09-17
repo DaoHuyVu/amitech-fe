@@ -14,7 +14,7 @@ export default function IntroductionSection1(){
 
     return(
         <section id="introduction__section1">
-            <div className="container-fluid">
+            <div className="container">
                 <div className='text-center position-relative'>
                     <h2 className='pb-3'>Công ty Cổ phần Giải pháp Công nghệ AMI Việt Nam (AMITECH)</h2>
                     <p>AMITECH cung cấp các dịch vụ về Quản lý năng lượng và Chuyển đổi số trong lĩnh vực quản lý năng lượng, giảm phát thải khí nhà kính. AMITECH có đội ngũ cán bộ, kỹ sư có trình độ cao, tay nghề vững, những người hàng ngày đang thực hiện dự án và cung cấp dịch vụ kỹ thuật cho khách hàng. AMITECH tự hào là Nhà cung cấp giải pháp của ….. và của các nhà cung cấp có uy tín ……</p>

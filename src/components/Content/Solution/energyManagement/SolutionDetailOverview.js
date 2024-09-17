@@ -4,7 +4,7 @@ export default function Overview(){
     
     return (
         <section id="solution-detail__overview">
-            <div className="container-fluid ">
+            <div className="container ">
                <div className="text-center ">
                     <h4 className='fw-bold ' style={{color : '#4d4d4d'}}>TỔNG QUAN VỀ PHẦN MỀM</h4>
                     <p style={{color : '#4d4d4d'}} className="w-75 mx-auto pb-3">

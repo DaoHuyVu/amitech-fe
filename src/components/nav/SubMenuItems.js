@@ -1,4 +1,4 @@
-import './nav-bar.css'
+    import './nav-bar.css'
 import NavBarMenuItem from './NavBarMenuItem'
 export default function SubMenuItems({className='',style,items,parent}){
     return(
