@@ -5,7 +5,7 @@ export default function SearchItem({item,className='',style}){
     return (
         <Link className={`${className} container`} style={style} to={`${getPostNavigation(item)}/${item.attributes.slug}`}>
            <div className='row'>
-                <div className='col-12 col-sm-5 col-xxl-4'>
+                <div className='col-12 col-sm-5 col-xxl-4 mb-3'>
                     <img src={getPostProfile(item)} alt='Search Item' width='100%'/>
                 </div>
                 <div className='col-12 col-sm-7 col-xxl-8'>

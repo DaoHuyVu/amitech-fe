@@ -2,22 +2,33 @@ import { searchPosts } from '../../../services/post'
 import SearchItem from './SearchItem'
 import Pagination from '../Pagination/Pagination'
 import './searchResults.css'
-import { useLoaderData} from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 const pageSize = 5
-export const loader = async ({request,params}) => {
-    const url = new URL(request.url)
-    const s = url.searchParams.get('s')
-    const results = await searchPosts(s,pageSize,params.pageNum)
-    return {results}
-}
 export default function SearchResults(){
-    const {results} = useLoaderData()
+    const [page,setPage] = useState(1)
+    const [results,setResults] = useState(null)
+    const location = useLocation()
+    useEffect(()=>{
+        const fetchPageItems = async () => {
+            try{
+                const url = location.search
+                const param = new URLSearchParams(url)
+                const s = param.get('s')
+                const res = await searchPosts(s,pageSize,page)
+                setResults(res)
+            }catch(err){
+                console.log(err)
+            }
+        } 
+        fetchPageItems()
+    },[page])
     return (
         <main id='search-results'>
             <div className='container pb-4' style={{color : 'black'}}>
             <h2 className='pb-4 px-3' >Kết quả tìm kiếm</h2>
                 {
-                    results.data.length > 0 ? 
+                    results && results.data.length > 0 ? 
                     results.data.map(e => {
                         return (
                             <SearchItem item={e} key={e.id} className='pb-3'/>
@@ -28,12 +39,13 @@ export default function SearchResults(){
                 }
             </div>
             {
-                results.data.length > 0 && 
+                results && 
                 <Pagination 
                     pageInfo={{
-                        page : results.meta.pagination.page,
-                        pageCount : results.meta.pagination.pageCount
+                        pageCount : results.meta.pagination.pageCount,
+                        page : page
                     }}
+                    fetchPageItems = {page => setPage(page)}
                 />
             }
         </main>
