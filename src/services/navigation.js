@@ -1,18 +1,17 @@
 import axios from "./AxiosInstance";
-import {handleGetMethod} from './common'
-export const getNavigation = async (slug) => {
-    const response = await handleGetMethod(() => axios.get(`/navigations?filters[slug][$eq]=${slug}&populate[0]=imageCover`));
-    return response.data.data[0];
-}
+import {handleCallback} from './common'
 export const getSubNavigations =  (parent) => {
-    return  handleGetMethod(() => axios.get(`/navigations?filters[parentNavigation]=${parent}&populate[0]=imageCover&fields[0]=name&fields[1]=slug&fields[2]=description&fields[3]=parentNavigation`))
+    return  handleCallback(() => axios.get(`/navigations?filters[parentNavigation]=${parent}&populate[0]=imageCover&fields[0]=name&fields[1]=slug&fields[2]=description&fields[3]=parentNavigation`))
 } 
 export const getSubNavigationsDetail = (slug) => {
-    return  handleGetMethod(() => axios.get(`/navigations?filters[slug]=${slug}&populate[0]=imageCover`))
+    return  handleCallback(() => axios.get(`/navigations?filters[slug]=${slug}&populate[0]=imageCover`))
 }
 export const getSubNavigationDetail =  (parent,slug) => {
-    return  handleGetMethod(() => axios.get(`/navigations?filters[parentNavigation]=${parent}&filters[slug]=${slug}&populate=*`))
+    return  handleCallback(() => axios.get(`/navigations?filters[parentNavigation]=${parent}&filters[slug]=${slug}&populate=*`))
 }
 export const getNavigationById = (id) => {
-    return handleGetMethod(() => axios.get(`/navigations/${id}`))
+    return handleCallback(() => axios.get(`/navigations/${id}`))
+}
+export const getNavigationDetailById = (id) => {
+    return handleCallback(() => axios.get(`/navigations/${id}?populate[imageCover][fields][0]=url`))
 }

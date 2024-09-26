@@ -1,4 +1,4 @@
-export const handleGetMethod = async (callback) => {
+export const handleCallback = async (callback) => {
     let response = null
     try{
         response = await callback()

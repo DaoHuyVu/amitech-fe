@@ -1,11 +1,11 @@
 import Banner from "../../common/BannerWrapper"
-import { getNavigationImageCover } from "../../../services/util"
+import { getNavigationIdImageCover } from "../../../services/util"
 export default function ProjectBanner({navigation}){
     return(
         <Banner 
-            imgSrc={getNavigationImageCover(navigation)}
-            title={navigation.name}
-            description={navigation.description}
+            imgSrc={getNavigationIdImageCover(navigation)}
+            title={navigation.attributes.name}
+            description={navigation.attributes.description}
         />
     )
 }

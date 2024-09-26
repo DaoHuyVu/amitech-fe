@@ -1,4 +1,8 @@
 import { host } from "./AxiosInstance"
+export function getNavigationIdImageCover(response){
+    return `${host}${response.attributes.imageCover.data.attributes.url}`
+}
+// The latter get imageURL when navigation is sparse. Yes this is pretty fucked up 
 export function getNavigationImageCover(response){
     return `${host}${response.imageCover.url}`
 }

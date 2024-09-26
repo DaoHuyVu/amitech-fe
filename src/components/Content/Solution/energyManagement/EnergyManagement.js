@@ -8,16 +8,16 @@ import Customer from './Customer'
 import OtherSolutions from './OtherSolutions'
 import { useLocation } from 'react-router-dom'
 import { useState,useEffect } from 'react'
-import { getNavigation } from '../../../../services/navigation'
-import {getLastPathname} from '../../../../utils/parseUrl'
+import { getNavigationDetailById } from '../../../../services/navigation'
 export default function EnergyManagement(){
     const [navigation,setNavigation] = useState(null)
     const location = useLocation()
     useEffect(()=>{
         const fetchNav = async () => {
             try{
-                const res = await getNavigation(getLastPathname(location.pathname))
-                setNavigation(res)
+                // 4 is solution category id
+                const res = await getNavigationDetailById(4)
+                setNavigation(res.data.data)
             }catch(err){
                 console.log(err)
             }
@@ -32,7 +32,7 @@ export default function EnergyManagement(){
             <Benefit />
             <SystemModel />
             <Customer />
-            {navigation && <OtherSolutions navigation={navigation}/>}
+            <OtherSolutions/>
         </div>
     )
 }
