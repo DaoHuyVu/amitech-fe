@@ -99,7 +99,7 @@ export default function Recruitment(){
         )
     }) 
     return (
-        <section id="introduction__section6">
+        <section id="tuyen-dung">
             <h2 className="text-center pb-4 fw-bold" style={{color : '#4d4d4d'}}>TUYỂN DỤNG</h2>
             <div className="container pb-5">
                 <div className="row row-gap-3">

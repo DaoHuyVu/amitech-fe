@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import {useLocation} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 
 const Header = () => {
 
@@ -22,7 +22,9 @@ const Header = () => {
       <HeaderWrapper>
         <TopBar>
           <TopBarContent>
-            <Logo src="/logo-ami-2.png" alt="Company Logo" link="/"/>
+            <NavLink to='/' >
+              <img src='/logo-ami-2.png' alt='Company Logo' />
+            </NavLink>
             <SearchAndNav>
               <SearchBar>
                 <SearchInput placeholder="Nhập nội dung tìm kiếm..."/>
@@ -42,7 +44,7 @@ const Header = () => {
         <NavBar>
           <NavMenu>
             {navItems.map((item, index) => (
-                <NavItem key={index} isActive={location.pathname === item.link}>
+                <NavItem key={index} $isActive={location.pathname === item.link}>
                   <StyledAnchor href={item.link}>
                     {item.text}
                   </StyledAnchor>
@@ -72,7 +74,7 @@ const navItems = [
     text: "Thiết bị & sản phẩm công nghiệp",
     isActive: false,
     hasDropdown: true,
-    link: "/thiet-bi-san-pham-cong-nghiep"
+    link: "/thiet-bi-va-san-pham-cong-nghiep"
   },
   {text: "tin tức và sự kiện", isActive: false, link: "/tin-tuc-va-su-kien"},
   {text: "báo giá", isActive: false, link: "/bao-gia"},
@@ -104,13 +106,6 @@ const TopBarContent = styled.div`
   @media (max-width: 991px) {
     flex-wrap: wrap;
   }
-`;
-
-const Logo = styled.img`
-  aspect-ratio: 4.35;
-  object-fit: contain;
-  width: 190px;
-  max-width: 100%;
 `;
 
 const SearchAndNav = styled.div`
@@ -234,7 +229,7 @@ const NavItem = styled.li`
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
-  color: ${props => props.isActive ? '#00c2ff' : '#fff'};
+  color: ${props => props.$isActive ? '#00c2ff' : '#fff'};
   cursor: pointer;
   display: flex;
   align-items: center;

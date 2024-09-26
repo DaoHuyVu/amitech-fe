@@ -66,7 +66,7 @@ export default function IntroductionSetion5(){
         )
     })
     return(
-        <section id='introduction__section5'>
+        <section id='chung-chi'>
             <h2 className="text-center fw-bold pb-4" style={{color : '#4d4d4d'}}>CHỨNG NHẬN / CHỨNG CHỈ</h2>
                 <div className='container'>
                    <div className='custom-slider '>

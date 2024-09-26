@@ -25,7 +25,7 @@ export default function HomeHeaderMain(){
         fetchNavs()
     },[])
     const navBarItems = navigations.map((navigation) => {
-        return navigation.hasChildren ? 
+        return navigation.childrenNavigations.length > 0 ? 
         <NavBarItemDropDown key={navigation.id} name={navigation.name} link = {navigation.slug}>
             <SubMenuItems items={navigation.childrenNavigations} parent={navigation.slug} />
         </NavBarItemDropDown>

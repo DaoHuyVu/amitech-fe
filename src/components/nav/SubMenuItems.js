@@ -6,7 +6,7 @@ export default function SubMenuItems({className='',style,items,parent}){
             {
                 items.map(item => {
                     return (
-                        <NavBarMenuItem link={`${parent}${item.slug}`} key={item.id} className='p-3'>
+                        <NavBarMenuItem link={`${parent}${item.slug}`} key={item.id} className='p-3' >
                             {item.name}
                         </NavBarMenuItem>
                     )

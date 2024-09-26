@@ -5,6 +5,8 @@ import { createContext, useEffect, useRef, useState } from "react";
 import MenuSideBar from "../components/bar/MenuSideBar";
 import './layout.css'
 import {getPrimaryNavigation} from '../services/header'
+import Header2 from '../components/header2/Header'
+import ScrollToHashElement from "../components/ScrollToHashElement";
 export const sidebarContext = createContext()
 export default function DefaultLayout() {
   const [isShowSideBar,setIsShowSideBar] = useState(false)
@@ -37,16 +39,19 @@ export default function DefaultLayout() {
       }
       else
         sidebarRef.current.classList.remove('sidebar--show')
+
     }
   },[isShowSideBar])
 
   const handleClose = () => {
     setIsShowSideBar(false)
   }
+  
   return (
       <sidebarContext.Provider value={{isShowSideBar,setIsShowSideBar}}>
         <div id="layout">
-          <Header />
+          <ScrollToHashElement />
+          {location.pathname === '/' ? <Header /> : <Header2 />}
           <MenuSideBar 
             ref={sidebarRef}
             handleClose={handleClose}

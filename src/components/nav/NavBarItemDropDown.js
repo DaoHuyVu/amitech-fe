@@ -14,7 +14,7 @@ export default function NavBarItemDropDown({className='',link,style,name,childre
     }
     return(
         <div ref={ref} className="nav-dropdown-area" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <NavLink to={link} style={style} end
+            <NavLink to={link} style={style} 
              className={({isActive}) =>  
                 isActive ? `${cl} nav-item--active` : `${cl}`
              }>

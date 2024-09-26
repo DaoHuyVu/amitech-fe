@@ -68,7 +68,7 @@ export default function IntroductionSection3(){
     })
 
     return(
-        <section id='introduction__section3'>
+        <section id='su-menh'>
             <div className="container">
                 <h2 style={{color : '#4d4d4d',fontWeight : '700',fontFamily : 'Roboto'}} className='text-center pb-4'>SỨ MỆNH - TẦM NHÌN - GIÁ TRỊ CỐT LÕI</h2>
                 <div className='container__item--zigzag'>

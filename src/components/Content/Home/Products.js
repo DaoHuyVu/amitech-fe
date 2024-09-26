@@ -67,7 +67,7 @@ export default function Products(){
                             return(
                                 <div className='col-12 col-md-6 col-lg-4 col-xxl-3' key={e.id}>
                                     <TCard > 
-                                        <ImageCard src={getPostProfile(e)}></ImageCard>
+                                        <ImageCard src={getPostProfile(e)} ></ImageCard>
                                         <CardContent className='rounded-bottom'style={{backgroundColor:`${bgColor[index]}`}}>
                                             <Link to={`/thiet-bi-va-san-pham-cong-nghiep/${e.attributes.slug}`} style={{color : 'white'}}>
                                                 <CardTitle maxLines={2}>

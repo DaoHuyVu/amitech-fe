@@ -66,7 +66,7 @@ export default function IntroductionSection4(){
         )
     })
     return(
-        <section id="introduction__section4">
+        <section id="hinh-anh-hoat-dong">
             <div className="container d-flex flex-column align-items-center ">
                 <h2 className="text-center ">Hình ảnh hoạt động</h2>
                     <div className='w-100 pb-4 scaled-carousel custom-carousel' >

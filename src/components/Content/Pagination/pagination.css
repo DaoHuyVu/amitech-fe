@@ -1,22 +1,25 @@
 .page-item{
     display: inline-block;
-    background-color: #f6f6f6;
-    color : black;
+    color : #4d4d4d;
     min-height: 40px;
     min-width : 40px;
     padding: 6px;
     margin: 0 3px 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-weight: 700;
 }
 .page-item-selectable{
     transition: background-color 0.5s ease ,color 0.5s ease;
 }
 .page-item--selected{
     color: white;
-    background-color: #002a9e;
+    background-color: #006ce7;
 }
 .page-item-selectable:hover{
     color:white;
-    background-color: #002a9e;
+    background-color: #006ce7;
 }
 
 

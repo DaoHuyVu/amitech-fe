@@ -24,12 +24,12 @@ const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
         return(
             <div key={item.id} className='menu-item-container'>
                 <div className='menu-item'>
-                    <NavLink to={item.slug} end 
+                    <NavLink to={item.slug} 
                     className={({isActive}) => isActive ? 'menu-item__title-active menu-item__title' : 'menu-item__title'}>
                         {item.name}
                     </NavLink>
                         {
-                            item.hasChildren && 
+                            item.childrenNavigations.length > 0 && 
                             (
                                 <ImageButton 
                                     className={`${isShowChildren ? 'menu-item--children-show' : 'menu-item--children-collapse'}`}

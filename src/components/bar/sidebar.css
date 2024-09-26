@@ -68,8 +68,9 @@
 }
 .menu-item__title{
     flex-grow: 1;
-    color : black;
+    color : #152d5280;
     padding: 10px;
+    font-weight: 700;
 }
 .menu-item__title-active{
     color : #002a9e

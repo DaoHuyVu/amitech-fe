@@ -6,15 +6,18 @@ export default function IntroductionSection2(){
         'Giới thiệu','Sứ mệnh - Tầm nhìn - Giá trị cốt lõi','Hình ảnh hoạt động',
         'Chứng nhận - Chứng chỉ','Tuyển dụng'
     ]
+    const navigationId = [
+        '#gioi-thieu','#su-menh','#hinh-anh-hoat-dong','#chung-chi','#tuyen-dung'
+    ]
     const columns = navigations.map((e,index) => {
         return(
-            <OptionButton link={`#introduction__section${index+2}`} key={index} className='col-auto'>
+            <OptionButton link={`${navigationId[index]}`} key={index} className='col-auto'>
                 {e}
             </OptionButton>
         )
     })
     return(
-        <section id="introduction__section2">
+        <section id="gioi-thieu">
             <div className="container d-flex flex-column align-items-center">
                 <div className="row d-flex justify-content-center gap-3 pb-5">
                     {columns}
@@ -24,7 +27,9 @@ export default function IntroductionSection2(){
                 </div>
                 <div className='row d-flex row-gap-4 pb-4'>
                     <div className='col-12 col-xxl-6'>
-                        <img src={bg1} alt='img' width='100%' height='100%'/>
+                        <div className='retained-4-7-image-wrapper'>
+                            <img className='aspect-retained-image' src={bg1}/>
+                        </div>
                     </div>
                     <div className='col-12 col-xxl-6'>
                         <p style={{color : '#4D4D4D'}}>

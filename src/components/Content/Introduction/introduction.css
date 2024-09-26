@@ -32,34 +32,34 @@
 #introduction__section1 *{
     z-index: 2;
 }
-#introduction__section2{
+#gioi-thieu{
     background-image: url('../../../assets/images/img\ 77.png');
     padding: 3rem 0;
     background-size: cover;
 }
 @media only screen and (min-width : 1200px) {
-    #introduction__section2{
+    #gioi-thieu{
         padding-bottom: 3rem ;
         padding-top: calc(3rem + 172px/2);
     }
 }
-#introduction__section3{
+#su-menh{
     padding : 4rem 0;
 }
 
 .container__item--zigzag > div:nth-child(even){
     flex-direction: row-reverse;
 }
-#introduction__section4{
+#hinh-anh-hoat-dong{
     padding : 4rem 0;
     background-color: #001A6C;
 }
 
-#introduction__section5{
+#chung-chi{
     padding : 4rem 0;
     font-family: 'Roboto';
 }
-#introduction__section6{
+#tuyen-dung{
     background-image: url('../../../assets//images/image\ 216.png');
     font-family: 'Roboto';
     padding : 4rem 0;
