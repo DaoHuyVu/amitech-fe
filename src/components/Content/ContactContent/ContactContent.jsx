@@ -8,7 +8,7 @@ function ContactDetails({title, details, imgSrc}) {
   return (
       <div className={`flex items-center space-x-2`}>
         <div className="flex">
-          <Title imgSrc={imgSrc}>{title}</Title>
+          <Title $imgSrc={imgSrc}>{title}</Title>
         </div>
         <div className="contact-info">{details}</div>
       </div>
@@ -112,7 +112,7 @@ const Title = styled.div`
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 30px;
-  background-image: url(${props => props.imgSrc});
+  background-image: url(${props => props.$imgSrc});
 `;
 
 export default Content;

@@ -1,324 +1,114 @@
-import * as React from "react";
-import styled from 'styled-components';
-import Pagination from "../../common/Pagination";
+import {useEffect, useState}  from "react";
 import { Link, useLocation } from "react-router-dom";
+import Card from '../../card/Card'
+import CardTitle from '../../card/CardTitle'
+import CardCategory from '../../card/CardCategory'
+import CardContent from '../../card/CardContent'
+import Image11Card from '../../card/Image11Card'
+import {getPostProfile,getNavigationIdImageCover} from '../../../services/util'
+import { getPostDetailById, getPostsByNavigationId } from "../../../services/post";
+import Banner from '../../common/BannerWrapper'
+import Pagination from '../Pagination/Pagination'
+import './product.css'
+const pageSize = 4
+export default function ProductsContent(){
+  const [pageDetails,setPageDetails] = useState(null)
+  const [selectedOption,setSelectedOption] = useState(0)
+  const [posts,setPosts] = useState(null)
+  const [page,setPage] = useState(1)
+  const location = useLocation()
+  const handleChangeOption = (idx) => {
+    setSelectedOption(idx)
+  }
+  const handlePageChange = (page) => {
+    setPage(page)
+  }
+  useEffect(()=>{
+    const fetchPageDetails = async () => {
+      try{
+        const res = await getPostDetailById(5)
+        setPageDetails(res.data.data)
+      }catch(err){
+        console.log(err)
+      }
+    } 
+    fetchPageDetails()
+  },[])
+  useEffect(()=>{
+    const fetchPosts = async () => {
+      try{
+        const res = await getPostsByNavigationId(5,page,pageSize)
+        setPosts(res.data)
+      }catch(err){
+        console.log(err)
+      }
+    }
+    fetchPosts()
+  },[page])
+  
+  const filterLabels = pageDetails ? pageDetails.attributes.subCategories.data.map((e)=>{
+    return e.attributes.name
+  }) : null
 
-function ProductComponent() {
-  const {state} = useLocation()
-  const [selectedButton, setSelectedButton] = React.useState(state !== null ? state.category : "Tất cả");
-  const handleButtonClick = (buttonName) => {
-    setSelectedButton(buttonName);
-  };
+  filterLabels && filterLabels.unshift("Tất cả")
 
-  const [currentPage, setCurrentPage] = React.useState(1);
-  const productsPerPage = 4; // Số lượng sản phẩm trên mỗi trang
+  const filteredPosts = posts ? (selectedOption === 0 ? posts.data : posts.data.filter(e => e.attributes.subCategories.data.attributes.name === filterLabels[selectedOption])) : null 
 
-  const allProducts = [
-    {
-      id: 1,
-      name: "Product 1",
-      description: "Description for product 1",
-      price: 100,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/88ca7c29822f2a2cd33ff5b0d645119efaf228fb8c46e422fe15e911647bae89?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&"
-    },
-    {
-      id: 2,
-      name: "Thiết bị giám sát điện",
-      description: "Description for product 2",
-      price: 200,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/88ca7c29822f2a2cd33ff5b0d645119efaf228fb8c46e422fe15e911647bae89?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&"
-    },
-    {
-      id: 3,
-      name: "Thiết bị giám sát khí nén",
-      description: "Description for product 3",
-      price: 300,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/88ca7c29822f2a2cd33ff5b0d645119efaf228fb8c46e422fe15e911647bae89?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&"
-    },
-    {
-      id: 4,
-      name: "Thiết bị giám sát tiêu thụ nước",
-      description: "Description for product 4",
-      price: 400,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/88ca7c29822f2a2cd33ff5b0d645119efaf228fb8c46e422fe15e911647bae89?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&"
-    },
-    {
-      id: 5,
-      name: "Thiết bị giám sát điện",
-      description: "Description for product 5",
-      price: 400,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/88ca7c29822f2a2cd33ff5b0d645119efaf228fb8c46e422fe15e911647bae89?apiKey=2f548b4572fc4b419a5782ae61ad8ee5&"
-    },
-  ];
-
-  // Tính số lượng trang
-  const totalPages = Math.ceil(allProducts.length / productsPerPage);
-
-  // Lấy các sản phẩm cho trang hiện tại
-  const currentProducts = allProducts
-  .filter(
-      product => selectedButton === "Tất cả" || product.name === selectedButton)
-  .slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage);
-
-  // Hàm để thay đổi trang
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  return (
-      <GridContainer>
-        <HeaderSection>
-          <ImageWrapper>
-            <LazyImage alt="" src="maskgroup-tbspcn.png"/>
-            <SectionContainer>
-              <SectionContent>
-                <SectionTitle>Thiết bị và sản phẩm công nghiệp</SectionTitle>
-                <SectionDescription>
-                  Cung cấp các thiết bị và sản phẩm công nghiệp giúp hỗ trợ hoạt
-                  động tiết kiệm Năng lượng trong doanh nghiệp
-                </SectionDescription>
-              </SectionContent>
-            </SectionContainer>
-          </ImageWrapper>
-        </HeaderSection>
-        <MainContainer>
-          <TabContainer>
-            <Tab active={selectedButton === "Tất cả" }
-                 onClick={() => handleButtonClick("Tất cả")}>
-              Tất cả
-            </Tab>
-            <Tab active={selectedButton === "Thiết bị giám sát điện" }
-                 onClick={() => handleButtonClick("Thiết bị giám sát điện")}>
-              Thiết bị giám sát điện
-            </Tab>
-            <Tab active={selectedButton === "Thiết bị giám sát khí nén"}
-                 onClick={() => handleButtonClick("Thiết bị giám sát khí nén")}>
-              Thiết bị giám sát khí nén
-            </Tab>
-            <Tab active={selectedButton === "Thiết bị giám sát tiêu thụ nước"}
-                 onClick={() => handleButtonClick(
-                     "Thiết bị giám sát tiêu thụ nước")}>
-              Thiết bị giám sát tiêu thụ nước
-            </Tab>
-          </TabContainer>
-          <ProductCategories>
-            {currentProducts.map((product, index) => (
-                <CategoryColumn key={index}>
-                  {/* ... hiển thị thông tin sản phẩm ... */}
-                  <CategoryContainer>
-                    <CategoryImage alt={product.name}
-                                   src={product.imageUrl}/>
-                    <CategoryDescription>
-                      <CategoryTitle>{product.name}</CategoryTitle>
-                      <Link to='/thiet-bi-va-san-pham-cong-nghiep/may-chu-thu-thap-du-lieu-tiet-kiem-nang-luong'>
-                      <CategoryText>{product.description}</CategoryText>
+  return(  
+    <>
+      {
+        pageDetails && 
+        <Banner 
+          imgSrc={getNavigationIdImageCover(pageDetails)}
+          title={pageDetails.attributes.name}
+          description={pageDetails.attributes.description}
+        />
+      }
+      <main id='industrial__products'>
+        <div className="container ">
+          <div className="row justify-content-center mb-4">
+            {
+              filterLabels && filterLabels.map((e,idx)=>{
+                return (
+                  <button 
+                  key={idx} 
+                  type='button' 
+                  className={`btn btn-outline-primary m-2 col-9 col-sm-5 col-lg-auto fw-bold ${idx === selectedOption ? 'active' : ''}`}
+                  onClick={ () => handleChangeOption(idx)}>
+                    {e}
+                  </button>
+                )
+              })
+            }   
+          </div>
+          <div className="row g-4 mb-4">
+            {
+              filteredPosts && filteredPosts.map((e,idx)=>{
+                return (
+                  <Card key={idx} className="col-12 col-md-6 col-xl-4 col-xxl-3">
+                    <Image11Card src={getPostProfile(e)}/>
+                    <CardContent style={{backgroundColor : '#666666'}}>
+                      <CardCategory style={{color : '#ffffffb2'}}>{e.attributes.subCategories.data.attributes.name}</CardCategory>
+                      <Link key={idx} to={`${location.pathname}/${e.attributes.slug}`}>
+                        <CardTitle maxLines={2} >{e.attributes.postTitle}</CardTitle>
                       </Link>
-                    </CategoryDescription>
-                  </CategoryContainer>
-                </CategoryColumn>
-            ))}
-          </ProductCategories>
-          <Pagination currentPage={currentPage} totalPages={totalPages}
-                      onPageChange={handlePageChange}/>
-        </MainContainer>
-      </GridContainer>
-  );
+                    </CardContent>
+                  </Card>
+                )
+              })
+            }      
+          </div>
+          {
+            posts && 
+            <Pagination pageInfo={{
+              page : page,
+              pageCount : posts.meta.pagination.pageCount
+            }} 
+            fetchPageItems = {(page) => handlePageChange(page)}
+            />
+          }
+        </div>
+      </main>
+    </>
+  )
 }
-
-export default ProductComponent;
-
-
-const GridContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
-`;
-
-const HeaderSection = styled.header`
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  color: #fff;
-  text-align: center;
-  justify-content: center;
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
-`;
-
-const ImageWrapper = styled.div`
-  display: flex;
-  position: relative;
-  min-height: 150px;
-  justify-content: center;
-  overflow: hidden;
-`;
-
-const LazyImage = styled.img`
-  position: absolute;
-  inset: 0;
-  height: 150px;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.5);
-`;
-
-const SectionContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  width: 100%;
-  justify-content: center;
-  position: relative;
-`;
-
-const SectionContent = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-height: 150px;
-  @media (max-width: 991px) {
-    padding: 0 20px;
-  }
-`;
-
-const SectionTitle = styled.h2`
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  //font: 700 32px/141% Roboto, -apple-system, Roboto, Helvetica,"VNFont Regular", sans-serif;
-  font-family: "VNFont", sans-serif;
-  font-size: 32px;
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
-`;
-
-const SectionDescription = styled.p`
-  margin-top: 16px;
-  font: 400 20px/120% Roboto, -apple-system, Roboto, Helvetica, sans-serif;
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
-`;
-
-const MainContainer = styled.main`
-  align-self: center;
-  display: flex;
-  margin-top: 72px;
-  width: 100%;
-  max-width: 1440px;
-  flex-direction: column;
-  @media (max-width: 991px) {
-    margin-top: 40px;
-  }
-`;
-
-const TabContainer = styled.nav`
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  font-size: 16px;
-  color: #006ce7;
-  font-weight: 700;
-  padding: 0 20px;
-  @media (max-width: 991px) {
-    flex-wrap: wrap;
-  }
-`;
-
-const Tab = styled.div.attrs(props => ({
-  // Pass only standard HTML attributes to the DOM
-  role: 'button',
-}))`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 14px 16px;
-  color: #006ce7;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 30px;
-
-  ${props => props.active && `
-    background-color: #006ce7;
-    color: #fff;
-  `}
-
-  ${props => !props.active && `
-    border: 1px solid rgba(0, 108, 231, 1);
-  `}
-`;
-
-const ProductCategories = styled.section`
-  display: flex;
-  flex-wrap: wrap; // Thêm dòng này
-  margin-top: 48px;
-  padding: 0 20px;
-  gap: 20px;
-  margin-bottom: 50px;
-  margin-left: 67px;
-  @media (max-width: 991px) {
-    margin-top: 40px;
-    flex-direction: column;
-  }
-`;
-
-const CategoryColumn = styled.div`
-  flex-basis: 315px;
-  display: flex;
-  flex-direction: column;
-  margin-right: 3px;
-  width: 100%;
-  @media (max-width: 991px) {
-    width: 100%;
-    flex-basis: 100%;
-  }
-`;
-
-const CategoryContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
-const CategoryImage = styled.img`
-  aspect-ratio: 1.33;
-  width: 100%;
-  flex-grow: 1;
-  object-position: center;
-  max-width: 100%;
-  @media (max-width: 991px) {
-    margin-top: 24px;
-  }
-`;
-
-const CategoryDescription = styled.div`
-  border-radius: 0 0 5px 5px;
-  background-color: #666;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 19px 16px;
-  text-transform: uppercase;
-  width: 100%;
-  @media (max-width: 991px) {
-    padding-right: 20px;
-  }
-`;
-
-const CategoryTitle = styled.h3`
-  color: rgba(255, 255, 255, 0.7);
-  font: 400 12px Roboto, sans-serif;
-`;
-
-const CategoryText = styled.p`
-  color: #fff;
-  margin-top: 12px;
-  font: 550 1em/2em BeVietNam, -apple-system, Roboto, Helvetica, sans-serif;
-`;

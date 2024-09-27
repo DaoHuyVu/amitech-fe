@@ -18,7 +18,7 @@
 
 }
 .card-content__title{
-    line-height: 30px;
+    line-height: 35px;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box; /* Create a flexbox container for text */

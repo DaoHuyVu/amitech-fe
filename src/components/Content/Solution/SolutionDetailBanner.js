@@ -1,11 +1,10 @@
 import Banner from "../../common/BannerWrapper";
-import { getNavigationIdImageCover } from "../../../services/util";
-export default function SolutionBanner({navigation}){
+export default function SolutionBanner(){
     return(
         <Banner 
-            imgSrc={getNavigationIdImageCover(navigation)}
-            title={navigation.attributes.name}
-            description={navigation.attributes.description}
+            imgSrc='/image 79.png'
+            title="Quản lý năng lượng"
+            description="Thứ 3, 15/08/2023"
         />
     )
 }

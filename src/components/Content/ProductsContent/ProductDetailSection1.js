@@ -3,12 +3,15 @@ import { Link } from "react-router-dom"
 import Slider from "react-slick"
 import parser from 'html-react-parser'
 import { getPostImage, getPostImageArray } from "../../../services/util"
+import CardContent from "../../card/CardContent"
+import CardTitle from "../../card/CardTitle"
+import CardDescription from "../../card/CardDescription"
 export default function ProductDetailSection1({data}){
     const carouselItems = getPostImageArray(data)
     const settings = {
         customPaging: function(i) {
             return (
-              <button className="aspect-3-4-image-wrapper d-block p-0" role='none'>
+              <button className="aspect-3-4-image-wrapper d-block" role='none'>
                 <img src={getPostImage(carouselItems[i])} alt='Carousel Item' className="aspect-retained-image" />
               </button>
             );
@@ -29,11 +32,20 @@ export default function ProductDetailSection1({data}){
         ]
     }
     const productDetail = <div style={{color : '#4d4d4d'}}>
-        <h4 className="pb-3">{data.attributes.postTitle}</h4>
+        {/* <h4 className="pb-3">{data.attributes.postTitle}</h4>
         <div className="pb-3">{parser(data.attributes.postDescription)}</div>
         <Button >
             <Link style={{color : 'white'}}>Liên hệ &gt;&gt;</Link>
-        </Button>
+        </Button> */}
+        <CardContent>
+            <CardTitle>{data.attributes.postTitle}</CardTitle>
+            <CardDescription>{parser(data.attributes.postDescription)}</CardDescription>
+            <Link to='#'>
+                <Button>
+                    Liên hệ &gt;&gt;
+                </Button>
+            </Link>
+        </CardContent>
     </div>
     return(
         <section id="product-detail__section1">

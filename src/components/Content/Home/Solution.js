@@ -48,7 +48,7 @@ export default function Solution(){
         )
     })
     return(
-        <section>
+        <section id='home__solution'>
             <div className="container">
                 <div className='text-center'>
                     <h4 style={{color : '#4D4D4D',lineHeight : '40px',fontWeight : 'bold' }}>

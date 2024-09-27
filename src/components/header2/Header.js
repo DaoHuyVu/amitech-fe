@@ -1,23 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 import {NavLink, useLocation} from "react-router-dom";
-
 const Header = () => {
-
   const location = useLocation();
-
-  const [isScrolled, setIsScrolled] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", checkScroll);
-    return () => {
-      window.removeEventListener("scroll", checkScroll);
-    };
-  }, []);
-
   return (
       <HeaderWrapper>
         <TopBar>
@@ -49,7 +34,7 @@ const Header = () => {
                     {item.text}
                   </StyledAnchor>
                   {item.hasDropdown && (
-                      <img className="dropdown-icon" src="/downbox1.png"
+                      <img className="dropdown-icon" src="/downbox1.png" alt='icon'
                            style={{marginLeft: '8px'}}></img>
                   )}
                 </NavItem>
@@ -76,7 +61,7 @@ const navItems = [
     hasDropdown: true,
     link: "/thiet-bi-va-san-pham-cong-nghiep"
   },
-  {text: "tin tức và sự kiện", isActive: false, link: "/tin-tuc-va-su-kien"},
+  {text: "tin tức và sự kiện", isActive: false, link: "/tin-tuc"},
   {text: "báo giá", isActive: false, link: "/bao-gia"},
   {text: "liên hệ", isActive: false, link: "/lien-he"},
 ];

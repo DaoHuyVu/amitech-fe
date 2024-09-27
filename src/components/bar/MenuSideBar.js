@@ -32,7 +32,7 @@ const MenuSideBar = forwardRef(({behavior='',className='',items},ref) => {
                             item.childrenNavigations.length > 0 && 
                             (
                                 <ImageButton 
-                                    className={`${isShowChildren ? 'menu-item--children-show' : 'menu-item--children-collapse'}`}
+                                    className={`${isShowChildren === item.id ? 'menu-item--children-show' : 'menu-item--children-collapse'}`}
                                     style={{width : '1rem',height : '1rem'}} onClick={() => handleShowChildren(item.id)}>
                                     <FontAwesomeIcon 
                                         className={`menu-item__accordion-icon`}

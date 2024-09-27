@@ -76,6 +76,9 @@ p {
 a,a:hover,a:active,a:visited{
     text-decoration: none;
 }
+a h1,a h2,a h3,a h4,a h5,a h6 {
+    color : white;
+}
 *:focus{
     outline: 0;
 }
@@ -97,25 +100,21 @@ a,a:hover,a:active,a:visited{
 
 .aspect-2-3-image-wrapper{
     padding-top : 67%;
-    width: 100%;
     height : 0;
     position: relative;
 }
 .aspect-3-5-image-wrapper{
     padding-top : 60%;
-    width: 100%;
     height: 0;
     position: relative;
 }
 .aspect-3-4-image-wrapper{
-    padding-top : 75% !important;
-    width: 100% !important;
-    height: 0 !important;
-    position: relative !important;
+    padding-top : 75% ;
+    height: 0 ;
+    position: relative ;
 }
 .aspect-1-1-image-wrapper{
     padding-top: 100%;
-    width: 100%;
     height : 0;
     position: relative;
 }
@@ -159,7 +158,7 @@ a,a:hover,a:active,a:visited{
 }
 
 .slick-dots li{
-    margin : 0 !important
+    margin : 0 
 }
 .slick-dots li.slick-active button:before{
     color : #006CE7 !important
@@ -246,27 +245,35 @@ a,a:hover,a:active,a:visited{
     padding : 3rem 0 100px 0;
 }
 
-.slick-thumb li{
-    width: 60px !important;
-    height: auto !important;
-    cursor: pointer;
+.sided-navigation.slick-thumb li{
+    width: 82px !important;
+    height: 82px !important;
 }
 .sided-carousel .sided-navigation{
     height: 100%;
-    width: 60px;
-    left : -60px;
+    width: 85px;
+    left : -85px;
     bottom : 0;
+}
+.sided-carousel .sided-navigation img{
+    height: 100%;
+    object-fit: contain;
+}
+.sided-carousel .sided-navigation.slick-dots li button::before{
+    visibility: hidden;
+}
+.sided-carousel .sided-navigation button{
+    width: 100%;
+    padding-top: 100%;
+    padding-bottom: 0px;
+    height : 0;
+    position: relative;
 }
 @media only screen and (min-width : 576px) {
     .sided-carousel {
-        padding-left: 60px;
+        padding-left: 85px;
     }
 }
-.sided-carousel .sided-navigation img{
-    max-width: 100% ;
-    display: block;
-}
-
 .slick-thumb li.slick-active img{
     filter: grayscale(0);
 }

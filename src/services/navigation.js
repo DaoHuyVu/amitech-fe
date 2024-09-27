@@ -13,5 +13,5 @@ export const getNavigationById = (id) => {
     return handleCallback(() => axios.get(`/navigations/${id}`))
 }
 export const getNavigationDetailById = (id) => {
-    return handleCallback(() => axios.get(`/navigations/${id}?populate[imageCover][fields][0]=url`))
+    return handleCallback(() => axios.get(`/navigations/${id}?populate[0]=imageCover`))
 }

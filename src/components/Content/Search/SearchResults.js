@@ -22,7 +22,7 @@ export default function SearchResults(){
             }
         } 
         fetchPageItems()
-    },[page])
+    },[page,location])
     return (
         <main id='search-results'>
             <div className='container pb-4' style={{color : 'black'}}>

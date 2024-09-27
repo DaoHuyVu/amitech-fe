@@ -38,7 +38,7 @@ export default function Functionality(){
                     </p>
                 </div>
                 <div className='col-12 col-lg-6 '>
-                    <div className="retained-4-7-image-wrapper">
+                    <div className="retained-4-7-image-wrapper ">
                         <img src={maytinh} alt='Computer' className='retained-4-7-image'/>
                             <Slider 
                                 {...settings} 

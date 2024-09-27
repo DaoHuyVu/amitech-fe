@@ -1,15 +1,3 @@
-// import './App.css';
-// import Home from './pages/home/Home'
-// import Products from "./pages/product/Products";
-// import News from "./pages/news/News";
-// import Quote from "./pages/quote/Quote";
-// import Contact from "./pages/contact/Contact";
-// import Solution from "./pages/solution/Solution";
-// import Recruitment from "./pages/recruitment/Recruitment";
-// import Introduction from "./pages/Introduction/Introduction";
-// import Project from "./pages/project/Project";
-// import JobDetails from "./pages/recruitment/JobDetails";
-// import NewsDetail from "./pages/news/NewsDetail";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, {lazy,Suspense}from "react";

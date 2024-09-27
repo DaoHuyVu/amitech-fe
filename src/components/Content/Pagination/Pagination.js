@@ -2,7 +2,7 @@ import PageItem from './PageItem'
 import './pagination.css'
 
 const totalPagesCenter = 5
-export default function Pagination({className='',style,pageInfo,fetchPageItems}){
+export default function Pagination({className='',style,pageInfo,fetchPageItems=() =>{}}){
     const {page,pageCount} = pageInfo
     const handleClick = (page) => {
         fetchPageItems(page)

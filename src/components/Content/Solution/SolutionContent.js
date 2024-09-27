@@ -1,22 +1,74 @@
 import React, {useEffect, useState} from "react";
 import Banner from "../../common/BannerWrapper";
-import imageBanner from "../../../assets/banner/giaiphap.png";
 import { Link } from "react-router-dom";
-const DigitalSolutionsPage = () => {
-  
+import Card from '../../card/Card'
+import Image23Card from '../../card/Image23Card'
+import CardContent from '../../card/CardContent'
+import CardTitle from '../../card/CardTitle'
+import CardDescription from '../../card/CardDescription'
+import {getNavigationIdImageCover} from '../../../services/util'
+import { getSolutionDetailsById } from "../../../services/solution";
+import './solution.css'
+import Pagination from '../Pagination/Pagination'
+export default function SolutionContent(){
+  const [data,setData] = useState(null)
   useEffect(()=>{
-    const fetchSolutionDetail = () => {
-      
+    const fetchSolutionDetail = async () => {
+      try{
+        const res = await getSolutionDetailsById(4)
+        setData(res.data.data)
+      }catch(err){
+        console.log(err)
+      }
     }
     fetchSolutionDetail()
   },[])
+  console.log(data)
   return (
-      <main className="digital-solutions">
-        <Banner
-            imgSrc={imageBanner}
-            title="GIẢI PHÁP CHUYỂN ĐỔI SỐ"
-            description="Cung cấp các giải pháp chuyển đổi số hàng đầu"
-        />
-      </main>
+    <>
+       {
+          data &&
+          <Banner
+            imgSrc={getNavigationIdImageCover(data)}
+            title={data.attributes.name}
+            description={data.attributes.description}
+          />
+        }
+        <main id="solution">
+          <div className="container mb-4">
+            {
+              data && 
+              data.attributes.childrenNavigations.data.map((e,index)=>{
+                return(
+                  <Card className='row pb-4' key={index}>
+                      <div className="col-12 col-xl-6 px-0">
+                        <Image23Card src={getNavigationIdImageCover(e)} />
+                      </div>
+                      <CardContent className="col-12 col-xl-6" style={{backgroundColor : '#f4f9ff'}}>
+                        <CardTitle 
+                        maxLines={2} 
+                        style={{color : '#4d4d4d',fontWeight:'700',width : '100%',fontSize:'30px'}}>
+                          {e.attributes.name}
+                        </CardTitle>
+                        <CardDescription coverRemain={false} style={{color : '#4d4d4db2'}}>{e.attributes.description}</CardDescription>
+                        <Link style={{color : '#00c2ff'}} to='#'>
+                          Xem thêm &gt;&gt;
+                        </Link>
+                      </CardContent>
+                  </Card>
+                )
+              })
+            }
+          </div>
+          <Pagination 
+            pageInfo={{
+              page : 1,
+              pageCount : 1
+            }}
+          />
+       </main>
+    </>
+      
   );
 };
+
