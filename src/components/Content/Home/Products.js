@@ -5,10 +5,11 @@ import { getProducts } from '../../../services/product'
 import { getNavigationById} from '../../../services/navigation'
 import { getPostProfile } from '../../../services/util'
 import TCard from '../../card/Card'
-import ImageCard from '../../card/Image34Card'
+import ImageCard from '../../card/ImageCard'
 import CardContent from '../../card/CardContent'
 import CardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
+import aspect34Wrapper from '../../card/aspectWrapper/aspect34Wrapper'
 export default function Products(){
     const [products,setProducts] = useState([])
     const bgColor = ['#001a6c','#002a9e','#2253b8']
@@ -67,7 +68,7 @@ export default function Products(){
                             return(
                                 <div className='col-12 col-md-6 col-lg-4 col-xxl-3' key={e.id}>
                                     <TCard > 
-                                        <ImageCard src={getPostProfile(e)} ></ImageCard>
+                                        <ImageCard src={getPostProfile(e)} AspectWrapper={aspect34Wrapper}/>
                                         <CardContent className='rounded-bottom'style={{backgroundColor:`${bgColor[index]}`}}>
                                             <Link to={`/thiet-bi-va-san-pham-cong-nghiep/${e.attributes.slug}`} style={{color : 'white'}}>
                                                 <CardTitle maxLines={2}>

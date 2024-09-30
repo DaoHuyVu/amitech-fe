@@ -3,11 +3,12 @@ import parser from 'html-react-parser'
 import Card from '../../card/Card'
 import { Link, useLocation } from 'react-router-dom'
 import { hostName } from '../../../config/domain'
-import Image47Card from '../../card/Image47Card'
+import ImageCard from '../../card/ImageCard'
 import CardContent from '../../card/CardContent'
 import CardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
 import Pagination from '../Pagination/Pagination'
+import aspect47Wrapper from '../../card/aspectWrapper/aspect47Wrapper'
 export default function ProjectSection2({data}){
     const location = useLocation()
     const projects = data.data
@@ -16,7 +17,7 @@ export default function ProjectSection2({data}){
         return(
             <div className='col-12 col-md-6 col-lg-4 col-xxl-3' key={e.id}>
                 <Card>
-                    <Image47Card src={getPostProfile(e)}/>  
+                    <ImageCard src={getPostProfile(e)} AspectWrapper={aspect47Wrapper}/>  
                     <CardContent style={{backgroundColor : '#f1f7ff'}}>
                         <CardTitle style={{color : '#4d4d4d'}}>{e.attributes.postTitle}</CardTitle>
                         <CardDescription style={{color : '#4d4d4db2'}}>{parser(e.attributes.postDescription)}</CardDescription>

@@ -19,3 +19,4 @@ export const getPostDetailById = (id) => {
 export const getPostsByNavigationId = (id,page,pageSize) => {
     return handleCallback(() => axios.get(`/posts?fields[0]=postTitle&fields[1]=slug&populate[navigations]=true&filters[navigations][id][$eq]=${id}&populate[subCategories]=true&populate[profile]=true&pagination[page]=${page}&pagination[pageSize]=${pageSize}`))
 }
+

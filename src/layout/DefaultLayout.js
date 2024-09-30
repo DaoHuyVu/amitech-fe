@@ -11,7 +11,6 @@ export const sidebarContext = createContext()
 export default function DefaultLayout() {
   const [isShowSideBar,setIsShowSideBar] = useState(false)
   const [navigations,setNavigations] = useState([])
-  const sidebarRef = useRef(null)
   const location = useLocation()
   const previousLocation = useRef(location.pathname)
   useEffect(()=>{
@@ -32,16 +31,6 @@ export default function DefaultLayout() {
     fetchNavs()
   },[])
   
-  useEffect(() => {
-    if(sidebarRef.current){
-      if(isShowSideBar){
-        sidebarRef.current.classList.add('sidebar--show')
-      }
-      else
-        sidebarRef.current.classList.remove('sidebar--show')
-
-    }
-  },[isShowSideBar])
 
   const handleClose = () => {
     setIsShowSideBar(false)
@@ -53,10 +42,11 @@ export default function DefaultLayout() {
           <ScrollToHashElement />
           {location.pathname === '/' ? <Header /> : <Header2 />}
           <MenuSideBar 
-            ref={sidebarRef}
             handleClose={handleClose}
             className={`d-xxxl-none ${isShowSideBar ? 'sidebar-container--show' : ''}`}
-            items={navigations}/>
+            items={navigations}
+            isShowSideBar={isShowSideBar}
+          />
             <Outlet/>
           <Footer />
         </div>

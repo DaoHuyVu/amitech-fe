@@ -82,7 +82,7 @@ const SectionTitle = styled.h2`
   }
 `;
 
-const SectionDescription = styled.p`
+const SectionDescription = styled.span`
   margin-top: 16px;
   @media (max-width: 991px) {
     max-width: 100%;

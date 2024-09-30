@@ -258,6 +258,7 @@ a h1,a h2,a h3,a h4,a h5,a h6 {
 .sided-carousel .sided-navigation img{
     height: 100%;
     object-fit: contain;
+    object-position:top;
 }
 .sided-carousel .sided-navigation.slick-dots li button::before{
     visibility: hidden;
@@ -336,4 +337,8 @@ a h1,a h2,a h3,a h4,a h5,a h6 {
     margin : 0 auto;
     display: block;
     max-width: 100%;
+}
+#post-content figcaption {
+    margin: 1rem auto 0;
+    text-align: center;
 }

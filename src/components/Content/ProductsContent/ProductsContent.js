@@ -4,12 +4,13 @@ import Card from '../../card/Card'
 import CardTitle from '../../card/CardTitle'
 import CardCategory from '../../card/CardCategory'
 import CardContent from '../../card/CardContent'
-import Image11Card from '../../card/Image11Card'
+import ImageCard from '../../card/ImageCard'
 import {getPostProfile,getNavigationIdImageCover} from '../../../services/util'
 import { getPostDetailById, getPostsByNavigationId } from "../../../services/post";
 import Banner from '../../common/BannerWrapper'
 import Pagination from '../Pagination/Pagination'
 import './product.css'
+import aspect34Wrapper from "../../card/aspectWrapper/aspect34Wrapper";
 const pageSize = 4
 export default function ProductsContent(){
   const [pageDetails,setPageDetails] = useState(null)
@@ -86,7 +87,7 @@ export default function ProductsContent(){
               filteredPosts && filteredPosts.map((e,idx)=>{
                 return (
                   <Card key={idx} className="col-12 col-md-6 col-xl-4 col-xxl-3">
-                    <Image11Card src={getPostProfile(e)}/>
+                    <ImageCard src={getPostProfile(e)} AspectWrapper={aspect34Wrapper}/>
                     <CardContent style={{backgroundColor : '#666666'}}>
                       <CardCategory style={{color : '#ffffffb2'}}>{e.attributes.subCategories.data.attributes.name}</CardCategory>
                       <Link key={idx} to={`${location.pathname}/${e.attributes.slug}`}>

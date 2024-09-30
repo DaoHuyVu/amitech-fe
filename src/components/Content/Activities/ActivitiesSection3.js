@@ -125,7 +125,7 @@ export default function ActivitiesSection3(){
                 <div className='row mb-4'>
                     {cols}
                 </div>
-                <Pagination pageInfo={{page : data.current,pageCount : data.total}}/>
+                <Pagination pageInfo={{page : data.current,pageCount : data.total}} />
             </div>
         </section>
     )

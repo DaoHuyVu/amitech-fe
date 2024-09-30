@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import Banner from "../../common/BannerWrapper";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Card from '../../card/Card'
-import Image23Card from '../../card/Image23Card'
+import ImageCard from '../../card/ImageCard'
 import CardContent from '../../card/CardContent'
 import CardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
@@ -10,8 +10,10 @@ import {getNavigationIdImageCover} from '../../../services/util'
 import { getSolutionDetailsById } from "../../../services/solution";
 import './solution.css'
 import Pagination from '../Pagination/Pagination'
+import aspect23Wrapper from "../../card/aspectWrapper/aspect23Wrapper";
 export default function SolutionContent(){
   const [data,setData] = useState(null)
+  const location = useLocation()
   useEffect(()=>{
     const fetchSolutionDetail = async () => {
       try{
@@ -23,7 +25,6 @@ export default function SolutionContent(){
     }
     fetchSolutionDetail()
   },[])
-  console.log(data)
   return (
     <>
        {
@@ -42,7 +43,7 @@ export default function SolutionContent(){
                 return(
                   <Card className='row pb-4' key={index}>
                       <div className="col-12 col-xl-6 px-0">
-                        <Image23Card src={getNavigationIdImageCover(e)} />
+                        <ImageCard src={getNavigationIdImageCover(e)} AspectWrapper={aspect23Wrapper}/>
                       </div>
                       <CardContent className="col-12 col-xl-6" style={{backgroundColor : '#f4f9ff'}}>
                         <CardTitle 
@@ -51,7 +52,7 @@ export default function SolutionContent(){
                           {e.attributes.name}
                         </CardTitle>
                         <CardDescription coverRemain={false} style={{color : '#4d4d4db2'}}>{e.attributes.description}</CardDescription>
-                        <Link style={{color : '#00c2ff'}} to='#'>
+                        <Link style={{color : '#00c2ff'}} to={`${location.pathname}${e.attributes.slug}`}>
                           Xem thêm &gt;&gt;
                         </Link>
                       </CardContent>

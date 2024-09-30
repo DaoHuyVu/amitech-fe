@@ -1,0 +1,19 @@
+#page-news{
+    font-family: 'Roboto';
+    padding : 3rem 0;
+}
+#page-news-detail{
+    font-family: 'Roboto';
+    padding : 3rem 0;
+}
+#page-news-detail #post-content p,#page-news-detail #post-content ul{
+    max-width: 960px;
+    margin: 0 auto;
+}
+#news-detail-section1{
+    margin-bottom: 3rem;
+}
+#news-detail-section2{
+    padding : 3rem 0;
+    background-image: url('/public/image\ 216.png');
+}

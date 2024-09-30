@@ -1,53 +1,44 @@
-import bg1 from '../../../assets/images/image 177.png'
-import bg2 from '../../../assets/images/image 204.png'
-import bg3 from '../../../assets/images/image 205.png'
-import bg4 from '../../../assets/images/image 206.png'
-import bg5 from '../../../assets/images/image 174.png'
+import { useState,useEffect } from 'react'
 import Button from '../../button/Button'
 import Slider from 'react-slick'
 import { Link } from 'react-router-dom'
 import Card from '../../card/Card'
-import Image47Card from '../../card/Image47Card'
+import ImageCard from '../../card/ImageCard'
 import CardContent from '../../card/CardContent'
 import CardCategory from '../../card/CardCategory'
 import CardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
+import { getNewsPostsById } from '../../../services/news'
+import { getPostCategory, getPostProfile } from '../../../services/util'
+import aspect47Wrapper from '../../card/aspectWrapper/aspect47Wrapper'
 export default function News(){
-    const carouselData = [
-        {
-            categoryName : 'Tin hoạt động của Amitech',
-            title : 'Ứng dụng phần mềm iNERGY AMS20 trong quản lý năng lượng',
-            content : 'Trong khuôn khổ các hoạt động của triển lãm quốc tế công nghệ năng lượng - môi trường Hà Nội năm 2022, nhiều giải pháp công nghệ đã được giới thiệu đến các doanh nghiệp, trong đó có giải pháp về hệ thống phần mềm quản lý năng lượng...',
-            src : bg1
-        },
-        {
-            categoryName : 'Tin hoạt động của Amitech ',
-            title : 'Ứng dụng phần mềm iNERGY AMS20 trong quản lý năng lượng',
-            content : 'Trong khuôn khổ các hoạt động của triển lãm quốc tế công nghệ năng lượng - môi trường Hà Nội năm 2022, nhiều giải pháp công nghệ đã được giới thiệu đến các doanh nghiệp, trong đó có giải pháp về hệ thống phần mềm quản lý năng lượng...',
-            src : bg1
-        },
-        {
-            categoryName : 'Tin hoạt động của Amitech ',
-            title : 'Ứng dụng phần mềm iNERGY AMS20 trong quản lý năng lượng',
-            content : 'Trong khuôn khổ các hoạt động của triển lãm quốc tế công nghệ năng lượng - môi trường Hà Nội năm 2022, nhiều giải pháp công nghệ đã được giới thiệu đến các doanh nghiệp, trong đó có giải pháp về hệ thống phần mềm quản lý năng lượng...',
-            src : bg1
+    const [data,setData] = useState(null)
+    useEffect(()=>{
+        const fetchData = async () => {
+            try{
+                const res = await getNewsPostsById(6)
+                setData(res.data.data)
+            }catch(err){
+                console.log(err)
+            }
         }
-    ]
-    const carouselItems = carouselData.map((e,index) => {
+        fetchData()
+    },[])
+    const carouselItems = data ? data.slice(0,6).map((e,index) => {
        return (
             <Card key={index} className='d-flex'>
-                <Image47Card src={e.src}/>
+                <ImageCard src={getPostProfile(e)} AspectWrapper={aspect47Wrapper}/>
                 <CardContent style={{backgroundColor : '#F1F7FF',minHeight : '300px'}}>
-                    <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{e.categoryName}</CardCategory>
-                    <CardTitle maxLines='1' style={{color : '#4d4d4d'}}>{e.title}</CardTitle>
-                    <CardDescription coverRemain='false' style={{color : '#4d4d4db2'}}>{e.content}</CardDescription>
-                    <Link to='#' style={{color : '#00c2ff',fontWeight : 'bold'}}>
+                    <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{getPostCategory(e)}</CardCategory>
+                    <CardTitle maxLines='1' style={{color : '#4d4d4d'}}>{e.attributes.postTitle}</CardTitle>
+                    <CardDescription coverRemain='false' style={{color : '#4d4d4db2'}}>{e.attributes.excerp}</CardDescription>
+                    <Link to={`/tin-tuc-va-su-kien/${e.attributes.slug}`} style={{color : '#00c2ff',fontWeight : 'bold'}}>
                         Xem thêm &gt;&gt;
                     </Link>
                 </CardContent>
             </Card>
-       )
-    })
+       ) 
+    })  : null
     const carouselSettings = {
         dots: true,
         slidesToShow : 1,
@@ -62,59 +53,37 @@ export default function News(){
             </div>
         )
     }
-    const newsData = [
-        {
-            categoryName : 'Tin hoạt động của Amitech',
-            title : 'AMITECH trở thành đối tác chính thức của MITSUBISHI ELECTRIC VIETNAM',
-            src : bg2
-        },
-        {
-            categoryName : 'Tin hoạt động của Amitech',
-            title : 'AMITECH tham gia Hội chợ ENTECH Hà Nội 2023',
-            src : bg3
-        },
-        {
-            categoryName : 'Tin hoạt động của Amitech',
-            title : 'Quản lý năng lượng iNERGY',
-            src : bg4
-        },
-        {
-            categoryName : 'Tin tổng hợp',
-            title : 'Thương thảo hợp đồng triển khai giải pháp iNergy kết hợp khảo sát các vị trí lắp đặt thiết bị',
-            src : bg5
-        }   
-    ]
-    const newsColumns = newsData.map((e,index) => {
+    const newsColumns = data ? data.slice(6,10).map((e,index) => {
         return (
             <div className='col-12 col-md-6' key={index}>
                 <Card className='d-flex'>
-                <Image47Card src={e.src}/>
+                <ImageCard src={getPostProfile(e)} AspectWrapper={aspect47Wrapper}/>
                 <CardContent style={{backgroundColor : '#F1F7FF'}}>
-                    <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{e.categoryName}</CardCategory>
-                    <CardTitle maxLines='3' style={{color : '#4d4d4d'}} className='fs-5'>{e.title}</CardTitle>
-                    <Link to='#' style={{color : '#00c2ff',fontWeight : 'bold'}}>
+                    <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{getPostCategory(e)}</CardCategory>
+                    <CardTitle maxLines='3' style={{color : '#4d4d4d'}}>{e.attributes.postTitle}</CardTitle>
+                    <Link to={`'/tin-tuc-va-su-kien/${e.attributes.slug}`} style={{color : '#00c2ff',fontWeight : 'bold'}}>
                         Xem thêm &gt;&gt;
                     </Link>
                 </CardContent>
                 </Card>
             </div>
         )
-    })
+    }) : null
     return(
         <section id="home_news">
             <div className="container d-flex flex-column align-items-center">
                 <div className="text-center pb-4">
                     <h5 style={{color : '#4D4D4D',fontWeight : '700'}}>TIN TỨC VÀ SỰ KIỆN</h5>
                 </div>
-                <div className="row g-3 w-100 h-100 pb-4 d-flex flex-row">
-                    <div className="col-12 col-xxl-6">
+                <div className="row w-100 h-100 pb-4 d-flex flex-row">
+                    <div className="col-12 col-xl-6">
                         <Slider {...carouselSettings} className='custom-carousel h-100 custom-carousel__button--disabled'>
-                            {carouselItems}
+                            {data && carouselItems}
                         </Slider>
                     </div>
-                    <div className="col-12 col-xxl-6">
+                    <div className="col-12 col-xl-6">
                         <div className="row gy-3 ">
-                            {newsColumns}
+                            {data && newsColumns}
                         </div>
                     </div>
                 </div>

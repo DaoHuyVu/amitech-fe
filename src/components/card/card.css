@@ -20,6 +20,7 @@
 .card-content__title{
     line-height: 35px;
     text-overflow: ellipsis;
+    font-size: 25px;
     overflow: hidden;
     display: -webkit-box; /* Create a flexbox container for text */
     -webkit-line-clamp: 4; /* Limit to 4 lines of text */

@@ -1,3 +1,4 @@
+import { DateTime } from "luxon"
 import { host } from "./AxiosInstance"
 export function getNavigationIdImageCover(response){
     return `${host}${response.attributes.imageCover.data.attributes.url}`
@@ -21,6 +22,12 @@ export function getPostProfile(response){
 export function getPostNavigation(response){
     return response.attributes.navigations.data[0].attributes.slug
 }
-
-
-
+export function getPostCategory(response){
+    return response.attributes.subCategories.data.attributes.name
+}
+export function getMediumSizePostProfile(response){
+   return `${host}${response.attributes.profile.data.attributes.formats.medium.url}`
+}
+export function convertUTCPlus7(dateTime){
+    return DateTime.fromISO(dateTime,{zone : 'utc'}).setZone('utc+7').toFormat('dd/MM/yyyy HH:mm')
+}

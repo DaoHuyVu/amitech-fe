@@ -9,7 +9,8 @@ import TCard from '../../card/Card'
 import TCardContent from '../../card/CardContent'
 import TCardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
-import ImageCard from '../../card/Image34Card'
+import ImageCard from '../../card/ImageCard'
+import aspect34Wrapper from '../../card/aspectWrapper/aspect34Wrapper'
 export default function Project(){
     const [projects,setProjects] = useState([])
     useEffect(() => {
@@ -27,7 +28,7 @@ export default function Project(){
         return (
             <div className="col-12 col-md-6 col-xl-4 col-xxl-3" key={e.id}>
                 <TCard>
-                    <ImageCard src={getPostProfile(e) }/>
+                    <ImageCard src={getPostProfile(e)} AspectWrapper={aspect34Wrapper}/>
                     <TCardContent style={{backgroundColor : '#f4f9ff1a'}}>
                         <TCardTitle>
                             {e.attributes.postTitle}

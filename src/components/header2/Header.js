@@ -61,7 +61,7 @@ const navItems = [
     hasDropdown: true,
     link: "/thiet-bi-va-san-pham-cong-nghiep"
   },
-  {text: "tin tức và sự kiện", isActive: false, link: "/tin-tuc"},
+  {text: "tin tức và sự kiện", isActive: false, link: "/tin-tuc-va-su-kien"},
   {text: "báo giá", isActive: false, link: "/bao-gia"},
   {text: "liên hệ", isActive: false, link: "/lien-he"},
 ];

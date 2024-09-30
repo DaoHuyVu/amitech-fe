@@ -32,11 +32,6 @@ export default function ProductDetailSection1({data}){
         ]
     }
     const productDetail = <div style={{color : '#4d4d4d'}}>
-        {/* <h4 className="pb-3">{data.attributes.postTitle}</h4>
-        <div className="pb-3">{parser(data.attributes.postDescription)}</div>
-        <Button >
-            <Link style={{color : 'white'}}>Liên hệ &gt;&gt;</Link>
-        </Button> */}
         <CardContent>
             <CardTitle>{data.attributes.postTitle}</CardTitle>
             <CardDescription>{parser(data.attributes.postDescription)}</CardDescription>
