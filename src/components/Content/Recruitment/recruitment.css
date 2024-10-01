@@ -1,0 +1,24 @@
+.job-status{
+    position: absolute;
+    color: white;
+    top : 1rem;
+    right : 1rem;
+    padding : 0.1rem 0.5rem;
+    border-radius: 2px;
+}
+
+* > .job-status{
+    width: auto;
+}
+#page-recruitment{
+    padding : 3rem 0 0 0;
+    font-family: 'Roboto';
+}
+#page-recruitment-detail{
+    font-family: 'Roboto';
+    padding: 3rem 0 ;
+    color : #4d4d4d
+}
+#page-recruitment-detail svg{
+    width: 16px;
+}

@@ -11,10 +11,11 @@ import { projectLoader } from "./components/Content/Project/ProjectDetailContent
 import NewsDetail, {loader as NewsLoader} from './components/Content/News/NewsDetail'
 import BaseContainer from "./components/Content/BaseContainer";
 import {loader as ProductDetailLoader } from "./components/Content/ProductsContent/ProductDetailContent"
+import {loader as JobDetailLoader} from './components/Content/Recruitment/RecruitmentDetail'
 const EnergyManagement = lazy(() => import("./components/Content/Solution/energyManagement/EnergyManagement"))
 const BaseSolution = lazy(() => import("./components/Content/Solution/BaseSolution"));
 const HomeContent =  lazy(() => import("./components/Content/Home/HomeContent"));
-const Recruitment = lazy(() =>import("./components/Content/Recruitment/RecruitmentContent"));
+const Recruitment = lazy(() =>import("./components/Content/Recruitment/Recruitment"));
 const DefaultLayout  = lazy(() => import("./layout/DefaultLayout"))
 const Introduction  = lazy(() => import("./components/Content/Introduction/IntroductionContent"))
 const Project  = lazy(() => import("./components/Content/Project/ProjectContent"))
@@ -27,6 +28,7 @@ const Activities = lazy(() => import("./components/Content/Activities/Activities
 const ProjectDetailContent = lazy(() => import("./components/Content/Project/ProjectDetailContent"))
 const ProductDetailContent =lazy(()=> import("./components/Content/ProductsContent/ProductDetailContent"))
 const SearchResult  = lazy(() => import('./components/Content/Search/SearchResults'))
+const RecruitmentDetail = lazy(() => import('./components/Content/Recruitment/RecruitmentDetail'))
 const router = createBrowserRouter([
   {
     path : '/',
@@ -124,7 +126,18 @@ const router = createBrowserRouter([
       },
       {
         path : 'tuyen-dung',
-        element : <Recruitment />
+        element : <BaseContainer/>,
+        children : [
+          {
+            index : true,
+            element : <Recruitment />
+          },
+          {
+            path : ':slug',
+            element : <RecruitmentDetail />,
+            loader : JobDetailLoader
+          }
+        ] 
       },
       
     ] 
@@ -134,7 +147,6 @@ function App() {
   return (
     <Suspense fallback={<div>...Loading</div>}>
       <RouterProvider router={router}>
-       
       </RouterProvider>
     </Suspense>
   );

@@ -31,3 +31,6 @@ export function getMediumSizePostProfile(response){
 export function convertUTCPlus7(dateTime){
     return DateTime.fromISO(dateTime,{zone : 'utc'}).setZone('utc+7').toFormat('dd/MM/yyyy HH:mm')
 }
+export function getJobThumbnail(response){
+    return `${host}${response.attributes.thumbnail.data.attributes.url}`
+}

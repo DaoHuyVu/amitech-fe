@@ -26,7 +26,7 @@ export default function IntroductionSection2(){
                     <h2 style={{color : '#4d4d4d',fontWeight : '700'}} className="pb-3">Giới thiệu về Amitech</h2>
                 </div>
                 <div className='row d-flex row-gap-4 pb-4'>
-                    <div className='col-12 col-xxl-6'>
+                    <div className='col-12 col-xxl-6 mx-auto' style={{maxWidth : '700px'}}>
                         <div className='retained-4-7-image-wrapper'>
                             <img className='aspect-retained-image' src={bg1} alt=""/>
                         </div>
