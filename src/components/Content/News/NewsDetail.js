@@ -28,7 +28,7 @@ export default function NewsDetail(){
             }
         }
         fetchRelatedPosts()
-    },[])
+    },[data])
     return(
         <>
             <Banner 
@@ -51,8 +51,8 @@ export default function NewsDetail(){
                                 {
                                     relatedPosts.map((e,idx) => {
                                         return (
-                                            <div className="col-12 col-md-6 col-xl-4 col-xxl-3">
-                                                <Card key={idx}>
+                                            <div className="col-12 col-md-6 col-xl-4 col-xxl-3" key={idx} >
+                                                <Card>
                                                     <ImageCard src={getPostProfile(e)} AspectWrapper={aspect34Wrapper}/>
                                                     <CardContent className="px-0">
                                                         <CardCategory style={{color : '#4d4d4db2'}}>

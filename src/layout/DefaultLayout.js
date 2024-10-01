@@ -7,6 +7,7 @@ import './layout.css'
 import {getPrimaryNavigation} from '../services/header'
 import Header2 from '../components/header2/Header'
 import ScrollToHashElement from "../components/ScrollToHashElement";
+import { ScrollRestoration } from "react-router-dom";
 export const sidebarContext = createContext()
 export default function DefaultLayout() {
   const [isShowSideBar,setIsShowSideBar] = useState(false)
@@ -40,6 +41,7 @@ export default function DefaultLayout() {
       <sidebarContext.Provider value={{isShowSideBar,setIsShowSideBar}}>
         <div id="layout">
           <ScrollToHashElement />
+          {/* <Header/> */}
           {location.pathname === '/' ? <Header /> : <Header2 />}
           <MenuSideBar 
             handleClose={handleClose}
@@ -48,6 +50,7 @@ export default function DefaultLayout() {
             isShowSideBar={isShowSideBar}
           />
             <Outlet/>
+            <ScrollRestoration />
           <Footer />
         </div>
       </sidebarContext.Provider>

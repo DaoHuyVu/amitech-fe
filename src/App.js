@@ -1,7 +1,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, {lazy,Suspense}from "react";
-import { createBrowserRouter, RouterProvider, ScrollRestoration} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
 import "slick-carousel/slick/slick.css";
@@ -11,7 +11,6 @@ import { projectLoader } from "./components/Content/Project/ProjectDetailContent
 import NewsDetail, {loader as NewsLoader} from './components/Content/News/NewsDetail'
 import BaseContainer from "./components/Content/BaseContainer";
 import {loader as ProductDetailLoader } from "./components/Content/ProductsContent/ProductDetailContent"
-import ScrollToTop from "./components/ScrollToTop";
 const EnergyManagement = lazy(() => import("./components/Content/Solution/energyManagement/EnergyManagement"))
 const BaseSolution = lazy(() => import("./components/Content/Solution/BaseSolution"));
 const HomeContent =  lazy(() => import("./components/Content/Home/HomeContent"));
@@ -134,8 +133,8 @@ const router = createBrowserRouter([
 function App() {
   return (
     <Suspense fallback={<div>...Loading</div>}>
-      <RouterProvider router={router} >
-        <ScrollRestoration />
+      <RouterProvider router={router}>
+       
       </RouterProvider>
     </Suspense>
   );

@@ -28,7 +28,7 @@ export default function IntroductionSection2(){
                 <div className='row d-flex row-gap-4 pb-4'>
                     <div className='col-12 col-xxl-6'>
                         <div className='retained-4-7-image-wrapper'>
-                            <img className='aspect-retained-image' src={bg1}/>
+                            <img className='aspect-retained-image' src={bg1} alt=""/>
                         </div>
                     </div>
                     <div className='col-12 col-xxl-6'>

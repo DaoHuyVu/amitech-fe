@@ -58,7 +58,7 @@ const ScrollToHashElement = ({
         })
       }
     }
-  }, [hash])
+  }, [hash,behavior,block,inline])
 
   return null
 }

@@ -6,10 +6,10 @@
     position: absolute;
     z-index: 2;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     background-color: white;
-    left : 0;
-    width: 100%;
+    justify-content: center;
+    border-radius: 5px;
     visibility: hidden;
     top : calc(42px + 37px + 24px); /* HeaderTop + HeaderMain's paddingTop + HeaderMain*/
     padding-top: 16px; /* HeaderMain's paddingBottom*/

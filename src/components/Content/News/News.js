@@ -11,7 +11,6 @@ import Banner from '../../common/BannerWrapper'
 import Pagination from '../Pagination/Pagination'
 import './news.css'
 import { faClock} from "@fortawesome/free-solid-svg-icons";
-import { DateTime } from "luxon";
 import aspect23Wrapper from "../../card/aspectWrapper/aspect23Wrapper";
 import aspect47Wrapper from "../../card/aspectWrapper/aspect47Wrapper";
 import CardDescription from "../../card/CardDescription";
@@ -20,7 +19,6 @@ import { getPostCategory } from "../../../services/util";
 import Slider from "react-slick";
 import { getNewsPostsById } from "../../../services/news";
 
-const pageSize = 4
 export default function News(){
   const [pageDetails,setPageDetails] = useState(null)
   const [selectedOption,setSelectedOption] = useState(0)

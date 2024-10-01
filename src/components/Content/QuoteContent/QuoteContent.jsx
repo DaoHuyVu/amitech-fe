@@ -18,7 +18,7 @@ function QuoteRequestForm() {
             <div className="form-container">
               <div className="form-image-column">
                 <img loading="lazy" src="gircontactl3.png"
-                     alt="Form Related Image" className="form-image"/>
+                     alt="Form Related " className="form-image"/>
               </div>
               <div className="form-fields-column">
                 <form className="quote-form">

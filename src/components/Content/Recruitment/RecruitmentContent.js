@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Banner from "../../common/BannerWrapper";
 import searchIcon from '../../../assets/icons/search-icon.png';
 import Pagination from "../../common/Pagination";
-import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import imageBanner from '../../../assets/banner/tuyendung.png';
 import {fetchRecruitment} from "../../../services/recruitmentService";

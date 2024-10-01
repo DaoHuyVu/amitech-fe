@@ -1,4 +1,4 @@
-import { forwardRef, useContext, useState,} from 'react'
+import { useContext, useState,} from 'react'
 import './sidebar.css'
 import ImageButton from '../button/ImageButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
