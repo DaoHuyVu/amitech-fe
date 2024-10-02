@@ -25,7 +25,7 @@ export default function Customer(){
                             key={index} 
                             className='col-12 col-sm-6 col-lg-4 ' >
                                 <div className='d-flex justify-content-center align-items-center' style={{backgroundColor : 'white',height : '100px'}} >
-                                    <img src={e} alt='customerLogo' style={{minHeight : '60px'}} className='mw-100'/>
+                                    <img loading='lazy' src={e} alt='customerLogo' style={{minHeight : '60px'}} className='mw-100'/>
                                 </div>
                             </div>
                         )
@@ -33,7 +33,7 @@ export default function Customer(){
                 </div>
                 <div className="row" style={{background :'linear-gradient(360deg, #006CE7 0%, #0E349C 100%)'}}>
                     <div className='col-12 col-lg-6 text-center order-2'>
-                        <img src={bg7} alt ='PriceImg' className='mw-100'/> 
+                        <img loading='lazy' src={bg7} alt ='PriceImg' className='mw-100' /> 
                     </div>
                     <Form className='col-12 col-lg-6 d-flex flex-column py-4 justify-content-center
                      align-items-center align-items-lg-start order-1 order-lg-2 row-gap-4' 

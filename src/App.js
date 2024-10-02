@@ -1,7 +1,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, {lazy,Suspense}from "react";
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, ScrollRestoration} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
 import "slick-carousel/slick/slick.css";
@@ -12,6 +12,7 @@ import NewsDetail, {loader as NewsLoader} from './components/Content/News/NewsDe
 import BaseContainer from "./components/Content/BaseContainer";
 import {loader as ProductDetailLoader } from "./components/Content/ProductsContent/ProductDetailContent"
 import {loader as JobDetailLoader} from './components/Content/Recruitment/RecruitmentDetail'
+import Loading from "./components/loading/Loading";
 const EnergyManagement = lazy(() => import("./components/Content/Solution/energyManagement/EnergyManagement"))
 const BaseSolution = lazy(() => import("./components/Content/Solution/BaseSolution"));
 const HomeContent =  lazy(() => import("./components/Content/Home/HomeContent"));
@@ -26,7 +27,7 @@ const News = lazy(()=>import("./components/Content/News/News"))
 const Contact = lazy(() => import("./components/Content/ContactContent/ContactContent"))
 const Activities = lazy(() => import("./components/Content/Activities/ActivitiesContent"))
 const ProjectDetailContent = lazy(() => import("./components/Content/Project/ProjectDetailContent"))
-const ProductDetailContent =lazy(()=> import("./components/Content/ProductsContent/ProductDetailContent"))
+const ProductDetailContent = lazy(()=> import("./components/Content/ProductsContent/ProductDetailContent"))
 const SearchResult  = lazy(() => import('./components/Content/Search/SearchResults'))
 const RecruitmentDetail = lazy(() => import('./components/Content/Recruitment/RecruitmentDetail'))
 const router = createBrowserRouter([
@@ -145,8 +146,14 @@ const router = createBrowserRouter([
 ])
 function App() {
   return (
-    <Suspense fallback={<div>...Loading</div>}>
-      <RouterProvider router={router}>
+    <Suspense fallback={<Loading />}>
+      <RouterProvider router={router} >
+        <ScrollRestoration 
+          getKey={(location,matches) => {
+            console.log(matches)
+            return location.key
+          }}
+        />
       </RouterProvider>
     </Suspense>
   );

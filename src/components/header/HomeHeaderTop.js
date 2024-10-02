@@ -49,8 +49,8 @@ export default function HomeHeaderTop(){
     navigationList.unshift(<LanguageChooser />)
     return(
             <div id="header-home-top">
-                <div className="container py-xl-2 d-none d-xxxl-block">
-                    <div className='d-flex flex-row-reverse column-gap-4 '>
+                <div className="container py-2 d-none d-xxxl-block">
+                    <div className='d-flex flex-row-reverse column-gap-4'>
                             <ListDelimiter elements={navigationList} style={itemStyle}/>
                             <SearchBar />
                             <ListDelimiter elements={contactList} style={itemStyle}/>

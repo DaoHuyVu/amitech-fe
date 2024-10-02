@@ -21,7 +21,7 @@ export default function IntroductionSection3(){
         return (
             <div className='d-flex align-items-start column-gap-3' key={index}>
                 <div className='p-3 d-flex justify-content-center align-items-center' style={{width : '70px',height : '70px',backgroundColor : '#006CE7',borderRadius : '5px'}}>
-                    <img src={e.icon} alt={name}/>
+                    <img loading='lazy' src={e.icon} alt={name}/>
                 </div>
                 <div className='pb-4'>
                     <h6 style={{color : '#006CE7',fontWeight : '700'}}>{e.title}</h6>
@@ -55,7 +55,7 @@ export default function IntroductionSection3(){
         return (
             <div className='d-flex align-items-start column-gap-3' key={index}>
                 <div className='p-3 d-flex justify-content-center align-items-center' style={{width : '70px',height : '70px',backgroundColor : '#006CE7',borderRadius : '5px'}}>
-                    <img src={e.icon} alt='icon3'/>
+                    <img loading='lazy' src={e.icon} alt='icon3'/>
                 </div>
                 <div>
                     <h6 style={{color : '#006CE7',fontWeight : '700'}}>{e.title}</h6>
@@ -74,7 +74,7 @@ export default function IntroductionSection3(){
                 <div className='container__item--zigzag'>
                     <div className="row row-gap-3 pb-4">
                         <div className='col-12 col-lg-6'>
-                            <img src={bg1} alt='background1' width='100%'/>
+                            <img loading='lazy' src={bg1} alt='background1' width='100%'/>
                         </div>
                         <div className='col-12 col-lg-6'>
                             {paragraph}
@@ -82,7 +82,7 @@ export default function IntroductionSection3(){
                     </div>
                     <div className="row row-gap-3 ">
                         <div className='col-12 col-lg-6'>
-                            <img src={bg2} alt='background2' width='100%'/>
+                            <img loading='lazy' src={bg2} alt='background2' width='100%'/>
                         </div>
                         <div className='col-12 col-lg-6'>
                             {lists}

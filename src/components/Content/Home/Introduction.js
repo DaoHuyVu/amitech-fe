@@ -20,7 +20,7 @@ export default function Introduction(){
                 </div>
                 <div className="row g-5">
                     <div className="col-12 col-lg-6 mb-4 text-center text-lg-start">
-                        <img loading='lazy' src={Background1} className='mw-100 ' alt="IntroductionImage"/>
+                        <img src={Background1} className='mw-100 ' alt="IntroductionImage"/>
                     </div>
                     <div className="col-12 col-lg-6" style={{minHeight : '400px'}}>
                         <LeftScrollContainer style={{height : '300px'}}>

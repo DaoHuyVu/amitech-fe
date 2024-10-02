@@ -68,6 +68,8 @@ body{
 
     --color-white-o-50 : #FFFFFF80;
     --color-white-o-30 : #FFFFFF4D;
+
+    --header-main-padding-y : 24px
 }
 p {
     margin : 0;

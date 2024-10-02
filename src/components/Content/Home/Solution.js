@@ -29,7 +29,7 @@ export default function Solution(){
                     backgroundSize : 'cover',
                     backgroundRepeat : 'no-repeat',
                     backgroundPosition : 'center',
-                    minHeight : '322px',
+                    minHeight : '362px',
                     borderRadius : '10px'
                 }}> 
                     <CardContent >

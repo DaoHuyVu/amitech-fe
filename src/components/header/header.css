@@ -10,9 +10,10 @@
     font-size: 14px;
 }
 #header-home-main{
+    position: relative;
     font-weight: 600;
     background-color: white;
-    padding : 24px 0;
+    padding : var(--header-main-padding-y) 0;
 }
 .language-chooser{
     display: flex;

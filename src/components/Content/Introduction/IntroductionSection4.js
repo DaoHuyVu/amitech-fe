@@ -53,7 +53,7 @@ export default function IntroductionSection4(){
         return (
             <div key={index} className='d-flex flex-column px-2 position-relative'>
                <div className="counter-bottom-image-wrapper"> 
-                    <img src={e.image} className="w-100" alt='img'/>
+                    <img loading='lazy' src={e.image} className="w-100" alt='Activities Gallery'/>
                     <div className="counter-bottom-image__dimmed-bottom invisible">
                         <p>{index+1}/{data.length} ảnh</p>
                     </div>

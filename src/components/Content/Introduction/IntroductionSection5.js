@@ -58,7 +58,7 @@ export default function IntroductionSetion5(){
     const slides = data.map((e,index)=>{
         return(
             <div className='p-2' key={index}>
-                <img src={e.img} alt = 'img' width='100%' height='200px' />
+                <img  loading='lazy' src={e.img} alt = 'Certificate' width='100%' height='200px' />
                 <div className='p-3' style={{height : 'calc(88px + 1rem)',backgroundColor : '#666666'}} >
                     {e.title}
                 </div>
