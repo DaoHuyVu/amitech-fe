@@ -1,4 +1,4 @@
-import {useEffect, useState}  from "react";
+import {useEffect, useState ,useRef}  from "react";
 import { Link, useLocation } from "react-router-dom";
 import Card from '../../card/Card'
 import CardTitle from '../../card/CardTitle'
@@ -18,6 +18,7 @@ export default function ProductsContent(){
   const [posts,setPosts] = useState(null)
   const [page,setPage] = useState(1)
   const location = useLocation()
+  const ref = useRef()
   const handleChangeOption = (idx) => {
     setSelectedOption(idx)
   }
@@ -35,6 +36,7 @@ export default function ProductsContent(){
     } 
     fetchPageDetails()
   },[])
+
   useEffect(()=>{
     const fetchPosts = async () => {
       try{
@@ -45,6 +47,7 @@ export default function ProductsContent(){
       }
     }
     fetchPosts()
+    if(ref) ref.current.scrollIntoView()
   },[page])
   
   const filterLabels = pageDetails ? pageDetails.attributes.subCategories.data.map((e)=>{
@@ -65,7 +68,7 @@ export default function ProductsContent(){
           description={pageDetails.attributes.description}
         />
       }
-      <main id='industrial__products'>
+      <main id='industrial__products' ref={ref}>
         <div className="container ">
           <div className="row justify-content-center mb-4">
             {

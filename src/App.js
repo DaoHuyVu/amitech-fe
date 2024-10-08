@@ -148,12 +148,6 @@ function App() {
   return (
     <Suspense fallback={<Loading />}>
       <RouterProvider router={router} >
-        <ScrollRestoration 
-          getKey={(location,matches) => {
-            console.log(matches)
-            return location.key
-          }}
-        />
       </RouterProvider>
     </Suspense>
   );

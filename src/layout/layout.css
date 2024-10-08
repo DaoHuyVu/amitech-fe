@@ -1,6 +1,9 @@
 /* Prevent the page to be scrolled when the menu sidebar is displayed */
 #layout{
     width: 100%;
-    height: 100vh;
-    overflow: auto
+}
+#layout__sidebar--show{
+    width: 100%;
+    height : 100vh;
+    overflow: hidden;
 }

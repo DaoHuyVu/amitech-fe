@@ -1,12 +1,13 @@
 import Header from "../components/header/HomeHeader";
 import Footer from "../components/footer/Footer";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import { createContext, useEffect, useRef, useState } from "react";
 import MenuSideBar from "../components/bar/MenuSideBar";
 import './layout.css'
 import {getPrimaryNavigation} from '../services/header'
 import Header2 from '../components/header2/Header'
 import ScrollToHashElement from "../components/ScrollToHashElement";
+import ScrollToTop from "../components/ScrollToTop";
 export const sidebarContext = createContext()
 export default function DefaultLayout() {
   const [isShowSideBar,setIsShowSideBar] = useState(false)
@@ -33,10 +34,9 @@ export default function DefaultLayout() {
   const handleClose = () => {
     setIsShowSideBar(false)
   }
-  
   return (
       <sidebarContext.Provider value={{isShowSideBar,setIsShowSideBar}}>
-        <div id="layout">
+        <div id={isShowSideBar ? "layout__sidebar--show" : "layout" }>
           <ScrollToHashElement />
           {/* <Header/> */}
           {location.pathname === '/' ? <Header /> : <Header2 />}
@@ -48,6 +48,7 @@ export default function DefaultLayout() {
           />
             <Outlet/>
           <Footer />
+          <ScrollToTop />
         </div>
       </sidebarContext.Provider>
   )
