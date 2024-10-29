@@ -2,13 +2,14 @@ import { searchPosts } from '../../../services/post'
 import SearchItem from './SearchItem'
 import Pagination from '../Pagination/Pagination'
 import './searchResults.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 const pageSize = 5
 export default function SearchResults(){
     const [page,setPage] = useState(1)
     const [results,setResults] = useState(null)
     const location = useLocation()
+    const ref = useRef(null)
     useEffect(()=>{
         const fetchPageItems = async () => {
             try{
@@ -22,9 +23,10 @@ export default function SearchResults(){
             }
         } 
         fetchPageItems()
+        if(ref) ref.current.scrollIntoView({block : 'start',behaviour : 'smooth'})
     },[page,location])
     return (
-        <main id='search-results'>
+        <main id='search-results' ref={ref}>
             <div className='container pb-4' style={{color : 'black'}}>
             <h2 className='pb-4 px-3' >Kết quả tìm kiếm</h2>
                 {

@@ -5,11 +5,13 @@
     width: 100vw;
     height: 100vh;
     z-index: 10;
+}
+.sidebar-container--collapse{
     pointer-events: none;
 }
 /* Added properties generally have !important to fight against higher specifity */
 .sidebar-container--show{
-    pointer-events : initial !important;
+    pointer-events : initial ;
 }
 #overlay-background{
     position: absolute;
@@ -26,17 +28,18 @@
 }
 #sidebar{
     position: absolute;
-    right : 0;
     top : 0;
     width: 400px;
-    right : -100%;
     height : 100%;
     transition: right 0.5s ease-in-out;
     background-color: white;
     box-shadow: 0 4px 32px 0 black;
 }
 .sidebar--show{
-   right : 0 !important
+   right : 0 
+}
+.sidebar--collapse{
+    right : -100%;
 }
 @media only screen and (max-width : 576px) {
     #sidebar{

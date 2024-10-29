@@ -1,6 +1,6 @@
 import Header from "../components/header/HomeHeader";
 import Footer from "../components/footer/Footer";
-import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { createContext, useEffect, useRef, useState } from "react";
 import MenuSideBar from "../components/bar/MenuSideBar";
 import './layout.css'
@@ -42,7 +42,7 @@ export default function DefaultLayout() {
           {location.pathname === '/' ? <Header /> : <Header2 />}
           <MenuSideBar 
             handleClose={handleClose}
-            className={`d-xxxl-none ${isShowSideBar ? 'sidebar-container--show' : ''}`}
+            className={`d-xxxl-none `}
             items={navigations}
             isShowSideBar={isShowSideBar}
           />

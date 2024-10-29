@@ -6,7 +6,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { NavLink} from 'react-router-dom'
 import { sidebarContext } from '../../layout/DefaultLayout'
 import CloseButtonSVG from '../../assets/svg/multiply-svgrepo-com.svg'
-const MenuSideBar = ({behavior='',className='',items,isShowSideBar}) => {
+const MenuSideBar = ({className='',items,isShowSideBar}) => {
     const {setIsShowSideBar} = useContext(sidebarContext) 
     // Store the menu item id to indicate whether it's showing children or not
     const [isShowChildren,setShowChildren] = useState(null)
@@ -62,9 +62,9 @@ const MenuSideBar = ({behavior='',className='',items,isShowSideBar}) => {
         )
     })
     return(
-        <div id="sidebar-container" className={`${behavior} ${className}`} >
+        <div id="sidebar-container" className={`${className}${isShowSideBar ? 'sidebar-container--show' : 'sidebar-container--collapse'}`} >
             <div id='overlay-background' onClick={handleClose}></div>
-            <div id='sidebar' className={`${isShowSideBar ? 'sidebar--show' : ''}`}>
+            <div id='sidebar' className={`${isShowSideBar ? 'sidebar--show' : 'sidebar--collapse'}`}>
                 <div id='menu'>
                         <ImageButton className='menu-close-btn' onClick={handleClose}>
                             <img src={CloseButtonSVG} alt='Close Button'/>
