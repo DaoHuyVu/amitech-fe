@@ -1,13 +1,55 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
 body{
-    font-family: "VNFont", sans-serif;
     box-sizing: border-box;
-    color : white;
     font-family: 'BeVietNam';
+    color : white;
 }
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
 @font-face {
     font-family: 'VNFont';
     src:
@@ -69,21 +111,16 @@ body{
     --color-white-o-50 : #FFFFFF80;
     --color-white-o-30 : #FFFFFF4D;
 
-    --header-main-padding-y : 24px
+    --header-main-padding-y : 24px;
+    --main_content-margin-top : 140px;
+       
+    
 }
-p {
-    margin : 0;
-    padding : 0;
-}
-a,a:hover,a:active,a:visited{
-    text-decoration: none;
-}
+
 a h1,a h2,a h3,a h4,a h5,a h6 {
     color : white;
 }
-*:focus{
-    outline: 0;
-}
+
 .text__weight--md{
     font-weight: 500;
 }
