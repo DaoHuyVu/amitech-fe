@@ -1,11 +1,5 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import React, {lazy,Suspense}from "react";
-import { createBrowserRouter, RouterProvider, ScrollRestoration} from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css'
-import './index.css'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import { ErrorPage } from "./components/error/ErrorPage";
 import { projectLoader } from "./components/Content/Project/ProjectDetailContent";
 import NewsDetail, {loader as NewsLoader} from './components/Content/News/NewsDetail'
