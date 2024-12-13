@@ -47,7 +47,6 @@ export default function ProductsContent(){
       }
     }
     fetchPosts()
-    if(ref) ref.current.scrollIntoView()
   },[page])
   
   const filterLabels = pageDetails ? pageDetails.attributes.subCategories.data.map((e)=>{
@@ -68,8 +67,7 @@ export default function ProductsContent(){
           description={pageDetails.attributes.description}
         />
       }
-      <main id='industrial__products' ref={ref}>
-        <div className="container ">
+        <div className="container" id='industrial__products' ref={ref}>
           <div className="row justify-content-center mb-4">
             {
               filterLabels && filterLabels.map((e,idx)=>{
@@ -112,7 +110,6 @@ export default function ProductsContent(){
             />
           }
         </div>
-      </main>
     </>
   )
 }

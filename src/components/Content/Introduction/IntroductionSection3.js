@@ -19,11 +19,11 @@ export default function IntroductionSection3(){
     const paragraph = paragraphData.map((e,index) => {
         const name = `icon${index+1}`
         return (
-            <div className='d-flex align-items-start column-gap-3' key={index}>
-                <div className='p-3 d-flex justify-content-center align-items-center' style={{width : '70px',height : '70px',backgroundColor : '#006CE7',borderRadius : '5px'}}>
+            <div className='d-flex column-gap-3 mb-3' key={index}>
+                <div className='p-3 d-flex justify-content-center align-items-center flex-shrink-0' style={{width : '70px',height : '70px',backgroundColor : '#006CE7',borderRadius : '5px'}}>
                     <img loading='lazy' src={e.icon} alt={name}/>
                 </div>
-                <div className='pb-4'>
+                <div>
                     <h6 style={{color : '#006CE7',fontWeight : '700'}}>{e.title}</h6>
                     <p style={{color : '#4D4D4D'}}>{e.text}</p>
                 </div>
@@ -53,9 +53,9 @@ export default function IntroductionSection3(){
     const lists = listData.map((e,index) => {
         const listItems = e.list.map((element,index) => <li className='pb-3' key={index}><p><b>{element.title}: </b>{element.text}</p></li>)
         return (
-            <div className='d-flex align-items-start column-gap-3' key={index}>
-                <div className='p-3 d-flex justify-content-center align-items-center' style={{width : '70px',height : '70px',backgroundColor : '#006CE7',borderRadius : '5px'}}>
-                    <img loading='lazy' src={e.icon} alt='icon3'/>
+            <div className='d-flex column-gap-3 ' key={index}>
+                <div className='p-3 d-flex justify-content-center align-items-center flex-shrink-0' style={{width : '70px',height : '70px',backgroundColor : '#006CE7',borderRadius : '5px'}}>
+                    <img src={e.icon} alt='icon3'/>
                 </div>
                 <div>
                     <h6 style={{color : '#006CE7',fontWeight : '700'}}>{e.title}</h6>

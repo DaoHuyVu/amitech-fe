@@ -15,3 +15,6 @@ export const getNavigationById = (id) => {
 export const getNavigationDetailById = (id) => {
     return handleCallback(() => axios.get(`/navigations/${id}?populate[0]=imageCover`))
 }
+export const getSecondaryNavigations = () =>{
+    return handleCallback(() => axios.get(`/navigations?filters[$or][0][menuLocation][$eq]=secondary&filters[$or][1][menuLocation][$eq]=primary&populate[0]=childrenNavigations`))
+} 

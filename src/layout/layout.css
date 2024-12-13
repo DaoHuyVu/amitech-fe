@@ -6,3 +6,18 @@
     width: 100%;
     overflow: hidden;
 }
+#main-content{
+    margin-top : var(--main-content-margin-top);
+}
+#main-content2{
+    margin-top: var(--main-content-margin-top-2);
+}
+@media only screen and (max-width : 1500px) {
+    #main-content{
+        margin-top: var(--main-content-margin-top-collapse);
+    }
+    #main-content2{
+        margin-top: var(--main-content-margin-top-collapse-2);
+    }
+}
+

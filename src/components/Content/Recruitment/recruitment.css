@@ -7,7 +7,7 @@
     border-radius: 2px;
 }
 
-* > .job-status{
+.row > .job-status{
     width: auto;
 }
 #page-recruitment{

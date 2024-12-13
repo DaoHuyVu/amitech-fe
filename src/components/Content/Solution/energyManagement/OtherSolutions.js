@@ -29,11 +29,11 @@ export default function OtherSolutions(){
                     {
                         otherSolutions.map((e,index) => {
                             return(
-                                <Card key={index} className='col-12 col-md-6 col-xl-4 col-xxl-3 '>
+                                <Card key={index} className='col-12 col-md-6 col-xl-4 col-xxl-3'>
                                     <ImageCard src={getNavigationImageCover(e)} AspectWrapper={aspect34Wrapper}/>
                                     <CardContent style={{backgroundColor : 'white'}}>
                                         <CardTitle maxLines={2} style={{color : '#4d4d4d',fontWeight : '700'}}>{e.name}</CardTitle>
-                                        <CardDescription style={{color : '#4d4d4db2'}}>{e.description}</CardDescription>
+                                        <CardDescription style={{color : '#4d4d4db2',textAlign : 'justify'}}>{e.description}</CardDescription>
                                         <Link to={concatePath(urlArr,urlArr.length-1,e.slug)} style={{color : '#00c2ff'}}>
                                             Xem thêm &gt;&gt;
                                         </Link>

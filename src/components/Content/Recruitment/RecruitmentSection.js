@@ -20,11 +20,11 @@ export default function RecruitmentSection({data,style}){
             <Link to={`/tuyen-dung/${e.attributes.slug}`} className='col-12 col-xxl-6 p-2' key={idx}>
                 <Card style={{...style,color : '#4d4d4db2'}} className="row flex-row mx-0" >
                     <div className="col-12 col-sm-4 p-3">
-                        <ImageCard src={getJobThumbnail(e)} AspectWrapper={aspect34Wrapper}/>
+                        <ImageCard src={getJobThumbnail(e)} AspectWrapper={aspect34Wrapper} className=""/>
                     </div>
                     <CardContent className="col-12 col-sm-8">
                         <CardCategory>{e.attributes.jobCategory}</CardCategory>
-                        <CardTitle maxLines={1} style={{color : '#4d4d4d'}}>{e.attributes.jobName}</CardTitle>
+                        <CardTitle maxLines={1} style={{color : '#4d4d4d',fontSize:'20px'}}>{e.attributes.jobName}</CardTitle>
                         <div className='row row-gap-2'>
                             <div className='col-auto'>
                                 <FontAwesomeIcon icon={faUserGroup}/> Số lượng : {e.attributes.jobQuantity}

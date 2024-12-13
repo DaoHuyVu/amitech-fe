@@ -54,7 +54,7 @@ const JobDetailsContent = () => {
 
   return (
       <StyledJobDetails>
-        <main className="job-details-container">
+        <div className="job-details-container">
           <div className="breadcrumbs">
             <a href="/">Trang chủ</a> /
             <a href="/tuyen-dung">Tuyển dụng</a>/
@@ -107,7 +107,7 @@ const JobDetailsContent = () => {
               </section>
             </div>
           </div>
-        </main>
+        </div>
       </StyledJobDetails>
   );
 };

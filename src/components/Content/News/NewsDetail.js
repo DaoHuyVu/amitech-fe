@@ -36,7 +36,7 @@ export default function NewsDetail(){
                 title={data.attributes.postTitle}
                 description={parser(data.attributes.postDescription)}
             />
-            <main id="page-news-detail">
+            <div id="page-news-detail">
                 <section id="news-detail-section1" >
                     <div className='container' id="post-content" style={{color : '#4d4d4d'}}>
                         {parser(data.attributes.postContent)}
@@ -71,7 +71,7 @@ export default function NewsDetail(){
                         </div>
                     }
                 </section>
-            </main>
+            </div>
         </>
     )
 }

@@ -1,8 +1,8 @@
 #header{
-    position: sticky;
+    position: fixed;
     top : 0;
     width: 100%;
-    z-index: 4
+    z-index: 4;
 }
 #header-home-top{
     background-color: #002A9E;
@@ -13,7 +13,19 @@
     position: relative;
     font-weight: 600;
     background-color: white;
-    padding : var(--header-main-padding-y) 0;
+    padding : var(--header-main-padding-y,0);
+}
+#header-main{
+    background-color: #002A9E;
+    font-family: 'Roboto';
+    font-size: 16px;
+    padding : 24px;
+}
+#header-top{
+    font-size: 14px;
+    background-color: #00258b;
+    padding: 16px;
+    font-family: 'Roboto';
 }
 .language-chooser{
     display: flex;

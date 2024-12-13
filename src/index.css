@@ -1,5 +1,4 @@
 body{
-    box-sizing: border-box;
     font-family: 'BeVietNam';
     color : white;
 }
@@ -39,6 +38,7 @@ body{
   /* 8. Improve line wrapping */
   p {
     text-wrap: pretty;
+    margin : 0;
   }
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
@@ -49,6 +49,9 @@ body{
   */
   #root, #__next {
     isolation: isolate;
+  }
+  a {
+    text-decoration: none;
   }
 @font-face {
     font-family: 'VNFont';
@@ -110,11 +113,11 @@ body{
 
     --color-white-o-50 : #FFFFFF80;
     --color-white-o-30 : #FFFFFF4D;
-
     --header-main-padding-y : 24px;
-    --main_content-margin-top : 140px;
-       
-    
+    --main-content-margin-top : 152px;  
+    --main-content-margin-top-collapse : 100px;
+    --main-content-margin-top-2 : 130px;
+    --main-content-margin-top-collapse-2 : 90px;
 }
 
 a h1,a h2,a h3,a h4,a h5,a h6 {
@@ -168,7 +171,7 @@ a h1,a h2,a h3,a h4,a h5,a h6 {
     position: absolute;
     top: 0;
     left: 0;
-    height : auto;
+    height : 100%;
     width: 100%;
 }
 .counter-bottom-image-wrapper{

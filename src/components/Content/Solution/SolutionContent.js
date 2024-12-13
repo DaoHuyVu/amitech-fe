@@ -35,7 +35,7 @@ export default function SolutionContent(){
             description={data.attributes.description}
           />
         }
-        <main id="solution">
+        <div id="solution">
           <div className="container mb-4">
             {
               data && 
@@ -67,7 +67,7 @@ export default function SolutionContent(){
               pageCount : 1
             }}
           />
-       </main>
+       </div>
     </>
       
   );

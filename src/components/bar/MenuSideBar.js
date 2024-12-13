@@ -62,7 +62,7 @@ const MenuSideBar = ({className='',items,isShowSideBar}) => {
         )
     })
     return(
-        <div id="sidebar-container" className={`${className}${isShowSideBar ? 'sidebar-container--show' : 'sidebar-container--collapse'}`} >
+        <div id="sidebar-container" className={`${className} ${isShowSideBar ? 'sidebar-container--show' : 'sidebar-container--collapse'}`} >
             <div id='overlay-background' onClick={handleClose}></div>
             <div id='sidebar' className={`${isShowSideBar ? 'sidebar--show' : 'sidebar--collapse'}`}>
                 <div id='menu'>

@@ -16,9 +16,7 @@ export default function Overview(){
                         lý năng lượng trong các doanh
                         nghiệp công nghiệp.
                     </p>
-                    <div className='pb-5'>
-                        <img src={img1} alt='Solution Overview Video' className='mw-100'/>
-                    </div>
+                    <img src={img1} alt='Solution Overview Video' className='mw-100 mx-auto mb-4'/>
                     <div>
                         <Button style={{marginRight : '1rem'}}>
                             Tư vấn miễn phí

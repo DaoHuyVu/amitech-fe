@@ -4,9 +4,7 @@ export default function SystemModel(){
         <section id="solution-detail__system-model">
             <div className="container">
                 <h4 className='fw-bold text-center pb-3' style={{color : '#4d4d4d'}}>MÔ HÌNH HỆ THỐNG</h4>
-                <div className='text-center'>
-                    <img src={img} alt='Mô hình hệ thống' className='mw-100' />
-                </div>
+                <img src={img} alt='Mô hình hệ thống' className='mw-100 mx-auto'/>
             </div>
         </section>
     )

@@ -1,0 +1,13 @@
+.navItem{
+    color : white; 
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.navItem:hover{
+    color : #00c2ff;
+}
+.active {
+    color : #00c2ff;
+}

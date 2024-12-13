@@ -1,0 +1,35 @@
+.selectLanguageContainer{
+    border : none;
+    position: relative;
+    background-color: transparent;
+    padding: 0px;
+}
+.languageFlag{
+    width : 18px;
+    height : 18px;
+}
+.selectLanguageItem{
+    display: flex;
+    color: white;
+    align-items: center;
+    font-size: 14px;
+    padding : 8px;
+}
+.languageDropdownContainer{
+    position: absolute;
+    top : 100%;
+    width: 100%;
+    left : 100%;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;   
+    visibility: hidden;
+    background-color : #222a9e;
+}
+.languageDropdownContainer.show{
+    visibility: visible;
+}
+.languageDropdownContainer.show .languageDropdownIcon{
+    rotate : z 180deg;
+}

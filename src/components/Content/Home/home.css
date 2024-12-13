@@ -1,7 +1,8 @@
-#home  section{
+#home > section{
     padding : 4rem 0;
     font-family: 'Roboto';
 }
+
 #home__digital-transformation{
     background-image: linear-gradient(270deg, #006CE7 42.29%, #0031B8 100%);
 }
