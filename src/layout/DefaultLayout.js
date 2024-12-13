@@ -46,7 +46,7 @@ export default function DefaultLayout() {
             items={navigations}
             isShowSideBar={isShowSideBar}
           />
-            <main id={`${location.pathname === '/' ? 'main-content2' : 'main-content'}`}>
+            <main id={`${location.pathname === '/' ? 'main-content' : 'main-content-2'}`}>
               <Outlet/>
             </main>
           <Footer />

@@ -1,80 +1,48 @@
-import img1 from '../../../assets/images/hinhanhhoatdong1.png'
 import Button from "../../button/Button"
-import Slider from 'react-slick'
 import { Link } from 'react-router-dom'
+import Carousel from '../../newComponents/carousel/Carousel'
+import Gallery from '../../newComponents/gallery/Gallery'
+import { useState, useEffect } from 'react'
+import { getGallery } from '../../../services/galleryService'
+import { host } from "../../../services/AxiosInstance"
 export default function IntroductionSection4(){
-    const data = [
-        {
-            image : img1,
-            time : 'Thứ 3, 15/08/2023',
-            title : 'Amitech tham gia hội chợ ENTECH Hà Nội 2023'
-        },
-        {
-            image : img1,
-            time : 'Thứ 3, 15/08/2023',
-            title : 'Amitech tham gia hội chợ ENTECH Hà Nội 2023'
-        },
-        {
-            image : img1,
-            time : 'Thứ 3, 15/08/2023',
-            title : 'Amitech tham gia hội chợ ENTECH Hà Nội 2023'
-        },
-        {
-            image : img1,
-            time : 'Thứ 3, 15/08/2023',
-            title : 'Amitech tham gia hội chợ ENTECH Hà Nội 2023'   
-        },
-    ]
-    const settings = {
-        className : 'center',
-        centerMode : true,
-        centerPadding : '0px',
-        infinite : true,
-        slidesToShow: 3,
-        slidesToScroll : 1,
-        speed: 500,
-        responsive : [
-            {
-                breakpoint : 1200,
-                settings : {
-                    slidesToShow : 2,
-                    centerMode : false,
-                }
-            },
-            {
-                breakpoint : 768 ,
-                settings : {
-                    slidesToShow : 1
-                }
+    const [data,setData] = useState(null)
+    useEffect(() => {
+        const fetchGallery = async () => {
+            try{
+                const res = await getGallery(1)
+                setData(res.data.data)
+            }catch(ex){
+                console.error(ex)
             }
-        ]
-      };
-    const slides = data.map((e,index) => {
+        }
+        fetchGallery()
+    },[])
+    const slides = data ? data.attributes.images.data.map((e,index) => {
         return (
-            <div key={index} className='d-flex flex-column px-2 position-relative'>
-               <div className="counter-bottom-image-wrapper"> 
-                    <img loading='lazy' src={e.image} className="w-100" alt='Activities Gallery'/>
-                    <div className="counter-bottom-image__dimmed-bottom invisible">
-                        <p>{index+1}/{data.length} ảnh</p>
-                    </div>
-               </div>
-               <div className='carousel-item-infomation invisible'>
-                <p style={{color : '#ffffffb2',paddingBottom : '0.5rem'}}>{e.time}</p>
-                <h5>{e.title}</h5>
-               </div>
+            <div key={index}>
+                <Gallery image={`${host}${e.attributes.url}`} >
+                    <p>{index+1}/{data.attributes.images.data.length} ảnh</p>
+                </Gallery>
             </div>
         )
-    })
+    }) : []
     return(
         <section id="hinh-anh-hoat-dong">
-            <div className="container d-flex flex-column align-items-center ">
-                <h2 className="text-center ">Hình ảnh hoạt động</h2>
-                    <div className='w-100 pb-4 scaled-carousel custom-carousel' >
-                        <Slider {...settings}>
+            <div className="container d-flex flex-column align-items-center">
+                <h2 className="text-center mb-4 text-uppercase">Hình ảnh hoạt động</h2>
+                    <div className='w-100 pb-3'>
+                        <Carousel >
                             {slides}
-                        </Slider>
+                        </Carousel>
                     </div>
-                    <Link to='/gioi-thieu/hinh-anh-hoat-dong' style={{color : 'white'}}>
+                    <p style={{weight : '400',fontSize : '12px',color : '#ffffffb2'}} className='mb-3'>
+                        {
+                            data && data.attributes.galleryDate
+                        }
+                    </p>
+                    <h3 style={{textWrap : 'wrap'}} className='mb-3'>{data && data.attributes.galleryTitle}</h3>
+                    <Link to='/gioi-thieu/hinh-anh-hoat-dong/1' style={{color : 'white'}}>
                         <Button style={{backgroundColor : '#00c2ff'}}>
                                 Xem tất cả &gt;&gt;
                         </Button>

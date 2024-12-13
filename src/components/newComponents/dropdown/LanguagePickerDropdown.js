@@ -7,12 +7,12 @@ import { useEffect, useState } from 'react'
 const languages = [    
     {
         name : 'Việt Nam',
-        flag : 'vn_flag.png',
+        flag : '/vn_flag.png',
         slug : 'http://localhost:3000'
     },
     {
         name : 'English',
-        flag : 'en_flag.png',
+        flag : '/en_flag.png',
         slug : 'http://localhost:3000/en'
     }
 ]

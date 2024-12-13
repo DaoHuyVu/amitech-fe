@@ -114,10 +114,10 @@ body{
     --color-white-o-50 : #FFFFFF80;
     --color-white-o-30 : #FFFFFF4D;
     --header-main-padding-y : 24px;
-    --main-content-margin-top : 152px;  
-    --main-content-margin-top-collapse : 100px;
-    --main-content-margin-top-2 : 130px;
-    --main-content-margin-top-collapse-2 : 90px;
+    --main-content-margin-top : 130px;
+    --main-content-margin-top-collapse : 90px;
+    --main-content-margin-top-2 : 156px;
+    --main-content-margin-top-collapse-2 : 100px;
 }
 
 a h1,a h2,a h3,a h4,a h5,a h6 {
@@ -214,27 +214,7 @@ a h1,a h2,a h3,a h4,a h5,a h6 {
     top : calc(100% + 0.5rem);
     width: 90%;
 }
-@media only screen and (min-width : 1200px) {
-    .scaled-carousel .slick-active{
-        transition: all 0.3s;
-        width: calc(1116px * 0.25) !important;
-    }
-}
-@media only screen and (min-width : 1400px) {
-    .scaled-carousel .slick-active{
-        transition: all 0.3s;
-        width: calc(1296px * 0.25) !important;
-    }
-}
 
-.scaled-carousel .slick-current {
-    transition: all 0.3s;
-    flex-grow: 1;
-}
-.scaled-carousel .slick-track{
-    display: flex;
-    align-items: center;
-}
 .custom-carousel .slick-next::before{
     background-image: url('./assets/images/arrow_next.png');
 }
@@ -255,7 +235,6 @@ a h1,a h2,a h3,a h4,a h5,a h6 {
     transform: translate(-50%,50%);
     z-index: 2;
 }
-
 .custom-carousel .slick-prev,
 .custom-carousel .slick-next{
     width: 32px;
@@ -282,9 +261,6 @@ a h1,a h2,a h3,a h4,a h5,a h6 {
 }
 .slick-disabled::before{
     opacity: 1 !important;
-}
-.scaled-carousel .slick-track{
-    padding : 3rem 0 100px 0;
 }
 
 .sided-navigation.slick-thumb li{

@@ -6,6 +6,7 @@ import NewsDetail, {loader as NewsLoader} from './components/Content/News/NewsDe
 import BaseContainer from "./components/Content/BaseContainer";
 import {loader as ProductDetailLoader } from "./components/Content/ProductsContent/ProductDetailContent"
 import {loader as JobDetailLoader} from './components/Content/Recruitment/RecruitmentDetail'
+import {loader as ActivityLoader} from './components/Content/Activities/ActivitiesSection2'
 import Loading from "./components/loading/Loading";
 const EnergyManagement = lazy(() => import("./components/Content/Solution/energyManagement/EnergyManagement"))
 const BaseSolution = lazy(() => import("./components/Content/Solution/BaseSolution"));
@@ -47,8 +48,9 @@ const router = createBrowserRouter([
               element : <Introduction />
             },
             {
-              path : 'hinh-anh-hoat-dong',
-              element : <Activities />
+              path : 'hinh-anh-hoat-dong/:id',
+              element : <Activities />,
+              loader : ActivityLoader
             }
         ]
       },

@@ -19,6 +19,7 @@ export default function ProductsContent(){
   const [page,setPage] = useState(1)
   const location = useLocation()
   const ref = useRef()
+  const locationRef = useRef(null)
   const handleChangeOption = (idx) => {
     setSelectedOption(idx)
   }

@@ -4,6 +4,7 @@ import SearchComponent from '../newComponents/search/SearchComponent'
 import './header.css'
 import { useEffect, useState } from 'react'
 import { getNavigationById } from '../../services/navigation'
+import NavItem from '../newComponents/nav/NavItem'
 import Link from '../newComponents/link/Link'
 export default function HeaderTop(){
     const [term,setTerm] = useState(null)

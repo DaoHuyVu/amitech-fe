@@ -1,131 +1,57 @@
-import img1 from '../../../assets/images/image 223.png'
+import { useState,useEffect } from 'react'
 import Pagination from '../Pagination/Pagination'
-
+import { getGalleries } from '../../../services/galleryService'
+import { host } from '../../../services/AxiosInstance'
+import { Link } from 'react-router-dom'
 export default function ActivitiesSection3(){
-    const data = {
-        current : 1,
-        total : 12,
-        perPage : 6,
-        albums : [
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Tại sao cần xây dựng hệ thống phần mềm bảo trì, bảo dưỡng trong doanh nghiệp hiện nay?'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Chúc mừng ngày Quốc tế phụ nữ'
-            },
-            {
-                images : [
-                    img1
-                ],
-                quantity : 15,
-                date : 'Thứ Ba, 15/08/2023',
-                title : 'Tại sao cần xây dựng hệ thống phần mềm bảo trì, bảo dưỡng trong doanh nghiệp hiện nay?'
-            },
-        ]
+    const [galleries,setGalleries] = useState(null)
+    const fetchGalleries = async (page = 1,pageSize = 4) => {
+        try{
+            const res = await getGalleries(page,pageSize)
+            setGalleries(res.data)
+        }catch(ex){
+            console.error(ex)
+        }
     }
-    const cols = data.albums.map((e,index) => {
+    useEffect(() => {
+        fetchGalleries()
+    },[])
+    const cols = galleries ? galleries.data.map((e,index) => {
         return (
             <div className='col-12 col-sm-6 col-lg-4 col-xl-3 p-2' key={index}>
-                <div className='counter-bottom-image-wrapper mb-2'>
-                    <img src={e.images.at(0)} alt='AlbumImage' className='w-100'/>
-                    <div className='counter-bottom-image__dimmed-bottom '>
-                        1/{e.quantity} ảnh
-                    </div>
+                <div className='retained-4-7-image-wrapper'>
+                    <img className='aspect-retained-image' src={`${host}${e.attributes.galleryProfile.data.attributes.url}`} />
                 </div>
-                <p style={{color : '#4d4d4db2'}} className='pb-2'>{e.date}</p>
-                <h5 style={{color : '#4d4d4d'}}>{e.title}</h5>
+                <p style={{weight : '400',fontSize : '12px',color : '#4d4d4db2'}} className='mb-3'>
+                    {
+                        galleries && e.attributes.galleryDate
+                    }
+                </p>
+                <Link to={`/gioi-thieu/hinh-anh-hoat-dong/${e.id}`}>
+                    <h3 
+                        style={{textWrap : 'wrap',color : '#4d4d4d',fontWeight : '700'}} 
+                        className='mb-3'
+                    >
+                        { galleries && e.attributes.galleryTitle}
+                    </h3>
+                </Link>
             </div>
         )
-    })
+    }) : []
     return(
         <section id='activities__section3'>
             <div className='container'>
                 <div className='row mb-4'>
                     {cols}
                 </div>
-                <Pagination pageInfo={{page : data.current,pageCount : data.total}} />
+                {
+                    galleries && 
+                    <Pagination 
+                        pageInfo={{page : galleries.meta.pagination.page,
+                        pageCount : galleries.meta.pagination.pageCount}}
+                        fetchPageItems={(page) => fetchGalleries(page = page)}
+                    />
+                }
             </div>
         </section>
     )

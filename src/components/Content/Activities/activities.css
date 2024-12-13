@@ -1,7 +1,9 @@
 #activities__section2{
-    padding : 0 0 3rem 0;
+    padding : 3rem 0;
     background-color: #F1F7FF;
+    font-family: 'Roboto';
 }
 #activities__section3{
-    margin : 3rem 0 3rem 0;
+    margin : 3rem 0;
+    font-family: 'Roboto';
 }

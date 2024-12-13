@@ -7,7 +7,7 @@ export default function NavDropdownItem({children,to,menuItems,...delegated}){
     return(
         <div className={`${styles.container}`} {...delegated}>
             <div>
-                <NavItem to={to}>
+                <NavItem to={to} end>
                     {children}
                     <Spacer size={8}/>
                     <FontAwesomeIcon icon={faCaretDown} className={`${styles.dropdownIcon}`}/>
