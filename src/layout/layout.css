@@ -2,10 +2,6 @@
 #layout{
     width: 100%;
 }
-#layout__sidebar--show{
-    width: 100%;
-    overflow: hidden;
-}
 #main-content{
     margin-top : var(--main-content-margin-top);
 }

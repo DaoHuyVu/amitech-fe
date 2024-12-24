@@ -18,7 +18,6 @@ const languages = [
 ]
 export default function LanguagePickerDropdown(){
     const [selectedLanguageId,setSelectedLanguageId] = useState(0)
-    const [show,setShow] = useState(false)
     const handleSelectLanguage = (idx) => {
         setSelectedLanguageId(idx)
         window.localStorage.setItem('lang',idx)
@@ -35,15 +34,15 @@ export default function LanguagePickerDropdown(){
     const selectedLanguage = languages[selectedLanguageId]
     return(
         <>
-            <button className={`${styles.selectLanguageContainer}`} onClick={() => setShow(!show)}>
+            <button className={`${styles.selectLanguageContainer}`}>
                 <span className={`${styles.selectLanguageItem}`} >
                     <img alt='flag' src={selectedLanguage.flag} className={`${styles.languageFlag}`}/>
                     <Spacer size={UNIT}/>
-                    {selectedLanguage.name}
+                        {selectedLanguage.name}
                     <Spacer size={UNIT}/>
                     <FontAwesomeIcon icon={faCaretDown} className={`${styles.languageDropdownIcon}`}/>
                 </span>
-                <div className={`${styles.languageDropdownContainer} ${show ? styles.show : ''}`}>
+                <div className={`${styles.languageDropdownContainer}`}>
                 {
                     languages.map((lang,idx) => {
                         return(

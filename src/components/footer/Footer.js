@@ -15,7 +15,7 @@ const ContactInfo = ({icon, title, content}) => (
 
 const FooterLink = ({text, link}) => (
     <FooterLinkItem href={link}>
-      <img src="/choose.png" alt="" style={{marginRight: '10px'}} />
+      <img src="/choose.png" alt="" style={{marginRight: '10px',display : 'inline'}} />
       {text}
     </FooterLinkItem>
 );
@@ -130,6 +130,7 @@ const Logo = styled.img`
   aspect-ratio: 4.35;
   object-fit: contain;
   width: 226px;
+
   max-width: 100%;
 `;
 
@@ -197,7 +198,7 @@ const FooterLinkItem = styled.a`
   font: 400 16px/42px BeVietNam, sans-serif;
   text-decoration: none;
   cursor: pointer;
-
+  display : inline;
   &:hover {
     text-decoration: underline;
   }

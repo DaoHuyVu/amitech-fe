@@ -14,7 +14,7 @@ body{
   
   body {
     /* 3. Add accessible line-height */
-    line-height: 1.5;
+    line-height: calc(1rem + 0.5em);
     /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
   }
@@ -53,6 +53,15 @@ body{
   a {
     text-decoration: none;
   }
+::-webkit-scrollbar{
+    width : 8px;
+}
+::-webkit-scrollbar-thumb{
+    background-color : #002A9E
+}
+::-webkit-scrollbar-track{
+    background-color : #002A9E66;
+}
 @font-face {
     font-family: 'VNFont';
     src:

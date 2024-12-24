@@ -5,7 +5,6 @@ import './header.css'
 import { useEffect, useState } from 'react'
 import { getNavigationById } from '../../services/navigation'
 import NavItem from '../newComponents/nav/NavItem'
-import Link from '../newComponents/link/Link'
 export default function HeaderTop(){
     const [term,setTerm] = useState(null)
     useEffect(() => {
@@ -32,7 +31,11 @@ export default function HeaderTop(){
                         <LanguagePickerDropdown />
                         <div className='d-flex align-items-center gap-2'>
                             <span style={{fontSize: '18px'}}>|</span>
-                            <Link to={term.attributes.slug}>{term.attributes.name}</Link>
+                            <NavItem 
+                                to={term.attributes.slug}
+                                style={{textTransform : 'initial',fontWeight : '400'}}
+                            >{term.attributes.name}
+                            </NavItem>
                         </div>
                     </div>
                 </div>)

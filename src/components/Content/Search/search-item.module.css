@@ -1,0 +1,35 @@
+.searchContainer{
+    border: 2px solid black;
+    display: block;
+    border-radius: 10px;
+}
+
+.searchItemThumbnail{
+    padding : 16px;
+    max-height: 300px;
+}
+.searchItemTitle{
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 700;
+    text-wrap:unset;
+    line-height: calc(1rem + 0.5em);
+    word-wrap:break-word;
+    margin-bottom: 16px;
+}
+.searchItemExcerp{
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    font-size: large;
+    line-height: calc(1rem + 0.5em);
+    overflow: hidden;
+    text-wrap:unset;
+    word-wrap:break-word;
+}

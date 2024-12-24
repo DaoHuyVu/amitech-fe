@@ -35,6 +35,9 @@
     align-items: center;
     border : none
 }
+.home-search-input:focus{
+    outline: none;
+}
 .home-search-bar-icon{
     width: 1.2em;
     height: 1.2em;

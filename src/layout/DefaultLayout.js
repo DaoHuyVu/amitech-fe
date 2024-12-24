@@ -6,8 +6,6 @@ import MenuSideBar from "../components/bar/MenuSideBar";
 import './layout.css'
 import {getPrimaryNavigation} from '../services/header'
 import Header from '../components/header/Header'
-import ScrollToHashElement from "../components/ScrollToHashElement";
-import ScrollToTop from "../components/ScrollToTop";
 export const sidebarContext = createContext()
 export default function DefaultLayout() {
   const [isShowSideBar,setIsShowSideBar] = useState(false)
@@ -36,9 +34,7 @@ export default function DefaultLayout() {
   }
   return (
       <sidebarContext.Provider value={{isShowSideBar,setIsShowSideBar}}>
-        <div id={isShowSideBar ? "layout__sidebar--show" : "layout" }>
-          <ScrollToHashElement />
-          {/* <Header/> */}
+        <div id="layout">
           {location.pathname === '/' ? <HomeHeader /> : <Header/>}
           <MenuSideBar 
             handleClose={handleClose}
@@ -50,7 +46,6 @@ export default function DefaultLayout() {
               <Outlet/>
             </main>
           <Footer />
-          <ScrollToTop />
         </div>
       </sidebarContext.Provider>
   )
