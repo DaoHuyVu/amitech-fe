@@ -87,7 +87,7 @@ export default function RecruitmentDetail(){
                     }
                 </div>
             </div>
-            <div style={{backgroundImage : `url('/image\ 216.png')`}} className="pt-5">
+            <div style={{backgroundImage : `url('/image 216.png')`}} className="pt-5">
                 <h2 style={{color : '#4d4d4d'}} className="text-center fw-bold">TUYỂN DỤNG</h2>
                 {relatedRecruitments && <RecruitmentSection data={relatedRecruitments} style={{backgroundColor : 'white'}}/>}
             </div>

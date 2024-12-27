@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import { host } from "../../../services/AxiosInstance"
 import { getGallery } from "../../../services/galleryService"
 import Carousel from "../../newComponents/carousel/Carousel"

@@ -8,6 +8,7 @@ import {loader as ProductDetailLoader } from "./components/Content/ProductsConte
 import {loader as JobDetailLoader} from './components/Content/Recruitment/RecruitmentDetail'
 import {loader as ActivityLoader} from './components/Content/Activities/ActivitiesSection2'
 import Loading from "./components/loading/Loading";
+import i18next from './i18'
 const EnergyManagement = lazy(() => import("./components/Content/Solution/energyManagement/EnergyManagement"))
 const BaseSolution = lazy(() => import("./components/Content/Solution/BaseSolution"));
 const HomeContent =  lazy(() => import("./components/Content/Home/HomeContent"));

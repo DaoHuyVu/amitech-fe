@@ -20,7 +20,7 @@ export default function ActivitiesSection3(){
         return (
             <div className='col-12 col-sm-6 col-lg-4 col-xl-3 p-2' key={index}>
                 <div className='retained-4-7-image-wrapper'>
-                    <img className='aspect-retained-image' src={`${host}${e.attributes.galleryProfile.data.attributes.url}`} />
+                    <img className='aspect-retained-image' src={`${host}${e.attributes.galleryProfile.data.attributes.url}`} alt="galleryItem"/>
                 </div>
                 <p style={{weight : '400',fontSize : '12px',color : '#4d4d4db2'}} className='mb-3'>
                     {
@@ -49,7 +49,7 @@ export default function ActivitiesSection3(){
                     <Pagination 
                         pageInfo={{page : galleries.meta.pagination.page,
                         pageCount : galleries.meta.pagination.pageCount}}
-                        fetchPageItems={(page) => fetchGalleries(page = page)}
+                        fetchPageItems={(page) => fetchGalleries(page)}
                     />
                 }
             </div>
