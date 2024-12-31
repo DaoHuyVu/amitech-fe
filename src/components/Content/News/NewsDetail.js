@@ -12,11 +12,13 @@ import aspect34Wrapper from "../../card/aspectWrapper/aspect34Wrapper"
 import CardContent from "../../card/CardContent"
 import CardCategory from "../../card/CardCategory"
 import CardTitle from "../../card/CardTitle"
+import { useTranslation } from "react-i18next"
 export const loader = async ({params})=>{
     return await getPostDetail(params.slug)
 }
 export default function NewsDetail(){
     const data = useLoaderData()
+    const {t} = useTranslation()
     const [relatedPosts,setRelatedPosts] = useState(null)
     useEffect(()=>{
         const fetchRelatedPosts = async () => {
@@ -43,7 +45,7 @@ export default function NewsDetail(){
                     </div>
                 </section>
                 <section id="news-detail-section2">
-                    <h3 className="mb-4 text-center fw-bold" style={{color : '#4d4d4d'}}>TIN TỨC LIÊN QUAN</h3>
+                    <h3 className="mb-4 text-center fw-bold" style={{color : '#4d4d4d'}}>{t('common.du-an-lien-quan')}</h3>
                     {
                         relatedPosts && 
                         <div className="container">

@@ -9,7 +9,9 @@ import CardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
 import Pagination from '../Pagination/Pagination'
 import aspect47Wrapper from '../../card/aspectWrapper/aspect47Wrapper'
+import { useTranslation } from 'react-i18next'
 export default function ProjectSection2({data}){
+    const {t} = useTranslation()
     const location = useLocation()
     const projects = data.data
     const pagination = data.meta.pagination
@@ -19,10 +21,13 @@ export default function ProjectSection2({data}){
                 <Card>
                     <ImageCard src={getPostProfile(e)} AspectWrapper={aspect47Wrapper}/>  
                     <CardContent style={{backgroundColor : '#f1f7ff'}}>
-                        <CardTitle style={{color : '#4d4d4d'}}>{e.attributes.postTitle}</CardTitle>
+                        <CardTitle 
+                        style={{color : '#4d4d4d',fontSize : '20px',lineHeight : '30px',height : 'calc(30px*4)'}}>
+                            {e.attributes.postTitle}
+                        </CardTitle>
                         <CardDescription style={{color : '#4d4d4db2'}}>{parser(e.attributes.postDescription)}</CardDescription>
                     <Link to={`${hostName}${location.pathname}/${e.attributes.slug}`} style={{color : '#00c2ff',fontWeight : 'bold'}}>
-                        Xem chi tiết &gt;&gt;
+                        {t("button.xem-chi-tiet")} &gt;&gt;
                     </Link>
                     </CardContent>
                 </Card>

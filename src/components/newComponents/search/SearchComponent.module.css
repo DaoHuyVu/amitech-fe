@@ -21,7 +21,7 @@
 {
     appearance: none;
 }
-.seachInput::placeholder{
+.searchInput::placeholder{
     color : #FFFFFF80;
 }
 .searchIconContainer{

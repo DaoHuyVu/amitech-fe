@@ -6,7 +6,9 @@ import { getPostImage,getPostImageArray } from '../../../services/util'
 import CardContent from '../../card/CardContent'
 import CardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
+import { useTranslation } from 'react-i18next'
 export default function ProjectDetailSection1({project}){
+    const {t} = useTranslation()
     const settings = {
         infinite : false,
         speed : 1000,
@@ -36,18 +38,11 @@ export default function ProjectDetailSection1({project}){
                         </div>
                     </div>
                     <CardContent className='col-12 col-lg-6'>
-                        {/* <h4 style={{color : '#4d4d4d',fontWeight : '700'}}>{project.attributes.postTitle}</h4>
-                        <div style={{color : '#4d4d4d'}} className='mb-0 pt-1 pb-3'>
-                           {parser(project.attributes.postDescription)}
-                        </div>
-                        <Button >
-                            <Link style={{color : 'white'}}>Liên hệ &gt;&gt;</Link>
-                        </Button> */}
-                        <CardTitle style={{color : '#4d4d4d',fontWeight : '700'}}>{project.attributes.postTitle}</CardTitle>
+                        <CardTitle maxLines={6} style={{color : '#4d4d4d',fontWeight : '700'}}>{project.attributes.postTitle}</CardTitle>
                         <CardDescription style={{color : '#4d4d4d'}} className='mb-0 pt-1 pb-3'>{parser(project.attributes.postDescription)}</CardDescription>
                         <Link to='#'>
                             <Button >
-                                Liên hệ &gt;&gt;
+                              {t('button.lien-he')}  &gt;&gt;
                             </Button>
                         </Link>
                     </CardContent>

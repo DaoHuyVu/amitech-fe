@@ -1,27 +1,33 @@
+import { useTranslation } from 'react-i18next'
 import Background1 from '../../../assets/images/img1.png'
+import ResponsiveHeader from '../../text/ResponsiveHeader'
+import Description from '../../text/Description'
 export default function DigitalTransformation(){
+    const {i18n,t} = useTranslation()
     return(
-        <section id='home__digital-transformation' >
+        <section id='home__digital-transformation'>
             <div className='container'>
                 <div className='row'>
-                    <div className='col-12 col-xl-5 d-flex align-items-center text-center text-xl-start pb-3'>
+                    <div className='col-12 col-xl-5 d-flex align-items-center text-center text-xl-start mb-3'>
                         <span>
-                            <h1 className='fw-bolder pb-3 title-fs-md title-fs-sm'>
-                                CHUYỂN ĐỔI SỐ
+                            <h1 className="display-5" style={{textTransform : 'uppercase',fontWeight : '800'}}>
+                                {
+                                    t("page.home.chuyen-doi-so.title")
+                                }
                             </h1>
-                            <h4 style={{color : '#ffffff99'}} className='lh-base'>
-                                Amitech cung cấp các giải pháp hàng đầu 
-                                giúp doanh nghiệp chuyển đổi số toàn diện,
-                                nhanh chóng, tiết kiệm, hiệu quả
-                            </h4>
+                            <Description style={{color : '#ffffff99',lineHeight : '36px'}} className='h4'>
+                               {
+                                    t("page.home.chuyen-doi-so.description")
+                               }
+                            </Description>
                         </span>
                     </div>
                     <div className='col-12 col-xl-1'></div>
-                    <div className='col-12 col-xl-6 text-center text-xl-start'>
+                    <div className='col-12 col-xl-6 text-xl-start'>
                         <img 
                             src={Background1}
                             alt='CDS'
-                            className='mw-100'
+                            className='m-auto'
                         />
                     </div>
                 </div>

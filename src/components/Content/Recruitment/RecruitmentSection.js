@@ -9,7 +9,9 @@ import JobStatus from './JobStatus'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserGroup,faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 export default function RecruitmentSection({data,style}){
+    const {t} = useTranslation()
     const cols = data.map((e,idx)=>{
         const itemStyle = e.attributes.jobStatus !== null ? 
         e.attributes.jobStatus === 'Hot' ? {backgroundColor : 'red'}
@@ -27,10 +29,10 @@ export default function RecruitmentSection({data,style}){
                         <CardTitle maxLines={1} style={{color : '#4d4d4d',fontSize:'20px'}}>{e.attributes.jobName}</CardTitle>
                         <div className='row row-gap-2'>
                             <div className='col-auto'>
-                                <FontAwesomeIcon icon={faUserGroup}/> Số lượng : {e.attributes.jobQuantity}
+                                <FontAwesomeIcon icon={faUserGroup}/> {t('common.so-luong')} : {e.attributes.jobQuantity}
                             </div>
                             <div className='col-auto'>
-                                $ Mức lương : {e.attributes.jobSalary}
+                                $ {t('common.muc-luong')} : {e.attributes.jobSalary}
                             </div>
                             <div className='col-auto'>
                                 <FontAwesomeIcon icon={faCalendarDays}/> {e.attributes.jobDate} 

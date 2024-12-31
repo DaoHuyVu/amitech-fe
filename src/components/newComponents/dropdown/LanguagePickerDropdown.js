@@ -5,7 +5,7 @@ import styles from './LanguageDropdown.module.css'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-const languages = [    
+export const languages = [    
     {
         name : 'Việt Nam',
         flag : '/vn_flag.png',

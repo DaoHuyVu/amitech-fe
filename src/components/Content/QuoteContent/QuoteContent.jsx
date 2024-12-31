@@ -2,14 +2,16 @@ import * as React from "react";
 import "./QuoteContent.css";
 import BannerWrapper from "../../common/BannerWrapper";
 import imageBanner from "../../../assets/banner/lienhe.png";
+import { useTranslation } from "react-i18next";
 
 function QuoteRequestForm() {
+  const {t} = useTranslation()
   return (
       <>
         <BannerWrapper
             imgSrc={imageBanner}
-            title={"BÁO GIÁ"}
-            description={"Lựa chọn giải pháp phù hợp với nhu cầu của bạn và nhận báo giá miễn phí"}
+            title={t('page.quote.title')}
+            description={t('page.quote.description')}
         />
         <section className="quote-section">
           <div className="form-background">
@@ -25,35 +27,35 @@ function QuoteRequestForm() {
                   <div className="form-inputs-container">
                     <div className="form-group">
                       <input type="text" id="name" name="name"
-                             className="form-input" placeholder="Họ tên *"
+                             className="form-input" placeholder={t('form.fields.ho-ten')}
                              required/>
                     </div>
                     <div className="form-group">
                       <input type="tel" id="phone" name="name"
                              className="form-input"
-                             placeholder="Số điện thoại *"
+                             placeholder={t('form.fields.so-dien-thoai')}
                              required/>
                     </div>
                     <div className="form-group">
                       <input type="email" id="email" name="name"
-                             className="form-input" placeholder="Email *"
+                             className="form-input" placeholder={t('form.fields.email')}
                              required/>
                     </div>
                     <div className="form-group">
                       <input type="text" id="company" className="form-input"
-                             name="name" placeholder="Công ty"/>
+                             name="name" placeholder={t('form.fields.cong-ty')}/>
                     </div>
                     <div className="form-group">
                       <input type="text" id="interest" className="form-input"
                              required name="name"
-                             placeholder="Lĩnh vực quan tâm *"/>
+                             placeholder={t('form.fields.linh-vuc-quan-tam')}/>
                     </div>
                     <div className="form-group">
                       <textarea id="message" className="form-input" rows="4"
-                                name="name" placeholder="Nội dung *"></textarea>
+                                name="name" placeholder={t('form.fields.noi-dung')}></textarea>
                     </div>
                     <button type="submit" className="form-submit">
-                      Gửi yêu cầu
+                      {t('form.fields.gui-yeu-cau')}
                     </button>
                   </div>
                 </form>

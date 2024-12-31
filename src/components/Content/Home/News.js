@@ -11,7 +11,9 @@ import CardDescription from '../../card/CardDescription'
 import { getNewsPostsById } from '../../../services/news'
 import { getPostCategory, getPostProfile } from '../../../services/util'
 import aspect47Wrapper from '../../card/aspectWrapper/aspect47Wrapper'
+import { useTranslation } from 'react-i18next'
 export default function News(){
+    const {t} = useTranslation()
     const [data,setData] = useState(null)
     useEffect(()=>{
         const fetchData = async () => {
@@ -30,10 +32,10 @@ export default function News(){
                 <ImageCard src={getPostProfile(e)} AspectWrapper={aspect47Wrapper}/>
                 <CardContent style={{backgroundColor : '#F1F7FF',minHeight : '300px'}}>
                     <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{getPostCategory(e)}</CardCategory>
-                    <CardTitle maxLines='1' style={{color : '#4d4d4d'}}>{e.attributes.postTitle}</CardTitle>
+                    <CardTitle maxLines='2' style={{color : '#4d4d4d',fontSize:"24px",textTransform : 'none'}}>{e.attributes.postTitle}</CardTitle>
                     <CardDescription coverRemain='false' style={{color : '#4d4d4db2'}}>{e.attributes.excerp}</CardDescription>
                     <Link to={`/tin-tuc-va-su-kien/${e.attributes.slug}`} style={{color : '#00c2ff',fontWeight : 'bold'}}>
-                        Xem thêm &gt;&gt;
+                        {t('button.xem-them')} &gt;&gt;
                     </Link>
                 </CardContent>
             </Card>
@@ -60,9 +62,9 @@ export default function News(){
                 <ImageCard src={getPostProfile(e)} AspectWrapper={aspect47Wrapper}/>
                 <CardContent style={{backgroundColor : '#F1F7FF'}}>
                     <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{getPostCategory(e)}</CardCategory>
-                    <CardTitle maxLines='3' style={{color : '#4d4d4d'}}>{e.attributes.postTitle}</CardTitle>
+                    <CardTitle maxLines='3' style={{color : '#4d4d4d',fontSize : '16px',lineHeight : '24px',height : 'calc(24px*3)',textTransform : 'none'}}>{e.attributes.postTitle}</CardTitle>
                     <Link to={`'/tin-tuc-va-su-kien/${e.attributes.slug}`} style={{color : '#00c2ff',fontWeight : 'bold'}}>
-                        Xem thêm &gt;&gt;
+                        {t('button.xem-them')} &gt;&gt;
                     </Link>
                 </CardContent>
                 </Card>
@@ -73,7 +75,7 @@ export default function News(){
         <section id="home_news">
             <div className="container d-flex flex-column align-items-center">
                 <div className="text-center pb-4">
-                    <h5 style={{color : '#4D4D4D',fontWeight : '700'}}>TIN TỨC VÀ SỰ KIỆN</h5>
+                    <h2 style={{color : '#4D4D4D',fontWeight : '700',textTransform : 'uppercase'}}>{t('common.tin-tuc-va-su-kien')}</h2>
                 </div>
                 <div className="row w-100 h-100 pb-4 d-flex flex-row">
                     <div className="col-12 col-xl-6">
@@ -89,8 +91,8 @@ export default function News(){
                 </div>
                 <Button
                     style={{backgroundColor : '#006CE7'}}>
-                    <Link to='/tin-tuc'>
-                        <p style={{color : 'white'}}>Xem thêm &gt;&gt;</p>
+                    <Link to='/tin-tuc-va-su-kien'>
+                        <p style={{color : 'white'}}>{t('button.xem-them')} &gt;&gt;</p>
                     </Link>
                 </Button>
             </div>

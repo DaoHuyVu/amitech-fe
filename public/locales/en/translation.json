@@ -1,0 +1,147 @@
+{
+    "common" : {
+        "gioi-thieu" : "Introduction",
+        "giai-phap-chuyen-doi-so" : "Digital Transform Solutions",
+        "thiet-bi-va-san-pham-cong-nghiep" : "Industrial equipments and products",
+        "bao-gia" : "Quote",
+        "tuyen-dung" : "Recruitment",
+        "hinh-anh-hoat-dong" : "Activities",
+        "du-an-tieu-bieu" : "Typical projects",
+        "tin-tuc-va-su-kien" : "News and events",
+        "doi-tac-va-khach-hang" : "Customer and partner",
+        "gioi-thieu-ve-amitech" : "Introduction to Amitech",
+        "chung-chi-chung-nhan" : "Certifications",
+        "su-menh-tam-nhin-gia-tri-cot-loi" : "Mission - Vision - Core Value",
+        "du-an-lien-quan" : "Related projects",
+        "tin-moi-nhat" : "Latest news",
+        "so-luong" : "Quantity",
+        "muc-luong" : "Salary",
+        "anh" : "image",
+        "tat-ca" : "All",
+        "nhap-ten-cong-viec" : "Enter job name",
+        "tim-viec-lam" : "Search",
+        "vi-tri" : "Position",
+        "tim-kiem-cong-viec" : "Search for job",
+        "nhap-noi-dung-tim-kiem" : "Enter search content...",
+        "lien-he-voi-chung-toi" : "Contact us",
+        "hay-gui-yeu-cau" : "Send your request, we will respond as soon as possible.",
+        "cam-ket" : "Commitment",
+        "chuyen-doi-so" : "Digital Transformation",
+        "ket-qua-tim-kiem" : "Search results",
+        "khong-tim-thay-ket-qua" : "No result match",
+        "chinh-sach-bao-mat" : "Security policy"
+    },
+    "button" : {
+        "xem-them" : "See more",
+        "tim-hieu-them" : "Explore more",
+        "tai-ho-so" : "Download profile",
+        "xem-tat-ca" : "View all",
+        "nhan-tu-van-mien-phi" : "Get free consult",
+        "lien-he" : "Contact",
+        "xem-chi-tiet" : "View details"
+    },
+    "form" : {
+         "fields" : {
+            "ho-ten" : "Name *",
+            "so-dien-thoai" : "Phone number *",
+            "email" : "Email *",
+            "cong-ty" : "Company *",
+            "linh-vuc-quan-tam" : "Area of interest *",
+            "noi-dung" : "Content *",
+            "gui-yeu-cau" : "Submit"
+         },
+         "header" : {
+            "dang-ky-nhan-tu-van-mien-phi" : "Register to get free consultant"
+         }
+    },
+    "text" : {
+        "address" : "4th Floor, Song Da 9 Building, No. 2 Nguyen Hoang, My Dinh, Nam Tu Liem, Hanoi",
+        "input-placeholder " : "Enter search content...",
+        "company-name" : "Ami Vietnam Technology Solutions Joint-Stock Company"
+    },
+    "page" : {
+        "home" : {
+            "chuyen-doi-so" : {
+                "title" : "Digital Transformation",
+                "description" : "Amitech provides leading solutions to help businesses transform digitally comprehensively, quickly, economically and effectively."
+            },
+            "gioi-thieu" : {
+                "description" : "Ami Vietnam Technology Solutions Joint Stock Company with Passion and Desire to become a leading Technology Company in the region in the field of Technology Application in Industrial Management and Production.",
+                "diem-uu-viet" : "Highlights",
+                "san-pham-chat-luong" : "Quality product",
+                "tu-van-ho-tro" : "Consult , support ",
+                "diem-uu-viet-1" : "Applying the most advanced and modern technology today",
+                "diem-uu-viet-2" : "Easy integration and data exchange with other systems",
+                "diem-uu-viet-3" : "Stable operation on all terminals"
+            },
+            "giai-phap-chuyen-doi-so" : {
+                "description" : "Amitech provides leading digital transformation solutions, helping businesses transform digitally comprehensively, quickly and economically."
+            },
+            "thiet-bi-va-san-pham-cong-nghiep" : {
+                "description" : "Amitech provides energy saving solutions, helping businesses monitor energy consumption, save time and costs, reduce emissions, protect the environment..."
+            }
+
+        },
+        "introduction" : {
+            "section1" : {
+                "title" : "AMI Vietnam Technology Solutions Joint-Stock Company (AMITECH)",
+                "description" : "AMITECH provides services in Energy Management and Digital Transformation in the field of energy management and greenhouse gas emission reduction. AMITECH has a team of highly qualified and skilled staff and engineers who are implementing projects and providing technical services to customers every day. AMITECH is proud to be a Solution Provider of ….. and of reputable suppliers ……"
+            },
+            "section2" : {
+                "description-1" : "AMI Vietnam Technology Solutions Joint-Stock Company was established in 2011.",
+                "description-2" : "With many years of experience in providing services on Energy Management and Digital Transformation in the field of energy management, greenhouse gas emission reduction. We have participated and are an active member of projects of the National Target Program, Ministry of Industry and Trade, Ministry of Natural Resources and Environment and international organizations: GIZ, WWF, WB, ADB, JICA,.. as well as Consulting for industrial corporations, factories nationwide.",
+                "description-3" : "With a team of highly qualified and skilled engineers and technicians. Every year, we regularly organize training sessions to improve the value of the Company's human resources. Along with training and developing human resources, the acquisition of science and technology and new production lines and installation technology is a matter of special concern. And we always strive to create the most perfect products, provide services with the highest quality to help businesses effectively use energy economically and efficiently, reduce emissions in production, reduce production costs, increase competitiveness for businesses and create the image of \"Green Enterprise\". Contributing to the industrialization and modernization of the country."
+            },
+            "section3" : {
+                "su-menh-title" : "Mission",
+                "tam-nhin-title" : "Vision",
+                "gia-tri-cot-loi-title" : "Core Value", 
+                "su-menh" : "Bringing along the new wave of technology in the 4.0 technology revolution, striving to develop high-quality \"Make in Vietnam\" Products - Services - Technology Solutions, bringing outstanding values ​​to Customers, contributing to building a strong Vietnam.",
+                "tam-nhin" : "Become a leading regional Technology Company in the field of Technology Application in Industrial Management and Production.",
+                "gia-tri-cot-loi" : {
+                    "tin-cay-label" : "Trust",
+                    "tien-ich-label" : "Supportive",
+                    "tan-tinh-label" : "Dedicated",
+                    "tin-cay-text" : "The platforms, products and services that AMITECH brings to customers are all highly reliable. AMITECH people with high knowledge and culture always give customers a sense of trust in transactions and transfer of knowledge and technology.",
+                    "tien-ich-text" : "AMITECH platforms, products and services always satisfy all business requirements of customers. Customers can easily access and use AMITECH platforms, products and services anytime, anywhere. AMITECH's customer support and consulting team is always ready to serve 365 days/year and 24 hours/day.",
+                    "tan-tinh-text" : "AMITECH people, from platform and product developers to business consultants and other departments, are always dedicated and devoted to serving the interests of customers, making customers trust and love them as a friend, a companion in their career."
+                }
+            }
+        },
+        "product-detail" : {
+            "section2" : {
+                "san-pham-lien-quan" : "Related products"
+            }
+        },
+        "project-detail" : {
+            "section2" :  {
+                "du-an-lien-quan" : "Related projects"
+            }
+        },
+        "recruitment" : {
+            "title" : "Job opportunities at AMITECH",
+            "description" : "Become a part of AMITECH and seize the opportunity to build a solid future career"
+        },
+        "quote" : {
+            "title" : "Quote",
+            "description" : "Choose the solution that suits your needs and get a free quote"
+        },
+        "contact" : {
+            "title" : "Contact",
+            "description" : "Let Amitech team support you anywhere",
+            "label" : {
+                "tru-so-chinh" : "Headquarter",
+                "dien-thoai" : "Phone number",
+                "hotline" : "Hotline",
+                "email" : "Email"
+            }
+        },
+        "activities" : {
+            "title" : "Activities",
+            "description" : "Update AMITECH's annual activities"
+        }
+    },
+    "footer" : {
+        
+    }
+}

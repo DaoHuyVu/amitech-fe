@@ -11,13 +11,15 @@ import { getSolutionDetailsById } from "../../../services/solution";
 import './solution.css'
 import Pagination from '../Pagination/Pagination'
 import aspect23Wrapper from "../../card/aspectWrapper/aspect23Wrapper";
+import { useTranslation } from "react-i18next";
 export default function SolutionContent(){
   const [data,setData] = useState(null)
   const location = useLocation()
+  const {t} = useTranslation()
   useEffect(()=>{
     const fetchSolutionDetail = async () => {
       try{
-        const res = await getSolutionDetailsById(4)
+        const res = await getSolutionDetailsById(window.localStorage.getItem('lang') === '0' ? 4 : 68)
         setData(res.data.data)
       }catch(err){
         console.log(err)
@@ -25,10 +27,11 @@ export default function SolutionContent(){
     }
     fetchSolutionDetail()
   },[])
+  if(!data) return
   return (
     <>
        {
-          data &&
+          
           <Banner
             imgSrc={getNavigationIdImageCover(data)}
             title={data.attributes.name}
@@ -45,7 +48,7 @@ export default function SolutionContent(){
                       <div className="col-12 col-xl-6 px-0">
                         <ImageCard src={getNavigationIdImageCover(e)} AspectWrapper={aspect23Wrapper}/>
                       </div>
-                      <CardContent className="col-12 col-xl-6" style={{backgroundColor : '#f4f9ff'}}>
+                      <CardContent className="col-12 col-xl-6 p-4" style={{backgroundColor : '#f4f9ff'}}>
                         <CardTitle 
                         maxLines={2} 
                         style={{color : '#4d4d4d',fontWeight:'700',width : '100%',fontSize:'30px'}}>
@@ -53,7 +56,7 @@ export default function SolutionContent(){
                         </CardTitle>
                         <CardDescription coverRemain={false} style={{color : '#4d4d4db2'}}>{e.attributes.description}</CardDescription>
                         <Link style={{color : '#00c2ff'}} to={`${location.pathname}${e.attributes.slug}`}>
-                          Xem thêm &gt;&gt;
+                          {t('button.xem-them')} &gt;&gt;
                         </Link>
                       </CardContent>
                   </Card>

@@ -10,7 +10,9 @@ import CardContent from '../../card/CardContent'
 import CardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
 import aspect34Wrapper from '../../card/aspectWrapper/aspect34Wrapper'
+import { useTranslation } from 'react-i18next'
 export default function Products(){
+    const {t} = useTranslation()
     const [products,setProducts] = useState([])
     const bgColor = ['#001a6c','#002a9e','#2253b8']
     useEffect(()=>{
@@ -37,11 +39,11 @@ export default function Products(){
         <section id='home__products'>
         <div className="container">
             <div className='text-center mb-3'>
-                <h4 style={{color : '#4D4D4D',fontWeight : '900'}} >
-                        THIẾT BỊ VÀ SẢN PHẨM CÔNG NGHIỆP
-                </h4>
+                <h2 style={{color : '#4D4D4D',fontWeight : '900',textTransform : 'uppercase'}}>
+                        {t('common.thiet-bi-va-san-pham-cong-nghiep')}
+                </h2>
                 <p className="mw-100 mw-xl-75 mx-auto" style={{color : 'black'}}>
-                Amitech cung cấp các giải pháp tiết kiệm Năng Lượng, giúp cho Doanh nghiệp giám sát tiêu thụ năng lượng, tiết kiệm thời gian và chi phí sử dụng, giảm phát thải, bảo vệ môi trường...
+                    {t('page.home.thiet-bi-va-san-pham-cong-nghiep.description')}
                 </p>
             </div>
             {
@@ -51,13 +53,16 @@ export default function Products(){
                             <div className='col-12 col-md-6 col-lg-4 col-xxl-3'>
                                 <TCard className='p-2 rounded' style={{backgroundColor:`${bgColor[index]}`,minHeight : '250px'}}>
                                     <CardContent>
-                                        <CardTitle maxLines={3} className='fs-2' style={{lineHeight : '40px'}}>{product.attributes.name}</CardTitle>
+                                        <CardTitle maxLines={3} 
+                                            style={{textTransform : 'uppercase'}}>
+                                                {product.attributes.name}
+                                            </CardTitle>
                                         <CardDescription>
                                             {product.attributes.description}
                                         </CardDescription>
                                     <Button style={{backgroundColor : 'transparent',borderColor : '#ffffff'}} >
                                         <Link to='/thiet-bi-va-san-pham-cong-nghiep' state={{category : `${product.attributes.name} `}} >
-                                            <p style={{color : 'white'}}>Xem thêm &gt;&gt;</p>
+                                            <p style={{color : 'white'}}>{t('button.xem-them')} &gt;&gt;</p>
                                         </Link>
                                     </Button>
                                     </CardContent>
@@ -71,7 +76,7 @@ export default function Products(){
                                         <ImageCard src={getPostProfile(e)} AspectWrapper={aspect34Wrapper}/>
                                         <CardContent className='rounded-bottom'style={{backgroundColor:`${bgColor[index]}`}}>
                                             <Link to={`/thiet-bi-va-san-pham-cong-nghiep/${e.attributes.slug}`} style={{color : 'white'}}>
-                                                <CardTitle maxLines={2}>
+                                                <CardTitle maxLines={2} style={{textTransform : 'uppercase',fontSize : '20px'}}>
                                                     {e.attributes.postTitle}
                                                 </CardTitle>
                                             </Link>

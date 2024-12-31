@@ -49,6 +49,11 @@ const router = createBrowserRouter([
               element : <Introduction />
             },
             {
+              path : 'hinh-anh-hoat-dong',
+              element : <Activities />,
+              loader : ActivityLoader
+            },
+            {
               path : 'hinh-anh-hoat-dong/:id',
               element : <Activities />,
               loader : ActivityLoader

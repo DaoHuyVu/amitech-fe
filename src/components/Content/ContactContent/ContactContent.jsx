@@ -3,6 +3,7 @@ import "./ContactContent.css"
 import BannerWrapper from "../../common/BannerWrapper";
 import styled from "styled-components";
 import imageBanner from "../../../assets/banner/lienhe.png";
+import { useTranslation } from 'react-i18next';
 
 function ContactDetails({title, details, imgSrc}) {
   return (
@@ -16,24 +17,25 @@ function ContactDetails({title, details, imgSrc}) {
 }
 
 function Content() {
+  const {t} = useTranslation()
   const contactInfo = [
     {
-      title: "Trụ sở chính",
-      details: "Tầng 4, Tòa nhà Sông Đà 9, Số 2 Nguyễn Hoàng, Mỹ Đình, Nam Từ Liêm, Hà Nội",
+      title: t('page.contact.label.tru-so-chinh'),
+      details: t('text.address'),
       imgSrc: "location.png",
     },
     {
-      title: "Điện thoại",
+      title: t('page.contact.label.dien-thoai'),
       details: "024 22 33 55 66",
       imgSrc: "hotline.png",
     },
     {
-      title: "Hotline",
+      title: t('page.contact.label.hotline'),
       details: "0986 893 233",
       imgSrc: "hotline.png",
     },
     {
-      title: "Email",
+      title: t('page.contact.label.email'),
       details: "contact@amitech.vn",
       imgSrc: "email.png",
     },
@@ -43,14 +45,13 @@ function Content() {
       <>
         <BannerWrapper
             imgSrc={imageBanner}
-            title={"LIÊN HỆ"}
-            description={"Hãy để đội ngũ Amitech hỗ trợ bạn bất cứ đâu"}
+            title={t('page.contact.title')}
+            description={t('page.contact.label.description')}
         />
         <div className="contact-container max-w-full p-0">
           <section className="contact-section">
             <article className="company-info">
-              <h2 className="company-name">Công ty cổ phần Giải pháp Công nghệ
-                Ami Việt Nam</h2>
+              <h2 className="company-name">{t('text.company-name')}</h2>
               {contactInfo.map((info, index) => (
                   <ContactDetails key={index} title={info.title}
                                   details={info.details}
@@ -71,30 +72,29 @@ function Content() {
           </section>
 
           <section className="contact-form-section">
-            <h2 className="form-title">Liên hệ với chúng tôi</h2>
-            <p className="form-subtitle">Hãy gửi yêu cầu, chúng tôi sẽ phản hồi
-              nhanh nhất có thể</p>
+            <h2 className="form-title">{t('common.lien-he-voi-chung-toi')}</h2>
+            <p className="form-subtitle">{t('common.hay-gui-yeu-cau')}</p>
             <form className="contact-form">
               <label htmlFor="nameInput" className="visually-hidden"></label>
               <input className="input-field" type="text" id="nameInput"
-                     placeholder="Họ tên *" aria-label="Họ tên" required/>
+                     placeholder={t('form.fields.ho-ten')} aria-label="Họ tên" required/>
 
               <label htmlFor="phoneInput" className="visually-hidden"></label>
               <input className="input-field" type="tel" id="phoneInput"
-                     placeholder="Số điện thoại *" aria-label="Số điện thoại"
+                     placeholder={t('form.fields.so-dien-thoai')} aria-label="Số điện thoại"
                      required/>
 
               <label htmlFor="emailInput"
                      className="visually-hidden"></label>
               <input className="input-field" type="email" id="emailInput"
-                     placeholder="Email *" aria-label="Email" required/>
+                     placeholder={t('form.fields.email')} aria-label="Email" required/>
 
               <label htmlFor="detailsInput" className="visually-hidden"></label>
               <textarea className="textarea-field" id="detailsInput"
-                        placeholder="Chi tiết yêu cầu"
+                        placeholder={t('form.fields.noi-dung')}
                         aria-label="Chi tiết yêu cầu"/>
 
-              <button className="submit-button" type="submit">Gửi yêu cầu
+              <button className="submit-button" type="submit">{t('form.fields.gui-yeu-cau')}
               </button>
             </form>
           </section>

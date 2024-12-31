@@ -18,8 +18,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getPostCategory } from "../../../services/util";
 import Slider from "react-slick";
 import { getNewsPostsById } from "../../../services/news";
+import { useTranslation } from "react-i18next";
 
 export default function News(){
+  const {t} = useTranslation()
   const [pageDetails,setPageDetails] = useState(null)
   const [selectedOption,setSelectedOption] = useState(0)
   const [posts,setPosts] = useState(null)
@@ -34,7 +36,7 @@ export default function News(){
   useEffect(()=>{
     const fetchPageDetails = async () => {
       try{
-        const res = await getPostDetailById(6)
+        const res = await getPostDetailById(window.localStorage.getItem('lang') === '0' ? 6 : 55)
         setPageDetails(res.data.data)
       }catch(err){
         console.log(err)
@@ -45,7 +47,7 @@ export default function News(){
   useEffect(()=>{
     const fetchPosts = async () => {
       try{
-        const res = await getNewsPostsById(6)
+        const res = await getNewsPostsById(window.localStorage.getItem('lang') === '0' ? 6 : 55)
         setPosts(res.data)
       }catch(err){
         console.log(err)
@@ -62,7 +64,7 @@ export default function News(){
                  <CardTitle maxLines='1' style={{color : '#4d4d4d'}}>{e.attributes.postTitle}</CardTitle>
                  <CardDescription coverRemain='false' style={{color : '#4d4d4db2'}}>{e.attributes.excerp}</CardDescription>
                  <Link to={`/tin-tuc-va-su-kien/${e.attributes.slug}`} style={{color : '#00c2ff',fontWeight : 'bold'}}>
-                     Xem thêm &gt;&gt;
+                     {t('button-xem-them')} &gt;&gt;
                  </Link>
              </CardContent>
          </Card>
@@ -93,9 +95,9 @@ export default function News(){
                   <ImageCard src={getPostProfile(e)} AspectWrapper={aspect47Wrapper}/>
                   <CardContent style={{backgroundColor : '#F1F7FF'}}>
                       <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{getPostCategory(e)}</CardCategory>
-                      <CardTitle maxLines='3' style={{color : '#4d4d4d'}} >{e.attributes.postTitle}</CardTitle>
+                      <CardTitle maxLines='3' style={{color : '#4d4d4d',textTransform : 'none'}} >{e.attributes.postTitle}</CardTitle>
                       <Link to={`'/tin-tuc-va-su-kien/${e.attributes.slug}`} style={{color : '#00c2ff',fontWeight : 'bold'}}>
-                          Xem thêm &gt;&gt;
+                          {t('button.xem-them')} &gt;&gt;
                       </Link>
                   </CardContent>
                   </Card>
@@ -105,15 +107,15 @@ export default function News(){
           }
         </div>
         <div className="col-12 col-md-6 d-flex flex-column" style={{color : '#4d4d4d'}}>
-          <h1 className="fw-bold mb-4">TIN MỚI NHẤT</h1>
+          <h1 className="fw-bold mb-4 text-uppercase">{t('common.tin-moi-nhat')}</h1>
           {
             posts && posts.data.slice(0,5).map((e,idx)=>{
               return (
                 <CardContent key={idx} className="p-0 ">
                   <Link to={`/tin-tuc-va-su-kien/${e.attributes.slug}`} >
-                    <CardTitle maxLines={2} style={{color : '#4d4d4d'}}>{e.attributes.postTitle}</CardTitle>
+                    <CardTitle maxLines={2} style={{color : '#4d4d4d',textTransform : 'none'}}>{e.attributes.postTitle}</CardTitle>
                   </Link> 
-                <CardCategory>{getPostCategory(e)}</CardCategory>
+                <CardCategory className="text-uppercase">{getPostCategory(e)}</CardCategory>
                 {idx !== 4 && <div style={{border : '1px solid #4d4d4db2',width : '100%'}} />}
                 </CardContent>
               )
@@ -128,7 +130,7 @@ export default function News(){
     return e.attributes.name
   }) : null
 
-  filterLabels && filterLabels.unshift("Tất cả")
+  filterLabels && filterLabels.unshift(t('common.tat-ca'))
 
   const filteredPosts = posts ? (selectedOption === 0 ? posts.data : posts.data.filter(e => e.attributes.subCategories.data.attributes.name === filterLabels[selectedOption])) : null 
   return(  
@@ -179,9 +181,9 @@ export default function News(){
                   <Card key={idx} className="col-12 col-md-6 col-xl-4 col-xxl-3">
                     <ImageCard src={getPostProfile(e)} AspectWrapper={aspect23Wrapper}/>
                     <CardContent>
-                      <CardCategory style={{color : '#4d4d4db2'}}>{e.attributes.subCategories.data.attributes.name}</CardCategory>
+                      <CardCategory style={{color : '#4d4d4db2',textTransform : 'uppercase'}}>{e.attributes.subCategories.data.attributes.name}</CardCategory>
                       <Link key={idx} to={`${location.pathname}/${e.attributes.slug}`}>
-                        <CardTitle maxLines={2} style={{color : '#4d4d4d'}}>{e.attributes.postTitle}</CardTitle>
+                        <CardTitle maxLines={2} style={{color : '#4d4d4d',textTransform : 'none'}}>{e.attributes.postTitle}</CardTitle>
                       </Link>
                       <CardDescription style={{color : '#4d4d4db2'}}>
                         <FontAwesomeIcon icon={faClock} />

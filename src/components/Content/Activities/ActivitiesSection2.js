@@ -1,19 +1,25 @@
+import { useTranslation } from "react-i18next"
 import { host } from "../../../services/AxiosInstance"
 import { getGallery } from "../../../services/galleryService"
 import Carousel from "../../newComponents/carousel/Carousel"
 import Gallery from "../../newComponents/gallery/Gallery"
-import { useLoaderData } from "react-router-dom"
+import { redirect, useLoaderData } from "react-router-dom"
 
-export const loader = async ({params}) => {
+export const loader = async ({params,request}) => {
+    const location = new URL(request.url);
+    if(!params.id){
+        redirect(`${location.pathname}/1`)
+    }
     return await getGallery(params.id)
 }
 export default function ActivitySection2(){
     const data = useLoaderData().data.data
+    const {t} = useTranslation()
     const slides = data ? data.attributes.images.data.map((e,index) => {
         return (
             <div key={index}>
                 <Gallery image={`${host}${e.attributes.url}`} >
-                    <p>{index+1}/{data.attributes.images.data.length} ảnh</p>
+                    <p>{index+1}/{data.attributes.images.data.length} {t('common.anh')}</p>
                 </Gallery>
             </div>
         )

@@ -8,7 +8,11 @@ import OverlayCard from '../../card/OverlayCard'
 import CardContent from '../../card/CardContent'
 import CardTitle from '../../card/CardTitle'
 import CardDescription from '../../card/CardDescription'
+import { useTranslation } from 'react-i18next'
+import Description from '../../text/Description'
+import ResponsiveHeader from '../../text/ResponsiveHeader'
 export default function Solution(){
+    const {t} = useTranslation()
     const [data,setData] = useState([])
     useEffect(() => {
         const fetchData = async () => {
@@ -39,7 +43,7 @@ export default function Solution(){
                         <CardTitle maxLines={2} style={{color : '#00c2ff'} }>{e.name}</CardTitle>
                         <CardDescription>{e.description}</CardDescription>
                         <Link style={{color : '#00C2FF'}} to={`${e.url}`} >
-                            Xem thêm &gt;&gt;
+                            {t('common.xem-them')} &gt;&gt;
                         </Link>
                     </OverlayCard>
                     
@@ -51,12 +55,12 @@ export default function Solution(){
         <section id='home__solution'>
             <div className="container">
                 <div className='text-center'>
-                    <h4 style={{color : '#4D4D4D',lineHeight : '40px',fontWeight : 'bold' }}>
-                            Giải pháp chuyển đổi số
-                    </h4>
-                    <p className="mw-100" style={{color : 'black'}}>
-                        Amitech cung cấp các giải pháp chuyển đổi số hàng đầu, giúp doanh nghiệp chuyển đổi số toàn diện, nhanh chóng, tiết kiệm
-                    </p>
+                    <ResponsiveHeader style={{color : '#4D4D4D',lineHeight : '40px',fontWeight : 'bold' }}>
+                            {t('common.giai-phap-chuyen-doi-so')}
+                    </ResponsiveHeader>
+                    <Description style={{color : 'black'}}>
+                        {t('page.home.giai-phap-chuyen-doi-so.description')}
+                    </Description>
                 </div>
                 <div className="row g-3 my-4">
                     {solutions}
@@ -65,7 +69,7 @@ export default function Solution(){
                     <Button>
                         <Link to='/giai-phap-chuyen-doi-so'>
                             <p style={{color : 'white'}}>
-                                Xem thêm &gt;&gt;
+                                {t('button.xem-them')} &gt;&gt;
                             </p>
                         </Link>
                     </Button>

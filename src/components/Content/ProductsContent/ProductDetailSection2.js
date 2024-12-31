@@ -4,11 +4,12 @@ import { getRelatedProducts } from '../../../services/product'
 import { getPostNavigation, getPostProfile } from '../../../services/util'
 import { Link, useLocation } from 'react-router-dom'
 import { concatePath } from '../../../utils/parseUrl'
+import { useTranslation } from 'react-i18next'
 export default function ProductDetailSection2({data}){
     const location = useLocation()
     const urlArr = location.pathname.split("/")
     const [relatedProducts,setRelatedProducts] = useState([])
-
+    const {t} = useTranslation()
     useEffect(() => {
         const fetchProducts = async () => {
            try{
@@ -29,7 +30,10 @@ export default function ProductDetailSection2({data}){
                 </div>
                 <div className='p-3 row-gap-2 flex-fill' style={{backgroundColor : '#666666'}}>
                     <Link to={concatePath(urlArr,urlArr.length-1,`/${e.attributes.slug}`)}>
-                        <h5 style={{color : 'white',margin : '0px'}} >{e.attributes.postTitle}</h5>
+                        <h5 
+                        style={{color : 'white',textTransform : 'uppercase',textWrapStyle : "auto",lineHeight : '30px'}}>
+                            {e.attributes.postTitle}
+                        </h5>
                     </Link>
                 </div>
             </div>
@@ -43,7 +47,7 @@ export default function ProductDetailSection2({data}){
                         {parser(data.attributes.postContent)}
                     </div>
                     <div className='col-12 col-xl-3'>
-                        <h4 className='text-center fw-bold text-xl-start'>SẢN PHẨM LIÊN QUAN</h4>
+                        <h4 className='text-center fw-bold text-xl-start'>{t("page.product-detail.section2.san-pham-lien-quan")}</h4>
                         <div className='row row-gap-3'>
                             {cols}
                         </div>

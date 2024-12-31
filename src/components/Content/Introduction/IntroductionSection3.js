@@ -3,17 +3,19 @@ import bg2 from '../../../assets/images/image 221.png'
 import icon1 from '../../../assets/images/sumenh.png'
 import icon2 from '../../../assets/images/tamnhin.png'
 import icon3 from '../../../assets/images/giatricotloi.png'
+import { useTranslation } from 'react-i18next'
 export default function IntroductionSection3(){
+    const {t} = useTranslation()
     const paragraphData = [
         {
             icon : icon1,
-            title : 'Sứ mệnh',
-            text : 'Mang theo làn sóng công nghệ mới trong cuộc cách mạng công nghệ 4.0, nỗ lực phát triển những Sản phẩm - Dịch vụ - Giải pháp Công nghệ Chất lượng cao "Make in Vietnam", đem lại những giá trị vượt trội cho Khách hàng, góp phần xây dựng một Việt Nam hùng cường.'
+            title : t('page.introduction.section3.su-menh-title'),
+            text : t('page.introduction.section3.su-menh')
         },
         {
             icon : icon2,
-            title : 'Tầm nhìn',
-            text : 'Trở thành một Công ty Công nghệ hàng đầu khu vực trong lĩnh vực Ứng dụng Công nghệ trong Quản lý và Sản xuất Công nghiệp.'
+            title : t('page.introduction.section3.tam-nhin-title'),
+            text : t('page.introduction.section3.tam-nhin')
         },
     ]
     const paragraph = paragraphData.map((e,index) => {
@@ -33,19 +35,19 @@ export default function IntroductionSection3(){
     const listData = [
         {
             icon : icon3,
-            title : 'Giá trị cốt lõi',
+            title : t('page.introduction.section3.gia-tri-cot-loi-title'),
             list : [
                 {
-                    title : 'Tin cậy',
-                    text : 'Các nền tảng, sản phẩm và dịch vụ AMITECH mang lại cho khách hàng đều có độ tin cậy cao, con người AMITECH với tri thức và văn hóa cao luôn mang lại cho khách hàng cảm giác tin cậy trong giao dịch và chuyển giao tri thức, công nghệ.'
+                    title : t('page.introduction.section3.gia-tri-cot-loi.tin-cay-label'),
+                    text :  t('page.introduction.section3.gia-tri-cot-loi.tin-cay-text')
                 },
                 {
-                    title : 'Tiện ích',
-                    text : 'Các nền tảng, sản phẩm và dịch vụ AMITECH luôn thỏa mãn mọi yêu cầu nghiệp vụ của khách hàng. Khách hàng có thể dễ dàng tiếp cận và sử dụng nền tảng, sản phẩm, dịch vụ của AMITECH bất cứ khi nào, bất cứ nơi nào. Đội ngũ tư vấn, hỗ trợ khách hàng của AMITECH luôn sẵn sàng phục vụ 365 ngày/năm và 24 giờ/ngày.'
+                    title : t('page.introduction.section3.gia-tri-cot-loi.tien-ich-label'),
+                    text :  t('page.introduction.section3.gia-tri-cot-loi.tien-ich-text')
                 },
                 {
-                    title : 'Tận tình',
-                    text : 'Con người AMITECH từ những người phát triển nền tảng, sản phẩm đến những người kinh doanh tư vấn và các bộ phận khác luôn luôn tận tâm, tận lực phục vụ vì lợi ích của khách hàng, làm cho khách hàng tin cậy và yêu mến như một người bạn, một người đồng hành trong sự nghiệp.'
+                    title : t('page.introduction.section3.gia-tri-cot-loi.tan-tinh-label'),
+                    text :  t('page.introduction.section3.gia-tri-cot-loi.tan-tinh-text')
                 }
             ]
         }
@@ -70,7 +72,7 @@ export default function IntroductionSection3(){
     return(
         <section id='su-menh'>
             <div className="container">
-                <h2 style={{color : '#4d4d4d',fontWeight : '700',fontFamily : 'Roboto'}} className='text-center pb-4'>SỨ MỆNH - TẦM NHÌN - GIÁ TRỊ CỐT LÕI</h2>
+                <h2 style={{color : '#4d4d4d',textTransform : 'uppercase'}} className='text-center pb-4'>{t('common.su-menh-tam-nhin-gia-tri-cot-loi')}</h2>
                 <div className='container__item--zigzag'>
                     <div className="row row-gap-3 pb-4">
                         <div className='col-12 col-lg-6'>

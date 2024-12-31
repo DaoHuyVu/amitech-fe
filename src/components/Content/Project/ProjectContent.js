@@ -13,7 +13,7 @@ export default function ProjectContent(){
         const fetchNav = async () => {
            try{
             // 3 is project category id
-            const res = await getNavigationDetailById(3)
+            const res = await getNavigationDetailById(window.localStorage.getItem('lang') === '0' ? 3 : 53)
             setNavigation(res.data.data)
            }catch(err){
             console.log(err)

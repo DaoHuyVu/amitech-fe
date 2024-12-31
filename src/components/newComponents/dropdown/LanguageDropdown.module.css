@@ -28,6 +28,7 @@
     flex-direction: column;   
     visibility: hidden;
     background-color : #222a9e;
+    z-index : 10;
 }
 .selectLanguageContainer:hover .languageDropdownContainer{
     visibility: visible;

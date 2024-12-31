@@ -2,7 +2,11 @@ import bg1 from '../../../assets/images/eb8e4180959645c81c87445 1.png'
 import bg2 from '../../../assets/images/IMG_7629 1.png'
 import bg3 from '../../../assets/images/e55b1bec035ad004894b 2.png'
 import bg4 from '../../../assets/images/image 174.png'
+import { useTranslation } from 'react-i18next'
+import ScalableHeader from '../../text/ResponsiveHeader'
+import Description from '../../text/Description'
 export default function IntroductionSection1(){
+    const {t} = useTranslation()
     const data = [bg1,bg2,bg3,bg4]
     const columns = data.map((e,index)=>{
         return (
@@ -16,8 +20,8 @@ export default function IntroductionSection1(){
         <section id="introduction__section1">
             <div className="container position-absolute start-50 translate-middle" style={{top : '50%'}}>
                 <div className='text-center'>
-                    <h2 className='pb-3'>Công ty Cổ phần Giải pháp Công nghệ AMI Việt Nam (AMITECH)</h2>
-                    <p style={{fontSize : '20px'}}>AMITECH cung cấp các dịch vụ về Quản lý năng lượng và Chuyển đổi số trong lĩnh vực quản lý năng lượng, giảm phát thải khí nhà kính. AMITECH có đội ngũ cán bộ, kỹ sư có trình độ cao, tay nghề vững, những người hàng ngày đang thực hiện dự án và cung cấp dịch vụ kỹ thuật cho khách hàng. AMITECH tự hào là Nhà cung cấp giải pháp của ….. và của các nhà cung cấp có uy tín ……</p>
+                    <ScalableHeader style={{marginBottom : '16px'}}>{t('page.introduction.section1.title')}</ScalableHeader>
+                    <Description style={{fontSize : '20px'}}>{t('page.introduction.section1.description')}</Description>
                 </div>
             </div>
             <div className='container position-absolute top-100 translate-middle start-50'>

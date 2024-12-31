@@ -6,7 +6,9 @@ import { getPostImage, getPostImageArray } from "../../../services/util"
 import CardContent from "../../card/CardContent"
 import CardTitle from "../../card/CardTitle"
 import CardDescription from "../../card/CardDescription"
+import { useTranslation } from "react-i18next"
 export default function ProductDetailSection1({data}){
+    const {t} = useTranslation()
     const carouselItems = getPostImageArray(data)
     const settings = {
         customPaging: function(i) {
@@ -37,7 +39,7 @@ export default function ProductDetailSection1({data}){
             <CardDescription>{parser(data.attributes.postDescription)}</CardDescription>
             <Link to='#'>
                 <Button>
-                    Liên hệ &gt;&gt;
+                    {t('button.lien-he')} &gt;&gt;
                 </Button>
             </Link>
         </CardContent>

@@ -5,10 +5,13 @@ import { getRelatedProjects } from '../../../services/project'
 import { useEffect, useState } from 'react'
 import { getPostNavigation, getPostProfile } from '../../../services/util'
 import { concatePath } from '../../../utils/parseUrl'
+import { useTranslation } from 'react-i18next'
+import ResponsiveHeader from '../../text/ResponsiveHeader'
 export default function ProjectDetailSection2({project}){
     const [relatedProjects,setRelatedProjects] = useState([])
     const location = useLocation()
     const urlArr = location.pathname.split("/")
+    const {t} = useTranslation()
     useEffect(()=>{
         const fetchProjects = async () => {
             try{
@@ -34,7 +37,7 @@ export default function ProjectDetailSection2({project}){
                     </div>
                     <Button style={{backgroundColor : 'transparent',color : '#00c2ff',border : 'none'}}>
                         <Link to={concatePath(urlArr,urlArr.length-1,`/${e.attributes.slug}`)}>
-                            Xem chi tiết &gt;&gt;
+                            {t('button.xem-chi-tiet')} &gt;&gt;
                         </Link>
                     </Button>
                 </div>
@@ -45,11 +48,11 @@ export default function ProjectDetailSection2({project}){
         <section id="project-detail__section2">
             <div className="container">
                 <div className="row gx-5">
-                    <div className='col-12 col-xl-8 col-xxl-9 pb-4' id='post-content'>
+                    <div className='col-12 col-xl-8 col-xxl-8 mb-5' id='post-content'>
                         {parser(project.attributes.postContent)}
                     </div>
-                    <div className='col-12 col-xl-4 col-xxl-3'>
-                        <h4 className='text-center fw-bold text-xl-start'>DỰ ÁN LIÊN QUAN</h4>
+                    <div className='col-12 col-xl-4 col-xxl-4'>
+                        <ResponsiveHeader className='text-center text-xl-start text-uppercase'>{t('page.project-detail.section2.du-an-lien-quan')}</ResponsiveHeader>
                         <div className='row row-gap-3'>
                             {cols}
                         </div>

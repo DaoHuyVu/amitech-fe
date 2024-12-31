@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const ContactInfo = ({icon, title, content}) => (
@@ -21,25 +22,26 @@ const FooterLink = ({text, link}) => (
 );
 
 function Footer() {
+  const {t} = useTranslation()
   const contactInfo = [
     {
       icon: "/location.png",
-      title: "Trụ sở chính",
-      content: "Tầng 4, Tòa nhà Sông Đà 9, Số 2 Nguyễn Hoàng, Mỹ Đình, Nam Từ Liêm, Hà Nội"
+      title: t('page.contact.label.tru-so-chinh'),
+      content: t('text.address')
     },
-    {icon: "/dienthoai.png", title: "Điện thoại", content: "024 22 33 55 66"},
-    {icon: "/hotline.png", title: "Hotline", content: "0 986 893 233"},
-    {icon: "/email.png", title: "Email", content: "contact@amitech.vn"}
+    {icon: "/dienthoai.png", title: t('page.contact.label.dien-thoai'), content: "024 22 33 55 66"},
+    {icon: "/hotline.png", title: t('page.contact.label.hotline'), content: "0 986 893 233"},
+    {icon: "/email.png", title: t('page.contact.label.email'), content: "contact@amitech.vn"}
   ];
 
   const footerLinks = [
-    {text:"Giới thiệu", link:"/gioi-thieu"},
-    {text: "Giải pháp chuyển đổi số", link: "/giai-phap-chuyen-doi-so"},
-    {text: "Thiết bị và sản phẩm công nghiệp", link: "/thiet-bi-san-pham-cong-nghiep"},
-    {text: "Báo giá", link: "/bao-gia"},
-    {text:"Tuyển dụng", link:"/tuyen-dung"},
-    {text:"Cam kết", link: "/cam-ket"},
-    {text:"Chính sách bảo mật", link: "/chinh-sach-bao-mat"},
+    {text:t('common.gioi-thieu'), link:"/gioi-thieu"},
+    {text:t('common.giai-phap-chuyen-doi-so'), link: "/giai-phap-chuyen-doi-so"},
+    {text: t('common.thiet-bi-va-san-pham-cong-nghiep'), link: "/thiet-bi-san-pham-cong-nghiep"},
+    {text: t('common.bao-gia'), link: "/bao-gia"},
+    {text:t('common.tuyen-dung'), link:"/tuyen-dung"},
+    {text:t("common.cam-ket"), link: "/cam-ket"},
+    {text:t('common.chinh-sach-bao-mat'), link: "/chinh-sach-bao-mat"},
   ];
 
   return (

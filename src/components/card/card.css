@@ -12,12 +12,15 @@
 }
 .card-content__title{
     line-height: 35px;
+    text-transform: uppercase;
     text-overflow: ellipsis;
     font-size: 25px;
+    text-wrap-style: auto;
     overflow: hidden;
     display: -webkit-box; /* Create a flexbox container for text */
     -webkit-line-clamp: 4; /* Limit to 4 lines of text */
     line-clamp: 4;
+    margin-bottom: 8px;
     -webkit-box-orient: vertical; /* Vertical box orientation for clamping */
     word-wrap: break-word;
     font-weight: bold;

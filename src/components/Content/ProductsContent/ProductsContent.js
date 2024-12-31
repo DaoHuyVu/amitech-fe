@@ -11,8 +11,10 @@ import Banner from '../../common/BannerWrapper'
 import Pagination from '../Pagination/Pagination'
 import './product.css'
 import aspect34Wrapper from "../../card/aspectWrapper/aspect34Wrapper";
+import { useTranslation } from "react-i18next";
 const pageSize = 4
 export default function ProductsContent(){
+  const {t} = useTranslation()
   const [pageDetails,setPageDetails] = useState(null)
   const [selectedOption,setSelectedOption] = useState(0)
   const [posts,setPosts] = useState(null)
@@ -28,7 +30,7 @@ export default function ProductsContent(){
   useEffect(()=>{
     const fetchPageDetails = async () => {
       try{
-        const res = await getPostDetailById(5)
+        const res = await getPostDetailById(window.localStorage.getItem('lang') === '0' ? 5 : 54)
         setPageDetails(res.data.data)
       }catch(err){
         console.log(err)
@@ -40,7 +42,7 @@ export default function ProductsContent(){
   useEffect(()=>{
     const fetchPosts = async () => {
       try{
-        const res = await getPostsByNavigationId(5,page,pageSize)
+        const res = await getPostsByNavigationId(window.localStorage.getItem('lang') === '0' ? 5 : 54,page,pageSize)
         setPosts(res.data)
       }catch(err){
         console.log(err)
@@ -53,10 +55,9 @@ export default function ProductsContent(){
     return e.attributes.name
   }) : null
 
-  filterLabels && filterLabels.unshift("Tất cả")
+  filterLabels && filterLabels.unshift(t("common.tat-ca"))
 
   const filteredPosts = posts ? (selectedOption === 0 ? posts.data : posts.data.filter(e => e.attributes.subCategories.data.attributes.name === filterLabels[selectedOption])) : null 
-
   return(  
     <>
       {
@@ -90,9 +91,9 @@ export default function ProductsContent(){
                   <Card key={idx} className="col-12 col-md-6 col-xl-4 col-xxl-3">
                     <ImageCard src={getPostProfile(e)} AspectWrapper={aspect34Wrapper}/>
                     <CardContent style={{backgroundColor : '#666666'}}>
-                      <CardCategory style={{color : '#ffffffb2'}}>{e.attributes.subCategories.data.attributes.name}</CardCategory>
-                      <Link key={idx} to={`${location.pathname}/${e.attributes.slug}`}>
-                        <CardTitle maxLines={2} >{e.attributes.postTitle}</CardTitle>
+                      <CardCategory style={{color : '#ffffffb2',textTransform : 'uppercase'}}>{e.attributes.subCategories.data.attributes.name}</CardCategory>
+                      <Link to={`${location.pathname}/${e.attributes.slug}`}>
+                        <CardTitle maxLines={3} style={{color : 'white'}}>{e.attributes.postTitle}</CardTitle>
                       </Link>
                     </CardContent>
                   </Card>

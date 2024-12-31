@@ -1,0 +1,147 @@
+{
+    "common" : {
+        "gioi-thieu" : "Giới thiệu",
+        "giai-phap-chuyen-doi-so" : "Giải pháp chuyển đổi số",
+        "thiet-bi-va-san-pham-cong-nghiep" : "Thiết bị và sản phẩm công nghiệp",
+        "bao-gia" : "Báo giá",
+        "tuyen-dung" : "Tuyển dụng",
+        "hinh-anh-hoat-dong" : "Hình ảnh hoạt động",
+        "du-an-tieu-bieu" : "Dự án tiêu biểu",
+        "tin-tuc-va-su-kien" : "Tin tức và sự kiện",
+        "doi-tac-va-khach-hang" : "Đối tác và khách hàng",
+        "gioi-thieu-ve-amitech" : "Giới thiệu về Amitech",
+        "chung-chi-chung-nhan" : "Chứng chỉ / Chứng nhận",
+        "su-menh-tam-nhin-gia-tri-cot-loi" : "Sứ mệnh - tầm nhìn - giá trị cốt lõi",
+        "cam-ket" : "Cam kết",
+        "chinh-sach-bao-mat" : "Chinh sách bảo mật",
+        "du-an-lien-quan" : "Dự án liên quan",
+        "tin-moi-nhat" : "Tin mới nhất",
+        "so-luong" : "Số lượng",
+        "muc-luong" : "Mức lương",
+        "anh" : "ảnh",
+        "tat-ca" : "Tất cả",
+        "chuyen-doi-so" : "Chuyển đổi số",
+        "ket-qua-tim-kiem" : "Kết quả tìm kiếm",
+        "khong-tim-thay-ket-qua" : "Không tìm thấy kết quả phù hợp",
+        "nhap-ten-cong-viec" : "Nhập tên công việc",
+        "tim-viec-lam" : "Tìm việc làm",
+        "vi-tri" : "Vị trí",
+        "tim-kiem-cong-viec" : "Tìm kiếm công việc",
+        "nhap-noi-dung-tim-kiem" : "Nhập nội dung tìm kiếm...",
+        "lien-he-voi-chung-toi" : "Liên hệ với chúng tôi",
+        "hay-gui-yeu-cau" : "Hãy gửi yêu cầu, chúng tôi sẽ phản hồi nhanh nhất có thế"
+    },
+    "button" : {
+        "xem-them" : "Xem thêm",
+        "tim-hieu-them" : "Tìm hiểu thêm",
+        "tai-ho-so" : "Tải hồ sơ năng lực",
+        "xem-tat-ca" : "Xem tất cả",
+        "nhan-tu-van-mien-phi" : "Nhận tư vấn miễn phí",
+        "lien-he" : "Liên hệ",
+        "xem-chi-tiet" : "Xem chi tiết"
+    },
+    "form" : {
+         "fields" : {
+            "ho-ten" : "Họ tên *",
+            "so-dien-thoai" : "Số điện thoại *",
+            "email" : "Email *",
+            "cong-ty" : "Công ty *",
+            "linh-vuc-quan-tam" : "Lĩnh vực quan tâm",
+            "noi-dung" : "Nội dung",
+            "gui-yeu-cau" : "Gửi yêu cầu"
+         },
+         "header" : {
+            "dang-ky-nhan-tu-van-mien-phi" : "Đăng ký nhận tư vấn miễn phí"
+         }
+    },
+    "text" : {
+        "address" : "Tầng 4, Tòa nhà Sông Đà 9, Số 2 Nguyễn Hoàng, Mỹ Đình, Nam Từ Liêm, Hà Nội",
+        "input-placeholder " : "Nhập nội dung tìm kiếm...",
+        "company-name" : "Công ty cổ phần Giải pháp Công nghệ Ami Việt Nam"
+    },
+    "page" : {
+        "home" : {
+            "chuyen-doi-so" : {
+                "title" : "Chuyển đổi số",
+                "description" : "Amitech cung cấp các giải pháp hàng đầu giúp doanh nghiệp chuyển đổi số toàn diện, nhanh chóng, tiết kiệm, hiệu quả"
+            },
+            "gioi-thieu" : {
+                "description" : "Công ty cổ phần giải pháp Công nghệ Ami Việt Nam với Đam mê và Khao khát trở thành một Công ty Công nghệ hàng đầu khu vực trong lĩnh vực Ứng dụng Công nghệ trong Quản lý và Sản Xuất Công Nghiệp.",
+                "diem-uu-viet" : "Điểm ưu việt",
+                "san-pham-chat-luong" : "Sản phẩm chất lượng",
+                "tu-van-ho-tro" : "Tư vấn , hỗ trợ",
+                "diem-uu-viet-1" : "Ứng dụng công nghệ tiên tiến, hiện đại nhất hiện nay",
+                "diem-uu-viet-2" : "Dễ dàng tích hợp, trao đổi dữ liệu với các hệ thống khác",
+                "diem-uu-viet-3" : "Vận hành hổn định trên mọi thiết bị đầu cuối"
+            },
+            "giai-phap-chuyen-doi-so" : {
+                "description" : "Amitech cung cấp các giải pháp chuyển đổi số hàng đầu, giúp doanh nghiệp chuyển đổi số toàn diện, nhanh chóng, tiết kiệm"
+            },
+            "thiet-bi-va-san-pham-cong-nghiep" : {
+                "description" : "Amitech cung cấp các giải pháp tiết kiệm Năng Lượng, giúp cho Doanh nghiệp giám sát tiêu thụ năng lượng, tiết kiệm thời gian và chi phí sử dụng, giảm phát thải, bảo vệ môi trường..."
+            }
+
+        },
+        "introduction" : {
+            "section1" : {
+                "title" : "Công ty Cổ phần Giải pháp Công nghệ AMI Việt Nam (AMITECH)",
+                "description" : "AMITECH cung cấp các dịch vụ về Quản lý năng lượng và Chuyển đổi số trong lĩnh vực quản lý năng lượng, giảm phát thải khí nhà kính. AMITECH có đội ngũ cán bộ, kỹ sư có trình độ cao, tay nghề vững, những người hàng ngày đang thực hiện dự án và cung cấp dịch vụ kỹ thuật cho khách hàng. AMITECH tự hào là Nhà cung cấp giải pháp của ….. và của các nhà cung cấp có uy tín ……"
+            },
+            "section2" : {
+                "description-1" : "Công ty cổ phần Giải pháp Công nghệ AMI Việt Nam được thành lập năm 2011.",
+                "description-2" : "Với nhiều năm kinh nghiệm trong việc cung cấp các dịch vụ về Quản lý năng lượng và Chuyển đổi số trong lĩnh vực quản lý năng lượng, giảm phát thải khí nhà kính. Chúng tôi đã tham gia và đang là thành viên tích cực của các dự án Chương trình mục tiêu Quốc gia, Bộ Công thương, Bộ Tài nguyên và Môi trường và các tổ chức quốc tế: GIZ, WWF, WB, ADB, JICA,.. cũng như Tư vấn cho các tập đoàn công nghiệp, nhà máy sản xuất trong cả nước.",
+                "description-3" : "Với đội ngũ cán bộ, kỹ sư có trình độ chuyên môn kỹ thuật, tay nghề cao. Hàng năm chúng tôi thường xuyên tổ chức các đợt tập huấn để nâng cao giá trị nhân lực của Công ty. Song song với việc đào tạo và phát triển nhân lực, việc tiếp thu khoa học kỹ thuật và dây chuyền sản xuất, công nghệ lắp dựng mới là một vấn đề đặc biệt được chú trọng. Và chúng tôi luôn nỗ lực hết mình để tạo ra những sản phẩm hoàn hảo nhất, cung cấp dịch vụ với chất lượng cao nhất giúp các doanh nghiệp thực hiện tốt việc việc sử dụng năng lượng tiết kiệm và hiệu quả, giảm phát thải trong sản xuất, giảm chi phí sản xuất tăng tính cạnh tranh cho doanh nghiệp và tạo hình ảnh “Doanh nghiệp xanh”. Đóng góp một phần vào công cuộc công nghiệp hóa, hiện đại hóa của đất nước."
+            },
+            "section3" : {
+                "su-menh-title" : "Sứ mệnh",
+                "tam-nhin-title" : "Tầm nhìn",
+                "gia-tri-cot-loi-title" : "Giá trị cốt lõi", 
+                "su-menh" : "Mang theo làn sóng công nghệ mới trong cuộc cách mạng công nghệ 4.0, nỗ lực phát triển những Sản phẩm - Dịch vụ - Giải pháp Công nghệ Chất lượng cao \"Make in Vietnam\", đem lại những giá trị vượt trội cho Khách hàng, góp phần xây dựng một Việt Nam hùng cường.",
+                "tam-nhin" : "Trở thành một Công ty Công nghệ hàng đầu khu vực trong lĩnh vực Ứng dụng Công nghệ trong Quản lý và Sản xuất Công nghiệp.",
+                "gia-tri-cot-loi" : {
+                    "tin-cay-label" : "Tin cậy",
+                    "tien-ich-label" : "Tiện ích",
+                    "tan-tinh-label" : "Tận tình",
+                    "tin-cay-text" : "Các nền tảng, sản phẩm và dịch vụ AMITECH mang lại cho khách hàng đều có độ tin cậy cao, con người AMITECH với tri thức và văn hóa cao luôn mang lại cho khách hàng cảm giác tin cậy trong giao dịch và chuyển giao tri thức, công nghệ.",
+                    "tien-ich-text" : "Các nền tảng, sản phẩm và dịch vụ AMITECH luôn thỏa mãn mọi yêu cầu nghiệp vụ của khách hàng. Khách hàng có thể dễ dàng tiếp cận và sử dụng nền tảng, sản phẩm, dịch vụ của AMITECH bất cứ khi nào, bất cứ nơi nào. Đội ngũ tư vấn, hỗ trợ khách hàng của AMITECH luôn sẵn sàng phục vụ 365 ngày/năm và 24 giờ/ngày.",
+                    "tan-tinh-text" : "  Con người AMITECH từ những người phát triển nền tảng, sản phẩm đến những người kinh doanh tư vấn và các bộ phận khác luôn luôn tận tâm, tận lực phục vụ vì lợi ích của khách hàng, làm cho khách hàng tin cậy và yêu mến như một người bạn, một người đồng hành trong sự nghiệp."
+                }
+            }
+        },
+        "product-detail" : {
+            "section2" : {
+                "san-pham-lien-quan" : "Sản phẩm liên quan"
+            }
+        },
+        "project-detail" : {
+            "section2" :  {
+                "du-an-lien-quan" : "Dự án liên quan"
+            }
+        },
+        "recruitment" : {
+            "title" : "Cơ hội việc làm tại AMITECH",
+            "description" : "Trở thành một phần của AMITECH và nắm bắt cơ hội tạo dựng nghề nghiệp tương lai vững chắc"
+        },
+        "quote" : {
+            "title" : "Báo giá",
+            "description" : "Lựa chọn giải pháp phù hợp với nhu cầu của bạn và nhận báo giá miễn phí"
+        },
+        "contact" : {
+            "title" : "Liên hệ",
+            "description" : "Hãy để đội ngũ Amitech hỗ trợ bạn bất cứ đâu",
+            "label" : {
+                "tru-so-chinh" : "Trụ sở chính",
+                "dien-thoai" : "Điện thoại",
+                "hotline" : "Hotline",
+                "email" : "Email"
+            }
+        },
+        "activities" : {
+            "title" : "HÌNH ẢNH HOẠT ĐỘNG",
+            "description" : "Cập nhật những hoạt động thường niên của AMITECH"
+        }
+    },
+    "footer" : {
+        
+    }
+}

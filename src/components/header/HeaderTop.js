@@ -11,7 +11,7 @@ export default function HeaderTop(){
         const fetchTerm = async () => {
             // Id cua tuyen dung
             try{
-                const res = await getNavigationById(10)
+                const res = await getNavigationById(window.localStorage.getItem('lang') === '0' ? 10 : 59)
                 setTerm(res.data.data)
             }catch(ex){
                 console.log(ex)
