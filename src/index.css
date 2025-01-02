@@ -1,22 +1,16 @@
 body{
     font-family: 'BeVietNam';
     color : white;
+    line-height: calc(1rem + 0.5em);
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
 }
-/* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
     box-sizing: border-box;
   }
   
-  /* 2. Remove default margin */
   * {
     margin: 0;
-  }
-  
-  body {
-    /* 3. Add accessible line-height */
-    line-height: calc(1rem + 0.5em);
-    /* 4. Improve text rendering */
-    -webkit-font-smoothing: antialiased;
   }
   
   /* 5. Improve media defaults */

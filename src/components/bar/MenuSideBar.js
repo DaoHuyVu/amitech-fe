@@ -2,10 +2,12 @@ import { useContext, useState,} from 'react'
 import './sidebar.css'
 import ImageButton from '../button/ImageButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { NavLink} from 'react-router-dom'
 import { sidebarContext } from '../../layout/DefaultLayout'
 import CloseButtonSVG from '../../assets/svg/multiply-svgrepo-com.svg'
+import SearchComponent from '../newComponents/search/SearchComponent'
+import LanguagePickerDropdown from '../newComponents/dropdown/LanguagePickerDropdown'
 const MenuSideBar = ({className='',items,isShowSideBar}) => {
     const {setIsShowSideBar} = useContext(sidebarContext) 
     // Store the menu item id to indicate whether it's showing children or not
@@ -62,15 +64,21 @@ const MenuSideBar = ({className='',items,isShowSideBar}) => {
         )
     })
     return(
-        <div id="sidebar-container" className={`${className} ${isShowSideBar ? 'sidebar-container--show' : 'sidebar-container--collapse'}`} >
+        <div id="sidebar-container" className={`${className} ${isShowSideBar ? 'sidebar-container--show' : 'sidebar-container--collapse'}`}>
             <div id='overlay-background' onClick={handleClose}></div>
             <div id='sidebar' className={`${isShowSideBar ? 'sidebar--show' : 'sidebar--collapse'}`}>
                 <div id='menu'>
-                        <ImageButton className='menu-close-btn' onClick={handleClose}>
-                            <img src={CloseButtonSVG} alt='Close Button'/>
-                        </ImageButton>
+                        <div style={{backgroundColor : '#00258b'}} className='d-flex flex-row align-items-center p-3 justify-content-between column-gap-3'>
+                            <SearchComponent style={{width : 'auto'}}/>
+                            <ImageButton className='menu-close-btn flex-shrink-0' onClick={handleClose}>
+                                <FontAwesomeIcon icon={faXmark} style={{color : 'white'}}/>
+                            </ImageButton>
+                        </div>
                     <div id='menu-content'>
                         {menuItems}
+                    </div>
+                    <div style={{backgroundColor : '#00258b'}} className='p-3'>
+                        <LanguagePickerDropdown />
                     </div>
                 </div>
             </div>
