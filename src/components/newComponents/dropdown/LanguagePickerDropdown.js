@@ -4,7 +4,7 @@ import Spacer from '../spacer/Spacer'
 import styles from './LanguageDropdown.module.css'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 export const languages = [    
     {
         name : 'Việt Nam',
@@ -19,7 +19,6 @@ export default function LanguagePickerDropdown(){
     const [selectedLanguageId,setSelectedLanguageId] = useState(0)
     const location = useLocation()
     const handleSelectLanguage = (idx) => {
-        setSelectedLanguageId(idx)
         window.localStorage.setItem('lang',idx)
     }
     useEffect(() => {
@@ -46,11 +45,16 @@ export default function LanguagePickerDropdown(){
                 {
                     languages.map((lang,idx) => {
                         return(
-                            <a href={`${location.pathname}`} key={idx} className={`${styles.selectLanguageItem}`} onClick={()=> handleSelectLanguage(idx)}>
-                                <img alt='flag' src={lang.flag} className={`${styles.languageFlag}`}/>
-                                <Spacer size={UNIT}/>
-                                {lang.name}
-                            </a>
+                            <Link 
+                                to={`${location.pathname}`} 
+                                reloadDocument="true"
+                                key={idx} 
+                                className={`${styles.selectLanguageItem}`} 
+                                onClick={()=> handleSelectLanguage(idx)}>
+                                    <img alt='flag' src={lang.flag} className={`${styles.languageFlag}`}/>
+                                    <Spacer size={UNIT}/>
+                                    {lang.name}
+                            </Link>
                         )
                     })
                 }

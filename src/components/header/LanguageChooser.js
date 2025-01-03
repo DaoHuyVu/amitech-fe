@@ -13,7 +13,6 @@ export default function LanguageChooser(){
     const location = useLocation()
     const [selectedLanguageId,setSelectedLanguageId] = useState(0)
     const handleSelectLanguage = (idx) => {
-        setSelectedLanguageId(idx)
         window.localStorage.setItem('lang',idx)
     }
     useEffect(() => {
