@@ -49,9 +49,10 @@
 #menu {
     height: 100%;
     overflow-y: auto;
+    background-color: #00258b;
 }
 .menu-close-btn{
-
+    color : rgba(255,255,255,0.5)
 }
 #menu-content{
     padding : 10px;
@@ -60,29 +61,30 @@
 }
 .menu-item-container{
     display: flex;
-    
     flex-direction: column;
+}
+.menu-item-container:hover .menu-item__title{
+    color : #00c2ff ;
 }
 .menu-item{
     display: flex;
     align-items: center;   
-    border-bottom: 1px solid rgb(211, 194, 194);
 }
 .menu-item__title{
     flex-grow: 1;
-    color : #152d5280;
+    color : white;
     padding: 10px;
     font-weight: 700;
+    text-transform: uppercase;
 }
 .menu-item__title-active{
-    color : #002a9e
+    color : #00c2ff
 }
-.menu-item__title:active{
-    color : #002a9e
-}
-
 .menu-item__accordion-icon{
-    color : gray;
+    color : white;
+}
+.menu-item-container:hover .menu-item__accordion-icon{
+    color : #00c2ff;
 }
 .submenu-items-container{
     display: grid;

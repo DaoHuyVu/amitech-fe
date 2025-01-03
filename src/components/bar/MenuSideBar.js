@@ -68,16 +68,16 @@ const MenuSideBar = ({className='',items,isShowSideBar}) => {
             <div id='overlay-background' onClick={handleClose}></div>
             <div id='sidebar' className={`${isShowSideBar ? 'sidebar--show' : 'sidebar--collapse'}`}>
                 <div id='menu'>
-                        <div style={{backgroundColor : '#00258b'}} className='d-flex flex-row align-items-center p-3 justify-content-between column-gap-3'>
+                        <div  className='d-flex flex-row align-items-center p-3 justify-content-between column-gap-3'>
                             <SearchComponent style={{width : 'auto'}}/>
                             <ImageButton className='menu-close-btn flex-shrink-0' onClick={handleClose}>
-                                <FontAwesomeIcon icon={faXmark} style={{color : 'white'}}/>
+                                <FontAwesomeIcon icon={faXmark}/>
                             </ImageButton>
                         </div>
                     <div id='menu-content'>
                         {menuItems}
                     </div>
-                    <div style={{backgroundColor : '#00258b'}} className='p-3'>
+                    <div className='p-3'>
                         <LanguagePickerDropdown />
                     </div>
                 </div>
