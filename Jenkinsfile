@@ -17,7 +17,7 @@ pipeline {
         stage('Build and Push') {
             steps {
                  script {
-                    docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIAL}") {
+                    docker.withRegistry('https://index.docker.io/v1/', "879f9fb8-e1e5-4638-9404-82dc1c713f52") {
                         sh """
                             docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG} .
                             docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG}
