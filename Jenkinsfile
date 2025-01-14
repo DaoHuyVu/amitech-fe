@@ -29,7 +29,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sshagent (credentials: [SSH_KEY_ID]) {
+                sshagent (credentials: ["${SSH_KEY_ID}"]) {
                     sh """
                         scp nginx-server.conf nginx-webserver.conf docker-compose-production.yaml ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH}
                     """
