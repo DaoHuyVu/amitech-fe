@@ -7,24 +7,22 @@ pipeline {
         DEPLOY_PATH = '~/SourceCode/Amitech/amitech-fe'
         GITHUB_REPO = 'https://github.com/DaoHuyVu/amitech-fe'
         SSH_KEY_ID = 'da7e4356-4157-42ca-8e8c-cea88743b1dd'  
+        DOCKER_CREDENTIAL = '879f9fb8-e1e5-4638-9404-82dc1c713f52'
         TAG = "2.0.7"
         IMAGE_NAME = "web"
         DOCKER_REGISTRY = "huyvu160102"
     }
 
     stages {
-        stage('Build') {
+        stage('Build and Push') {
             steps {
-                script {
-                    sh """
-                        docker build -t ${IMAGE_NAME} .
-                    """
-                    sh """
-                        docker tag ${IMAGE_NAME}:latest ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG}
-                    """
-                    sh """
-                        docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG}
-                    """   
+                 script {
+                    docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIAL}") {
+                        sh """
+                            docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG} .
+                            docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG}
+                        """
+                    }
                 }
             }
         }
