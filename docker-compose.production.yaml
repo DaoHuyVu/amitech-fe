@@ -23,7 +23,7 @@ services:
     networks:
       - ami-net
     volumes:  
-      - ./nginx-webserver.conf:/etc/nginx/conf.d/default.conf 
+      - ./nginx-webserver.conf:/etc/nginx/conf.d/default.conf
     deploy:
       replicas : 2
     depends_on:
