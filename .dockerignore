@@ -1,0 +1,6 @@
+node_modules
+.idea
+build
+.gitignore
+docker-compose.yaml
+.git
