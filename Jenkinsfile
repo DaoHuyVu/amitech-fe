@@ -39,10 +39,14 @@ pipeline {
                     sshagent (credentials: ["da7e4356-4157-42ca-8e8c-cea88743b1dd"]) {
                         try{
                                 sh """
+                                    set -x
                                     scp nginx-server.conf nginx-webserver.conf docker-compose-production.yaml ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH}
+                                    set +x
                                 """
                                 sh """
+                                    set -x
                                     docker pull ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG}
+                                    set +x
                                 """
                         }
                         catch(Exception e){
