@@ -17,12 +17,6 @@ pipeline {
         stage('Build and Push') {
             steps {
                  script {
-                    echo "DEPLOY_USER: ${DEPLOY_USER}"
-                    echo "DEPLOY_SERVER: ${DEPLOY_SERVER}"
-                    echo "DEPLOY_PATH: ${DEPLOY_PATH}"
-                    echo "DOCKER_REGISTRY: ${DOCKER_REGISTRY}"
-                    echo "IMAGE_NAME: ${IMAGE_NAME}"
-                    echo "TAG: ${TAG}"
                     docker.withRegistry('https://index.docker.io/v1/', "879f9fb8-e1e5-4638-9404-82dc1c713f52") {
                         sh """
                             docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG} .
@@ -35,6 +29,12 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                echo "DEPLOY_USER: ${DEPLOY_USER}"
+                echo "DEPLOY_SERVER: ${DEPLOY_SERVER}"
+                echo "DEPLOY_PATH: ${DEPLOY_PATH}"
+                echo "DOCKER_REGISTRY: ${DOCKER_REGISTRY}"
+                echo "IMAGE_NAME: ${IMAGE_NAME}"
+                echo "TAG: ${TAG}"
                 sshagent (credentials: ["da7e4356-4157-42ca-8e8c-cea88743b1dd"]) {
                     sh """
                         scp nginx-server.conf nginx-webserver.conf docker-compose-production.yaml ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH}
