@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import Background1 from '../../../assets/images/img4.png'
 import Button from '../../button/Button'
 import LeftScrollContainer from '../../scroller/LeftScroll'
 import ResponsiveHeader from '../../text/ResponsiveHeader'
@@ -23,7 +22,7 @@ export default function Introduction(){
                 </div>
                 <div className="row g-5">
                     <div className="col-12 col-lg-6 mb-4 text-center text-lg-start">
-                        <img src={Background1} className='mw-100 ' alt="IntroductionImage"/>
+                        <img src="/img4.png" className='mw-100 ' alt="IntroductionImage"/>
                     </div>
                     <div className="col-12 col-lg-6" style={{minHeight : '400px'}}>
                         <LeftScrollContainer style={{height : '300px'}}>

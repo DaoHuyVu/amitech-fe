@@ -1,6 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import Background1 from '../../../assets/images/img1.png'
-import ResponsiveHeader from '../../text/ResponsiveHeader'
 import Description from '../../text/Description'
 export default function DigitalTransformation(){
     const {i18n,t} = useTranslation()
@@ -25,7 +23,7 @@ export default function DigitalTransformation(){
                     <div className='col-12 col-xl-1'></div>
                     <div className='col-12 col-xl-6 text-xl-start'>
                         <img 
-                            src={Background1}
+                            src="/img1.png"
                             alt='CDS'
                             className='m-auto'
                         />
