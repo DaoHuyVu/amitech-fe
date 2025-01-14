@@ -36,12 +36,18 @@ pipeline {
                 echo "IMAGE_NAME: ${IMAGE_NAME}"
                 echo "TAG: ${TAG}"
                 sshagent (credentials: ["da7e4356-4157-42ca-8e8c-cea88743b1dd"]) {
-                    sh """
-                        scp nginx-server.conf nginx-webserver.conf docker-compose-production.yaml ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH}
-                    """
-                    sh """
-                        docker pull ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG}
-                    """
+                   try{
+                        sh """
+                            scp nginx-server.conf nginx-webserver.conf docker-compose-production.yaml ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH}
+                        """
+                        sh """
+                            docker pull ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG}
+                        """
+                   }
+                   catch(Exception e){
+                        echo "Error during Docker pull: ${e.message}"
+                        currentBuild.result = 'FAILURE'
+                   }
                 }
             }
         }
