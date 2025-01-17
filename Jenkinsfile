@@ -8,17 +8,22 @@ pipeline {
         GITHUB_REPO = 'https://github.com/DaoHuyVu/amitech-fe'
         SSH_KEY_ID = 'da7e4356-4157-42ca-8e8c-cea88743b1dd'  
         DOCKER_CREDENTIAL = '231a1aad-db15-405f-b9f9-ca6cccacd1ac'
-        TAG = "2.0.8"
+        TAG = "2.0.8    "
         IMAGE_NAME = "web"
         DOCKER_REGISTRY = "huyvu160102"
+        ENV_PATH = credentials('33cdf5ff-1d1e-4929-8d55-27f3bdec95f2')
     }
 
     stages {
-        stage('Checkout SCM') {
+        stage('Setup env'){
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '871998dd-4ab0-4d03-98f8-6c10065545b5', url: 'https://github.com/DaoHuyVu/amitech-fe']])
+                    script {
+                        def envContent = readFile(ENV_PATH)
+                        writeFile file: '.env.production.local', text: envContent
+                        sh 'cat .env.production.local'
+                    }
+                }
             }
-        }
         stage('Build and Push') {
             steps {
                  script {
@@ -31,7 +36,6 @@ pipeline {
                 }
             }
         }
-
         // stage('Deploy') {
         //     steps {
         //         script{
