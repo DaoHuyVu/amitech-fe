@@ -43,7 +43,7 @@ export default function Solution(){
                         <CardTitle maxLines={2} style={{color : '#00c2ff'} }>{e.name}</CardTitle>
                         <CardDescription>{e.description}</CardDescription>
                         <Link style={{color : '#00C2FF'}} to={`${e.url}`} >
-                            {t('common.xem-them')} &gt;&gt;
+                            {t('button.xem-them')} &gt;&gt;
                         </Link>
                     </OverlayCard>
                     

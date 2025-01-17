@@ -20,7 +20,6 @@ pipeline {
                     script {
                         def envContent = readFile(ENV_PATH)
                         writeFile file: '.env.production.local', text: envContent
-                        sh 'cat .env.production.local'
                     }
                 }
             }
@@ -36,18 +35,18 @@ pipeline {
                 }
             }
         }
-        // stage('Deploy') {
-        //     steps {
-        //         script{
-        //             sh """
-        //                 scp -i /d/Secret/ec2_ed25519_huyvu161202.pem nginx-server.conf nginx-webserver.conf docker-compose.production.yaml ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH}
-        //             """
-        //             sh """
-        //                 ssh -i /d/Secret/ec2_ed25519_huyvu161202.pem ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH} "docker pull ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG}"
-        //             """
-        //         }
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+                script{
+                    sh """
+                        scp -i /d/Secret/ec2_ed25519_huyvu161202.pem -o StrictHostKeyChecking=no nginx-server.conf nginx-webserver.conf docker-compose.production.yaml ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH}
+                    """
+                    sh """
+                        ssh -i /d/Secret/ec2_ed25519_huyvu161202.pem -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH} "docker pull ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG} & docker compose up -d --build"
+                    """
+                }
+            }
+        }
     }
 
     post {
