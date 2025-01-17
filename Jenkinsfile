@@ -39,10 +39,10 @@ pipeline {
             steps {
                 script{
                     sh """
-                        scp -i /d/Secret/ec2_ed25519_huyvu161202.pem -o StrictHostKeyChecking=no nginx-server.conf nginx-webserver.conf docker-compose.production.yaml ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH}
+                        scp -i /d/Secret/ec2_ed25519_huyvu161202.pem -o StrictHostKeyChecking=no nginx-server.production.conf nginx-webserver.production.conf docker-compose.production.yaml ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH}
                     """
                     sh """
-                        ssh -i /d/Secret/ec2_ed25519_huyvu161202.pem -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_SERVER}:${DEPLOY_PATH} "docker pull ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG} & docker compose up -d --build"
+                        ssh -i /d/Secret/ec2_ed25519_huyvu161202.pem -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_SERVER} "sudo docker pull ${DOCKER_REGISTRY}/${IMAGE_NAME}:${TAG} & sudo docker compose -f ${DEPLOY_PATH}/docker-compose.production.yaml up -d --build"
                     """
                 }
             }
